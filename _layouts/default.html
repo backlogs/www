@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+        <title>Ajellito - {{ page.title }}</title>
+        <link rel="stylesheet" type="text/css" href="media/theme/default.css" />
+    </head>
+
+<body>
+<div class="container">
+    <div class="header">
+        <div class="title">
+            <!-- h1>Indigo</h1 -->
+        </div>
+
+        <div class="navigation">
+            {% for post in site.categories.navigation %}
+			    <a  id="navtab-{{post.id}}"
+                        href=".{{ post.url }}">{{ post.name }}</a>
+            {% endfor %}
+            <div class="clearer"><span></span></div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="content">
+            <h1>{{page.title}}</h1>
+            {{ content }}
+        </div>
+
+        <div class="sidenav">
+            <h1>Related</h1>
+            <ul>
+                {% for post in site.related_posts %}
+                    <li><a href=".{{post.url}}">{{post.name}}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="clearer"><span></span></div>
+    </div>
+</div>
+<div class="footer"/>
+
+</body>
+
+</html>
