@@ -4,12 +4,12 @@ name: Home
 layout: default
 category: navigation
 ---
-Ajellito aims to do _just enough_ for you to effectively and
+Redmine Backlogs aims to do _just enough_ for you to effectively and
 efficiently manage projects using an Agile methodology.
 
-# Ajellito Features Summary
+# Redmine Backlogs Features Summary
 
-Ajellito allows you to track iterations, user stories and tasks in the
+Redmine Backlogs allows you to track iterations, user stories and tasks in the
 well-proven Redmine project management system.
 
 -   Pretty burndown charts to impress your manager
