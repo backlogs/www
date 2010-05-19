@@ -16,7 +16,7 @@
 
         <div class="navigation">
             {% for post in site.categories.navigation %}
-			    <a  id="navtab-{{post.id}}"
+			    <a  id="navtab-{{post.id | remove:'/'}}"
                         href=".{{ post.url }}">{{ post.name }}</a>
             {% endfor %}
             <div class="clearer"><span></span></div>
