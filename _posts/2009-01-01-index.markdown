@@ -30,5 +30,5 @@ Backlogs](Usage.html). For a little more background, read more about
 using Backlogs from the perspective of a specific role in your
 project:
 
-- [Scrum Master](UsecaseScrumMaster.html)
+- [Scrum Master](UseCaseScrumMaster.html)
 - (more to come)
