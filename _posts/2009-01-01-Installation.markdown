@@ -1,6 +1,6 @@
 ---
 title: How to set up redmine+backlogs
-name: Getting Started
+name: Installation
 layout: default
 category: navigation
 ---
