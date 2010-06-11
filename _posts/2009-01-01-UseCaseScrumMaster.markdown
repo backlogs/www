@@ -3,8 +3,6 @@ title: You are the Scrum Master
 name: "Usage: Scrum Master"
 layout: default
 ---
-## You are the Scrum Master
-
 You are the Scrum Master for a team that has chosen to use
 Redmine/Backlogs.
 
