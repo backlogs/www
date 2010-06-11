@@ -1,6 +1,6 @@
 ---
 title: You are the Scrum Master
-name: Usage: Scrum Master
+name: "Usage: Scrum Master"
 layout: default
 ---
 ## You are the Scrum Master
