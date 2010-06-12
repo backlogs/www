@@ -16,6 +16,16 @@ well-proven Redmine project management system.
 -   Printable task board cards
 -   Impediment registration
 
+The installation is pretty simple (we think), the [installation instructions](Installation.html) should get you started. Once that's
+done, you could either watch one of our screencasts: [Configuring backlogs](BacklogsConfiguration), 
+[Project setup](SettingUpYourProject.html), or [Using
+Backlogs](Usage.html), or get a little more background about
+using Backlogs from the perspective of a specific role in your
+project:
+
+- [Scrum Master](UseCaseScrumMaster.html)
+- (more to come)
+
 This product is relatively new, and while I can appreciate why you
 might want to fork code to your own repository (GitHub makes this very
 easy), I would prefer it if patches were submitted upstream to this code base to help
@@ -23,12 +33,3 @@ avoid fragmenting the product into multiple unfinished projects. Of
 course, the code is open source and you're free to fork it if you wish - however it'd be nice to have a central repository that is as
 advanced and complete as possible.
 
-The installation is pretty simple (we think), the [Installation instructions](Installation.html) should get you started. One that's
-done, you could either watch one of our screencasts: [Configuring backlogs](BacklogsConfiguration), 
-[Project setup](SettingUpYourProject.html), or [Using
-Backlogs](Usage.html). For a little more background, read more about
-using Backlogs from the perspective of a specific role in your
-project:
-
-- [Scrum Master](UseCaseScrumMaster.html)
-- (more to come)

@@ -21,6 +21,10 @@ backlog, but don't "close" them.
 
 ## Planning a sprint
 
+Sprints are what Redmine calls versions, so you create a new sprint by
+creating a new... version, right. Go to your project, select the
+"settings" tab, pick "versions" and create one.
+
 If you click the "Backlogs" tab for your project you'll get to the
 planning page. On this page you can change various things by clicking
 on them and pressing enter to confirm (or esc to cancel):
