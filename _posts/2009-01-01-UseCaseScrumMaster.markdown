@@ -49,7 +49,9 @@ board (you _are_ using a cork board or equivalent, right?)
 ## The daily scrum
 
 You can use the task board to register time-remaining on issues, and
-drag-and-drop tasks to their current state.
+drag-and-drop tasks to their current state. It's low impact -- try
+having someone (not you! you need to be at the standup!) follow the
+standup as it progresses.
 
 To enter impediments
 you'll have to go the the standard "New Issue" tab and enter a new

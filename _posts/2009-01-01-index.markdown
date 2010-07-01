@@ -24,7 +24,8 @@ using Backlogs from the perspective of a specific role in your
 project:
 
 - [Scrum Master](UseCaseScrumMaster.html)
-- (more to come)
+- [Product Owner](UseCaseProductOwner.html)
+- [Team Member](UseCaseTeamMember.html)
 
 This product is relatively new, and while I can appreciate why you
 might want to fork code to your own repository (GitHub makes this very
