@@ -24,6 +24,7 @@ system:
 -   holidays
 -   rubyist-aasm
 -   prawn
+-   icalendar
 
 Migrate everything:
 
