@@ -5,7 +5,7 @@ categories: en
 ---
 # Usage: Product Owner
 
-You are responsible for prioritizing and describing the stories in the product backlog.
+As the product owner you are responsible for prioritizing and describing the stories in the product backlog. Read more about <a href="http://www.mountaingoatsoftware.com/scrum/product-owner" target="_blank">the product owner role</a> from Mountain Goat Software.
 
 ## Maintaining the product backlog
 
