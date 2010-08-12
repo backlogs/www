@@ -1,47 +1,44 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-"http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+ "http://www.w3.org/TR/html4/strict.dtd">
 <html>
-    <head>
-        <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
-        <title>Redmine Backlogs - {{ page.title }}</title>
-        <link rel="stylesheet" type="text/css" href="media/theme/default.css" />
-    </head>
-
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=iso-8859-1"/>
+  <title>Redmine Backlogs :: {{ page.title }}</title>
+  <link rel="stylesheet" href="../../assets/styles/blueprint/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="../../assets/styles/blueprint/print.css" type="text/css" media="print">	
+  <!--[if lt IE 8]><link rel="stylesheet" href="../../assets/styles/blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <link rel="stylesheet" type="text/css" href="../../assets/styles/default.css" />
+  <link  href="http://fonts.googleapis.com/css?family=Reenie+Beanie:regular" rel="stylesheet" type="text/css" > 
+</head>
 <body>
-<div class="container">
-    <div class="header">
-        <div class="title">
-            <!-- h1>Indigo</h1 -->
-        </div>
+<body>
+  <div class="container">
+    <div class="span-2">&nbsp;</div>
 
-        <div class="navigation">
-            {% for post in site.categories.navigation %}
-			    <a  id="navtab-{{post.id | remove:'/'}}"
-                        href=".{{ post.url }}">{{ post.name }}</a>
-            {% endfor %}
-            <div class="clearer"><span></span></div>
-        </div>
+    <div id="hd" class="span-20">
+      <div class="title span-10"><a href="{{ site.url }}" name="top">{{ site.name }}</a></div>
+      <div class="description span-10 last">{{ site.description }}</div>
     </div>
-
-    <div class="main">
-        <div class="content">
-            <h1>{{page.title}}</h1>
-            {{ content }}
-        </div>
-
-        <div class="sidenav">
-            <h1>Related</h1>
-            <ul>
-                {% for post in site.related_posts %}
-                    <li><a href=".{{post.url}}">{{post.name}}</a></li>
-                {% endfor %}
-            </ul>
-        </div>
-        <div class="clearer"><span></span></div>
+    <div class="span-2 last">&nbsp;</div>
+    
+    <div class="span-2">&nbsp;</div>
+    <div id="body_container" class="span-20">
+      <div id="nav" class="span-5">
+      	Contents
+      	<ul>
+      	  {% for post in site.categories.en %}
+      	  <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+      	  {% endfor %}
+      	</ul>
+      </div>
+      <div id="body" class="span-15 last">
+        <div id="content">
+        	{{ content }}
+        	<a href="#top">Back to top</a>
+      	</div>
+      </div>
     </div>
-</div>
-<div class="footer"/>
-
+    <div class="span-2 last">&nbsp;</div>	
+  </div>
 </body>
-
 </html>

@@ -1,0 +1,134 @@
+body{
+  background-color:#CFCFCF;
+  font-family:Georgia,Times,serif;
+}
+a{
+  color:#930000;
+}
+a:hover{
+  color:#CC0000;
+}
+#hd{
+  background-color:#690000;
+  color:#FF9999;
+  height:40px;
+}
+#hd .title{
+  margin:4px 0 0 5px;
+}
+#hd .title a{
+  color:inherit;
+  font-size:24px;
+  text-decoration:none;
+}
+#hd .description{
+  font-size:12px;
+  margin:17px 5px 0 0;
+  text-align:right;
+}
+#nav{
+  font-size:20px;
+  margin-top:5px;
+  text-align:center;
+}
+
+
+#nav ul{
+  margin:15px 0 0 15px;
+  padding:0;
+  width:100%;
+}
+#nav ul li{
+  color:#000;
+  list-style:none;
+}
+#nav ul li a{
+  background:#ff9;
+  background:-webkit-gradient(linear, 0% 0%, 0% 100%, from(#ff9), to(#cc3));
+  background:-moz-linear-gradient(left top, #ff9, #cc3 100%);
+  color:#000;
+  display:block;
+  float:left;
+  font-family:"Reenie Beanie",Georgia,Times,serif;
+  height:60px;
+  list-style:none;
+  margin:0 0 0.4em 1em;
+  padding:0;
+  text-align:center;
+  text-decoration:none;
+  word-wrap:break-word;
+  width:120px;
+  -moz-box-shadow:5px 5px 7px rgba(33,33,33,.7);
+  -webkit-box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  box-shadow: 5px 5px 7px rgba(33,33,33,.7);
+  }
+#nav ul li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+}
+#nav ul li:nth-child(even) a{
+  -o-transform:rotate(10deg);
+  -webkit-transform:rotate(10deg);
+  -moz-transform:rotate(10deg);
+}
+#nav ul li:nth-child(3n) a{
+  -o-transform:rotate(-3deg);
+  -webkit-transform:rotate(-3deg);
+  -moz-transform:rotate(-3deg);
+  position:relative;
+  top:-5px;
+}
+/* thanks to http://www.zurb.com/playground/css3-polaroids */
+#nav li a{
+  -webkit-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  -moz-transform:rotate(-6deg);
+  -moz-transition:-moz-transform .15s linear;
+  -o-transition:-o-transform .5s linear;
+  -webkit-transition:-webkit-transform .15s linear;}
+#nav ul li a:hover,ul li a:focus{
+  -moz-box-shadow:10px 10px 7px rgba(33,33,33,.7);
+  -webkit-box-shadow: 10px 10px 7px rgba(33,33,33,.7);
+  box-shadow: 10px 10px 7px rgba(33,33,33,.7);
+  cursor:pointer;
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  -o-transform: scale(1.25);
+  position:relative;
+  z-index:5;
+}
+
+
+
+#body_container{
+  background-color:#FFFFFF;
+}
+#body{
+  background-color:#FFFFFF;
+  font-size:16px;
+}
+#content{
+  margin:5px;
+}
+h1,h2,h3{
+  margin-bottom:10px;
+}
+code{
+  font-size:0.9em;
+}
+pre{
+  background-color:#CCCCCC;
+  overflow:auto;
+  padding:10px;
+}
+pre code{
+  font-size:0.9em;
+}
+img{
+  border:1px solid #CCCCCC;
+  display:block;
+  padding:5px;
+  margin-left:auto;
+  margin-right:auto;
+}
