@@ -49,7 +49,7 @@ Backlogs is hands-down the most beautiful plugin on the plugin list!
 ## Hard-core Ruby, Rails or Redmine developer
 
 Backlogs builds on the awesome Redmine project tracker, which in turn
-is built on the equally awesome rails. We can always use a hane
+is built on the equally awesome rails. We can always use a hand
 building new features, or cleaning up old ones. If you can write code,
 but have no Ruby experience: picking up Redmine, Rails and Ruby should
 be a matter of weeks at most, and once you do, you'll probably never
