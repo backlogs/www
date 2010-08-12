@@ -7,7 +7,7 @@ categories: en
 
 Alrighty! Let's install Backlogs to your system. Now, remember, if
 you come across any hitches or just don't know how to proceed, feel
-free to ask for help from the [the forums](http://backlogsplugin.morphexchange.com/).
+free to ask for help from the [the forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards).
 
 
 ## Install Redmine
