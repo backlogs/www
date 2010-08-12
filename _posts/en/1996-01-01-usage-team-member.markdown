@@ -19,7 +19,9 @@ But if you are not co-located:
 You can edit time-remaining or the task status on the task board.
 Editing time-remaining can be done by clicking the card and pressing
 enter to confirm (or escape to cancel). To change the task status,
-drag and drop it in the appropriate column.
+drag and drop it in the appropriate column. The page updates
+automatically, so the other team-members will see the changes in
+nearly real-time.
 
 If you need clarification for a story, _talk to your product owner_,
 but do add those details to the story (click the story or task id, and
