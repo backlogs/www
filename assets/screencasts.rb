@@ -4,7 +4,7 @@ def flash_container(swf)
   screencast = swf.gsub(/\.swf$/, '')
   title = screencast.gsub(/[-_]/, ' ').capitalize
   File.open("_posts/en/1900-01-01-screencast-#{screencast}.html", 'w') do |container|
-    container.write "---\ntitle: #{title}\nlayout: default\n---\n"
+    container.write "---\ntitle: \"Screencast: #{title}\"\nlayout: default\n---\n"
     container.write <<EOF
       <OBJECT
             CLASSID="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
