@@ -54,9 +54,12 @@ into the main repo.
 ## Compatibility
 
 We're building this tool during our free time only and, therefore, were only
-able to these it in the following environments:
+able to test it in the following environments:
 
 * Firefox 3.5.x Mac OS X
+* Google Chrome 5.0.x Windows XP
 * Redmine 1.0-stable
 * PostgreSQL 8.2.6
 * MySQL 5.0.83
+
+but we'll happily fix it for other environments if you file an issue.
