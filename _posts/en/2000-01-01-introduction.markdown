@@ -5,19 +5,15 @@ categories: en
 ---
 # Welcome!
 
-Thanks for trying out Redmine Backlogs! We designed
+Thanks for trying out Redmine Backlogs. We designed
 this tool to do just enough for you to manage your projects in
 an agile way. We use it on a daily basis and continually improve
 on it. We hope you will find it useful too!
 
+
 ## About Redmine
 
-_Brief intro on Redmine here. Link to the Redmine website._
-
-
-## Agile Project Management
-
-_Brief into on the agile movement here. Link to one or more websites._
+Redmine is a flexible project management web application. Written using Ruby on Rails framework, it is cross-platform and cross-database. Redmine is open source and released under the terms of the GNU General Public License v2 (GPL). In a word, it's awesome, and we're big fans (can you tell?). For more information about Redmine, visit [the official website](http://www.redmine.org/)
 
 
 ## Redmine Backlogs Features
@@ -39,27 +35,22 @@ And a lot more!
 
 Have a question that's not covered by this guide? Go ahead and
 start a conversation in [the forums](http://backlogsplugin.morphexchange.com/). You may also follow
-@redminebacklogs on *Twitter* for various announcements.
+[@redminebacklogs](http://twitter.com/redminebacklogs) on *Twitter* for various announcements.
 
 
 ## Bugs and Feature Requests
 
-If you find any bugs or maybe want to see some improvements to the
-plugin, feel free to file a ticket in the project's [bug tracker](http://backlogsplugin.morphexchange.com/).
-Better yet, go ahead and fork the project on github so you can fix the bugs
-yourself, then send us a pull request so that we can incorporate it
-into the main repo.
+If you find any bugs or maybe want to suggest improvements, feel free to file a ticket in the project's [bug tracker](http://backlogsplugin.morphexchange.com/). Better yet, go ahead and fork the project on github so you can fix the bugs yourself, then send us a pull request so that we can incorporate it into the main repo.
 
 
 ## Compatibility
 
-We're building this tool during our free time only and, therefore, were only
-able to test it in the following environments:
+We're building this tool during our free time and, therefore, have only been able to test it in the following environments:
 
-* Firefox 3.5.x Mac OS X
-* Google Chrome 5.0.x Windows XP
+* Firefox 3.5.x Mac OS X (Snow Leopard)
+* Google Chrome 5.0.x Windows XP and Mac OS X (Snow Leopard)
 * Redmine 1.0-stable
 * PostgreSQL 8.2.6
 * MySQL 5.0.83
 
-but we'll happily fix it for other environments if you file an issue.
+But hey, don't let that stop you from [filing a ticket](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/issues/new) if you find a problem in other environments.

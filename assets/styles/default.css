@@ -133,3 +133,6 @@ img{
   margin-right:auto;
   max-width:500px;
 }
+#content ul li{
+  margin-bottom:1em;
+}
