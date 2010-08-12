@@ -43,8 +43,8 @@ ahead and skip to the second method.
 
 ### Method #1
 
-**NOTE**: This first method requires some knowledge oF git. For more information on how
-to use and install git, please visit http://git-scm.com/.
+**NOTE**: This first method requires some knowledge of git. For more information on how
+to use and install git, please visit [http://git-scm.com/](http://git-scm.com/).
 
 First, make sure that you're inside the `vendor/plugins` directory
 of your Redmine instance. Now, clone the source from Github by executing the following
@@ -84,7 +84,7 @@ row. You should then see a screen similar to the one below:
 
 ![](../../assets/images/configure_screen.png)
 
-* _Story Trackers_ and _Task Trackers_ - These fields tell Backlogs what
+* _Story Trackers_ and _Task Tracker_ - These fields tell Backlogs what
 type of issues it should consider as stories and tasks respectively. You
 may select more than one story tracker but only one task tracker. Make
 sure that the tracker you don't use the same tracker in both fields! If
