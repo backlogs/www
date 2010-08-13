@@ -5,21 +5,16 @@ categories: en
 ---
 # Welcome!
 
-Thanks for trying out Redmine Backlogs. We designed
-this tool to do just enough for you to manage your projects in
-an agile way. We use it on a daily basis and continually improve
-on it. We hope you will find it useful too!
+Backlogs is a Redmine plugin that's designed to do just enough so your team can work in an agile way. It's still a work in progress, but we're already using it on a daily basis and continually improve on it. We hope you'll find it useful too!
 
 
 ## About Redmine
 
-Redmine is a flexible project management web application. Written using Ruby on Rails framework, it is cross-platform and cross-database. Redmine is open source and released under the terms of the GNU General Public License v2 (GPL). In a word, it's awesome, and we're big fans (can you tell?). For more information about Redmine, visit [the official website](http://www.redmine.org/)
-
+Redmine is, in one word, awesome. In a few more words, Redmine is an awesome web-based project management application. We're big fans, can you tell? It's written with the Ruby on Rails framework and released under the terms of the GNU General Public License v2 (GPL). Visit [the official website](http://www.redmine.org/) for more info.
 
 ## Redmine Backlogs Features
 
-Redmine Backlogs is still a work in progress but can already do a
-number of useful things for your agile team:
+Redmine Backlogs is still a work in progress but can already do a number of useful things for your agile team:
 
 * Sort stories in your product and iteration backlogs
 * Track story points for each of your stories
@@ -28,13 +23,13 @@ number of useful things for your agile team:
 * Produce printable task board cards
 * Track impediments within each iteration
 
-And a lot more! 
+And a lot more! There are a few more things below that you should know before getting started, but if you can't wait, go ahead and [install the plugin now](../installation).
 
 
 ## Getting Additional Help
 
 Have a question that's not covered by this guide? Go ahead and
-start a conversation in [the forums](http://backlogsplugin.morphexchange.com/). You may also follow
+start a conversation in [the forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards). You may also follow
 [@redminebacklogs](http://twitter.com/redminebacklogs) on *Twitter* for various announcements.
 
 
@@ -53,4 +48,4 @@ We're building this tool during our free time and, therefore, have only been abl
 * PostgreSQL 8.2.6
 * MySQL 5.0.83
 
-But hey, don't let that stop you from [filing a ticket](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/issues/new) if you find a problem in other environments.
+So if you come across any problems, please don't hesitate to [file a ticket](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/issues/new).
