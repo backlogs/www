@@ -79,6 +79,20 @@ a:hover{
   position:relative;
   top:-5px;
 }
+#nav ul li:nth-child(4n) a{
+  -o-transform:rotate(-12deg);
+  -webkit-transform:rotate(-12deg);
+  -moz-transform:rotate(-12deg);
+  position:relative;
+  top:-5px;
+}
+#nav ul li:nth-child(7n) a{
+  -o-transform:rotate(-10deg);
+  -webkit-transform:rotate(-10deg);
+  -moz-transform:rotate(-10deg);
+  position:relative;
+  top:-5px;
+}
 /* thanks to http://www.zurb.com/playground/css3-polaroids */
 #nav li a{
   -webkit-transform: rotate(-6deg);
