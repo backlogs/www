@@ -5,17 +5,17 @@ categories: en
 ---
 # Installation
 
-Alrighty! Let's install Backlogs into your system. Now, remember, if you come across any hitches or just don't know how to proceed, feel free to ask for help from the [the forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards).
+Alrighty! Let's install Backlogs into your system. Now, remember, if you come across any hitches or just don't know how to proceed, feel free to ask for help in [the forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards).
 
 
 ## Install Redmine
 
-The Backlogs plugin requires Redmine 1.0 (1.0-stable branch) or above to be installed before it can run. For more information on Redmine and how to install it, please visit [the official Redmine website](http://www.redmine.org/).
+The Backlogs plugin requires Redmine (1.0-stable branch) to be installed before it can run. For more information on Redmine and how to install it, please visit [the official Redmine website](http://www.redmine.org/).
 
 
 ## Check Those Gems!
 
-Backlogs requires a few gems to run properly. Make sure the following and their dependencies are installed on your system:
+Backlogs requires a few gems to run properly. Make sure the following gems (and their dependencies) are installed on your system:
 
 * Rails 2.3.5
 * activeresource
@@ -27,18 +27,19 @@ Backlogs requires a few gems to run properly. Make sure the following and their 
 
 ## Install Backlogs
 
-Now you can download the Backlogs source code from [the official repo](git://github.com/relaxdiego/redmine_backlogs.git) into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
+Now let's download the Backlogs source code from [the official repo](git://github.com/relaxdiego/redmine_backlogs.git) into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
 
 
 ### Method #1
-
-**NOTE**: This first method requires some knowledge of git. For more information on how to use and install git, please visit [the git homepage](http://git-scm.com/).
+> **NOTE**: This first method requires some knowledge of git. For more information on how to use it, please visit [the git homepage](http://git-scm.com/).
 
 First, make sure that you're inside the `vendor/plugins` directory of your Redmine instance. Now, clone the source from Github by executing the following command:
 
     git clone git://github.com/relaxdiego/redmine_backlogs.git
 
-This will create a directory named `redmine_backlogs` which is exactly what we need. **IMPORTANT**: Don't rename this directory.
+This will create a directory named `redmine_backlogs` which is exactly what we need. 
+
+> **IMPORTANT**: Don't rename the `redmine_backlogs` directory!
 
 That's it for Method #1. If you want to try out some of the experimental features, feel free to poke around by checking out any of the available remote branches.
 
@@ -54,18 +55,18 @@ This will display a dialog box where you can select the format of your archive. 
 
 ## Configure Backlogs
 
-Now that Backlogs is installed, let's go ahead and tell it how to behave. To do that, access your Redmine instance using your preferred browser, log in as an administrator and head on to _Administration_ > _Plugins_.
-Then click the _Configure_ link to the right of the Redmine Backlogs Plugin record. You should then see a screen similar to the one below:
+Now that Backlogs is installed, let's go ahead and tell it how to behave. To do that, access your Redmine instance using your preferred browser, log in as an administrator and head on to _Administration_ > _Plugins_. Then click the _Configure_ link to the right of the Redmine Backlogs Plugin record. You should then see a screen similar to the one below:
 
 ![Configure Screen](../../assets/images/configure_screen.png)
 
-* _Story Trackers_ and _Task Tracker_ - These fields tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Make
-sure that you don't use the same tracker in both fields! If you do this, the _Apply_ button will automatically be disabled.
+A quick description of the fields:
+
+* _Story Trackers_ and _Task Tracker_ - These fields tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Make sure that you don't use the same tracker in both fields! If you do this, the _Apply_ button will automatically be disabled.
 * _Points burn up/down_ - Tells Backlogs how to display the sprint progress chart. Some of us like it to go up, others like it to go down. Choose which one you prefer.
 * _Label types for card printing_ - If you like physical task boards (and you do, right?), you can select one of 250 preconfigured label types that are commercially available. Your product/sprint backlog will print neatly onto these.
 * _Template for sprint wiki page_ - Backlogs helps you keep your sprint retrospectives or review notes on a wiki. If you want to have some template text on this page you can fill in the page that will be used as a template, which will be copied onto the sprint wiki page if that page does not already exist. Note that this template page must be created per-project.
 
-Once you're done, go ahead and click _Apply_. Note that if that button is disabled, it means you're using a task tracker that's also a story tracker. Correct that error so you can proceed.
+Once you're done, go ahead and click _Apply_. If that button is disabled, it means you're using a task tracker that's also a story tracker. Fix the error so you can proceed.
 
 
 ## Set Permissions
@@ -87,7 +88,9 @@ Up next, we need to ensure that your Redmine instance is set-up correctly. So ma
     rake db:migrate:upgrade_plugin_migrations
     rake db:migrate_plugins
 
-For more information on the above rake tasks, execute `rake -T` from within your Redmine installation. You may also want to run the following rake tasks **but** be careful not to do it indiscriminately in a running production environment as it might produce unwanted results.
+For more information on the above rake tasks, execute `rake -T` from within your Redmine installation. You may also want to run the following rake tasks.
+
+> **WARNING:** Be careful when running the following rake tasks in a production environment as it might produce unwanted results.
 
     rake tmp:cache:clear
     rake tmp:sessions:clear
