@@ -5,30 +5,20 @@ categories: en
 ---
 # Usage: Team Member
 
-You are part of a team that has chosen to use
-Redmine/Backlogs.
+As a team member, you are co-responsible for ensuring that the stories in the backlog are implemented in a manner that is acceptable to the product owner.
 
-If you're co-located, try to coerce your scrum master to work with
-redmine on your behalf. Your role entails working on the product, not
-administrative work if you can avoid it.
-
-But if you are not co-located:
 
 ## Maintain the task board
 
-You can edit time-remaining or the task status on the task board.
-Editing time-remaining can be done by clicking the card and pressing
-enter to confirm (or escape to cancel). To change the task status,
-drag and drop it in the appropriate column. The page updates
-automatically, so the other team-members will see the changes in
-nearly real-time.
+![Sprint Taskboard](../../assets/images/sprint_taskboard.png)
 
-If you need clarification for a story, _talk to your product owner_,
-but do add those details to the story (click the story or task id, and
-update the story or task).
+The taskboard provides a number of functionalities you can use in your day to day work:
 
-You can add a task to a story by clicking the '+'.
+* **Add tasks** that you believe are needed to complete a story. You can do this by clicking the "+" button to the right of a story. Feel free to add as many tasks as needed. These will not be displayed in the master backlog.
+* **Assign one or more tasks** to yourself. You can do this by clicking on a task and then selecting your name from the _Assigned To_ drop down. The task will immediately adopt your user color.
+* If your team prefers to record the **time remaining** on each task, click on a task and input the remaining time accordingly. After you click _OK_, the value automatically displays as a red badge on the task.
+* You can add **sprint impediments** by adding them at the top row marked _Sprint Impediments_.
+* **Drag and drop** a task between columns to change its state.
+* **Edit any attribute** of the task by clicking the task and modifying any of the fields.
 
-But really, let
-someone else do the boring administrative work. Pester your scrum
-master to get that arranged.
+> **NOTE:** Task colors are determined by the assignee's preferred color. This preference is randomly assigned by Backlogs if a user doesn't have a color yet. To modify your preferred color, go to your account page in Redmine.
