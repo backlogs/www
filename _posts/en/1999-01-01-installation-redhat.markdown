@@ -1,7 +1,7 @@
 ---
 title: Installation on RHEL 5.x
 layout: default
-category: en
+categories: en
 ---
 
 # Installing on RHEL 5.x

@@ -19,13 +19,9 @@ We currently have translations for (what we think is) US-English, and Dutch. Add
 
 The documentation is traditionally a weak point for many open-source projects. We'd love to include your story, to get better coverage in our documentation (since we're pretty experienced with Backlogs ourselves, it becomes progressively harder to write for newcomers), or just verbatim stories (we like praise!). So go ahead and let us know via [the forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards)
 
-## JavaScript & jQuery wizards
+## User Interface and JavaScript Jocks
 
-We're always looking to make the user interface more efficient, and yes, more snazzy. If JavaScript is your thing, and you see something that could use a little more of it, go right ahead!
-
-## Visual Design Artist
-
-Everyone loves eyecandy. We don't want to diverge too far from the looks of Redmine, but we'd sure like it if people would say that Backlogs is hands-down the most beautiful plugin on the plugin list!
+We're always looking to make the user interface more efficient, and yes, more snazzy. If UI design is your thing, and you see something that could use some improvement, go right ahead! Also, everyone loves eyecandy. We don't want to diverge too far from the looks of Redmine, but we'd sure like it if people would say that Backlogs is hands-down the most beautiful plugin on the plugin list!
 
 ## Ruby, Rails, or Redmine developers
 
