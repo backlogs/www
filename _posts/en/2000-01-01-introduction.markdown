@@ -44,8 +44,8 @@ We're building this tool during our free time and, therefore, have only been abl
 
 * Firefox 3.5.x Mac OS X (Snow Leopard)
 * Google Chrome 5.0.x Windows XP and Mac OS X (Snow Leopard)
-* Redmine 1.0-stable
-* PostgreSQL 8.2.6
+* Redmine 1.0.0
+* PostgreSQL 8.4.4
 * MySQL 5.0.83
 
 So if you come across any problems, please don't hesitate to [file a ticket](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/issues/new).
