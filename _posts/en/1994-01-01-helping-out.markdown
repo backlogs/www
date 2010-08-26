@@ -9,7 +9,7 @@ There's currently just two of us diligently plugging away to make Backlogs absol
 
 ## Something broken? Please tell us
 
-We're not perfect; as you're reading this, at least 400 changes have gone into Backlogs since we restarted the new branch. Something is bound to be broken at any given time, as we can't catch all the corner cases with the limited amount of time and test cases/test data we have available. So if something is broken, or you think of a way Backlogs could be even better than it is now, please let us know at the [bug tracker](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/issues/new).
+We're not perfect; as you're reading this, at least 400 changes have gone into Backlogs since we restarted the new branch. Something is bound to be broken at any given time, as we can't catch all the corner cases with the limited amount of time and test cases/test data we have available. So if something is broken, or you think of a way Backlogs could be even better than it is now, please let us know at the [bug tracker](http://bugs.redminebacklogs.net/projects/redmine-backlogs/issues/new).
 
 ## We'd like to speak your language
 
@@ -17,7 +17,7 @@ We currently have translations for (what we think is) US-English, and Dutch. Add
 
 ## Have a story? Do tell!
 
-The documentation is traditionally a weak point for many open-source projects. We'd love to include your story, to get better coverage in our documentation (since we're pretty experienced with Backlogs ourselves, it becomes progressively harder to write for newcomers), or just verbatim stories (we like praise!). So go ahead and let us know via [the forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards)
+The documentation is traditionally a weak point for many open-source projects. We'd love to include your story, to get better coverage in our documentation (since we're pretty experienced with Backlogs ourselves, it becomes progressively harder to write for newcomers), or just verbatim stories (we like praise!). So go ahead and let us know via [the forums](http://bugs.redminebacklogs.net/projects/redmine-backlogs/boards)
 
 ## User Interface and JavaScript Jocks
 

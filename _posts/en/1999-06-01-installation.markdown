@@ -8,7 +8,7 @@ categories: en
 Alrighty! Let's install Backlogs into your system. Now, remember, if
 you come across any hitches or just don't know how to proceed, feel
 free to ask for help in [the
-forums](http://backlogsplugin.morphexchange.com/projects/redmine-backlogs/boards).
+forums](http://bugs.redminebacklogs.net/projects/redmine-backlogs/boards).
 For you poor souls who are stuck on RHEL 5.x there's a separate set of
 [installation instructions](/en/installation-redhat), but I still
 recommend you read this installation manual first.
