@@ -57,8 +57,7 @@ Install Redmine (I picked `/var/www/redmine`)
     cd /var/www
     rm -rf redmine
     git clone http://github.com/edavis10/redmine.git
-    git branch --track 1.0-stable origin/1.0-stable
-    git checkout 1.0-stable
+    git checkout 1.0.0
     
     cd redmine
     git clone http://github.com/relaxdiego/redmine_backlogs.git vendor/plugins/redmine_backlogs
