@@ -78,6 +78,8 @@ Now that Backlogs is installed, let's go ahead and tell it how to behave. To do 
 
 ![Configure Screen](../../assets/images/configure_screen.png)
 
+> NOTE: Redmine ships with just the Feature, Bug, and Support tracker. To add custom trackers such as Task and Impediment in the above screen, go to _Administration > Trackers_ in Redmine.
+
 A quick description of the fields:
 
 * _Story Trackers_ and _Task Tracker_ - These fields tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Make sure that you don't use the same tracker in both fields! If you do this, the _Apply_ button will automatically be disabled.
