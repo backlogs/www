@@ -15,7 +15,7 @@ recommend you read this installation manual first.
 
 ## Install Redmine
 
-The Backlogs plugin requires Redmine (1.0-stable branch) to be installed before it can run. For more information on Redmine and how to install it, please visit [the official Redmine website](http://www.redmine.org/).
+The Backlogs plugin requires Redmine 1.0.0 (Any 1.x.x version might also work although we have not tested it yet. Anything lower than 1.0.0 is not supported) to be installed before it can run. For more information on Redmine and how to install it, please visit [the official Redmine website](http://www.redmine.org/).
 
 
 ## Check Those Gems!
