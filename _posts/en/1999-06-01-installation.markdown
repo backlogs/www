@@ -138,10 +138,29 @@ We recommend that you make this cron job run at least once a day.
 
 If you want to grab the latest & greatest from the repo, here's what you do:
 
+    cd path/to/redmine_backlogs
     git checkout master
     git pull origin
     rake db:migrate_plugins
 
 > **NOTE:** Obviously, you can only do this if you used _Method #1_ in the installation process above.
 
-> **WARNING:** The master branch is constantly in flux and might be broken at times. Make sure to do the above in your test or staging environment first before pulling the code into production!
+> **WARNING:** The master branch is constantly in flux and might be broken at times. Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
+
+
+## Optional: Upgrading with git
+
+We release new versions of the product often. To grab the latest version in the repo, here's what you do:
+
+    cd path/to/redmine_backlogs
+    git fetch --tags origin
+    git tag
+
+The last line above will show you a list of available versions. To upgrade to one of the versions, do the following:
+   
+    git checkout vX.Y.Z
+    rake db:migrate_plugins
+
+> **NOTE:** Replace vX.Y.Z with the correct tag.
+
+> **WARNING:** Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
