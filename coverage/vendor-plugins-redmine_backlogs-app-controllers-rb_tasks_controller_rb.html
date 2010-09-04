@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</title>
+    <title>vendor/plugins/redmine_backlogs/app/controllers/rb_tasks_controller.rb</title>
     <link href="screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="print.css" media="print" rel="stylesheet" type="text/css" />
     
@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>App C0 Coverage Information - RCov</h1>
-    <h2>vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</h2>
+    <h2>vendor/plugins/redmine_backlogs/app/controllers/rb_tasks_controller.rb</h2>
 
     
 
@@ -27,18 +27,18 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_version_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</a></td>
-            <td class='right_align'><tt>29</tt></td>
+            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_tasks_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_tasks_controller.rb</a></td>
+            <td class='right_align'><tt>28</tt></td>
             <td class='right_align'><tt>22</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.31%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:79px"></div>
-            <div class="uncovered" style="width:21px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.27%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:77px"></div>
-            <div class="uncovered" style="width:23px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -57,7 +57,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line1">1</a> require_dependency 'version'</pre></td>
+            <td><pre><a name="line1">1</a> include RbCommonHelper</pre></td>
           </tr>
         
           
@@ -69,163 +69,157 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line3">3</a> module Backlogs</pre></td>
+            <td><pre><a name="line3">3</a> class RbTasksController &lt; RbApplicationController</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line4">4</a>   module VersionPatch</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line5">5</a>     def self.included(base) # :nodoc:</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line6">6</a>       base.extend(ClassMethods)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line7">7</a>       base.send(:include, InstanceMethods)</pre></td>
+            <td><pre><a name="line4">4</a>   unloadable</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line8">8</a>     end</pre></td>
+            <td><pre><a name="line5">5</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line6">6</a>   def create</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line7">7</a>     @task  = Task.create_with_relationships(params, User.current.id, @project.id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line8">8</a>     result = @task.errors.length</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line9">9</a>     status = (result == 0 ? 200 : 400)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line10">10</a>     @include_meta = true</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line9">9</a>   </pre></td>
+            <td><pre><a name="line11">11</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line10">10</a>     module ClassMethods</pre></td>
+            <td><pre><a name="line12">12</a>     respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line13">13</a>       format.html { render :partial =&gt; &quot;task&quot;, :object =&gt; @task, :status =&gt; status }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line11">11</a>     end</pre></td>
+            <td><pre><a name="line14">14</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line12">12</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line13">13</a>     module InstanceMethods</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line14">14</a>       def touch_burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line15">15</a>         today = connection.quote(Date.today)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line16">16</a>         tomorrow = connection.quote(Date.today + 1)</pre></td>
+            <td><pre><a name="line15">15</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>         # not the same as between</pre></td>
+            <td><pre><a name="line16">16</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>         connection.execute &quot;delete from burndown_days where created_at &gt;= #{today} and created_at &lt; #{tomorrow}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line19">19</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line20">20</a>   </pre></td>
+            <td><pre><a name="line17">17</a>   def update</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a>       def burndown</pre></td>
+            <td><pre><a name="line18">18</a>     @task = Task.find_by_id(params[:id])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line22">22</a>         return Sprint.find_by_id(self.id).burndown</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line19">19</a>     result = @task.update_with_relationships(params)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line23">23</a>       end</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line20">20</a>     status = (result ? 200 : 400)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line24">24</a>   </pre></td>
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>     @include_meta = true</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
+            <td><pre><a name="line22">22</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line23">23</a>     respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line24">24</a>       format.html { render :partial =&gt; &quot;task&quot;, :object =&gt; @task, :status =&gt; status }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
             <td><pre><a name="line25">25</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line26">26</a>   end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line27">27</a> end</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line27">27</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line28">28</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line29">29</a> Version.send(:include, Backlogs::VersionPatch) unless Version.included_modules.include? Backlogs::VersionPatch</pre></td>
+            <td><pre><a name="line28">28</a> end</pre></td>
           </tr>
         
       </tbody>

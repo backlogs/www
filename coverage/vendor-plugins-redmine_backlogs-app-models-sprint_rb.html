@@ -30,15 +30,15 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-sprint_rb.html">vendor/plugins/redmine_backlogs/app/models/sprint.rb</a></td>
             <td class='right_align'><tt>293</tt></td>
             <td class='right_align'><tt>220</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>74.40%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>83.96%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:74px"></div>
-            <div class="uncovered" style="width:26px"></div>
+            <div class="covered" style="width:84px"></div>
+            <div class="uncovered" style="width:16px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>71.82%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.27%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:72px"></div>
-            <div class="uncovered" style="width:28px"></div>
+            <div class="covered" style="width:82px"></div>
+            <div class="uncovered" style="width:18px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -1292,7 +1292,7 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line207">207</a>         if ! project.wiki</pre></td>
           </tr>
         
@@ -1310,103 +1310,103 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line210">210</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line211">211</a>         if wiki_page_title.nil? || wiki_page_title.blank?</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line212">212</a>             self.update_attribute(:wiki_page_title, Wiki.titleize(self.name))</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line213">213</a>         end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line214">214</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line215">215</a>         page = project.wiki.find_page(self.wiki_page_title)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line216">216</a>         template = project.wiki.find_page(Setting.plugin_redmine_backlogs[:wiki_template])</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line217">217</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line218">218</a>         if template and not page</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line219">219</a>             page = WikiPage.new(:wiki =&gt; project.wiki, :title =&gt; self.wiki_page_title)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line220">220</a>             page.content = WikiContent.new</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line221">221</a>             page.content.text = &quot;h1. #{self.name}\n\n#{template.text}&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line222">222</a>             page.save!</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line223">223</a>         end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line224">224</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line225">225</a>         return wiki_page_title</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line226">226</a>     end</pre></td>
           </tr>
         
@@ -1718,19 +1718,19 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line278">278</a>         return Issue.find(:all, </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line279">279</a>             :conditions =&gt; [&quot;id in (</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line280">280</a>                             select issue_from_id</pre></td>
           </tr>
         
@@ -1772,50 +1772,50 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line287">287</a>                             )&quot;,</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line288">288</a>                         Story.trackers + [Task.tracker],</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line289">289</a>                         self.id]</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line290">290</a>             ) #.sort {|a,b| a.closed? == b.closed? ?  a.updated_on &lt;=&gt; b.updated_on : (a.closed? ? 1 : -1) }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line291">291</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line292">292</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line293">293</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Aug 31 14:27:14 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sat Sep 04 13:44:40 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
