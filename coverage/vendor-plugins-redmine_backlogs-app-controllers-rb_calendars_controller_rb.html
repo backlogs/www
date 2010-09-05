@@ -30,15 +30,15 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_calendars_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_calendars_controller.rb</a></td>
             <td class='right_align'><tt>117</tt></td>
             <td class='right_align'><tt>95</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.91%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:83px"></div>
-            <div class="uncovered" style="width:17px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>78.95%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:79px"></div>
-            <div class="uncovered" style="width:21px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -309,7 +309,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line43">43</a>     open_issues = &quot;</pre></td>
+            <td><pre><a name="line43">43</a>     open_issues = %Q[</pre></td>
           </tr>
         
           
@@ -320,91 +320,91 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line45">45</a>         and tracker_id in (?)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line46">46</a>         and fixed_version_id in (</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line47">47</a>           select id</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line48">48</a>           from versions</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line49">49</a>           where project_id = ?</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line50">50</a>             and status = 'open'</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line51">51</a>             and not sprint_start_date is null</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line52">52</a>             and effective_date &gt;= ?</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line53">53</a>         )</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line54">54</a>     &quot;</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line54">54</a>     ]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line55">55</a>     open_issues_and_impediments = &quot;</pre></td>
+            <td><pre><a name="line55">55</a>     open_issues_and_impediments = %Q[</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line56">56</a>       (assigned_to_id is null or assigned_to_id = ?)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line57">57</a>       and</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line58">58</a>       (</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line59">59</a>         (#{open_issues})</pre></td>
           </tr>
         
@@ -434,38 +434,38 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line64">64</a>             from issue_relations</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line65">65</a>             join issues on issues.id = issue_to_id and relation_type = 'blocks'</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line66">66</a>             where #{open_issues})</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line67">67</a>         )</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line68">68</a>       )</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line69">69</a>     &quot;</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line69">69</a>     ]</pre></td>
           </tr>
         
           
@@ -759,7 +759,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Sat Sep 04 13:44:40 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sun Sep 05 22:32:32 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

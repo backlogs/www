@@ -1197,7 +1197,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line191">191</a>         return stories.sum('story_points')</pre></td>
+            <td><pre><a name="line191">191</a>         return stories.inject(0){|sum, story| sum + story.story_points.to_i}</pre></td>
           </tr>
         
           
@@ -1815,7 +1815,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Sat Sep 04 13:44:40 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sun Sep 05 22:32:32 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
