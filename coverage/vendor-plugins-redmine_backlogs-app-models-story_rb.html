@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-story_rb.html">vendor/plugins/redmine_backlogs/app/models/story.rb</a></td>
-            <td class='right_align'><tt>202</tt></td>
-            <td class='right_align'><tt>163</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>72.77%</tt></div>
+            <td class='right_align'><tt>217</tt></td>
+            <td class='right_align'><tt>178</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>69.12%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:73px"></div>
-            <div class="uncovered" style="width:27px"></div>
+            <div class="covered" style="width:69px"></div>
+            <div class="uncovered" style="width:31px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>69.94%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>65.73%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:70px"></div>
-            <div class="uncovered" style="width:30px"></div>
+            <div class="covered" style="width:66px"></div>
+            <div class="uncovered" style="width:34px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -141,289 +141,289 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line15">15</a>                   and (fixed_version_id = ? or ? is NULL)</pre></td>
+            <td><pre><a name="line15">15</a>                   and (</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line16">16</a>                     (fixed_version_id is NULL and ? is NULL)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line17">17</a>                     or</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a>                     (fixed_version_id = ? and not ? is NULL)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>                     )</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line16">16</a>                   and (is_closed = ? or not ? is NULL)&quot;, </pre></td>
+            <td><pre><a name="line20">20</a>                   and (is_closed = ? or not ? is NULL)&quot;, </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line17">17</a>                 project.id,</pre></td>
+            <td><pre><a name="line21">21</a>                 project.id,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>                 Story.trackers,</pre></td>
+            <td><pre><a name="line22">22</a>                 Story.trackers,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a>                 sprint, sprint,</pre></td>
+            <td><pre><a name="line23">23</a>                 sprint,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a>                 false, sprint</pre></td>
+            <td><pre><a name="line24">24</a>                 sprint, sprint,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a>                 ],</pre></td>
+            <td><pre><a name="line25">25</a>                 false, sprint</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a>             :joins =&gt; :status,</pre></td>
+            <td><pre><a name="line26">26</a>                 ],</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a>             :limit =&gt; options[:limit]).each_with_index {|story, i|</pre></td>
+            <td><pre><a name="line27">27</a>             :joins =&gt; :status,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line28">28</a>             :limit =&gt; options[:limit]).each_with_index {|story, i|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line24">24</a>         story.rank = i + 1</pre></td>
+            <td><pre><a name="line29">29</a>         story.rank = i + 1</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line25">25</a>         stories &lt;&lt; story</pre></td>
+            <td><pre><a name="line30">30</a>         stories &lt;&lt; story</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line26">26</a>       }</pre></td>
+            <td><pre><a name="line31">31</a>       }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line27">27</a> </pre></td>
+            <td><pre><a name="line32">32</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>       return stories</pre></td>
+            <td><pre><a name="line33">33</a>       return stories</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line29">29</a>     end</pre></td>
+            <td><pre><a name="line34">34</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line30">30</a> </pre></td>
+            <td><pre><a name="line35">35</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>     def self.product_backlog(project, limit=nil)</pre></td>
+            <td><pre><a name="line36">36</a>     def self.product_backlog(project, limit=nil)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line32">32</a>       return Story.backlog(project, nil, :limit =&gt; limit)</pre></td>
+            <td><pre><a name="line37">37</a>       return Story.backlog(project, nil, :limit =&gt; limit)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line33">33</a>     end</pre></td>
+            <td><pre><a name="line38">38</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line34">34</a> </pre></td>
+            <td><pre><a name="line39">39</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line35">35</a>     def self.sprint_backlog(sprint, options={})</pre></td>
+            <td><pre><a name="line40">40</a>     def self.sprint_backlog(sprint, options={})</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line36">36</a>       return Story.backlog(sprint.project, sprint.id, options)</pre></td>
+            <td><pre><a name="line41">41</a>       return Story.backlog(sprint.project, sprint.id, options)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line37">37</a>     end</pre></td>
+            <td><pre><a name="line42">42</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line38">38</a> </pre></td>
+            <td><pre><a name="line43">43</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line39">39</a>     def self.create_and_position(params)</pre></td>
+            <td><pre><a name="line44">44</a>     def self.create_and_position(params)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line40">40</a>       attribs = params.select{|k,v| k != 'prev_id' and k != 'id' and Story.column_names.include? k }</pre></td>
+            <td><pre><a name="line45">45</a>       attribs = params.select{|k,v| k != 'prev_id' and k != 'id' and Story.column_names.include? k }</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line41">41</a>       attribs = Hash[*attribs.flatten]</pre></td>
+            <td><pre><a name="line46">46</a>       attribs = Hash[*attribs.flatten]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line42">42</a>       s = Story.new(attribs)</pre></td>
+            <td><pre><a name="line47">47</a>       s = Story.new(attribs)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line43">43</a>       s.move_after(params['prev_id']) if s.save!</pre></td>
+            <td><pre><a name="line48">48</a>       s.move_after(params['prev_id']) if s.save!</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line44">44</a>       return s</pre></td>
+            <td><pre><a name="line49">49</a>       return s</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line45">45</a>     end</pre></td>
+            <td><pre><a name="line50">50</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line46">46</a> </pre></td>
+            <td><pre><a name="line51">51</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line47">47</a>     def self.find_all_updated_since(since, project_id)</pre></td>
+            <td><pre><a name="line52">52</a>     def self.find_all_updated_since(since, project_id)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line48">48</a>       # different databases do date-to-string comparisons in different</pre></td>
+            <td><pre><a name="line53">53</a>       # different databases do date-to-string comparisons in different</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line49">49</a>       # ways</pre></td>
+            <td><pre><a name="line54">54</a>       # ways</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line50">50</a>       if ! (since.is_a?(Date) || since.is_a?(DateTime))</pre></td>
+            <td><pre><a name="line55">55</a>       if ! (since.is_a?(Date) || since.is_a?(DateTime))</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line51">51</a>         since = since.to_s</pre></td>
+            <td><pre><a name="line56">56</a>         since = since.to_s</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line52">52</a>         if since.match(/:/)</pre></td>
+            <td><pre><a name="line57">57</a>         if since.match(/:/)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line53">53</a>           since = DateTime.strptime(since, '%Y-%m-%d %H:%M:%S')</pre></td>
+            <td><pre><a name="line58">58</a>           since = DateTime.strptime(since, '%Y-%m-%d %H:%M:%S')</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line54">54</a>         else</pre></td>
+            <td><pre><a name="line59">59</a>         else</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line55">55</a>           since = Date.strptime(since, '%Y-%m-%d')</pre></td>
+            <td><pre><a name="line60">60</a>           since = Date.strptime(since, '%Y-%m-%d')</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line56">56</a>         end</pre></td>
+            <td><pre><a name="line61">61</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line57">57</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line58">58</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line59">59</a>       find(:all,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line60">60</a>            :conditions =&gt; [&quot;project_id = ? AND updated_on &gt; ? AND tracker_id in (?)&quot;, project_id, since, trackers],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line61">61</a>            :order =&gt; &quot;updated_on ASC&quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line62">62</a>     end</pre></td>
+            <td><pre><a name="line62">62</a>       end</pre></td>
           </tr>
         
           
@@ -435,151 +435,151 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line64">64</a>     def self.trackers</pre></td>
+            <td><pre><a name="line64">64</a>       find(:all,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line65">65</a>         trackers = Setting.plugin_redmine_backlogs[:story_trackers]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line66">66</a>         return [] if trackers == '' or trackers.nil?</pre></td>
+            <td><pre><a name="line65">65</a>            :conditions =&gt; [&quot;project_id = ? AND updated_on &gt; ? AND tracker_id in (?)&quot;, project_id, since, trackers],</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line67">67</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line68">68</a>         return trackers.map { |tracker| Integer(tracker) }</pre></td>
+            <td><pre><a name="line66">66</a>            :order =&gt; &quot;updated_on ASC&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line69">69</a>     end</pre></td>
+            <td><pre><a name="line67">67</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line70">70</a> </pre></td>
+            <td><pre><a name="line68">68</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line71">71</a>     def tasks</pre></td>
+            <td><pre><a name="line69">69</a>     def self.trackers</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line70">70</a>         trackers = Setting.plugin_redmine_backlogs[:story_trackers]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line71">71</a>         return [] if trackers == '' or trackers.nil?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line72">72</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line73">73</a>         return trackers.map { |tracker| Integer(tracker) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line74">74</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line75">75</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line76">76</a>     def tasks</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line72">72</a>       return Task.tasks_for(self.id)</pre></td>
+            <td><pre><a name="line77">77</a>       return Task.tasks_for(self.id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line73">73</a>     end</pre></td>
+            <td><pre><a name="line78">78</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line74">74</a> </pre></td>
+            <td><pre><a name="line79">79</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line75">75</a>     def move_after(prev_id)</pre></td>
+            <td><pre><a name="line80">80</a>     def move_after(prev_id)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line76">76</a>       # remove so the potential 'prev' has a correct position</pre></td>
+            <td><pre><a name="line81">81</a>       # remove so the potential 'prev' has a correct position</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line77">77</a>       remove_from_list</pre></td>
+            <td><pre><a name="line82">82</a>       remove_from_list</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line78">78</a> </pre></td>
+            <td><pre><a name="line83">83</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line79">79</a>       begin</pre></td>
+            <td><pre><a name="line84">84</a>       begin</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line80">80</a>         prev = self.class.find(prev_id)</pre></td>
+            <td><pre><a name="line85">85</a>         prev = self.class.find(prev_id)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line81">81</a>       rescue ActiveRecord::RecordNotFound</pre></td>
+            <td><pre><a name="line86">86</a>       rescue ActiveRecord::RecordNotFound</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line82">82</a>         prev = nil</pre></td>
+            <td><pre><a name="line87">87</a>         prev = nil</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line83">83</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line84">84</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line85">85</a>       # if it's the first story, move it to the 1st position</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line86">86</a>       if prev.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line87">87</a>         insert_at</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line88">88</a>         move_to_top</pre></td>
+            <td><pre><a name="line88">88</a>       end</pre></td>
           </tr>
         
           
@@ -591,115 +591,115 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line90">90</a>       # if its predecessor has no position (shouldn't happen), make it</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line91">91</a>       # the last story</pre></td>
+            <td><pre><a name="line90">90</a>       # if it's the first story, move it to the 1st position</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line92">92</a>       elsif !prev.in_list?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line93">93</a>         insert_at</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line94">94</a>         move_to_bottom</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line95">95</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line96">96</a>       # there's a valid predecessor</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line97">97</a>       else</pre></td>
+            <td><pre><a name="line91">91</a>       if prev.nil?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line98">98</a>         insert_at(prev.position + 1)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line99">99</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line100">100</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line101">101</a> </pre></td>
+            <td><pre><a name="line92">92</a>         insert_at</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line102">102</a>     def set_points(p)</pre></td>
+            <td><pre><a name="line93">93</a>         move_to_top</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line94">94</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line95">95</a>       # if its predecessor has no position (shouldn't happen), make it</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line96">96</a>       # the last story</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line97">97</a>       elsif !prev.in_list?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line103">103</a>         self.init_journal(User.current)</pre></td>
+            <td><pre><a name="line98">98</a>         insert_at</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line104">104</a> </pre></td>
+            <td><pre><a name="line99">99</a>         move_to_bottom</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line100">100</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line101">101</a>       # there's a valid predecessor</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line102">102</a>       else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line103">103</a>         insert_at(prev.position + 1)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line104">104</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line105">105</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line106">106</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line107">107</a>     def set_points(p)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line105">105</a>         if p.nil? || p == '' || p == '-'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line106">106</a>             self.update_attribute(:story_points, nil)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line107">107</a>             return</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line108">108</a>         end</pre></td>
+            <td><pre><a name="line108">108</a>         self.init_journal(User.current)</pre></td>
           </tr>
         
           
@@ -711,13 +711,13 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line110">110</a>         if p.downcase == 's'</pre></td>
+            <td><pre><a name="line110">110</a>         if p.nil? || p == '' || p == '-'</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line111">111</a>             self.update_attribute(:story_points, 0)</pre></td>
+            <td><pre><a name="line111">111</a>             self.update_attribute(:story_points, nil)</pre></td>
           </tr>
         
           
@@ -741,535 +741,625 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line115">115</a>         p = Integer(p)</pre></td>
+            <td><pre><a name="line115">115</a>         if p.downcase == 's'</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line116">116</a>         if p &gt;= 0</pre></td>
+            <td><pre><a name="line116">116</a>             self.update_attribute(:story_points, 0)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line117">117</a>             self.update_attribute(:story_points, p)</pre></td>
+            <td><pre><a name="line117">117</a>             return</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line118">118</a>             return</pre></td>
+            <td><pre><a name="line118">118</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line119">119</a>         end</pre></td>
+            <td><pre><a name="line119">119</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line120">120</a>     end</pre></td>
+            <td><pre><a name="line120">120</a>         p = Integer(p)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line121">121</a>         if p &gt;= 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line122">122</a>             self.update_attribute(:story_points, p)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line123">123</a>             return</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line124">124</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line125">125</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line121">121</a> </pre></td>
+            <td><pre><a name="line126">126</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line122">122</a>     def points_display(notsized='-')</pre></td>
+            <td><pre><a name="line127">127</a>     def points_display(notsized='-')</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line123">123</a>         # For reasons I have yet to uncover, activerecord will</pre></td>
+            <td><pre><a name="line128">128</a>         # For reasons I have yet to uncover, activerecord will</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line124">124</a>         # sometimes return numbers as Fixnums that lack the nil?</pre></td>
+            <td><pre><a name="line129">129</a>         # sometimes return numbers as Fixnums that lack the nil?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line125">125</a>         # method. Comparing to nil should be safe.</pre></td>
+            <td><pre><a name="line130">130</a>         # method. Comparing to nil should be safe.</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line126">126</a>         return notsized if story_points == nil</pre></td>
+            <td><pre><a name="line131">131</a>         return notsized if story_points == nil</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line127">127</a>         return 'S' if story_points == 0</pre></td>
+            <td><pre><a name="line132">132</a>         return 'S' if story_points == 0</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line128">128</a>         return story_points.to_s</pre></td>
+            <td><pre><a name="line133">133</a>         return story_points.to_s</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line129">129</a>     end</pre></td>
+            <td><pre><a name="line134">134</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line130">130</a> </pre></td>
+            <td><pre><a name="line135">135</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line131">131</a>     def task_status</pre></td>
+            <td><pre><a name="line136">136</a>     def task_status</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line132">132</a>         closed = 0</pre></td>
+            <td><pre><a name="line137">137</a>         closed = 0</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line133">133</a>         open = 0</pre></td>
+            <td><pre><a name="line138">138</a>         open = 0</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line134">134</a>         self.descendants.each {|task|</pre></td>
+            <td><pre><a name="line139">139</a>         self.descendants.each {|task|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line135">135</a>             if task.closed?</pre></td>
+            <td><pre><a name="line140">140</a>             if task.closed?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line136">136</a>                 closed += 1</pre></td>
+            <td><pre><a name="line141">141</a>                 closed += 1</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line137">137</a>             else</pre></td>
+            <td><pre><a name="line142">142</a>             else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line138">138</a>                 open += 1</pre></td>
+            <td><pre><a name="line143">143</a>                 open += 1</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line139">139</a>             end</pre></td>
+            <td><pre><a name="line144">144</a>             end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line140">140</a>         }</pre></td>
+            <td><pre><a name="line145">145</a>         }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line141">141</a>         return {:open =&gt; open, :closed =&gt; closed}</pre></td>
+            <td><pre><a name="line146">146</a>         return {:open =&gt; open, :closed =&gt; closed}</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line142">142</a>     end</pre></td>
+            <td><pre><a name="line147">147</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line143">143</a> </pre></td>
+            <td><pre><a name="line148">148</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line144">144</a>     def update_and_position!(params)</pre></td>
+            <td><pre><a name="line149">149</a>     def update_and_position!(params)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line145">145</a>       attribs = params.select{|k,v| k != 'id' and Story.column_names.include? k }</pre></td>
+            <td><pre><a name="line150">150</a>       attribs = params.select{|k,v| k != 'id' and Story.column_names.include? k }</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line146">146</a>       attribs = Hash[*attribs.flatten]</pre></td>
+            <td><pre><a name="line151">151</a>       attribs = Hash[*attribs.flatten]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line147">147</a>       result = journalized_update_attributes! attribs</pre></td>
+            <td><pre><a name="line152">152</a>       result = journalized_update_attributes! attribs</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line148">148</a>       if result and params[:prev]</pre></td>
+            <td><pre><a name="line153">153</a>       if result and params[:prev]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line149">149</a>         move_after(params[:prev])</pre></td>
+            <td><pre><a name="line154">154</a>         move_after(params[:prev])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line150">150</a>       end</pre></td>
+            <td><pre><a name="line155">155</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line151">151</a>       result</pre></td>
+            <td><pre><a name="line156">156</a>       result</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line152">152</a>     end</pre></td>
+            <td><pre><a name="line157">157</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line153">153</a> </pre></td>
+            <td><pre><a name="line158">158</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line154">154</a>   def rank=(r)</pre></td>
+            <td><pre><a name="line159">159</a>   def rank=(r)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line155">155</a>     @rank = r</pre></td>
+            <td><pre><a name="line160">160</a>     @rank = r</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line156">156</a>   end</pre></td>
+            <td><pre><a name="line161">161</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line157">157</a> </pre></td>
+            <td><pre><a name="line162">162</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line158">158</a>   def rank</pre></td>
+            <td><pre><a name="line163">163</a>   def rank</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line159">159</a>     @rank ||= Issue.count(:conditions =&gt; [</pre></td>
+            <td><pre><a name="line164">164</a>     @rank ||= Issue.count(:conditions =&gt; [</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line160">160</a>                               &quot;parent_id is NULL</pre></td>
+            <td><pre><a name="line165">165</a>                               &quot;parent_id is NULL</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line161">161</a>                                 and project_id = ?</pre></td>
+            <td><pre><a name="line166">166</a>                                 and project_id = ?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line162">162</a>                                 and tracker_id in (?)</pre></td>
+            <td><pre><a name="line167">167</a>                                 and tracker_id in (?)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line163">163</a>                                 and (fixed_version_id = ? or ? is NULL)</pre></td>
+            <td><pre><a name="line168">168</a>                                 and (</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line164">164</a>                                 and (is_closed = ? or not ? is NULL)</pre></td>
+            <td><pre><a name="line169">169</a>                                   (fixed_version_id is NULL and ? is NULL)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line165">165</a>                                 and (</pre></td>
+            <td><pre><a name="line170">170</a>                                   or</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line166">166</a>                                   (? is NULL and ((issues.position is NULL and issues.id &lt;= ?) or not issues.position is NULL))</pre></td>
+            <td><pre><a name="line171">171</a>                                   (fixed_version_id = ? and not ? is NULL)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line167">167</a>                                   or</pre></td>
+            <td><pre><a name="line172">172</a>                                   )</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line168">168</a>                                   (not ? is NULL and not issues.position is NULL and issues.position &lt;= ?)</pre></td>
+            <td><pre><a name="line173">173</a>                                 and (is_closed = ? or not ? is NULL)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line169">169</a>                                 )</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line170">170</a>                                 &quot;, </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line171">171</a>                               self.project.id,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line172">172</a>                               Story.trackers,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line173">173</a>                               self.fixed_version_id, self.fixed_version_id,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line174">174</a>                               false, self.fixed_version_id,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line175">175</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line176">176</a>                               self.position, self.id,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line177">177</a>                               self.position, self.position</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line178">178</a>                               ],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line179">179</a>                           :joins =&gt; :status)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line180">180</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line181">181</a>     return @rank</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line182">182</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line183">183</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line184">184</a>   def self.at_rank(project_id, sprint_id, rank)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line185">185</a>     return Story.find(:first,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line186">186</a>                       :order =&gt; 'case when issues.position is null then 1 else 0 end ASC, case when issues.position is NULL then issues.id else issues.position end ASC',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line187">187</a>                       :conditions =&gt; [</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line188">188</a>                           &quot;parent_id is NULL</pre></td>
+            <td><pre><a name="line174">174</a>                                 and (</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line189">189</a>                             and project_id = ?</pre></td>
+            <td><pre><a name="line175">175</a>                                   (? is NULL and ((issues.position is NULL and issues.id &lt;= ?) or not issues.position is NULL))</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line190">190</a>                             and tracker_id in (?)</pre></td>
+            <td><pre><a name="line176">176</a>                                   or</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line191">191</a>                             and (fixed_version_id = ? or ? is NULL)</pre></td>
+            <td><pre><a name="line177">177</a>                                   (not ? is NULL and not issues.position is NULL and issues.position &lt;= ?)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line178">178</a>                                 )</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line192">192</a>                             and (is_closed = ? or not ? is NULL)&quot;, </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line193">193</a>                           project_id,</pre></td>
+            <td><pre><a name="line179">179</a>                                 &quot;, </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line194">194</a>                           Story.trackers,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line195">195</a>                           sprint_id, sprint_id,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line196">196</a>                           false, sprint_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line197">197</a>                           ],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line198">198</a>                       :joins =&gt; :status,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line199">199</a>                       :limit =&gt; 1,</pre></td>
+            <td><pre><a name="line180">180</a>                               self.project.id,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line200">200</a>                       :offset =&gt; rank - 1)</pre></td>
+            <td><pre><a name="line181">181</a>                               Story.trackers,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line182">182</a>                               self.fixed_version_id,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line183">183</a>                               self.fixed_version_id, self.fixed_version_id,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line184">184</a>                               false, self.fixed_version_id,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line201">201</a>   end</pre></td>
+            <td><pre><a name="line185">185</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line186">186</a>                               self.position, self.id,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line187">187</a>                               self.position, self.position</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line202">202</a> end</pre></td>
+            <td><pre><a name="line188">188</a>                               ],</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line189">189</a>                           :joins =&gt; :status)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line190">190</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line191">191</a>     return @rank</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line192">192</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line193">193</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line194">194</a>   def self.at_rank(project_id, sprint_id, rank)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line195">195</a>     return Story.find(:first,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line196">196</a>                       :order =&gt; 'case when issues.position is null then 1 else 0 end ASC, case when issues.position is NULL then issues.id else issues.position end ASC',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line197">197</a>                       :conditions =&gt; [</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line198">198</a>                           &quot;parent_id is NULL</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line199">199</a>                             and project_id = ?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line200">200</a>                             and tracker_id in (?)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line201">201</a>                             and (</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line202">202</a>                               (fixed_version_id is NULL and ? is NULL)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line203">203</a>                               or</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line204">204</a>                               (fixed_version_id = ? and not ? is NULL)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line205">205</a>                               )</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line206">206</a>                             and (is_closed = ? or not ? is NULL)&quot;, </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line207">207</a>                           project_id,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line208">208</a>                           Story.trackers,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line209">209</a>                           sprint_id,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line210">210</a>                           sprint_id, sprint_id,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line211">211</a>                           false, sprint_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line212">212</a>                           ],</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line213">213</a>                       :joins =&gt; :status,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line214">214</a>                       :limit =&gt; 1,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line215">215</a>                       :offset =&gt; rank - 1)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line216">216</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line217">217</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Sep 05 22:32:32 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

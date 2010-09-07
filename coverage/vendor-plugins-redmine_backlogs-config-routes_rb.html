@@ -28,8 +28,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-config-routes_rb.html">vendor/plugins/redmine_backlogs/config/routes.rb</a></td>
-            <td class='right_align'><tt>22</tt></td>
-            <td class='right_align'><tt>18</tt></td>
+            <td class='right_align'><tt>24</tt></td>
+            <td class='right_align'><tt>20</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -87,109 +87,121 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line6">6</a>     rb.resources :updated_items,    :only =&gt; :sghow,              :controller =&gt; :rb_updated_items</pre></td>
+            <td><pre><a name="line6">6</a>     rb.resource   :updated_items,    :only =&gt; :show,               :controller =&gt; :rb_updated_items,    :as =&gt; &quot;updated_items/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>     rb.resources :queries,          :only =&gt; :show,               :controller =&gt; :rb_queries</pre></td>
+            <td><pre><a name="line7">7</a>     rb.resource   :query,            :only =&gt; :show,               :controller =&gt; :rb_queries,          :as =&gt; &quot;queries/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line8">8</a>     rb.resources :wikis,            :only =&gt; [:show, :edit],      :controller =&gt; :rb_wikis</pre></td>
+            <td><pre><a name="line8">8</a>     rb.resource   :wiki,             :only =&gt; [:show, :edit],      :controller =&gt; :rb_wikis,            :as =&gt; &quot;wikis/:sprint_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line9">9</a>     rb.resources :statistics,       :only =&gt; :show,               :controller =&gt; :rb_statistics</pre></td>
+            <td><pre><a name="line9">9</a>     rb.resource   :statistics,       :only =&gt; :show,               :controller =&gt; :rb_statistics</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line10">10</a>     rb.resources :calendars,        :only =&gt; :show,               :controller =&gt; :rb_calendars</pre></td>
+            <td><pre><a name="line10">10</a>     rb.resource   :calendars,        :only =&gt; :show,               :controller =&gt; :rb_calendars,        :as =&gt; &quot;calendars/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line11">11</a>     rb.resources :burndown_charts,  :only =&gt; :show,               :controller =&gt; :rb_burndown_charts</pre></td>
+            <td><pre><a name="line11">11</a>     rb.resource   :burndown_chart,   :only =&gt; :show,               :controller =&gt; :rb_burndown_charts,  :as =&gt; &quot;burndown_charts/:sprint_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line12">12</a>     rb.resources :impediments,      :except =&gt; :destroy,          :controller =&gt; :rb_impediments</pre></td>
+            <td><pre><a name="line12">12</a>     rb.resource   :impediment,       :except =&gt; :index,            :controller =&gt; :rb_impediments,      :as =&gt; &quot;impediment/:id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>     rb.resources :tasks,            :except =&gt; :destroy,          :controller =&gt; :rb_tasks</pre></td>
+            <td><pre><a name="line13">13</a>     rb.resources  :impediments,      :only =&gt; :index,              :controller =&gt; :rb_impediments,      :as =&gt; &quot;impediments/:sprint_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>     rb.resources :stories,          :only =&gt; [:create, :update],  :controller =&gt; :rb_stories</pre></td>
+            <td><pre><a name="line14">14</a>     rb.resource   :task,             :except =&gt; :index,            :controller =&gt; :rb_tasks,            :as =&gt; &quot;task/:id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>     rb.resources :stories,          :only =&gt; :index,              :controller =&gt; :rb_stories, :as =&gt; &quot;stories/:project_id&quot;</pre></td>
+            <td><pre><a name="line15">15</a>     rb.resources  :tasks,            :only =&gt; :index,              :controller =&gt; :rb_tasks,            :as =&gt; &quot;tasks/:story_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>     rb.resources :sprints,          :only =&gt; [:show, :update],    :controller =&gt; :rb_sprints</pre></td>
+            <td><pre><a name="line16">16</a>     rb.resource   :story,            :except =&gt; :index,            :controller =&gt; :rb_stories,          :as =&gt; &quot;story/:id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line17">17</a>     rb.resources :server_variables, :only =&gt; :show,               :controller =&gt; :rb_server_variables</pre></td>
+            <td><pre><a name="line17">17</a>     rb.resources  :stories,          :only =&gt; :index,              :controller =&gt; :rb_stories,          :as =&gt; &quot;stories/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>     rb.resources :taskboards,       :only =&gt; :show,               :controller =&gt; :rb_taskboards</pre></td>
+            <td><pre><a name="line18">18</a>     rb.resource   :sprint,           :only =&gt; [:show, :update],    :controller =&gt; :rb_sprints,          :as =&gt; &quot;sprints/:sprint_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line19">19</a>     rb.resources :master_backlogs,  :only =&gt; :show,               :controller =&gt; :rb_master_backlogs</pre></td>
+            <td><pre><a name="line19">19</a>     rb.resource   :server_variables, :only =&gt; :show,               :controller =&gt; :rb_server_variables, :as =&gt; &quot;server_variables/:project_id&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line20">20</a>     rb.resource   :taskboard,        :only =&gt; :show,               :controller =&gt; :rb_taskboards,       :as =&gt; &quot;taskboards/:sprint_id&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>     rb.resource   :master_backlog,   :only =&gt; :show,               :controller =&gt; :rb_master_backlogs,  :as =&gt; &quot;master_backlogs/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a>   end</pre></td>
+            <td><pre><a name="line22">22</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a> </pre></td>
+            <td><pre><a name="line23">23</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a> end</pre></td>
+            <td><pre><a name="line24">24</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Sep 05 22:32:32 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

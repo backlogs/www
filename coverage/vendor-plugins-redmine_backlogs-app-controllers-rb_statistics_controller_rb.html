@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>vendor/plugins/redmine_backlogs/app/controllers/rb_sprints_controller.rb</title>
+    <title>vendor/plugins/redmine_backlogs/app/controllers/rb_statistics_controller.rb</title>
     <link href="screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="print.css" media="print" rel="stylesheet" type="text/css" />
     
@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>App C0 Coverage Information - RCov</h1>
-    <h2>vendor/plugins/redmine_backlogs/app/controllers/rb_sprints_controller.rb</h2>
+    <h2>vendor/plugins/redmine_backlogs/app/controllers/rb_statistics_controller.rb</h2>
 
     
 
@@ -27,9 +27,9 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_sprints_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_sprints_controller.rb</a></td>
-            <td class='right_align'><tt>21</tt></td>
-            <td class='right_align'><tt>13</tt></td>
+            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_statistics_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_statistics_controller.rb</a></td>
+            <td class='right_align'><tt>14</tt></td>
+            <td class='right_align'><tt>11</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -57,127 +57,85 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line1">1</a> include RbCommonHelper</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line2">2</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line3">3</a> # Responsible for exposing sprint CRUD. It SHOULD NOT be used</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line4">4</a> # for displaying the taskboard since the taskboard is a management</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line5">5</a> # interface used for managing objects within a sprint. For</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line6">6</a> # info about the taskboard, see RbTaskboardsController</pre></td>
+            <td><pre><a name="line1">1</a> class RbStatisticsController &lt; ApplicationController</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a> class RbSprintsController &lt; RbApplicationController</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line8">8</a>   unloadable</pre></td>
+            <td><pre><a name="line2">2</a>   unloadable</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line9">9</a>   </pre></td>
+            <td><pre><a name="line3">3</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line10">10</a>   def update</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line11">11</a>     attribs = params.select{|k,v| k != 'id' and Sprint.column_names.include? k }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line12">12</a>     attribs = Hash[*attribs.flatten]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line13">13</a>     result  = @sprint.update_attributes attribs</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line14">14</a>     status  = (result ? 200 : 400)</pre></td>
+            <td><pre><a name="line4">4</a>   before_filter :authorize_global</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line15">15</a>     </pre></td>
+            <td><pre><a name="line5">5</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line6">6</a>   def show</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line17">17</a>       format.html { render :text =&gt; status, :status =&gt; status }</pre></td>
+            <td><pre><a name="line7">7</a>     @projects = EnabledModule.find(:all,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>     end</pre></td>
+            <td><pre><a name="line8">8</a>                                 :conditions =&gt; [&quot;enabled_modules.name = 'backlogs' and status = ?&quot;, Project::STATUS_ACTIVE],</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a>   end</pre></td>
+            <td><pre><a name="line9">9</a>                                 :include =&gt; :project,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line10">10</a>                                 :joins =&gt; :project).collect { |mod| mod.project }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line11">11</a>     @projects.sort! {|a, b| a.scrum_statistics.score &lt;=&gt; b.scrum_statistics.score}</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a>   </pre></td>
+            <td><pre><a name="line12">12</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a> end</pre></td>
+            <td><pre><a name="line13">13</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line14">14</a> end</pre></td>
           </tr>
         
       </tbody>

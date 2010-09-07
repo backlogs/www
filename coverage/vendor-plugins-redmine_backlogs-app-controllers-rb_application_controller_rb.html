@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_application_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_application_controller.rb</a></td>
-            <td class='right_align'><tt>43</tt></td>
-            <td class='right_align'><tt>33</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>88.37%</tt></div>
+            <td class='right_align'><tt>34</tt></td>
+            <td class='right_align'><tt>26</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>73.53%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:88px"></div>
-            <div class="uncovered" style="width:12px"></div>
+            <div class="covered" style="width:74px"></div>
+            <div class="uncovered" style="width:26px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>84.85%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>65.38%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:85px"></div>
-            <div class="uncovered" style="width:15px"></div>
+            <div class="covered" style="width:65px"></div>
+            <div class="uncovered" style="width:35px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -123,108 +123,108 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line12">12</a>     @project = if ['rb_sprints',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line13">13</a>                    'rb_taskboards',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line14">14</a>                    'rb_burndown_charts',</pre></td>
+            <td><pre><a name="line12">12</a>     @project = if params[:sprint_id]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>                    'rb_wikis'].include? params[:controller]</pre></td>
+            <td><pre><a name="line13">13</a>                  load_sprint</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>                  load_sprint</pre></td>
+            <td><pre><a name="line14">14</a>                  @sprint.project</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line17">17</a>                  @sprint.project</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line18">18</a>                </pre></td>
+            <td><pre><a name="line15">15</a>                elsif params[:project_id]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line19">19</a>                elsif ['rb_queries',</pre></td>
+            <td><pre><a name="line16">16</a>                  Project.find(params[:project_id])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line17">17</a>                else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a>                  raise &quot;Cannot determine project (#{params.inspect})&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>                end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a>                       'rb_master_backlogs',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line21">21</a>                       'rb_calendars',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line22">22</a>                       'rb_server_variables',</pre></td>
+            <td><pre><a name="line21">21</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line23">23</a>                       'rb_updated_items'].include? params[:controller]</pre></td>
+            <td><pre><a name="line22">22</a>   def check_if_plugin_is_configured</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line24">24</a>                  Project.find(params[:id])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line25">25</a>                </pre></td>
+            <td><pre><a name="line23">23</a>     settings = Setting.plugin_redmine_backlogs</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line26">26</a>                elsif params[:project_id]</pre></td>
+            <td><pre><a name="line24">24</a>     if settings[:story_trackers].nil? || settings[:task_tracker].nil?</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line27">27</a>                  Project.find(params[:project_id])</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line25">25</a>       respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line28">28</a>                end</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line26">26</a>         format.html { render :file =&gt; &quot;rb_common/not_configured&quot; }</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
+            <td><pre><a name="line27">27</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line28">28</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
             <td><pre><a name="line29">29</a>   end</pre></td>
           </tr>
         
@@ -237,85 +237,31 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>   def check_if_plugin_is_configured</pre></td>
+            <td><pre><a name="line31">31</a>   def load_sprint</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line32">32</a>     settings = Setting.plugin_redmine_backlogs</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line33">33</a>     if settings[:story_trackers].nil? || settings[:task_tracker].nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line34">34</a>       respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line35">35</a>         format.html { render :file =&gt; &quot;rb_common/not_configured&quot; }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line36">36</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line37">37</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line38">38</a>   end</pre></td>
+            <td><pre><a name="line32">32</a>     @sprint = Sprint.find(params[:sprint_id])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line39">39</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line40">40</a>   def load_sprint</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line41">41</a>     @sprint = Sprint.find(params[:id])</pre></td>
+            <td><pre><a name="line33">33</a>   end  </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a>   end  </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line43">43</a> end</pre></td>
+            <td><pre><a name="line34">34</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Sep 05 22:32:32 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Sep 07 08:10:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

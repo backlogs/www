@@ -29,7 +29,7 @@
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_wikis_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_wikis_controller.rb</a></td>
             <td class='right_align'><tt>17</tt></td>
-            <td class='right_align'><tt>11</tt></td>
+            <td class='right_align'><tt>9</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -86,20 +86,20 @@
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line6">6</a>   def show</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line6">6</a>   # NOTE: this method does create a template page when called.</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>     sprint = Sprint.first(:conditions =&gt; { :project_id =&gt; @project.id, :id =&gt; params[:id]})</pre></td>
+            <td><pre><a name="line7">7</a>   def show</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line8">8</a>     redirect_to :controller =&gt; 'wiki', :action =&gt; 'index', :id =&gt; @project.id, :page =&gt; sprint.wiki_page</pre></td>
+            <td><pre><a name="line8">8</a>     redirect_to :controller =&gt; 'wiki', :action =&gt; 'index', :id =&gt; @project.id, :page =&gt; @sprint.wiki_page</pre></td>
           </tr>
         
           
@@ -128,20 +128,20 @@
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line13">13</a>   def edit</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line13">13</a>   # NOTE: this method does create a template page when called.</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>     sprint = Sprint.first(:conditions =&gt; { :project_id =&gt; @project.id, :id =&gt; params[:id]})</pre></td>
+            <td><pre><a name="line14">14</a>   def edit</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>     redirect_to :controller =&gt; 'wiki', :action =&gt; 'edit', :id =&gt; @project.id, :page =&gt; sprint.wiki_page</pre></td>
+            <td><pre><a name="line15">15</a>     redirect_to :controller =&gt; 'wiki', :action =&gt; 'edit', :id =&gt; @project.id, :page =&gt; @sprint.wiki_page</pre></td>
           </tr>
         
           
@@ -159,7 +159,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Sun Sep 05 22:32:32 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
