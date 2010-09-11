@@ -66,8 +66,6 @@ This will display a page where you can download the available versions tagged in
 
 ## Pre-install Tasks
 
-## Rake It In!
-
 Up next, we need to ensure that your Redmine instance is set-up correctly. So make sure to execute the following rake commands from the command line while in your Redmine installation's top directory:
 
     rake generate_session_store
