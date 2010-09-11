@@ -42,8 +42,8 @@ If you find any bugs or maybe want to suggest improvements, feel free to file a 
 
 We're building this tool during our free time and, therefore, have only been able to test it in the following environments:
 
-* Firefox 3.5.x Mac OS X (Snow Leopard)
-* Google Chrome 5.0.x Windows XP and Mac OS X (Snow Leopard)
+* Google Chrome 6.0.x Windows XP 
+* Google Chrome 6.0.x Mac OS X (Snow Leopard)
 * Redmine 1.0.0
 * PostgreSQL 8.4.4
 * MySQL 5.0.83
