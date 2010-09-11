@@ -152,7 +152,7 @@ If you want to grab the latest & greatest from the repo, here's what you do:
 
 We release new versions of the product often. To grab the latest version in the repo, here's what you do:
 
-    cd path/to/redmine_backlogs
+    cd path/to/backlogs
     git fetch --tags origin
     git tag
 
