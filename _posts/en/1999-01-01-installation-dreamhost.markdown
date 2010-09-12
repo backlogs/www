@@ -10,7 +10,8 @@ categories: en
 1.Create directory /.gem (if not present)
 
 2.add to .bash_profile
-<pre>  export GEM_HOME="$RUN/.gem"
+
+  export GEM_HOME="$RUN/.gem"
   export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"
   export PATH="$RUN/.gem/bin:$PATH"
   export RUBYLIB="$RUN/lib:$RUBYLIB"</pre>
