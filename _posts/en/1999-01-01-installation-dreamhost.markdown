@@ -17,18 +17,16 @@ categories: en
 
 3.Create file .gemrc with this content(there must be an empty line at
 the end):
-<pre>
- gemhome: /home/YOURUSERNAME/.gem
- gempath:
-  - /home/YOURUSERNAME/.gem
-  - /usr/lib/ruby/gems/1.8
 
-</pre>
+    gemhome: /home/YOURUSERNAME/.gem
+    gempath:
+     - /home/YOURUSERNAME/.gem
+     - /usr/lib/ruby/gems/1.8
 
 *In Redmine directory :*
 1.Add to /config/environment.rb
-<pre> ENV['GEM_PATH'] =
-'/home/YOURUSERNAME/gems:/usr/lib/ruby/gems/1.8'</pre>
+
+    ENV['GEM_PATH'] = '/home/YOURUSERNAME/gems:/usr/lib/ruby/gems/1.8'
 
 *SSH to your account*
 1.gem install prawn
