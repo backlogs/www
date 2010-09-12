@@ -16,6 +16,8 @@ The Backlogs plugin requires Redmine 1.0.0 (Any 1.x.x version might also work al
 
 Backlogs requires a few gems to run properly. Make sure the following gems (and their dependencies) are installed on your system:
 
+> *NOTE*: Dreamhost users, please [see this page](/en/installation-dreamhost) for additional instructions.
+
 * Rails 2.3.5
 * activeresource
 * holidays
