@@ -52,37 +52,10 @@ after which you can install the gems required by Redmine and Backlogs:
 
 ## Redmine and Backlogs
 
-Install Redmine (I picked `/var/www/redmine`)
-
-    cd /var/www
-    rm -rf redmine
-    git clone http://github.com/edavis10/redmine.git
-    git checkout 1.0.0
-    
-    cd redmine
-    git clone http://github.com/relaxdiego/redmine_backlogs.git vendor/plugins/redmine_backlogs
-
-Now edit `config/database.yml` to use the database you set up earlier.
-I recommend setting up both a development and a production
-environment. When done, let Rails create the tables required
-
-    RAILS_ENV=production # or development
-    export RAILS_ENV
-    rake generate_session_store
-    rake config/initializers/session_store.rb
-    rake db:migrate
-    rake db:migrate:upgrade_plugin_migrations
-    rake db:migrate_plugins
-    rake tmp:cache:clear
-    rake tmp:sessions:clear
-
 I couldn't get Rails to work without hard-coding the environment, so
+after the installation, do.
 
     sed -i 's/^# ENV/ENV/g' /var/www/redmine/config/environment.rb
-
-At this point you should be able to run `./script/server`, and your
-development environment should come up using the built-in Webrick. You can typically reach this
-at http://localhost:3000/
 
 ## Apache
 
@@ -131,4 +104,6 @@ environment and will compile and install mod_rails for you. The chmod
 was necesary because the mod_rails installation reverted some file
 permissions which prevented apache from reading the ruby files.
 
-That should be it. Restart apache, and you should be good to go.
+Don't forget to restart apache. Follow the regular [installation
+instructions](/en/installation/) starting at "Install Backlogs" to
+finish the installation.
