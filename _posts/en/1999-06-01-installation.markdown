@@ -95,10 +95,7 @@ migrations. :-) When not otherwise specified, rails picks the
 'development' envorinment. If you want to set up your production
 environment, make sure to set RAILS_ENV using something like
 
-    RAILS_ENV=production
-    export RAILS_ENV
-
-before you run your rake tasks.
+    rake redmine:backlogs:install RAILS_ENV=production
 
 > **About story and task trackers:** These settings tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Some of us like to use Bug, Feature, and Support as story trackers and Task as the task tracker. Others prefer to make it simple by creating a Story tracker and a Task tracker. It's really up to you.
 
