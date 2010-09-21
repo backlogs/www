@@ -68,6 +68,11 @@ This will display a page where you can download the available versions tagged in
 
 ## Pre-install Tasks
 
+**IMPORTANT:** Before you continue, keep in mind that most rake tasks run on the development environment when you don't specify a value for RAILS_ENV. If you want to ensure that the rake tasks run on the production environment, run the following in the terminal:
+
+    RAILS_ENV=production
+    export RAILS_ENV
+
 Up next, we need to ensure that your Redmine instance is set-up correctly. So make sure to execute the following rake commands from the command line while in your Redmine installation's top directory:
 
     rake generate_session_store
@@ -90,12 +95,8 @@ Now that Backlogs has been downloaded, let's go ahead and tell it how to behave.
     rake redmine:backlogs:install
 
 This will download some needed files, help you set up your story and
-task trackers, make breakfast for you, and run the plugin's database
-migrations. :-) When not otherwise specified, rails picks the
-'development' envorinment. If you want to set up your production
-environment, make sure to set RAILS_ENV using something like
-
-    rake redmine:backlogs:install RAILS_ENV=production
+task trackers, run the plugin's database migrations, and, if you're
+nice enough, maybe even make breakfast for you!
 
 > **About story and task trackers:** These settings tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Some of us like to use Bug, Feature, and Support as story trackers and Task as the task tracker. Others prefer to make it simple by creating a Story tracker and a Task tracker. It's really up to you.
 
