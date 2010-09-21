@@ -30,15 +30,15 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_project_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_project_patch.rb</a></td>
             <td class='right_align'><tt>211</tt></td>
             <td class='right_align'><tt>171</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>84.83%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>81.04%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:85px"></div>
-            <div class="uncovered" style="width:15px"></div>
+            <div class="covered" style="width:81px"></div>
+            <div class="uncovered" style="width:19px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>83.63%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.12%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:84px"></div>
-            <div class="uncovered" style="width:16px"></div>
+            <div class="covered" style="width:80px"></div>
+            <div class="uncovered" style="width:20px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -1052,13 +1052,13 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line167">167</a>           @scrum_statistics[:info, :average_days_per_sprint] = dps</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line168">168</a>           @scrum_statistics[:info, :average_days_per_point] = (velocity ? dps.to_f / velocity : nil)</pre></td>
           </tr>
         
@@ -1130,7 +1130,7 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line180">180</a>           select_stories = &quot;</pre></td>
           </tr>
         
@@ -1154,7 +1154,7 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line184">184</a>             and project_id = #{self.id}</pre></td>
           </tr>
         
@@ -1178,25 +1178,25 @@
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line188">188</a>   </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line189">189</a>           points_per_hour = Story.find_by_sql(&quot;select avg(story_points) / avg(estimated_hours) as points_per_hour from issues where #{select_stories}&quot;)[0].points_per_hour</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line190">190</a>   </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line191">191</a>           if points_per_hour</pre></td>
           </tr>
         
@@ -1323,7 +1323,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-helpers-rb_common_helper_rb.html">vendor/plugins/redmine_backlogs/app/helpers/rb_common_helper.rb</a></td>
-            <td class='right_align'><tt>76</tt></td>
-            <td class='right_align'><tt>58</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>92.11%</tt></div>
+            <td class='right_align'><tt>92</tt></td>
+            <td class='right_align'><tt>72</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:92px"></div>
-            <div class="uncovered" style="width:8px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>89.66%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:90px"></div>
-            <div class="uncovered" style="width:10px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -171,18 +171,18 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line20">20</a>   def description_or_empty(story)</pre></td>
+            <td><pre><a name="line20">20</a>   def breadcrumb_separator</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line21">21</a>     story.new_record? ? &quot;&quot; : textilizable(story, :description)</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>     &quot;&lt;span class='separator'&gt;&amp;gt;&lt;/span&gt;&quot;</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line22">22</a>   end</pre></td>
           </tr>
         
@@ -195,13 +195,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line24">24</a>   def mark_if_closed(story)</pre></td>
+            <td><pre><a name="line24">24</a>   def id_or_empty(item)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line25">25</a>     !story.new_record? &amp;&amp; story.status.is_closed? ? &quot;closed&quot; : &quot;&quot;</pre></td>
+            <td><pre><a name="line25">25</a>     item.new_record? ? &quot;&quot; : item.id</pre></td>
           </tr>
         
           
@@ -219,61 +219,61 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>   def story_points_or_empty(story)</pre></td>
+            <td><pre><a name="line28">28</a>   def issue_link_or_empty(item)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line29">29</a>     story.story_points.nil? ? &quot;&quot; : story.story_points</pre></td>
+            <td><pre><a name="line29">29</a>     item_id = item.id.to_s</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line30">30</a>     text = (item_id.length &gt; 8 ? &quot;#{item_id[0..1]}...#{item_id[-4..-1]}&quot; : item_id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line31">31</a>     item.new_record? ? &quot;&quot; : link_to(text, {:controller =&gt; &quot;issues&quot;, :action =&gt; &quot;show&quot;, :id =&gt; item}, {:target =&gt; &quot;_blank&quot;, :class =&gt; &quot;prevent_edit&quot;})</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line30">30</a>   end</pre></td>
+            <td><pre><a name="line32">32</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line31">31</a> </pre></td>
+            <td><pre><a name="line33">33</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line32">32</a>   def record_id_or_empty(story)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line33">33</a>     story.new_record? ? &quot;&quot; : story.id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line34">34</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line35">35</a> </pre></td>
+            <td><pre><a name="line34">34</a>   def sprint_link_or_empty(item)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line36">36</a>   def issue_link_or_empty(story)</pre></td>
+            <td><pre><a name="line35">35</a>     item_id = item.id.to_s</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line37">37</a>     story.new_record? ? &quot;&quot; : link_to(story.id, {:controller =&gt; &quot;issues&quot;, :action =&gt; &quot;show&quot;, :id =&gt; story}, {:target =&gt; &quot;_blank&quot;, :class =&gt; &quot;prevent_edit&quot;})</pre></td>
+            <td><pre><a name="line36">36</a>     text = (item_id.length &gt; 8 ? &quot;#{item_id[0..1]}...#{item_id[-4..-1]}&quot; : item_id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line37">37</a>     item.new_record? ? &quot;&quot; : link_to(text, {:controller =&gt; &quot;sprint&quot;, :action =&gt; &quot;show&quot;, :id =&gt; item}, {:target =&gt; &quot;_blank&quot;, :class =&gt; &quot;prevent_edit&quot;})</pre></td>
           </tr>
         
           
@@ -291,13 +291,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line40">40</a>   def status_id_or_default(story)</pre></td>
+            <td><pre><a name="line40">40</a>   def mark_if_closed(story)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line41">41</a>     story.new_record? ? IssueStatus.find(:first, :order =&gt; &quot;position ASC&quot;).id : story.status.id</pre></td>
+            <td><pre><a name="line41">41</a>     !story.new_record? &amp;&amp; story.status.is_closed? ? &quot;closed&quot; : &quot;&quot;</pre></td>
           </tr>
         
           
@@ -315,13 +315,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line44">44</a>   def status_label_or_default(story)</pre></td>
+            <td><pre><a name="line44">44</a>   def story_points_or_empty(story)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line45">45</a>     story.new_record? ? IssueStatus.find(:first, :order =&gt; &quot;position ASC&quot;).name : story.status.name</pre></td>
+            <td><pre><a name="line45">45</a>     story.story_points.nil? ? &quot;&quot; : story.story_points</pre></td>
           </tr>
         
           
@@ -333,19 +333,19 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line47">47</a> </pre></td>
+            <td><pre><a name="line47">47</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line48">48</a>   def story_html_id_or_empty(story)</pre></td>
+            <td><pre><a name="line48">48</a>   def status_id_or_default(story)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line49">49</a>     story.new_record? ? &quot;&quot; : &quot;story_#{story.id}&quot;</pre></td>
+            <td><pre><a name="line49">49</a>     story.new_record? ? IssueStatus.find(:first, :order =&gt; &quot;position ASC&quot;).id : story.status.id</pre></td>
           </tr>
         
           
@@ -363,18 +363,18 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line52">52</a>   def textile_description_or_empty(story)</pre></td>
+            <td><pre><a name="line52">52</a>   def status_label_or_default(story)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line53">53</a>     story.new_record? ? &quot;&quot; : h(story.description).gsub(/&amp;lt;(\/?pre)&amp;gt;/, '&lt;\1&gt;')</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line53">53</a>     story.new_record? ? IssueStatus.find(:first, :order =&gt; &quot;position ASC&quot;).name : story.status.name</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line54">54</a>   end</pre></td>
           </tr>
         
@@ -387,13 +387,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>   def tracker_id_or_empty(story)</pre></td>
+            <td><pre><a name="line56">56</a>   def sprint_html_id_or_empty(sprint)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line57">57</a>     story.new_record? ? &quot;&quot; : story.tracker_id</pre></td>
+            <td><pre><a name="line57">57</a>     sprint.new_record? ? &quot;&quot; : &quot;sprint_#{sprint.id}&quot;</pre></td>
           </tr>
         
           
@@ -411,13 +411,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line60">60</a>   def tracker_name_or_empty(story)</pre></td>
+            <td><pre><a name="line60">60</a>   def story_html_id_or_empty(story)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line61">61</a>     story.new_record? ? &quot;&quot; : story.tracker.name</pre></td>
+            <td><pre><a name="line61">61</a>     story.new_record? ? &quot;&quot; : &quot;story_#{story.id}&quot;</pre></td>
           </tr>
         
           
@@ -429,19 +429,19 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line63">63</a>   </pre></td>
+            <td><pre><a name="line63">63</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line64">64</a>   def updated_on_with_milliseconds(story)</pre></td>
+            <td><pre><a name="line64">64</a>   def theme_name</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line65">65</a>     date_string_with_milliseconds(story.updated_on, 0.001) unless story.nil?</pre></td>
+            <td><pre><a name="line65">65</a>     'rb_default'</pre></td>
           </tr>
         
           
@@ -459,61 +459,157 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line68">68</a>   def date_string_with_milliseconds(d, add=0)</pre></td>
+            <td><pre><a name="line68">68</a>   def theme_stylesheet_link_tag(*args)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line69">69</a>     return '' if d.nil?</pre></td>
+            <td><pre><a name="line69">69</a>     themed_args = args.select{ |a| a.class!=Hash }.map{ |s| &quot;#{theme_name}/#{s.to_s}&quot;}</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line70">70</a>     d.strftime(&quot;%B %d, %Y %H:%M:%S&quot;) + '.' + (d.to_f % 1 + add).to_s.split('.')[1]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line71">71</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line72">72</a> </pre></td>
+            <td><pre><a name="line70">70</a>     options = args.select{ |a| a.class==Hash}.first || { }</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line73">73</a>   def remaining_hours(item)</pre></td>
+            <td><pre><a name="line71">71</a>     options[:plugin] = 'redmine_backlogs'</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line74">74</a>     item.remaining_hours.nil? || item.remaining_hours==0 ? &quot;&quot; : item.remaining_hours</pre></td>
+            <td><pre><a name="line72">72</a>     themed_args &lt;&lt; options</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line73">73</a>     stylesheet_link_tag *themed_args</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line75">75</a>   end</pre></td>
+            <td><pre><a name="line74">74</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line76">76</a> end</pre></td>
+            <td><pre><a name="line75">75</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line76">76</a>   def tracker_id_or_empty(story)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line77">77</a>     story.new_record? ? &quot;&quot; : story.tracker_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line78">78</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line79">79</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line80">80</a>   def tracker_name_or_empty(story)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line81">81</a>     story.new_record? ? &quot;&quot; : story.tracker.name</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line82">82</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line83">83</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line84">84</a>   def date_string_with_milliseconds(d, add=0)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line85">85</a>     return '' if d.nil?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line86">86</a>     d.strftime(&quot;%B %d, %Y %H:%M:%S&quot;) + '.' + (d.to_f % 1 + add).to_s.split('.')[1]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line87">87</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line88">88</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line89">89</a>   def remaining_hours(item)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line90">90</a>     item.remaining_hours.nil? || item.remaining_hours==0 ? &quot;&quot; : item.remaining_hours</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line91">91</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line92">92</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

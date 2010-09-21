@@ -279,7 +279,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line38">38</a>                     snippet += &quot;&lt;tr&gt;&lt;th&gt;#{l(:field_velocity_based_estimate)}&lt;/th&gt;&lt;td&gt;#{vbe} days&lt;/td&gt;&lt;/tr&gt;&quot;</pre></td>
+            <td><pre><a name="line38">38</a>                     snippet += &quot;&lt;tr&gt;&lt;th&gt;#{l(:field_velocity_based_estimate)}&lt;/th&gt;&lt;td&gt;#{vbe ? vbe.to_s + ' days' : '-'}&lt;/td&gt;&lt;/tr&gt;&quot;</pre></td>
           </tr>
         
           
@@ -645,7 +645,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line99">99</a>                     snippet += link_to l(:button_edit_wiki), {:controller =&gt; 'backlogs', :action =&gt; 'wiki_page_edit', :project_id =&gt; project.id, :sprint_id =&gt; version.id }, :class =&gt; 'icon icon-edit'</pre></td>
+            <td><pre><a name="line99">99</a>                     snippet += link_to l(:button_edit_wiki), {:controller =&gt; 'rb_wikis', :action =&gt; 'edit', :project_id =&gt; project.id, :sprint_id =&gt; version.id }, :class =&gt; 'icon icon-edit'</pre></td>
           </tr>
         
           
@@ -813,7 +813,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

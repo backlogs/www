@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>vendor/plugins/redmine_backlogs/app/controllers/rb_taskboards_controller.rb</title>
+    <title>vendor/plugins/redmine_backlogs/app/controllers/rb_custom_styles_controller.rb</title>
     <link href="screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="print.css" media="print" rel="stylesheet" type="text/css" />
     
@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>App C0 Coverage Information - RCov</h1>
-    <h2>vendor/plugins/redmine_backlogs/app/controllers/rb_taskboards_controller.rb</h2>
+    <h2>vendor/plugins/redmine_backlogs/app/controllers/rb_custom_styles_controller.rb</h2>
 
     
 
@@ -27,9 +27,9 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_taskboards_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_taskboards_controller.rb</a></td>
-            <td class='right_align'><tt>17</tt></td>
-            <td class='right_align'><tt>14</tt></td>
+            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_custom_styles_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_custom_styles_controller.rb</a></td>
+            <td class='right_align'><tt>9</tt></td>
+            <td class='right_align'><tt>8</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -57,109 +57,61 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line1">1</a> include RbCommonHelper</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line2">2</a> </pre></td>
+            <td><pre><a name="line1">1</a> class RbCustomStylesController &lt; RbApplicationController</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line3">3</a> class RbTaskboardsController &lt; RbApplicationController</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line4">4</a>   unloadable</pre></td>
+            <td><pre><a name="line2">2</a>   unloadable</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line5">5</a>   </pre></td>
+            <td><pre><a name="line3">3</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line6">6</a>   def show</pre></td>
+            <td><pre><a name="line4">4</a>   def show</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>     @statuses     = Tracker.find_by_id(Task.tracker).issue_statuses</pre></td>
+            <td><pre><a name="line5">5</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line8">8</a>     @story_ids    = @sprint.stories.map{|s| s.id}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line9">9</a>     @last_updated = Task.find(:first, </pre></td>
+            <td><pre><a name="line6">6</a>       format.css { render :layout =&gt; false }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line10">10</a>                               :conditions =&gt; [&quot;parent_id in (?)&quot;, @story_ids],</pre></td>
+            <td><pre><a name="line7">7</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line11">11</a>                               :order      =&gt; &quot;updated_on DESC&quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line12">12</a>     respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line13">13</a>       format.html { render :layout =&gt; &quot;rb&quot; }</pre></td>
+            <td><pre><a name="line8">8</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line14">14</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line15">15</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line16">16</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line17">17</a> end</pre></td>
+            <td><pre><a name="line9">9</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sun Sep 12 19:55:33 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

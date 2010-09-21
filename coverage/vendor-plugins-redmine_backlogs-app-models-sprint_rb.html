@@ -30,15 +30,15 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-sprint_rb.html">vendor/plugins/redmine_backlogs/app/models/sprint.rb</a></td>
             <td class='right_align'><tt>293</tt></td>
             <td class='right_align'><tt>220</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>83.96%</tt></div>
-          <div class="percent_graph">
-            <div class="covered" style="width:84px"></div>
-            <div class="uncovered" style="width:16px"></div>
-          </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.27%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.25%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:82px"></div>
             <div class="uncovered" style="width:18px"></div>
+          </div></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.91%</tt></div>
+          <div class="percent_graph">
+            <div class="covered" style="width:81px"></div>
+            <div class="uncovered" style="width:19px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -272,31 +272,31 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line37">37</a>       day = day_index[data.created_at.to_date]</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line38">38</a>       next if !day</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line39">39</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line40">40</a>       _series[day] = [data.points_committed.to_f, data.points_resolved.to_f, data.points_accepted.to_f, data.remaining_hours.to_f]</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line41">41</a>     }</pre></td>
           </tr>
         
@@ -1196,13 +1196,13 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line191">191</a>         return stories.inject(0){|sum, story| sum + story.story_points.to_i}</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line192">192</a>     end</pre></td>
           </tr>
         
@@ -1550,49 +1550,49 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line250">250</a>         bd = self.burndown('up')</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line251">251</a>         return false if !bd</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line252">252</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line253">253</a>         # assume a sprint is active if it's only 2 days old</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line254">254</a>         return true if bd.remaining_hours.size &lt;= 2</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line255">255</a> </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line256">256</a>         return Issue.exists?(['fixed_version_id = ? and ((updated_on between ? and ?) or (created_on between ? and ?))', self.id, -2.days.from_now, Time.now, -2.days.from_now, Time.now])</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line257">257</a>     end</pre></td>
           </tr>
         
@@ -1815,7 +1815,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

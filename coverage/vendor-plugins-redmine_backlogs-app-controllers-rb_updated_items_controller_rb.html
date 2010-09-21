@@ -28,8 +28,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_updated_items_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_updated_items_controller.rb</a></td>
-            <td class='right_align'><tt>43</tt></td>
-            <td class='right_align'><tt>34</tt></td>
+            <td class='right_align'><tt>45</tt></td>
+            <td class='right_align'><tt>35</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -57,265 +57,277 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line1">1</a> class RbUpdatedItemsController &lt; RbApplicationController</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line2">2</a>   unloadable</pre></td>
+            <td><pre><a name="line1">1</a> include RbCommonHelper</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line3">3</a>   </pre></td>
+            <td><pre><a name="line2">2</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line3">3</a> class RbUpdatedItemsController &lt; RbApplicationController</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line4">4</a>   unloadable</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line4">4</a>   # Returns all models that have changed since params[:since]</pre></td>
+            <td><pre><a name="line5">5</a>   </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line5">5</a>   # params[:only] limits the types of models that the method</pre></td>
+            <td><pre><a name="line6">6</a>   # Returns all models that have changed since params[:since]</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line6">6</a>   # should return</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line7">7</a>   def show</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line8">8</a>     only  = (params[:only] ? params[:only].split(/, ?/).map{|v| v.to_sym} : [:sprints, :stories, :tasks, :impediments])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line9">9</a>     @items = HashWithIndifferentAccess.new</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line10">10</a>     @include_meta = true</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line11">11</a>     @last_update = nil</pre></td>
+            <td><pre><a name="line7">7</a>   # params[:only] limits the types of models that the method</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line12">12</a> </pre></td>
+            <td><pre><a name="line8">8</a>   # should return</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>     latest_updates = []</pre></td>
+            <td><pre><a name="line9">9</a>   def show</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>     if only.include? :stories</pre></td>
+            <td><pre><a name="line10">10</a>     only  = (params[:only] ? params[:only].split(/, ?/).map{|v| v.to_sym} : [:sprints, :stories, :tasks, :impediments])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>       @items[:stories] = Story.find_all_updated_since(params[:since], @project.id)</pre></td>
+            <td><pre><a name="line11">11</a>     @items = HashWithIndifferentAccess.new</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>       if @items[:stories].length &gt; 0</pre></td>
+            <td><pre><a name="line12">12</a>     @include_meta = true</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line17">17</a>         latest_updates &lt;&lt; @items[:stories].sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.first</pre></td>
+            <td><pre><a name="line13">13</a>     @last_update = nil</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line19">19</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line20">20</a>     </pre></td>
+            <td><pre><a name="line14">14</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a>     if only.include? :tasks</pre></td>
+            <td><pre><a name="line15">15</a>     latest_updates = []</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line22">22</a>       @items[:tasks] = Task.find_all_updated_since(params[:since], @project.id)</pre></td>
+            <td><pre><a name="line16">16</a>     if only.include? :stories</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line23">23</a>       if @items[:tasks].length &gt; 0</pre></td>
+            <td><pre><a name="line17">17</a>       @items[:stories] = Story.find_all_updated_since(params[:since], @project.id)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line24">24</a>         latest_updates &lt;&lt; @items[:tasks].sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.first</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line25">25</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line26">26</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line27">27</a> </pre></td>
+            <td><pre><a name="line18">18</a>       if @items[:stories].length &gt; 0</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>     if only.include? :impediments</pre></td>
+            <td><pre><a name="line19">19</a>         latest_updates &lt;&lt; @items[:stories].sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.last</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line20">20</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line21">21</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line22">22</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line29">29</a>       @items[:impediments] = Task.find_all_updated_since(params[:since], @project.id, true)</pre></td>
+            <td><pre><a name="line23">23</a>     if only.include? :tasks</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line30">30</a>       if @items[:impediments].length &gt; 0</pre></td>
+            <td><pre><a name="line24">24</a>       @items[:tasks] = Task.find_all_updated_since(params[:since], @project.id)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>         latest_updates &lt;&lt; @items[:impediments].sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.first</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line32">32</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line33">33</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line34">34</a>     </pre></td>
+            <td><pre><a name="line25">25</a>       if @items[:tasks].length &gt; 0</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line35">35</a>     if latest_updates.length &gt; 0</pre></td>
+            <td><pre><a name="line26">26</a>         latest_updates &lt;&lt; @items[:tasks].sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.last</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line27">27</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line28">28</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line29">29</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line36">36</a>       @last_update = latest_updates.sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.first.updated_on</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line37">37</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line38">38</a>     </pre></td>
+            <td><pre><a name="line30">30</a>     if only.include? :impediments</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line39">39</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line31">31</a>       @items[:impediments] = Task.find_all_updated_since(params[:since], @project.id, true)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line40">40</a>       format.html { render :layout =&gt; false }</pre></td>
+            <td><pre><a name="line32">32</a>       if @items[:impediments].length &gt; 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line33">33</a>         latest_updates &lt;&lt; @items[:impediments].sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.last</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line41">41</a>     end</pre></td>
+            <td><pre><a name="line34">34</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a>   end</pre></td>
+            <td><pre><a name="line35">35</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line43">43</a> end</pre></td>
+            <td><pre><a name="line36">36</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line37">37</a>     if latest_updates.length &gt; 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line38">38</a>       @last_update = latest_updates.sort{ |a,b| a.updated_on &lt;=&gt; b.updated_on }.last.updated_on</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line39">39</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line40">40</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line41">41</a>     respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line42">42</a>       format.html { render :layout =&gt; false }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line43">43</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line44">44</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line45">45</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Sep 07 08:10:52 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
