@@ -154,8 +154,9 @@ If you want to grab the latest & greatest from the repo, here's what you do:
 
 > **NOTE:** Obviously, you can only do this if you used _Method #1_ in the installation process above.
 
-> **WARNING:** The master branch is constantly in flux and might be broken at times. Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
+> **WARNING:** The master is constantly in flux and might be broken at times. Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
 
+> **ANOTHER WARNING:** If you decide to checkout any of the topic branches (topic branches are prefixed by the dev's name. example: relaxdiego-super-crazy-idea), keep in mind that these are very early stage work and may break the build at times. Topic branches are unsupported and we don't recommend you pull from them unless you know what you're doing.
 
 ## Optional: Upgrading with git
 
