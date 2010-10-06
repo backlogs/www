@@ -21,6 +21,7 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 * Rails 2.3.5
 * activeresource
 * holidays
+* i18n
 * icalendar
 * prawn
 
