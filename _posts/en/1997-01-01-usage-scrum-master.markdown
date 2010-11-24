@@ -9,7 +9,14 @@ As the Scrum Master, you are responsible for ensuring that the team lives by the
 
 ## Planning a sprint
 
-Redmine has versions but no sprints and Backlogs just reuses the versions construct for sprints. We're not big fans of this set-up, but we haven't really found a solution that we liked yet. So, for now, to define new sprints, go to your project, click _Settings_ > _Versions_ and create a new version.
+Redmine has versions but no sprints and Backlogs just reuses the
+versions construct for sprints. We're not big fans of this set-up, but
+we haven't really found a solution that we liked yet. So, for now, to
+define new sprints, go to your project, click _Settings_ > _Versions_
+and create a new version. The date you enter here will be the sprint
+end date; the sprint start date must be entered from the main
+_Backlogs_ tab. Click on the sprint header to edit its name, start-
+and end dates.
 
 ### Elaborate on stories
 
