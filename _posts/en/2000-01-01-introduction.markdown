@@ -29,13 +29,13 @@ And a lot more! There are a few more things below that you should know before ge
 ## Getting Additional Help
 
 Have a question that's not covered by this guide? Go ahead and
-start a conversation in [the forums](http://bugs.redminebacklogs.net/projects/redmine-backlogs/boards). You may also follow
+start a conversation in the forums (the forums are under construction.) You may also follow
 [@redminebacklogs](http://twitter.com/redminebacklogs) on *Twitter* for various announcements.
 
 
 ## Bugs and Feature Requests
 
-If you find any bugs or maybe want to suggest improvements, feel free to file a ticket in the project's [bug tracker](http://bugs.redminebacklogs.net/). Better yet, go ahead and fork the project on github so you can fix the bugs yourself, then send us a pull request so that we can incorporate it into the main repo.
+If you find any bugs or maybe want to suggest improvements, feel free to file a ticket in the project's [bug tracker](https://github.com/relaxdiego/redmine_backlogs/issues). Better yet, go ahead and fork the project on github so you can fix the bugs yourself, then send us a pull request so that we can incorporate it into the main repo.
 
 
 ## Compatibility
@@ -48,4 +48,4 @@ We're building this tool during our free time and, therefore, have only been abl
 * PostgreSQL 8.4.4
 * MySQL 5.0.83
 
-So if you come across any problems, please don't hesitate to [file a ticket](http://bugs.redminebacklogs.net/projects/redmine-backlogs/issues/new).
+So if you come across any problems, please don't hesitate to [file a ticket](https://github.com/relaxdiego/redmine_backlogs/issues).
