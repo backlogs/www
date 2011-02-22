@@ -17,7 +17,7 @@ We currently have translations for (what we think is) US-English, and Dutch. Add
 
 ## Have a story? Do tell!
 
-The documentation is traditionally a weak point for many open-source projects. We'd love to include your story, to get better coverage in our documentation (since we're pretty experienced with Backlogs ourselves, it becomes progressively harder to write for newcomers), or just verbatim stories (we like praise!). So go ahead and let us know via the forums (the forums are under constuction). 
+The documentation is traditionally a weak point for many open-source projects. We'd love to include your story, to get better coverage in our documentation (since we're pretty experienced with Backlogs ourselves, it becomes progressively harder to write for newcomers), or just verbatim stories (we like praise!). So go ahead and let us know via the forums (the forums are under constuction.) Feel free to send a [GitHub message](https://github.com/relaxdiego) or a [Twitter message](http://twitter.com/redminebacklogs).
 
 ## User Interface and JavaScript Jocks
 
