@@ -29,7 +29,7 @@ And a lot more! There are a few more things below that you should know before ge
 ## Getting Additional Help
 
 Have a question that's not covered by this guide? Go ahead and
-start a conversation in the forums (the forums are under construction.) You may also follow
+start a conversation in [the forums](http://forum.redminebacklogs.net). You may also follow
 [@redminebacklogs](http://twitter.com/redminebacklogs) on *Twitter* for various announcements.
 
 
