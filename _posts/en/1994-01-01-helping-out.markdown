@@ -15,7 +15,9 @@ So if something is broken, or you think of a way Backlogs could be even better t
 
 ## We'd like to speak your language
 
-We currently have translations for (what we think is) US-English, and Dutch. Adding a new translation is fairly easy: grab one of the existing [translation files](http://github.com/relaxdiego/redmine_backlogs/tree/master/config/locales/) 
+We currently have translations for German, UK-English, US-English,
+French, Brazilian Portuguese, Dutch and Chinese.
+Adding a new translation is fairly easy: grab one of the existing [translation files](http://github.com/relaxdiego/redmine_backlogs/tree/master/config/locales/) 
 and replace the text after the colons.
 
 ## Have a story? Do tell!
