@@ -9,7 +9,7 @@
     <script type="text/javascript" src="rcov.js"></script>
   </head>
   <body>
-    <h1>App C0 Coverage Information - RCov</h1>
+    <h1>Redmine C0 Coverage Information - RCov</h1>
     <h2>vendor/plugins/redmine_backlogs/config/routes.rb</h2>
 
     
@@ -28,8 +28,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-config-routes_rb.html">vendor/plugins/redmine_backlogs/config/routes.rb</a></td>
-            <td class='right_align'><tt>24</tt></td>
-            <td class='right_align'><tt>20</tt></td>
+            <td class='right_align'><tt>29</tt></td>
+            <td class='right_align'><tt>25</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -182,26 +182,56 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line22">22</a>   end</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line22">22</a>     rb.resource   :release,          :only =&gt; :show,               :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line23">23</a>     rb.resources  :release,          :only =&gt; :edit,               :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line24">24</a>     rb.resources  :release,          :only =&gt; :destroy,            :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line25">25</a>     rb.resources  :releases,         :only =&gt; :index,              :controller =&gt; :rb_releases,         :as =&gt; &quot;releases/:project_id&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line26">26</a>     rb.resources  :releases,         :only =&gt; :snapshot,           :controller =&gt; :rb_releases,         :as =&gt; &quot;releases/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a> </pre></td>
+            <td><pre><a name="line27">27</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line24">24</a> end</pre></td>
+            <td><pre><a name="line28">28</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line29">29</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Mar 25 21:11:16 +0100 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

@@ -9,7 +9,7 @@
     <script type="text/javascript" src="rcov.js"></script>
   </head>
   <body>
-    <h1>App C0 Coverage Information - RCov</h1>
+    <h1>Redmine C0 Coverage Information - RCov</h1>
     <h2>vendor/plugins/redmine_backlogs/lib/backlogs_issue_patch.rb</h2>
 
     
@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_issue_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_issue_patch.rb</a></td>
-            <td class='right_align'><tt>136</tt></td>
-            <td class='right_align'><tt>97</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.15%</tt></div>
+            <td class='right_align'><tt>146</tt></td>
+            <td class='right_align'><tt>105</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>81.51%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:80px"></div>
-            <div class="uncovered" style="width:20px"></div>
+            <div class="covered" style="width:82px"></div>
+            <div class="uncovered" style="width:18px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.32%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.05%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:77px"></div>
-            <div class="uncovered" style="width:23px"></div>
+            <div class="covered" style="width:79px"></div>
+            <div class="uncovered" style="width:21px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -135,667 +135,667 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>         after_save  :backlogs_after_save</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line15">15</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line16">16</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line17">17</a>   </pre></td>
+            <td><pre><a name="line14">14</a>         before_validation :backlogs_before_validation</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>     module ClassMethods</pre></td>
+            <td><pre><a name="line15">15</a>         after_save  :backlogs_after_save</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a>     end</pre></td>
+            <td><pre><a name="line16">16</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a>   </pre></td>
+            <td><pre><a name="line17">17</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line18">18</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a>     module InstanceMethods</pre></td>
+            <td><pre><a name="line19">19</a>     module ClassMethods</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line20">20</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line21">21</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line22">22</a>       def move_to_project_without_transaction_with_autolink(new_project, new_tracker = nil, options = {})</pre></td>
+            <td><pre><a name="line22">22</a>     module InstanceMethods</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line23">23</a>       def move_to_project_without_transaction_with_autolink(new_project, new_tracker = nil, options = {})</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line23">23</a>         newissue = move_to_project_without_transaction_without_autolink(new_project, new_tracker, options)</pre></td>
+            <td><pre><a name="line24">24</a>         newissue = move_to_project_without_transaction_without_autolink(new_project, new_tracker, options)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line24">24</a>   </pre></td>
+            <td><pre><a name="line25">25</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line25">25</a>         if self.project_id == newissue.project_id and self.is_story? and newissue.is_story? and self.id != newissue.id</pre></td>
+            <td><pre><a name="line26">26</a>         if self.project_id == newissue.project_id and self.is_story? and newissue.is_story? and self.id != newissue.id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line26">26</a>           relation = IssueRelation.new :relation_type =&gt; IssueRelation::TYPE_DUPLICATES</pre></td>
+            <td><pre><a name="line27">27</a>           relation = IssueRelation.new :relation_type =&gt; IssueRelation::TYPE_DUPLICATES</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line27">27</a>           relation.issue_from = self</pre></td>
+            <td><pre><a name="line28">28</a>           relation.issue_from = self</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line28">28</a>           relation.issue_to = newissue</pre></td>
+            <td><pre><a name="line29">29</a>           relation.issue_to = newissue</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line29">29</a>           relation.save</pre></td>
+            <td><pre><a name="line30">30</a>           relation.save</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line30">30</a>         end</pre></td>
+            <td><pre><a name="line31">31</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line31">31</a>   </pre></td>
+            <td><pre><a name="line32">32</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line32">32</a>         return newissue</pre></td>
+            <td><pre><a name="line33">33</a>         return newissue</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line33">33</a>       end</pre></td>
+            <td><pre><a name="line34">34</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line34">34</a>   </pre></td>
+            <td><pre><a name="line35">35</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line35">35</a>       def journalized_update_attributes!(attribs)</pre></td>
+            <td><pre><a name="line36">36</a>       def journalized_update_attributes!(attribs)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line36">36</a>         self.init_journal(User.current)</pre></td>
+            <td><pre><a name="line37">37</a>         self.init_journal(User.current)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line37">37</a>         return self.update_attributes!(attribs)</pre></td>
+            <td><pre><a name="line38">38</a>         return self.update_attributes!(attribs)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line38">38</a>       end</pre></td>
+            <td><pre><a name="line39">39</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line39">39</a>   </pre></td>
+            <td><pre><a name="line40">40</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line40">40</a>       def journalized_update_attributes(attribs)</pre></td>
+            <td><pre><a name="line41">41</a>       def journalized_update_attributes(attribs)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line41">41</a>         self.init_journal(User.current)</pre></td>
+            <td><pre><a name="line42">42</a>         self.init_journal(User.current)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line42">42</a>         return self.update_attributes(attribs)</pre></td>
+            <td><pre><a name="line43">43</a>         return self.update_attributes(attribs)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line43">43</a>       end</pre></td>
+            <td><pre><a name="line44">44</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line44">44</a>   </pre></td>
+            <td><pre><a name="line45">45</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line45">45</a>       def journalized_update_attribute(attrib, v)</pre></td>
+            <td><pre><a name="line46">46</a>       def journalized_update_attribute(attrib, v)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line46">46</a>         self.init_journal(User.current)</pre></td>
+            <td><pre><a name="line47">47</a>         self.init_journal(User.current)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line47">47</a>         self.update_attribute(attrib, v)</pre></td>
+            <td><pre><a name="line48">48</a>         self.update_attribute(attrib, v)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line48">48</a>       end</pre></td>
+            <td><pre><a name="line49">49</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line49">49</a>   </pre></td>
+            <td><pre><a name="line50">50</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line50">50</a>       def is_story?</pre></td>
+            <td><pre><a name="line51">51</a>       def is_story?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line51">51</a>         return (Story.trackers.include?(self.tracker_id) and self.root?)</pre></td>
+            <td><pre><a name="line52">52</a>         return (Story.trackers.include?(self.tracker_id) and self.root?)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line52">52</a>       end</pre></td>
+            <td><pre><a name="line53">53</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line53">53</a>   </pre></td>
+            <td><pre><a name="line54">54</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line54">54</a>       def is_task?</pre></td>
+            <td><pre><a name="line55">55</a>       def is_task?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line55">55</a>         return (self.parent_id &amp;&amp; self.tracker_id == Task.tracker)</pre></td>
+            <td><pre><a name="line56">56</a>         return (self.parent_id &amp;&amp; self.tracker_id == Task.tracker)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line56">56</a>       end</pre></td>
+            <td><pre><a name="line57">57</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line57">57</a>   </pre></td>
+            <td><pre><a name="line58">58</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line58">58</a>       def story</pre></td>
+            <td><pre><a name="line59">59</a>       def story</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line59">59</a>         return Issue.find(:first,</pre></td>
+            <td><pre><a name="line60">60</a>         return Issue.find(:first,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line60">60</a>           :conditions =&gt; [ &quot;id = ? and tracker_id in (?)&quot;, self.root_id, Story.trackers ])</pre></td>
+            <td><pre><a name="line61">61</a>           :conditions =&gt; [ &quot;id = ? and tracker_id in (?)&quot;, self.root_id, Story.trackers ])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line61">61</a>       end</pre></td>
+            <td><pre><a name="line62">62</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line62">62</a>   </pre></td>
+            <td><pre><a name="line63">63</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line63">63</a>       def blocks</pre></td>
+            <td><pre><a name="line64">64</a>       def blocks</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line64">64</a>         # return issues that I block that aren't closed</pre></td>
+            <td><pre><a name="line65">65</a>         # return issues that I block that aren't closed</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line65">65</a>         return [] if closed?</pre></td>
+            <td><pre><a name="line66">66</a>         return [] if closed?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line66">66</a>         relations_from.collect {|ir| ir.relation_type == 'blocks' &amp;&amp; !ir.issue_to.closed? ? ir.issue_to : nil}.compact</pre></td>
+            <td><pre><a name="line67">67</a>         relations_from.collect {|ir| ir.relation_type == 'blocks' &amp;&amp; !ir.issue_to.closed? ? ir.issue_to : nil}.compact</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line67">67</a>       end</pre></td>
+            <td><pre><a name="line68">68</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line68">68</a>   </pre></td>
+            <td><pre><a name="line69">69</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line69">69</a>       def blockers</pre></td>
+            <td><pre><a name="line70">70</a>       def blockers</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line70">70</a>         # return issues that block me</pre></td>
+            <td><pre><a name="line71">71</a>         # return issues that block me</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line71">71</a>         return [] if closed?</pre></td>
+            <td><pre><a name="line72">72</a>         return [] if closed?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line72">72</a>         relations_to.collect {|ir| ir.relation_type == 'blocks' &amp;&amp; !ir.issue_from.closed? ? ir.issue_from : nil}.compact</pre></td>
+            <td><pre><a name="line73">73</a>         relations_to.collect {|ir| ir.relation_type == 'blocks' &amp;&amp; !ir.issue_from.closed? ? ir.issue_from : nil}.compact</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line73">73</a>       end</pre></td>
+            <td><pre><a name="line74">74</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line74">74</a> </pre></td>
+            <td><pre><a name="line75">75</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line75">75</a>       def velocity_based_estimate</pre></td>
+            <td><pre><a name="line76">76</a>       def velocity_based_estimate</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line76">76</a>         return nil if !self.is_story? || ! self.story_points || self.story_points &lt;= 0</pre></td>
+            <td><pre><a name="line77">77</a>         return nil if !self.is_story? || ! self.story_points || self.story_points &lt;= 0</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line77">77</a>   </pre></td>
+            <td><pre><a name="line78">78</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line78">78</a>         dpp = self.project.scrum_statistics.info[:average_days_per_point]</pre></td>
+            <td><pre><a name="line79">79</a>         dpp = self.project.scrum_statistics.info[:average_days_per_point]</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line79">79</a>         return nil if ! dpp</pre></td>
+            <td><pre><a name="line80">80</a>         return nil if ! dpp</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line80">80</a>   </pre></td>
+            <td><pre><a name="line81">81</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line81">81</a>         return Integer(self.story_points * dpp)</pre></td>
+            <td><pre><a name="line82">82</a>         return Integer(self.story_points * dpp)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line82">82</a>       end</pre></td>
+            <td><pre><a name="line83">83</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line83">83</a>   </pre></td>
+            <td><pre><a name="line84">84</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line84">84</a>       def recalculate_attributes_for_with_remaining_hours(issue_id)</pre></td>
+            <td><pre><a name="line85">85</a>       def recalculate_attributes_for_with_remaining_hours(issue_id)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line85">85</a>         recalculate_attributes_for_without_remaining_hours(issue_id)</pre></td>
+            <td><pre><a name="line86">86</a>         recalculate_attributes_for_without_remaining_hours(issue_id)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line86">86</a>   </pre></td>
+            <td><pre><a name="line87">87</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line87">87</a>         if issue_id &amp;&amp; p = Issue.find_by_id(issue_id)</pre></td>
+            <td><pre><a name="line88">88</a>         if issue_id &amp;&amp; p = Issue.find_by_id(issue_id)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line88">88</a>           if p.left != (p.right + 1) # this node has children</pre></td>
+            <td><pre><a name="line89">89</a>           if p.left != (p.right + 1) # this node has children</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line89">89</a>             p.update_attribute(:remaining_hours, p.leaves.sum(:remaining_hours).to_f)</pre></td>
+            <td><pre><a name="line90">90</a>             p.update_attribute(:remaining_hours, p.leaves.sum(:remaining_hours).to_f)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line90">90</a>           end</pre></td>
+            <td><pre><a name="line91">91</a>           end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line91">91</a>         end</pre></td>
+            <td><pre><a name="line92">92</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line92">92</a>       end</pre></td>
+            <td><pre><a name="line93">93</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line93">93</a>   </pre></td>
+            <td><pre><a name="line94">94</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line94">94</a>       def backlogs_after_save</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line95">95</a>         ## automatically sets the tracker to the task tracker for</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line96">96</a>         ## any descendant of story, and follow the version_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line97">97</a>         ## Normally one of the _before_save hooks ought to take</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line98">98</a>         ## care of this, but appearantly neither root_id nor</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line99">99</a>         ## parent_id are set at that point</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line100">100</a>   </pre></td>
+            <td><pre><a name="line95">95</a>       def backlogs_before_validation</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line101">101</a>         touched_sprint = nil</pre></td>
+            <td><pre><a name="line96">96</a>         if self.tracker_id == Task.tracker</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line97">97</a>           self.estimated_hours = self.remaining_hours if self.estimated_hours.blank? &amp;&amp; ! self.remaining_hours.blank?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line98">98</a>           self.remaining_hours = self.estimated_hours if self.remaining_hours.blank? &amp;&amp; ! self.estimated_hours.blank?</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line102">102</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line103">103</a>         if self.is_story?</pre></td>
+            <td><pre><a name="line99">99</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line104">104</a>           # raw sql here because it's efficient and not</pre></td>
+            <td><pre><a name="line100">100</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line105">105</a>           # doing so causes an update loop when Issue calls</pre></td>
+            <td><pre><a name="line101">101</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line102">102</a>       def backlogs_after_save</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line106">106</a>           # update_parent</pre></td>
+            <td><pre><a name="line103">103</a>         ## automatically sets the tracker to the task tracker for</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line107">107</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line108">108</a>           if not Task.tracker.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line109">109</a>             tasks = self.descendants.collect{|t| connection.quote(t.id)}.join(&quot;,&quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line110">110</a>             if tasks != &quot;&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line111">111</a>               connection.execute(&quot;update issues set tracker_id=#{connection.quote(Task.tracker)}, fixed_version_id=#{connection.quote(self.fixed_version_id)} where id in (#{tasks})&quot;)</pre></td>
+            <td><pre><a name="line104">104</a>         ## any descendant of story, and follow the version_id</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line112">112</a>             end</pre></td>
+            <td><pre><a name="line105">105</a>         ## Normally one of the _before_save hooks ought to take</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line113">113</a>           end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line114">114</a>           touched_sprint = self.fixed_version</pre></td>
+            <td><pre><a name="line106">106</a>         ## care of this, but appearantly neither root_id nor</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line115">115</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line116">116</a>         elsif not Task.tracker.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line117">117</a>           begin</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line118">118</a>             story = self.story</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line119">119</a>             if not story.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line120">120</a>               connection.execute &quot;update issues set tracker_id = #{connection.quote(Task.tracker)}, fixed_version_id = #{connection.quote(story.fixed_version_id)} where id = #{connection.quote(self.id)}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line121">121</a>               touched_sprint = story.fixed_version</pre></td>
+            <td><pre><a name="line107">107</a>         ## parent_id are set at that point</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line122">122</a>             end</pre></td>
+            <td><pre><a name="line108">108</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line109">109</a>         touched_sprints = []</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line123">123</a>           end</pre></td>
+            <td><pre><a name="line110">110</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line111">111</a>         if self.is_story?</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line124">124</a>         end</pre></td>
+            <td><pre><a name="line112">112</a>           # raw sql here because it's efficient and not</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line113">113</a>           # doing so causes an update loop when Issue calls</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line114">114</a>           # update_parent</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line115">115</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line116">116</a>           if not Task.tracker.nil?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line117">117</a>             tasks = self.descendants.collect{|t| connection.quote(t.id)}.join(&quot;,&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line118">118</a>             if tasks != &quot;&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line119">119</a>               connection.execute(&quot;update issues set tracker_id=#{connection.quote(Task.tracker)}, fixed_version_id=#{connection.quote(self.fixed_version_id)} where id in (#{tasks})&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line120">120</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line121">121</a>           end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line122">122</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line123">123</a>           touched_sprints = [self.fixed_version_id, self.fixed_version_id_was].compact.uniq</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line124">124</a>           touched_sprints = touched_sprints.collect{|s| Sprint.find(s)}.compact</pre></td>
           </tr>
         
           
@@ -807,73 +807,133 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line126">126</a>         if not touched_sprint.nil?</pre></td>
+            <td><pre><a name="line126">126</a>         elsif not Task.tracker.nil?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line127">127</a>           touched_sprint.touch_burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line128">128</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line129">129</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line130">130</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line131">131</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line132">132</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line133">133</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line134">134</a> end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line135">135</a> </pre></td>
+            <td><pre><a name="line127">127</a>           begin</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line136">136</a> Issue.send(:include, Backlogs::IssuePatch) unless Issue.included_modules.include? Backlogs::IssuePatch</pre></td>
+            <td><pre><a name="line128">128</a>             story = self.story</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line129">129</a>             if not story.blank?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line130">130</a>               connection.execute &quot;update issues set tracker_id = #{connection.quote(Task.tracker)}, fixed_version_id = #{connection.quote(story.fixed_version_id)} where id = #{connection.quote(self.id)}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line131">131</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line132">132</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line133">133</a>             touched_sprints = [self.root_id, self.root_id_was].compact.uniq.collect{|s| Story.find(s).fixed_version}.compact</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line134">134</a>           end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line135">135</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line136">136</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line137">137</a>         touched_sprints.each {|sprint|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line138">138</a>           sprint.touch_burndown</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line139">139</a>         }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line140">140</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line141">141</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line142">142</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line143">143</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line144">144</a> end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line145">145</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line146">146</a> Issue.send(:include, Backlogs::IssuePatch) unless Issue.included_modules.include? Backlogs::IssuePatch</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Mar 25 21:11:16 +0100 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

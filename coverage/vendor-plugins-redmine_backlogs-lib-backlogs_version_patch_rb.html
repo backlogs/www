@@ -9,7 +9,7 @@
     <script type="text/javascript" src="rcov.js"></script>
   </head>
   <body>
-    <h1>App C0 Coverage Information - RCov</h1>
+    <h1>Redmine C0 Coverage Information - RCov</h1>
     <h2>vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</h2>
 
     
@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_version_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</a></td>
-            <td class='right_align'><tt>29</tt></td>
-            <td class='right_align'><tt>22</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.31%</tt></div>
+            <td class='right_align'><tt>31</tt></td>
+            <td class='right_align'><tt>25</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>67.74%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:79px"></div>
-            <div class="uncovered" style="width:21px"></div>
+            <div class="covered" style="width:68px"></div>
+            <div class="uncovered" style="width:32px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.27%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>64.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:77px"></div>
-            <div class="uncovered" style="width:23px"></div>
+            <div class="covered" style="width:64px"></div>
+            <div class="uncovered" style="width:36px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -141,97 +141,109 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>         today = connection.quote(Date.today)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line16">16</a>         tomorrow = connection.quote(Date.today + 1)</pre></td>
+            <td><pre><a name="line15">15</a>         BurndownDay.find(:all,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>         # not the same as between</pre></td>
+            <td><pre><a name="line16">16</a>           :joins =&gt; :version,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>         connection.execute &quot;delete from burndown_days where created_at &gt;= #{today} and created_at &lt; #{tomorrow}&quot;</pre></td>
+            <td><pre><a name="line17">17</a>           :conditions =&gt; ['burndown_days.version_id = ? and (burndown_days.created_at &gt;= ? or burndown_days.created_at &gt;= versions.effective_date)', self.id, Date.today]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a>         ).each {|bdd|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>           BurndownDay.destroy(bdd.id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a>         }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line21">21</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line20">20</a>   </pre></td>
+            <td><pre><a name="line22">22</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a>       def burndown</pre></td>
+            <td><pre><a name="line23">23</a>       def burndown</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line22">22</a>         return Sprint.find_by_id(self.id).burndown</pre></td>
+            <td><pre><a name="line24">24</a>         return Sprint.find_by_id(self.id).burndown</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line23">23</a>       end</pre></td>
+            <td><pre><a name="line25">25</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line24">24</a>   </pre></td>
+            <td><pre><a name="line26">26</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line25">25</a>     end</pre></td>
+            <td><pre><a name="line27">27</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line26">26</a>   end</pre></td>
+            <td><pre><a name="line28">28</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line27">27</a> end</pre></td>
+            <td><pre><a name="line29">29</a> end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line28">28</a> </pre></td>
+            <td><pre><a name="line30">30</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line29">29</a> Version.send(:include, Backlogs::VersionPatch) unless Version.included_modules.include? Backlogs::VersionPatch</pre></td>
+            <td><pre><a name="line31">31</a> Version.send(:include, Backlogs::VersionPatch) unless Version.included_modules.include? Backlogs::VersionPatch</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Mar 25 21:11:16 +0100 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

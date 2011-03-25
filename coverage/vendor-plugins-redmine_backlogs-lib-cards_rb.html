@@ -9,7 +9,7 @@
     <script type="text/javascript" src="rcov.js"></script>
   </head>
   <body>
-    <h1>App C0 Coverage Information - RCov</h1>
+    <h1>Redmine C0 Coverage Information - RCov</h1>
     <h2>vendor/plugins/redmine_backlogs/lib/cards.rb</h2>
 
     
@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-cards_rb.html">vendor/plugins/redmine_backlogs/lib/cards.rb</a></td>
-            <td class='right_align'><tt>249</tt></td>
-            <td class='right_align'><tt>201</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>70.68%</tt></div>
+            <td class='right_align'><tt>330</tt></td>
+            <td class='right_align'><tt>268</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>59.70%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:71px"></div>
-            <div class="uncovered" style="width:29px"></div>
+            <div class="covered" style="width:60px"></div>
+            <div class="uncovered" style="width:40px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>68.16%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>56.72%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:68px"></div>
-            <div class="uncovered" style="width:32px"></div>
+            <div class="covered" style="width:57px"></div>
+            <div class="uncovered" style="width:43px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -98,1304 +98,1304 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line8">8</a> </pre></td>
-          </tr>
-        
-          
-          
           <tr class="marked">
-            <td><pre><a name="line9">9</a> module Cards</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line10">10</a>     class TaskboardCards</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line11">11</a>         include Redmine::I18n</pre></td>
+            <td><pre><a name="line8">8</a> require 'uri/common'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line12">12</a>         </pre></td>
+            <td><pre><a name="line9">9</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>         begin</pre></td>
+            <td><pre><a name="line10">10</a> module Cards</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>           LABELS = YAML::load_file(File.dirname(__FILE__) + '/labels.yaml')</pre></td>
+            <td><pre><a name="line11">11</a>     class TaskboardCards</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line15">15</a>         rescue</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line16">16</a>           LABELS = {}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line17">17</a>         end</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line12">12</a>         include Redmine::I18n</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>         </pre></td>
+            <td><pre><a name="line13">13</a>         </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line19">19</a>         def self.selected_label</pre></td>
+            <td><pre><a name="line14">14</a>         begin</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line20">20</a>             return nil if not Setting.plugin_redmine_backlogs[:card_spec]</pre></td>
+            <td><pre><a name="line15">15</a>           LABELS = YAML::load_file(File.dirname(__FILE__) + '/labels.yaml')</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line21">21</a>             return LABELS[Setting.plugin_redmine_backlogs[:card_spec]]</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line16">16</a>         rescue</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line17">17</a>           LABELS = {}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a>         end</pre></td>
+            <td><pre><a name="line19">19</a>         </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line20">20</a>         def self.selected_label</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>             return nil if not Setting.plugin_redmine_backlogs[:card_spec]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line22">22</a>             return LABELS[Setting.plugin_redmine_backlogs[:card_spec]]</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line24">24</a>         def initialize(lang)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line25">25</a>             set_language_if_valid lang</pre></td>
+            <td><pre><a name="line23">23</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line26">26</a> </pre></td>
+            <td><pre><a name="line24">24</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line27">27</a>             raise &quot;No label stock selected&quot; unless Setting.plugin_redmine_backlogs[:card_spec]</pre></td>
+            <td><pre><a name="line25">25</a>         def initialize(lang)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>             label = TaskboardCards.selected_label</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line29">29</a>             raise &quot;Label stock \&quot;#{Setting.plugin_redmine_backlogs[:card_spec]}\&quot; not found&quot; unless label</pre></td>
+            <td><pre><a name="line26">26</a>             set_language_if_valid lang</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line30">30</a> </pre></td>
+            <td><pre><a name="line27">27</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>             label['papersize'].upcase!</pre></td>
+            <td><pre><a name="line28">28</a>             raise &quot;No label stock selected&quot; unless Setting.plugin_redmine_backlogs[:card_spec]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line29">29</a>             label = TaskboardCards.selected_label</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line30">30</a>             raise &quot;Label stock \&quot;#{Setting.plugin_redmine_backlogs[:card_spec]}\&quot; not found&quot; unless label</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line32">32</a>     </pre></td>
+            <td><pre><a name="line31">31</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line33">33</a>             geom = Prawn::Document::PageGeometry::SIZES[label['papersize']]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line34">34</a>             raise &quot;Paper size '#{label['papersize']}' not supported&quot; if geom.nil?</pre></td>
+            <td><pre><a name="line32">32</a>             label['papersize'].upcase!</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line35">35</a>     </pre></td>
+            <td><pre><a name="line33">33</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line36">36</a>             @paper_width = geom[0]</pre></td>
+            <td><pre><a name="line34">34</a>             geom = Prawn::Document::PageGeometry::SIZES[label['papersize']]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line37">37</a>             @paper_height = geom[1]</pre></td>
+            <td><pre><a name="line35">35</a>             raise &quot;Paper size '#{label['papersize']}' not supported&quot; if geom.nil?</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line38">38</a>     </pre></td>
+            <td><pre><a name="line36">36</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line39">39</a>             @top_margin = topts(label['top_margin'])</pre></td>
+            <td><pre><a name="line37">37</a>             @paper_width = geom[0]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line40">40</a>             @vertical_pitch = topts(label['vertical_pitch'])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line41">41</a>             @height = topts(label['height'])</pre></td>
+            <td><pre><a name="line38">38</a>             @paper_height = geom[1]</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a>     </pre></td>
+            <td><pre><a name="line39">39</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line43">43</a>             @left_margin = topts(label['left_margin'])</pre></td>
+            <td><pre><a name="line40">40</a>             @top_margin = TaskboardCards.topts(label['top_margin'])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line44">44</a>             @horizontal_pitch = topts(label['horizontal_pitch'])</pre></td>
+            <td><pre><a name="line41">41</a>             @vertical_pitch = TaskboardCards.topts(label['vertical_pitch'])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line45">45</a>             @width = topts(label['width'])</pre></td>
+            <td><pre><a name="line42">42</a>             @height = TaskboardCards.topts(label['height'])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line46">46</a>     </pre></td>
+            <td><pre><a name="line43">43</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line47">47</a>             @across = label['across']</pre></td>
+            <td><pre><a name="line44">44</a>             @left_margin = TaskboardCards.topts(label['left_margin'])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line48">48</a>             @down = label['down']</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line49">49</a>     </pre></td>
+            <td><pre><a name="line45">45</a>             @horizontal_pitch = TaskboardCards.topts(label['horizontal_pitch'])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line50">50</a>             @inner_margin = topts(label['inner_margin']) || 1.mm</pre></td>
+            <td><pre><a name="line46">46</a>             @width = TaskboardCards.topts(label['width'])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line51">51</a>     </pre></td>
+            <td><pre><a name="line47">47</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line52">52</a>             @pdf = Prawn::Document.new(</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line53">53</a>                 :page_layout =&gt; :portrait,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line54">54</a>                 :left_margin =&gt; 0,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line55">55</a>                 :right_margin =&gt; 0,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line56">56</a>                 :top_margin =&gt; 0,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line57">57</a>                 :bottom_margin =&gt; 0,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line58">58</a>                 :page_size =&gt; label['papersize'])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line59">59</a>     </pre></td>
+            <td><pre><a name="line48">48</a>             @across = label['across']</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line60">60</a>             @cards = 0</pre></td>
+            <td><pre><a name="line49">49</a>             @down = label['down']</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line61">61</a>         end</pre></td>
+            <td><pre><a name="line50">50</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line51">51</a>             @inner_margin = TaskboardCards.topts(label['inner_margin']) || 1.mm</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line62">62</a>     </pre></td>
+            <td><pre><a name="line52">52</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line63">63</a>         def self.measurement(x)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line64">64</a>           x = &quot;#{x}pt&quot; if x =~ /[0-9]$/</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line65">65</a>           return x</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line66">66</a>         end</pre></td>
+            <td><pre><a name="line53">53</a>             @pdf = Prawn::Document.new(</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line67">67</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line68">68</a>         def self.fetch_labels</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line69">69</a>             ['avery-iso-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line70">70</a>              'avery-other-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line71">71</a>              'avery-us-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line72">72</a>              'brother-other-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line73">73</a>              'dymo-other-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line74">74</a>              'maco-us-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line75">75</a>              'misc-iso-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line76">76</a>              'misc-other-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line77">77</a>              'misc-us-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line78">78</a>              'pearl-iso-templates.xml',  </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line79">79</a>              'uline-us-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line80">80</a>              'worldlabel-us-templates.xml',</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line81">81</a>              'zweckform-iso-templates.xml'].each {|url|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line82">82</a>                 labels = Net::HTTP.get_response(URI.parse(&quot;http://git.gnome.org/browse/glabels/plain/templates/#{url}&quot;)).body</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line83">83</a>                 doc = REXML::Document.new(labels)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line84">84</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line85">85</a>                 doc.elements.each('Glabels-templates/Template') do |specs|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line86">86</a>                     label = nil</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line87">87</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line88">88</a>                     papersize = specs.attributes['size']</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line89">89</a>                     papersize = 'Letter' if papersize == 'US-Letter'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line90">90</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line91">91</a>                     specs.elements.each('Label-rectangle') do |geom|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line92">92</a>                         margin = nil</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line93">93</a>                         geom.elements.each('Markup-margin') do |m|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line94">94</a>                             margin = m.attributes['size']</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line95">95</a>                         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line96">96</a>                         margin = &quot;1mm&quot; if margin.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line97">97</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line98">98</a>                         geom.elements.each('Layout') do |layout|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line99">99</a>                             label = {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line100">100</a>                                 'inner_margin' =&gt; TaskboardCards.measurement(margin),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line101">101</a>                                 'across' =&gt; Integer(layout.attributes['nx']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line102">102</a>                                 'down' =&gt; Integer(layout.attributes['ny']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line103">103</a>                                 'top_margin' =&gt; TaskboardCards.measurement(layout.attributes['y0']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line104">104</a>                                 'height' =&gt; TaskboardCards.measurement(geom.attributes['height']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line105">105</a>                                 'vertical_pitch' =&gt; TaskboardCards.measurement(layout.attributes['dx']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line106">106</a>                                 'left_margin' =&gt; TaskboardCards.measurement(layout.attributes['x0']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line107">107</a>                                 'width' =&gt; TaskboardCards.measurement(geom.attributes['width']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line108">108</a>                                 'horizontal_pitch' =&gt; TaskboardCards.measurement(layout.attributes['dy']),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line109">109</a>                                 'papersize' =&gt; papersize,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line110">110</a>                                 'source' =&gt; 'glabel'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line111">111</a>                             }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line112">112</a>                         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line113">113</a>                     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line114">114</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line115">115</a>                     next if label.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line116">116</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line117">117</a>                     key = &quot;#{specs.attributes['brand']} #{specs.attributes['part']}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line118">118</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line119">119</a>                     LABELS[key] = label if not LABELS[key] or LABELS[key]['source'] == 'glabel'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line120">120</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line121">121</a>                     specs.elements.each('Alias') do |also|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line122">122</a>                         key = &quot;#{also.attributes['brand']} #{also.attributes['part']}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line123">123</a>                         LABELS[key] = label.dup if not LABELS[key] or LABELS[key]['source'] == 'glabel'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line124">124</a>                     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line125">125</a>                 end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line126">126</a>             }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line127">127</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line128">128</a>             File.open(File.dirname(__FILE__) + '/labels.yaml', 'w') do |dump|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line129">129</a>                 YAML.dump(LABELS, dump)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line130">130</a>             end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line131">131</a>         end</pre></td>
+            <td><pre><a name="line54">54</a>                 :page_layout =&gt; :portrait,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line132">132</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line133">133</a>         attr_reader :pdf</pre></td>
+            <td><pre><a name="line55">55</a>                 :left_margin =&gt; 0,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line134">134</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line135">135</a>         def card(issue, type)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line136">136</a>             row = (@cards % @down) + 1</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line137">137</a>             col = ((@cards / @down) % @across) + 1</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line138">138</a>             @cards += 1</pre></td>
+            <td><pre><a name="line56">56</a>                 :right_margin =&gt; 0,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line139">139</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line140">140</a>             @pdf.start_new_page if row == 1 and col == 1 and @cards != 1</pre></td>
+            <td><pre><a name="line57">57</a>                 :top_margin =&gt; 0,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
+            <td><pre><a name="line58">58</a>                 :bottom_margin =&gt; 0,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line59">59</a>                 :page_size =&gt; label['papersize'])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line60">60</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line61">61</a>             fontdir = File.dirname(__FILE__) + '/ttf'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line62">62</a>             @pdf.font_families.update(</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line63">63</a>               &quot;DejaVuSans&quot; =&gt; {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line64">64</a>                 :bold         =&gt; &quot;#{fontdir}/DejaVuSans-Bold.ttf&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line65">65</a>                 :italic       =&gt; &quot;#{fontdir}/DejaVuSans-Oblique.ttf&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line66">66</a>                 :bold_italic  =&gt; &quot;#{fontdir}/DejaVuSans-BoldOblique.ttf&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line67">67</a>                 :normal       =&gt; &quot;#{fontdir}/DejaVuSans.ttf&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line68">68</a>               }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line69">69</a>             )</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line70">70</a>             @pdf.font &quot;DejaVuSans&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line71">71</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line72">72</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line73">73</a>             @cards = 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line74">74</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line75">75</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line76">76</a>         def self.measurement(x)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line77">77</a>           x = &quot;#{x}pt&quot; if x =~ /[0-9]$/</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line78">78</a>           return x</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line79">79</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line80">80</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line81">81</a>         def self.malformed(label)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line82">82</a>           return TaskboardCards.topts(label['height']) &gt; TaskboardCards.topts(label['vertical_pitch']) || TaskboardCards.topts(label['width']) &gt; TaskboardCards.topts(label['horizontal_pitch'])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line83">83</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line84">84</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line85">85</a>         def self.fetch_labels</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line86">86</a>             LABELS.keys.each {|label|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line87">87</a>               if TaskboardCards.malformed(LABELS[label])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line88">88</a>                 LABELS.delete(label)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line89">89</a>                 puts &quot;Removing malformed label '#{label}'&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line90">90</a>               end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line91">91</a>             }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line92">92</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line93">93</a>             malformed_labels = {}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line94">94</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line95">95</a>             ['avery-iso-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line96">96</a>              'avery-other-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line97">97</a>              'avery-us-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line98">98</a>              'brother-other-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line99">99</a>              'dymo-other-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line100">100</a>              'maco-us-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line101">101</a>              'misc-iso-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line102">102</a>              'misc-other-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line103">103</a>              'misc-us-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line104">104</a>              'pearl-iso-templates.xml',  </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line105">105</a>              'uline-us-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line106">106</a>              'worldlabel-us-templates.xml',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line107">107</a>              'zweckform-iso-templates.xml'].each {|filename|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line108">108</a>                 uri = URI.parse(&quot;http://git.gnome.org/browse/glabels/plain/templates/#{filename}&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line109">109</a>                 labels = nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line110">110</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line111">111</a>                 if ! ENV['http_proxy'].blank?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line112">112</a>                   begin</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line113">113</a>                     proxy = URI.parse(ENV['http_proxy'])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line114">114</a>                     if proxy.userinfo</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line115">115</a>                       user, pass = proxy.userinfo.split(/:/)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line116">116</a>                     else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line117">117</a>                       user = pass = nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line118">118</a>                     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line119">119</a>                     labels = Net::HTTP::Proxy(proxy.host, proxy.port, user, pass).start(uri.host) {|http| http.get(uri.path)}.body</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line120">120</a>                   rescue URI::Error =&gt; e</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line121">121</a>                     puts &quot;Setup proxy failed: #{e}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line122">122</a>                     labels = nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line123">123</a>                   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line124">124</a>                 end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line125">125</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line126">126</a>                 begin</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line127">127</a>                   labels = Net::HTTP.get_response(uri).body if labels.nil?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line128">128</a>                 rescue</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line129">129</a>                   labels = nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line130">130</a>                 end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line131">131</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line132">132</a>                 if labels.nil?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line133">133</a>                   puts &quot;Could not fetch #{filename}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line134">134</a>                   next</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line135">135</a>                 end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line136">136</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line137">137</a>                 doc = REXML::Document.new(labels)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line138">138</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line139">139</a>                 doc.elements.each('Glabels-templates/Template') do |specs|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line140">140</a>                     label = nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
             <td><pre><a name="line141">141</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line142">142</a>             parent_story = issue.story</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line142">142</a>                     papersize = specs.attributes['size']</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line143">143</a>     </pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line143">143</a>                     papersize = 'Letter' if papersize == 'US-Letter'</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line144">144</a>             # card bounds</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line144">144</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line145">145</a>             @pdf.bounding_box self.top_left(row, col), :width =&gt; @width, :height =&gt; @height do</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line145">145</a>                     specs.elements.each('Label-rectangle') do |geom|</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line146">146</a>                 @pdf.line_width = 0.5</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line146">146</a>                         margin = nil</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line147">147</a>                 @pdf.stroke do</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line147">147</a>                         geom.elements.each('Markup-margin') do |m|</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line148">148</a>                     @pdf.stroke_bounds</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line148">148</a>                             margin = m.attributes['size']</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line149">149</a>                     </pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line149">149</a>                         end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line150">150</a>                     # card margin</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line150">150</a>                         margin = &quot;1mm&quot; if margin.blank?</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line151">151</a>                     @pdf.bounding_box [@inner_margin, @height - @inner_margin],</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line151">151</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line152">152</a>                                         :width =&gt; @width - (2 * @inner_margin),</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line152">152</a>                         geom.elements.each('Layout') do |layout|</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line153">153</a>                                         :height =&gt; @height - (2 * @inner_margin) do</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line153">153</a>                             label = {</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line154">154</a>     </pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line154">154</a>                                 'inner_margin' =&gt; TaskboardCards.measurement(margin),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line155">155</a>                         scoresize = 0</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line155">155</a>                                 'across' =&gt; Integer(layout.attributes['nx']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line156">156</a>                         @y = @pdf.bounds.height</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line156">156</a>                                 'down' =&gt; Integer(layout.attributes['ny']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line157">157</a>                         @pdf.font_size(12) do</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line157">157</a>                                 'top_margin' =&gt; TaskboardCards.measurement(layout.attributes['y0']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line158">158</a>                             score = (type == :task ? issue.estimated_hours : issue.story_points)</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line158">158</a>                                 'height' =&gt; TaskboardCards.measurement(geom.attributes['height']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line159">159</a>                             score ||= '?'</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line159">159</a>                                 'horizontal_pitch' =&gt; TaskboardCards.measurement(layout.attributes['dx']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line160">160</a>                             score = &quot;#{score} #{type == :task ? l(:label_hours) : l(:label_points)}&quot;</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line160">160</a>                                 'left_margin' =&gt; TaskboardCards.measurement(layout.attributes['x0']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line161">161</a>                             scoresize = @pdf.width_of(&quot; #{score} &quot;)</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line161">161</a>                                 'width' =&gt; TaskboardCards.measurement(geom.attributes['width']),</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line162">162</a>     </pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line162">162</a>                                 'vertical_pitch' =&gt; TaskboardCards.measurement(layout.attributes['dy']),</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line163">163</a>                             text_box(score, {</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line163">163</a>                                 'papersize' =&gt; papersize,</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line164">164</a>                                     :width =&gt; scoresize,</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line164">164</a>                                 'source' =&gt; 'glabel'</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line165">165</a>                                     :height =&gt; @pdf.font.height</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line165">165</a>                             }</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line166">166</a>                                 }, pdf.bounds.width - scoresize)</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line166">166</a>                         end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line167">167</a>                         end</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line167">167</a>                     end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line168">168</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line169">169</a>                         @y = @pdf.bounds.height</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line170">170</a>                         pos = parent_story.position ? parent_story.position : l(:label_not_prioritized)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line171">171</a>                         trail = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{pos})&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line172">172</a>                         @pdf.font_size(6) do</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line173">173</a>                             text_box(trail, {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line174">174</a>                                     :width =&gt; pdf.bounds.width - scoresize,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line175">175</a>                                     :height =&gt; @pdf.font.height,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line176">176</a>                                     :style =&gt; :italic</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line177">177</a>                                 })</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line178">178</a>                         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line179">179</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line180">180</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line181">181</a>                         @pdf.font_size(6) do</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line182">182</a>                             parent = (type == :task ? parent_story.subject : (issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)))</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line183">183</a>                             text_box parent, {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line184">184</a>                                     :width =&gt; pdf.bounds.width - scoresize,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line185">185</a>                                     :height =&gt; @pdf.font.height</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line186">186</a>                             }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line187">187</a>                         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line188">188</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line189">189</a>                         text_box issue.subject, {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line190">190</a>                                 :width =&gt; pdf.bounds.width,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line191">191</a>                                 :height =&gt; @pdf.font.height * 2</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line192">192</a>                             }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line193">193</a>                         @pdf.line [0, @y], [pdf.bounds.width, @y]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line194">194</a>                         @y -= 2</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line195">195</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line196">196</a>                         @pdf.font_size(8) do</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line197">197</a>                             text_box issue.description || issue.subject , {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line198">198</a>                                     :width =&gt; pdf.bounds.width,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line199">199</a>                                     :height =&gt; @y - 8</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line200">200</a>                                 }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line201">201</a>                         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line202">202</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line203">203</a>                         @pdf.font_size(6) do</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line204">204</a>                             category = issue.category ? &quot;#{l(:field_category)}: #{issue.category.name}&quot; : ''</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line205">205</a>                             catsize = @pdf.width_of(&quot; #{category} &quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line206">206</a>                             text_box(category, {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line207">207</a>                                     :width =&gt; catsize,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line208">208</a>                                     :height =&gt; @pdf.font.height</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line209">209</a>                                 }, pdf.bounds.width - catsize)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line210">210</a>                         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line211">211</a>                     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line212">212</a>                 end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line213">213</a>             end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line214">214</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line215">215</a>     </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line216">216</a>         def add(story, add_tasks = true)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line217">217</a>             if add_tasks</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line169">169</a>                     next if label.nil?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line218">218</a>                 story.descendants.each {|task|</pre></td>
+            <td><pre><a name="line170">170</a>     </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line219">219</a>                     card(task, :task)</pre></td>
+            <td><pre><a name="line171">171</a>                     key = &quot;#{specs.attributes['brand']} #{specs.attributes['part']}&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line220">220</a>                 }</pre></td>
+            <td><pre><a name="line172">172</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line221">221</a>             end</pre></td>
+            <td><pre><a name="line173">173</a>                     if TaskboardCards.malformed(label)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line174">174</a>                       puts &quot;Skipping malformed label '#{key}' from #{filename}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line175">175</a>                       malformed_labels[key] = label</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line176">176</a>                     else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line177">177</a>                       LABELS[key] = label if not LABELS[key] or LABELS[key]['source'] == 'glabel'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line178">178</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line179">179</a>                       specs.elements.each('Alias') do |also|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line180">180</a>                           key = &quot;#{also.attributes['brand']} #{also.attributes['part']}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line181">181</a>                           LABELS[key] = label.dup if not LABELS[key] or LABELS[key]['source'] == 'glabel'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line182">182</a>                       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line183">183</a>                     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line184">184</a>                 end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line185">185</a>             }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line186">186</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line187">187</a>             File.open(File.dirname(__FILE__) + '/labels.yaml', 'w') do |dump|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line188">188</a>                 YAML.dump(LABELS, dump)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line189">189</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line190">190</a>             File.open(File.dirname(__FILE__) + '/labels-malformed.yaml', 'w') do |dump|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line191">191</a>                 YAML.dump(malformed_labels, dump)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line192">192</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line193">193</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line194">194</a>             if Setting.plugin_redmine_backlogs[:card_spec] &amp;&amp; ! TaskboardCards.selected_label &amp;&amp; LABELS.size != 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line195">195</a>               # current label non-existant</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line196">196</a>               label = LABELS.keys[0]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line197">197</a>               puts &quot;Non-existant label stock '#{Setting.plugin_redmine_backlogs[:card_spec]}' selected, replacing with random '#{label}'&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line198">198</a>               s = Setting.plugin_redmine_backlogs</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line199">199</a>               s[:card_spec] = label</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line200">200</a>               Setting.plugin_redmine_backlogs = s</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line201">201</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line202">202</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line222">222</a>     </pre></td>
+            <td><pre><a name="line203">203</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line223">223</a>             card(story, :story)</pre></td>
+            <td><pre><a name="line204">204</a>         attr_reader :pdf</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line224">224</a>         end</pre></td>
+            <td><pre><a name="line205">205</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line206">206</a>         def card(issue, type)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line207">207</a>             row = (@cards % @down) + 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line208">208</a>             col = ((@cards / @down) % @across) + 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line209">209</a>             @cards += 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line210">210</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line211">211</a>             @pdf.start_new_page if row == 1 and col == 1 and @cards != 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line212">212</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line213">213</a>             parent_story = issue.story</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line214">214</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line215">215</a>             # card bounds</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line216">216</a>             @pdf.bounding_box self.top_left(row, col), :width =&gt; @width, :height =&gt; @height do</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line217">217</a>                 @pdf.line_width = 0.5</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line218">218</a>                 @pdf.stroke do</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line219">219</a>                     @pdf.stroke_bounds</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line220">220</a>                     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line221">221</a>                     # card margin</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line222">222</a>                     @pdf.bounding_box [@inner_margin, @height - @inner_margin],</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line223">223</a>                                         :width =&gt; @width - (2 * @inner_margin),</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line224">224</a>                                         :height =&gt; @height - (2 * @inner_margin) do</pre></td>
           </tr>
         
           
@@ -1407,151 +1407,637 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line226">226</a>         def text_box(s, options, x = 0)</pre></td>
+            <td><pre><a name="line226">226</a>                         scoresize = 0</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line227">227</a>             box = Prawn::Text::Box.new(s, options.merge(:overflow =&gt; :ellipses, :at =&gt; [x, @y], :document =&gt; @pdf))</pre></td>
+            <td><pre><a name="line227">227</a>                         @y = @pdf.bounds.height</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line228">228</a>             box.render</pre></td>
+            <td><pre><a name="line228">228</a>                         @pdf.font_size(12) do</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line229">229</a>             @y -= (options[:height] + (options[:size] || @pdf.font_size) / 2)</pre></td>
+            <td><pre><a name="line229">229</a>                             score = (type == :task ? issue.estimated_hours : issue.story_points)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line230">230</a>             return box</pre></td>
+            <td><pre><a name="line230">230</a>                             score ||= '?'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line231">231</a>                             score = &quot;#{score} #{type == :task ? l(:label_hours) : l(:label_points)}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line232">232</a>                             scoresize = @pdf.width_of(&quot; #{score} &quot;)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line231">231</a>         end</pre></td>
+            <td><pre><a name="line233">233</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line234">234</a>                             text_box(score, {</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line232">232</a>     </pre></td>
+            <td><pre><a name="line235">235</a>                                     :width =&gt; scoresize,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line233">233</a>         def topts(m)</pre></td>
+            <td><pre><a name="line236">236</a>                                     :height =&gt; @pdf.font.height</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line234">234</a>             return nil if m.class == NilClass</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line235">235</a>             return Float(m[0..-3]).mm if m =~ /mm$/</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line236">236</a>             return Float(m[0..-3]).cm if m =~ /cm$/</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line237">237</a>             return Float(m[0..-3]).in if m =~ /in$/</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line238">238</a>             return Float(m[0..-3]).pt if m =~ /pt$/</pre></td>
+            <td><pre><a name="line237">237</a>                                 }, pdf.bounds.width - scoresize)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line239">239</a>             return Float(m)</pre></td>
+            <td><pre><a name="line238">238</a>                         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line240">240</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line241">241</a>     </pre></td>
+            <td><pre><a name="line239">239</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line242">242</a>         def top_left(row, col)</pre></td>
+            <td><pre><a name="line240">240</a>                         @y = @pdf.bounds.height</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line243">243</a>             top = @paper_height - (@top_margin + @vertical_pitch * (row - 1))</pre></td>
+            <td><pre><a name="line241">241</a>                         pos = parent_story.position ? parent_story.position : l(:label_not_prioritized)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line244">244</a>             left = @left_margin + (@horizontal_pitch * (col - 1))</pre></td>
+            <td><pre><a name="line242">242</a>                         trail = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{pos})&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line245">245</a>             return [left, top]</pre></td>
+            <td><pre><a name="line243">243</a>                         @pdf.font_size(6) do</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line244">244</a>                             text_box(trail, {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line245">245</a>                                     :width =&gt; pdf.bounds.width - scoresize,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line246">246</a>                                     :height =&gt; @pdf.font.height,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line246">246</a>         end</pre></td>
+            <td><pre><a name="line247">247</a>                                     :style =&gt; :italic</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line247">247</a>     end</pre></td>
+            <td><pre><a name="line248">248</a>                                 })</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line248">248</a> </pre></td>
+            <td><pre><a name="line249">249</a>                         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line249">249</a> end</pre></td>
+            <td><pre><a name="line250">250</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line251">251</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line252">252</a>                         @pdf.font_size(6) do</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line253">253</a>                             parent = (type == :task ? parent_story.subject : (issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)))</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line254">254</a>                             text_box parent, {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line255">255</a>                                     :width =&gt; pdf.bounds.width - scoresize,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line256">256</a>                                     :height =&gt; @pdf.font.height</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line257">257</a>                             }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line258">258</a>                         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line259">259</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line260">260</a>                         text_box issue.subject, {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line261">261</a>                                 :width =&gt; pdf.bounds.width,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line262">262</a>                                 :height =&gt; @pdf.font.height * 2</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line263">263</a>                             }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line264">264</a>                         @pdf.line [0, @y], [pdf.bounds.width, @y]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line265">265</a>                         @y -= 2</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line266">266</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line267">267</a>                         @pdf.font_size(8) do</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line268">268</a>                             text_box issue.description || issue.subject , {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line269">269</a>                                     :width =&gt; pdf.bounds.width,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line270">270</a>                                     :height =&gt; @y - 8</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line271">271</a>                                 }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line272">272</a>                         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line273">273</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line274">274</a>                         @pdf.font_size(6) do</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line275">275</a>                             category = issue.category ? &quot;#{l(:field_category)}: #{issue.category.name}&quot; : ''</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line276">276</a>                             catsize = @pdf.width_of(&quot; #{category} &quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line277">277</a>                             text_box(category, {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line278">278</a>                                     :width =&gt; catsize,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line279">279</a>                                     :height =&gt; @pdf.font.height</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line280">280</a>                                 }, pdf.bounds.width - catsize)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line281">281</a>                         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line282">282</a>                     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line283">283</a>                 end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line284">284</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line285">285</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line286">286</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line287">287</a>         def add(story, add_tasks = true)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line288">288</a>             if add_tasks</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line289">289</a>                 story.descendants.each {|task|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line290">290</a>                     card(task, :task)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line291">291</a>                 }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line292">292</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line293">293</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line294">294</a>             card(story, :story)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line295">295</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line296">296</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line297">297</a>         def text_box(s, options, x = 0)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line298">298</a>             box = Prawn::Text::Box.new(s, options.merge(:overflow =&gt; :ellipses, :at =&gt; [x, @y], :document =&gt; @pdf))</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line299">299</a>             box.render</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line300">300</a>             @y -= (options[:height] + (options[:size] || @pdf.font_size) / 2)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line301">301</a>             return box</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line302">302</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line303">303</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line304">304</a>         def self.topts(v)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line305">305</a>             return nil if v.class == NilClass</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line306">306</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line307">307</a>             if v =~ /[a-z]{2}$/i</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line308">308</a>               units = v[-2, 2].downcase</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line309">309</a>               v = v[0..-3]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line310">310</a>             else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line311">311</a>               units = 'pt'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line312">312</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line313">313</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line314">314</a>             v = &quot;#{v}0&quot; if v =~ /\.$/</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line315">315</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line316">316</a>             return Float(v).mm if units == 'mm'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line317">317</a>             return Float(v).cm if units == 'cm'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line318">318</a>             return Float(v).in if units == 'in'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line319">319</a>             return Float(v).pt if units == 'pt'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line320">320</a>             raise &quot;Unexpected units '#{units}'&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line321">321</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line322">322</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line323">323</a>         def top_left(row, col)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line324">324</a>             top = @paper_height - (@top_margin + @vertical_pitch * (row - 1))</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line325">325</a>             left = @left_margin + (@horizontal_pitch * (col - 1))</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line326">326</a>             return [left, top]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line327">327</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line328">328</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line329">329</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line330">330</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Mar 25 21:11:16 +0100 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

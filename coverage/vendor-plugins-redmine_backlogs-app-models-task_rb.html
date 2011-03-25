@@ -9,7 +9,7 @@
     <script type="text/javascript" src="rcov.js"></script>
   </head>
   <body>
-    <h1>App C0 Coverage Information - RCov</h1>
+    <h1>Redmine C0 Coverage Information - RCov</h1>
     <h2>vendor/plugins/redmine_backlogs/app/models/task.rb</h2>
 
     
@@ -28,14 +28,14 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-task_rb.html">vendor/plugins/redmine_backlogs/app/models/task.rb</a></td>
-            <td class='right_align'><tt>119</tt></td>
-            <td class='right_align'><tt>95</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.31%</tt></div>
+            <td class='right_align'><tt>127</tt></td>
+            <td class='right_align'><tt>103</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.17%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:77px"></div>
             <div class="uncovered" style="width:23px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>71.58%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>71.84%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:72px"></div>
             <div class="uncovered" style="width:28px"></div>
@@ -99,7 +99,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line8">8</a>     return nil if task_tracker.nil? or task_tracker == ''</pre></td>
+            <td><pre><a name="line8">8</a>     return nil if task_tracker.blank?</pre></td>
           </tr>
         
           
@@ -129,271 +129,271 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>     attribs = params.clone.delete_if {|k,v| !Task::SAFE_ATTRIBUTES.include?(k) }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line14">14</a>     attribs[:remaining_hours] = 0 if IssueStatus.find(params[:status_id]).is_closed?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line15">15</a>     attribs['author_id'] = user_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line16">16</a>     attribs['tracker_id'] = Task.tracker</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line17">17</a>     attribs['project_id'] = project_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line18">18</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line19">19</a>     task = new(attribs)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line20">20</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line21">21</a>     valid_relationships = if is_impediment</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line22">22</a>                             task.validate_blocks_list(params[:blocks])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line23">23</a>                           else</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line24">24</a>                             true</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line25">25</a>                           end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line26">26</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line27">27</a>     if valid_relationships &amp;&amp; task.save</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line28">28</a>       task.move_after params[:prev]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line29">29</a>       task.update_blocked_list params[:blocks].split(/\D+/) if params[:blocks]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line30">30</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line31">31</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line32">32</a>     return task</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line33">33</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line34">34</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line35">35</a>   # TODO: there's an assumption here that impediments always have the</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line36">36</a>   # task-tracker as their tracker.</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line37">37</a>   def self.find_all_updated_since(since, project_id, find_impediments = false)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line38">38</a>     find(:all,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line39">39</a>          :conditions =&gt; [&quot;project_id = ? AND updated_on &gt; ? AND tracker_id in (?) and parent_id IS #{ find_impediments ? '' : 'NOT' } NULL&quot;, project_id, Time.parse(since), tracker],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line40">40</a>          :order =&gt; &quot;updated_on ASC&quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line41">41</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line42">42</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line43">43</a>   def self.tasks_for(story_id)</pre></td>
+            <td><pre><a name="line13">13</a>     if Issue.const_defined? &quot;SAFE_ATTRIBUTES&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line44">44</a>     tasks = []</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line45">45</a>     Task.find(:all,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line46">46</a>               :conditions =&gt; ['tracker_id = ? and not parent_id is NULL and root_id = ?', Task.tracker, story_id],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line47">47</a>               :order =&gt; :lft</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line48">48</a>               ).each_with_index {|task, i|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line49">49</a>       task.rank = i + 1</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line50">50</a>       tasks &lt;&lt; task</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line51">51</a>     }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line52">52</a>     return tasks</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line53">53</a>   end</pre></td>
+            <td><pre><a name="line14">14</a>       attribs = params.clone.delete_if {|k,v| !Task::SAFE_ATTRIBUTES.include?(k) }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line54">54</a> </pre></td>
+            <td><pre><a name="line15">15</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line55">55</a>   def update_with_relationships(params, is_impediment = false)</pre></td>
+            <td><pre><a name="line16">16</a>       attribs = params.clone.delete_if {|k,v| !Issue.new.safe_attribute_names.include?(k.to_s) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line17">17</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>     attribs = params.clone.delete_if {|k,v| !Task::SAFE_ATTRIBUTES.include?(k) }</pre></td>
+            <td><pre><a name="line18">18</a>     attribs[:remaining_hours] = 0 if IssueStatus.find(params[:status_id]).is_closed?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line57">57</a>     attribs[:remaining_hours] = 0 if IssueStatus.find(params[:status_id]).is_closed?</pre></td>
+            <td><pre><a name="line19">19</a>     attribs['author_id'] = user_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line20">20</a>     attribs['tracker_id'] = Task.tracker</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>     attribs['project_id'] = project_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line22">22</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line23">23</a>     task = new(attribs)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line24">24</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line25">25</a>     valid_relationships = if is_impediment</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line26">26</a>                             task.validate_blocks_list(params[:blocks])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line27">27</a>                           else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line28">28</a>                             true</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line29">29</a>                           end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line30">30</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line31">31</a>     if valid_relationships &amp;&amp; task.save</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line32">32</a>       task.move_after params[:prev]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line33">33</a>       task.update_blocked_list params[:blocks].split(/\D+/) if params[:blocks]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line34">34</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line35">35</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line36">36</a>     return task</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line37">37</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line38">38</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line39">39</a>   # TODO: there's an assumption here that impediments always have the</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line40">40</a>   # task-tracker as their tracker.</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line41">41</a>   def self.find_all_updated_since(since, project_id, find_impediments = false)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line42">42</a>     find(:all,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line43">43</a>          :conditions =&gt; [&quot;project_id = ? AND updated_on &gt; ? AND tracker_id in (?) and parent_id IS #{ find_impediments ? '' : 'NOT' } NULL&quot;, project_id, Time.parse(since), tracker],</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line44">44</a>          :order =&gt; &quot;updated_on ASC&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line45">45</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line46">46</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line47">47</a>   def self.tasks_for(story_id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line48">48</a>     tasks = []</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line49">49</a>     Task.find(:all,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line50">50</a>               :conditions =&gt; ['tracker_id = ? and not parent_id is NULL and root_id = ?', Task.tracker, story_id],</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line51">51</a>               :order =&gt; :lft</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line52">52</a>               ).each_with_index {|task, i|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line53">53</a>       task.rank = i + 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line54">54</a>       tasks &lt;&lt; task</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line55">55</a>     }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line56">56</a>     return tasks</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line57">57</a>   end</pre></td>
           </tr>
         
           
@@ -405,133 +405,133 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line59">59</a>     valid_relationships = if is_impediment &amp;&amp; params[:blocks] #if blocks param was not sent, that means the impediment was just dragged</pre></td>
+            <td><pre><a name="line59">59</a>   def update_with_relationships(params, is_impediment = false)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line60">60</a>     if Issue.const_defined? &quot;SAFE_ATTRIBUTES&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line60">60</a>                             validate_blocks_list(params[:blocks])</pre></td>
+            <td><pre><a name="line61">61</a>       attribs = params.clone.delete_if {|k,v| !Task::SAFE_ATTRIBUTES.include?(k) }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line61">61</a>                           else</pre></td>
+            <td><pre><a name="line62">62</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line62">62</a>                             true</pre></td>
+            <td><pre><a name="line63">63</a>       attribs = params.clone.delete_if {|k,v| !Issue.new.safe_attribute_names.include?(k.to_s) }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line63">63</a>                           end</pre></td>
+            <td><pre><a name="line64">64</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line65">65</a>     attribs[:remaining_hours] = 0 if IssueStatus.find(params[:status_id]).is_closed?</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line64">64</a> </pre></td>
+            <td><pre><a name="line66">66</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line65">65</a>     if valid_relationships &amp;&amp; result = journalized_update_attributes!(attribs)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line66">66</a>       move_after params[:prev]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line67">67</a>       update_blocked_list params[:blocks].split(/\D+/) if params[:blocks]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line68">68</a>       result</pre></td>
+            <td><pre><a name="line67">67</a>     valid_relationships = if is_impediment &amp;&amp; params[:blocks] #if blocks param was not sent, that means the impediment was just dragged</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line69">69</a>     else</pre></td>
+            <td><pre><a name="line68">68</a>                             validate_blocks_list(params[:blocks])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line69">69</a>                           else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line70">70</a>                             true</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line71">71</a>                           end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line72">72</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line73">73</a>     if valid_relationships &amp;&amp; result = journalized_update_attributes!(attribs)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line74">74</a>       move_after params[:prev]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line75">75</a>       update_blocked_list params[:blocks].split(/\D+/) if params[:blocks]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line76">76</a>       result</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line70">70</a>       false</pre></td>
+            <td><pre><a name="line77">77</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line71">71</a>     end</pre></td>
+            <td><pre><a name="line78">78</a>       false</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line72">72</a>   end</pre></td>
+            <td><pre><a name="line79">79</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line73">73</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line74">74</a>   def update_blocked_list(for_blocking)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line75">75</a>     # Existing relationships not in for_blocking should be removed from the 'blocks' list</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line76">76</a>     relations_from.find(:all, :conditions =&gt; &quot;relation_type='blocks'&quot;).each{ |ir| </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line77">77</a>       ir.destroy unless for_blocking.include?( ir[:issue_to_id] )</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line78">78</a>     }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line79">79</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line80">80</a>     already_blocking = relations_from.find(:all, :conditions =&gt; &quot;relation_type='blocks'&quot;).map{|ir| ir.issue_to_id}</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line80">80</a>   end</pre></td>
           </tr>
         
           
@@ -542,236 +542,284 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line82">82</a>     # Non-existing relationships that are in for_blocking should be added to the 'blocks' list</pre></td>
-          </tr>
-        
-          
-          
           <tr class="marked">
-            <td><pre><a name="line83">83</a>     for_blocking.select{ |id| !already_blocking.include?(id) }.each{ |id|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line84">84</a>       ir = relations_from.new(:relation_type=&gt;'blocks')</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line85">85</a>       ir[:issue_to_id] = id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line86">86</a>       ir.save!</pre></td>
+            <td><pre><a name="line82">82</a>   def update_blocked_list(for_blocking)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line87">87</a>     }</pre></td>
+            <td><pre><a name="line83">83</a>     # Existing relationships not in for_blocking should be removed from the 'blocks' list</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line88">88</a>     reload</pre></td>
+            <td><pre><a name="line84">84</a>     relations_from.find(:all, :conditions =&gt; &quot;relation_type='blocks'&quot;).each{ |ir|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line85">85</a>       ir.destroy unless for_blocking.include?( ir[:issue_to_id] )</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line89">89</a>   end</pre></td>
+            <td><pre><a name="line86">86</a>     }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line90">90</a>   </pre></td>
+            <td><pre><a name="line87">87</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line91">91</a>   def validate_blocks_list(list)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line92">92</a>     if list.split(/\D+/).length==0</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line93">93</a>       errors.add :label_blocks, :error_must_have_comma_delimited_list</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line94">94</a>       false</pre></td>
+            <td><pre><a name="line88">88</a>     already_blocking = relations_from.find(:all, :conditions =&gt; &quot;relation_type='blocks'&quot;).map{|ir| ir.issue_to_id}</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line95">95</a>     else</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line96">96</a>       true</pre></td>
+            <td><pre><a name="line89">89</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line97">97</a>     end</pre></td>
+            <td><pre><a name="line90">90</a>     # Non-existing relationships that are in for_blocking should be added to the 'blocks' list</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line91">91</a>     for_blocking.select{ |id| !already_blocking.include?(id) }.each{ |id|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line92">92</a>       ir = relations_from.new(:relation_type=&gt;'blocks')</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line93">93</a>       ir[:issue_to_id] = id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line94">94</a>       ir.save!</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line98">98</a>   end</pre></td>
+            <td><pre><a name="line95">95</a>     }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line96">96</a>     reload</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line99">99</a>   </pre></td>
+            <td><pre><a name="line97">97</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line100">100</a>   # assumes the task is already under the same story as 'id'</pre></td>
+            <td><pre><a name="line98">98</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line101">101</a>   def move_after(id)</pre></td>
+            <td><pre><a name="line99">99</a>   def validate_blocks_list(list)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line102">102</a>     id = nil if id.respond_to?('empty?') &amp;&amp; id.empty?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line103">103</a>     if id.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line104">104</a>       sib = self.siblings</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line105">105</a>       move_to_left_of sib[0].id if sib.any?</pre></td>
+            <td><pre><a name="line100">100</a>     if list.split(/\D+/).length==0</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line106">106</a>     else</pre></td>
+            <td><pre><a name="line101">101</a>       errors.add :blocks, :must_have_comma_delimited_list</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line107">107</a>       move_to_right_of id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line108">108</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line109">109</a>   end</pre></td>
+            <td><pre><a name="line102">102</a>       false</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line110">110</a> </pre></td>
+            <td><pre><a name="line103">103</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line111">111</a>   def rank=(r)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line112">112</a>     @rank = r</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line113">113</a>   end</pre></td>
+            <td><pre><a name="line104">104</a>       true</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line114">114</a> </pre></td>
+            <td><pre><a name="line105">105</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line106">106</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line107">107</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line108">108</a>   # assumes the task is already under the same story as 'id'</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line115">115</a>   def rank</pre></td>
+            <td><pre><a name="line109">109</a>   def move_after(id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line110">110</a>     id = nil if id.respond_to?('blank?') &amp;&amp; id.blank?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line111">111</a>     if id.nil?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line112">112</a>       sib = self.siblings</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line113">113</a>       move_to_left_of sib[0].id if sib.any?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line116">116</a>     @rank ||= Issue.count(:conditions =&gt; ['tracker_id = ? and not parent_id is NULL and root_id = ? and lft &lt;= ?', Task.tracker, story_id, self.lft])</pre></td>
+            <td><pre><a name="line114">114</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line117">117</a>     return @rank</pre></td>
+            <td><pre><a name="line115">115</a>       move_to_right_of id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line118">118</a>   end</pre></td>
+            <td><pre><a name="line116">116</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line119">119</a> end</pre></td>
+            <td><pre><a name="line117">117</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line118">118</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line119">119</a>   def rank=(r)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line120">120</a>     @rank = r</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line121">121</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line122">122</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line123">123</a>   def rank</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line124">124</a>     @rank ||= Issue.count(:conditions =&gt; ['tracker_id = ? and not parent_id is NULL and root_id = ? and lft &lt;= ?', Task.tracker, story_id, self.lft])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line125">125</a>     return @rank</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line126">126</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line127">127</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Mar 25 21:11:16 +0100 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

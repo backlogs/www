@@ -9,7 +9,7 @@
     <script type="text/javascript" src="rcov.js"></script>
   </head>
   <body>
-    <h1>App C0 Coverage Information - RCov</h1>
+    <h1>Redmine C0 Coverage Information - RCov</h1>
     <h2>vendor/plugins/redmine_backlogs/lib/backlogs_query_patch.rb</h2>
 
     
@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_query_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_query_patch.rb</a></td>
-            <td class='right_align'><tt>114</tt></td>
-            <td class='right_align'><tt>76</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>88.60%</tt></div>
+            <td class='right_align'><tt>126</tt></td>
+            <td class='right_align'><tt>87</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.95%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:89px"></div>
-            <div class="uncovered" style="width:11px"></div>
+            <div class="covered" style="width:81px"></div>
+            <div class="uncovered" style="width:19px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.89%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>72.41%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:83px"></div>
-            <div class="uncovered" style="width:17px"></div>
+            <div class="covered" style="width:72px"></div>
+            <div class="uncovered" style="width:28px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -369,7 +369,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line53">53</a>             if Story.trackers.length == 0 or Task.tracker.nil?</pre></td>
+            <td><pre><a name="line53">53</a>             if Story.trackers.length == 0 or Task.tracker.blank?</pre></td>
           </tr>
         
           
@@ -399,7 +399,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line58">58</a>                                                     :values =&gt; [[l(:backlogs_story), &quot;story&quot;], [l(:backlogs_task), &quot;task&quot;], [l(:backlogs_any), &quot;any&quot;]],</pre></td>
+            <td><pre><a name="line58">58</a>                                                     :values =&gt; [[l(:backlogs_story), &quot;story&quot;], [l(:backlogs_task), &quot;task&quot;], [l(:backlogs_impediment), &quot;impediment&quot;], [l(:backlogs_any), &quot;any&quot;]],</pre></td>
           </tr>
         
           
@@ -495,253 +495,325 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line74">74</a>                 </pre></td>
+            <td><pre><a name="line74">74</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line75">75</a>                 selected_values.each { |val|</pre></td>
+            <td><pre><a name="line75">75</a>                 story_trackers = Story.trackers.collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line76">76</a>                     case val</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line77">77</a>                         when &quot;story&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line78">78</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id in (&quot; + Story.trackers.collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;) + &quot;) and #{db_table}.parent_id is NULL)&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line79">79</a>                         when &quot;task&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line80">80</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id = #{Task.tracker} and not #{db_table}.parent_id is NULL)&quot;</pre></td>
+            <td><pre><a name="line76">76</a>                 all_trackers = (Story.trackers + [Task.tracker]).collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line81">81</a>                     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line82">82</a>                 }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line83">83</a>   </pre></td>
+            <td><pre><a name="line77">77</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line84">84</a>                 case operator</pre></td>
+            <td><pre><a name="line78">78</a>                 selected_values.each { |val|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line85">85</a>                     when &quot;=&quot;</pre></td>
+            <td><pre><a name="line79">79</a>                     case val</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line86">86</a>                         sql = sql.join(&quot; or &quot;)</pre></td>
+            <td><pre><a name="line80">80</a>                         when &quot;story&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line81">81</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id in (#{story_trackers}) and #{db_table}.parent_id is NULL)&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line82">82</a>                         when &quot;task&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line83">83</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id = #{Task.tracker} and not #{db_table}.parent_id is NULL)&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line87">87</a>                     when &quot;!&quot;</pre></td>
+            <td><pre><a name="line84">84</a>                         when &quot;impediment&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line88">88</a>                         sql = &quot;not (&quot; + sql.join(&quot; or &quot;) + &quot;)&quot;</pre></td>
+            <td><pre><a name="line85">85</a>                             sql &lt;&lt; &quot;(#{db_table}.id in (</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line89">89</a>                 end</pre></td>
+            <td><pre><a name="line86">86</a>                                   select issue_from_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line87">87</a>                                   from issue_relations ir</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line88">88</a>                                   join issues blocked on</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line89">89</a>                                     blocked.id = ir.issue_to_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line90">90</a>                                     and blocked.tracker_id in (#{all_trackers})</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line91">91</a>                                   where ir.relation_type = 'blocks'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line92">92</a>                                 )&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line93">93</a>                     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line94">94</a>                 }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line90">90</a>   </pre></td>
+            <td><pre><a name="line95">95</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line91">91</a>                 return sql</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line92">92</a>         </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line93">93</a>             else</pre></td>
+            <td><pre><a name="line96">96</a>                 case operator</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line94">94</a>                 return sql_for_field_without_backlogs_issue_type(field, operator, v, db_table, db_field, is_custom_filter)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line95">95</a>             end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line96">96</a>       </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line97">97</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line98">98</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line99">99</a>     </pre></td>
+            <td><pre><a name="line97">97</a>                     when &quot;=&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line100">100</a>     module ClassMethods</pre></td>
+            <td><pre><a name="line98">98</a>                         sql = sql.join(&quot; or &quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line99">99</a>                     when &quot;!&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line100">100</a>                         sql = &quot;not (&quot; + sql.join(&quot; or &quot;) + &quot;)&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line101">101</a>                 end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line101">101</a>         # Setter for +available_columns+ that isn't provided by the core.</pre></td>
+            <td><pre><a name="line102">102</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line102">102</a>         def available_columns=(v)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line103">103</a>             self.available_columns = (v)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line104">104</a>         end</pre></td>
+            <td><pre><a name="line103">103</a>                 return sql</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line105">105</a>   </pre></td>
+            <td><pre><a name="line104">104</a>         </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line106">106</a>         # Method to add a column to the +available_columns+ that isn't provided by the core.</pre></td>
+            <td><pre><a name="line105">105</a>             else</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line107">107</a>         def add_available_column(column)</pre></td>
+            <td><pre><a name="line106">106</a>                 return sql_for_field_without_backlogs_issue_type(field, operator, v, db_table, db_field, is_custom_filter)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line108">108</a>             self.available_columns &lt;&lt; (column)</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line107">107</a>             end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
+            <td><pre><a name="line108">108</a>       </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
             <td><pre><a name="line109">109</a>         end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line110">110</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line111">111</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line112">112</a> end</pre></td>
-          </tr>
-        
-          
-          
           <tr class="inferred">
-            <td><pre><a name="line113">113</a> </pre></td>
+            <td><pre><a name="line111">111</a>     </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line114">114</a> Query.send(:include, Backlogs::QueryPatch) unless Query.included_modules.include? Backlogs::QueryPatch</pre></td>
+            <td><pre><a name="line112">112</a>     module ClassMethods</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line113">113</a>         # Setter for +available_columns+ that isn't provided by the core.</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line114">114</a>         def available_columns=(v)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line115">115</a>             self.available_columns = (v)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line116">116</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line117">117</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line118">118</a>         # Method to add a column to the +available_columns+ that isn't provided by the core.</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line119">119</a>         def add_available_column(column)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line120">120</a>             self.available_columns &lt;&lt; (column)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line121">121</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line122">122</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line123">123</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line124">124</a> end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line125">125</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line126">126</a> Query.send(:include, Backlogs::QueryPatch) unless Query.included_modules.include? Backlogs::QueryPatch</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Wed Sep 22 01:32:51 +0800 2010 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Mar 25 21:11:16 +0100 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
