@@ -10,7 +10,7 @@ For you poor souls who are stuck on RHEL 5.x,  there's a separate set of [instal
 
 ## Install Redmine
 
-The Backlogs plugin requires Redmine 1.0.0 (Any 1.x.x version might also work although we have not tested it yet. Anything lower than 1.0.0 is not supported) to be installed before it can run. For more information on Redmine and how to install it, please visit [the official Redmine website](http://www.redmine.org/).
+The Backlogs plugin requires Redmine 1.1.2 (Any 1.x.x version might also work although we have not tested it yet. Anything lower than 1.1.2 is not supported) to be installed before it can run. For more information on Redmine and how to install it, please visit [the official Redmine website](http://www.redmine.org/).
 
 
 ## Check Those Gems!
@@ -20,11 +20,13 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 > *NOTE*: Dreamhost users, please [see this page](/en/installation-dreamhost) for additional instructions.
 
 * Rails 2.3.5
-* activeresource
-* holidays
-* i18n
+* rubygems 1.3.7 
+* rack 1.0.1
+* rmagick
+* i18n 0.4.2
 * icalendar
 * prawn
+* holidays
 
 
 ## Install Backlogs
