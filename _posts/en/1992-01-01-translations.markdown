@@ -15,6 +15,16 @@ serves as a base for all other translations
 
 * backlogs_impediment
 
+### Old-style variable substitution
+
+* event_sprint_description
+* event_sprint_summary
+* label_backlogs_unconfigured
+* label_sprint_name
+* label_sprint_velocity
+* todo_issue_description
+* todo_issue_summary
+
 ## en-GB: needs update
 
 ### Missing
@@ -43,6 +53,16 @@ serves as a base for all other translations
 * today_not_in_release_msg
 * today_not_in_release_warning
 
+### Old-style variable substitution
+
+* event_sprint_description
+* event_sprint_summary
+* label_backlogs_unconfigured
+* label_sprint_name
+* label_sprint_velocity
+* todo_issue_description
+* todo_issue_summary
+
 ## nl: needs update
 
 ### Missing
@@ -64,6 +84,16 @@ serves as a base for all other translations
 * remaining_story_points
 * today_not_in_release_msg
 * today_not_in_release_warning
+
+### Old-style variable substitution
+
+* event_sprint_description
+* event_sprint_summary
+* label_backlogs_unconfigured
+* label_sprint_name
+* label_sprint_velocity
+* todo_issue_description
+* todo_issue_summary
 
 ## pt-BR: needs update
 
@@ -87,6 +117,16 @@ serves as a base for all other translations
 * today_not_in_release_msg
 * today_not_in_release_warning
 
+### Old-style variable substitution
+
+* event_sprint_description
+* event_sprint_summary
+* label_backlogs_unconfigured
+* label_sprint_name
+* label_sprint_velocity
+* todo_issue_description
+* todo_issue_summary
+
 ## zh: needs update
 
 ### Missing
@@ -108,4 +148,14 @@ serves as a base for all other translations
 * remaining_story_points
 * today_not_in_release_msg
 * today_not_in_release_warning
+
+### Old-style variable substitution
+
+* event_sprint_description
+* event_sprint_summary
+* label_backlogs_unconfigured
+* label_sprint_name
+* label_sprint_velocity
+* todo_issue_description
+* todo_issue_summary
 
