@@ -5,11 +5,11 @@ categories: en
 ---
 h1. Translations
 
-h2. en
+bq(success). en
 
 serves as a base for all other translations
 
-h2. de: needs update
+bq(error). German
 
 *Missing*
 
@@ -22,13 +22,13 @@ h2. de: needs update
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-h2. en-GB: needs update
+bq(error). UK English
 
 *Missing*
 
 |backlogs_impediment|label_impediments|
 
-h2. fr: needs update
+bq(error). French
 
 *Missing*
 
@@ -49,7 +49,7 @@ h2. fr: needs update
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-h2. nl: needs update
+bq(error). Dutch
 
 *Missing*
 
@@ -70,7 +70,7 @@ h2. nl: needs update
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-h2. pt-BR: needs update
+bq(error). Brazilian Portuguese
 
 *Missing*
 
@@ -91,7 +91,20 @@ h2. pt-BR: needs update
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-h2. zh: needs update
+bq(error). Russian
+
+*Missing*
+
+|label_impediments||
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Chinese
 
 *Missing*
 
