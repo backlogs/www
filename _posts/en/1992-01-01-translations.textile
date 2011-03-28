@@ -9,7 +9,7 @@ bq(success). US English
 
 serves as a base for all other translations
 
-bq(error). German
+bq(error). German (97%)
 
 *Missing*
 
@@ -22,13 +22,13 @@ bq(error). German
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). UK English
+bq(error). UK English (97%)
 
 *Missing*
 
 |backlogs_impediment|label_impediments|
 
-bq(error). French
+bq(error). French (81%)
 
 *Missing*
 
@@ -49,7 +49,7 @@ bq(error). French
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Dutch
+bq(error). Dutch (81%)
 
 *Missing*
 
@@ -70,7 +70,7 @@ bq(error). Dutch
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Brazilian Portuguese
+bq(error). Brazilian Portuguese (81%)
 
 *Missing*
 
@@ -91,7 +91,7 @@ bq(error). Brazilian Portuguese
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Russian
+bq(error). Russian (98%)
 
 *Missing*
 
@@ -104,7 +104,7 @@ bq(error). Russian
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Chinese
+bq(error). Chinese (81%)
 
 *Missing*
 
