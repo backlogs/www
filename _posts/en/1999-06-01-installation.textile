@@ -1,0 +1,318 @@
+---
+title: Installation
+layout: default
+categories: en
+---
+<script>
+    $(document).ready(function() {
+        $("a.select-platform").attr("href", "#");
+
+        $("a.select-platform").click(function() {
+            classes = $(this).attr("class").split(' ');
+            platform = null;
+            for (key in classes) {
+                if (classes[key] != 'select-platform' && classes[key] != '') {
+                    platform = classes[key];
+                }
+            }
+            $(".platform").hide();
+            $(".platform." + platform).show();
+        });
+
+        $(".platform").hide();
+        $(".platform.generic").show();
+    });
+</script>
+h1. Installation
+
+Alrighty! Let's install Backlogs into your system. Now, remember, if you come across any hitches or just don't know how to proceed,
+don't hesitate to "ask for help":http://forum.redminebacklogs.net. 
+
+Select your target platform: "(select-platform generic)generic":http://www.example.com, "(select-platform rhel5x)RHEL 5.x":http://www.example.com, "(select-platform dreamhost)Dreamhost":http://www.example.com
+
+h2. Install Redmine
+
+ <div class="platform rhel5x">
+RHEL 5.x (for x >= 3) is not a particularly friendly environment for
+rails, but it can be done. Here's what worked for me.
+
+h3. Ruby
+
+RHEL comes with a pretty ancient version of Ruby, so you'll need to
+upgrade. Feel free to compile Ruby by hand, but a kind soul has
+provided RPMS. Create a file named `/etc/yum.repos.d/ruby.repo` with
+the following content:
+
+bc. [ruby]
+name=ruby
+baseurl=http://repo.premiumhelp.eu/ruby/
+gpgcheck=0
+enabled=0
+
+and execute the following commands:
+
+bc. yum -y --enablerepo=ruby install ruby rubygems ruby-mysql ruby-devel
+yum -y install git patch curl
+yum -y install httpd
+
+
+h3. Redmine and Backlogs
+
+I couldn't get Rails to work without hard-coding the environment, so
+after the installation, do.
+
+bc. sed -i 's/^# ENV/ENV/g' /var/www/redmine/config/environment.rb
+
+h3. Apache
+
+For production you will _not_ want to use Webrick. Here's how to get
+Redmine running on Apache using mod_rails.
+
+Create a file named `/etc/httpd/conf.d/mod_rails.conf` and add the
+following to it
+
+bc. LoadModule passenger_module
+/usr/lib/ruby/gems/1.8/gems/passenger-2.2.11/ext/apache2/mod_passenger.so
+PassengerRoot /usr/lib/ruby/gems/1.8/gems/passenger-2.2.11
+PassengerRuby /usr/bin/ruby
+
+Create a virtualhost for your redmine instance by creating
+`/etc/httpd/conf.d/redmine.conf`
+
+bc. NameVirtualHost *
+<VirtualHost>
+ServerAdmin You@example.com
+DocumentRoot /var/www/redmine/public/
+<Directory "/var/www/redmine/public/">
+AllowOverride all
+Options -MultiViews
+</Directory>
+</VirtualHost>
+
+You may need to fiddle with file permissions to allow `apache` to read
+all the required files. What worked in the end was
+
+bc. chown -R apache:apache /var/www
+
+but I'm fairly sure this could be done more fine-grained.
+
+I have not been able to locate a packaged version of mod_rails, so
+we'll have to build it
+
+bc. yum -y install make gcc-c++ httpd-devel
+gem install passenger
+passenger-install-apache2-module
+chmod -R a+rwX /usr/lib/ruby/gems/1.8/
+
+The `passenger-install-apache2-module` command will ask you a number of questions about your
+environment and will compile and install mod_rails for you. The chmod
+was necesary because the mod_rails installation reverted some file
+permissions which prevented apache from reading the ruby files.
+
+Don't forget to restart apache.
+ </div>
+
+The Backlogs plugin requires Redmine 1.1.2 to be installed; any 1.1.x version might also work although we have not tested it yet. Anything lower
+than 1.1.2 is not supported. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/.
+
+h2. Check Those Gems!
+
+ <div class="platform rhel5x">
+You need an up-to-date version of rubygems for rails 2.3.5, so:
+
+bc. gem install rubygems-update -d --no-rdoc --no-ri
+update_rubygems
+gem update --system
+
+ </div>
+
+ <div class="platform dreamhost">
+h3. In your home directory
+
+Create directory `.gem/` (if not present)
+
+bc. mkdir ~/.gem
+
+Add the following to `~/.bash_profile`
+
+bc. export GEM_HOME="$RUN/.gem"
+export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"
+export PATH="$RUN/.gem/bin:$PATH"
+export RUBYLIB="$RUN/lib:$RUBYLIB"</pre>
+
+Create file `~/.gemrc` with this content (there must be an empty line at the end):
+
+bc. gemhome: /home/YOURUSERNAME/.gem
+gempath:
+* /home/YOURUSERNAME/.gem
+* /usr/lib/ruby/gems/1.8
+    
+bq(info). *REMEMBER*: Make sure the file above has an empty line at the end
+
+h3. In the Redmine directory
+
+Add to `config/environment.rb`
+
+bc. ENV['GEM_PATH'] = '/home/YOURUSERNAME/.gem:/usr/lib/ruby/gems/1.8'
+
+ </div>
+
+Backlogs requires a few gems to run properly. Make sure the following gems (and their dependencies) are installed on your system:
+
+* rails 2.3.5
+* rubygems 1.3.7 
+* rack 1.0.1
+* rmagick
+* i18n 0.4.2
+* icalendar
+* prawn
+* holidays
+
+h2. Install Backlogs
+
+Now let's download the Backlogs source code from "the official repo":git://github.com/relaxdiego/redmine_backlogs.git into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
+
+h3. Method #1
+
+bq(info). *NOTE*: This first method requires some knowledge of git. For more information on how to use it, please visit "the git homepage":http://git-scm.com/.
+
+First, make sure that you're inside the `vendor/plugins` directory of your Redmine instance. Now, clone the source from Github by executing the following command:
+
+bc. git clone git://github.com/relaxdiego/redmine_backlogs.git
+
+This will create a directory named `redmine_backlogs` which is exactly what we need. 
+
+bq(warning). *IMPORTANT:* Don't rename the `redmine_backlogs` directory!
+
+Now you need to select the version you want to use. First, go inside the `redmine_backlogs` directory by executing the following:
+
+bc. cd redmine_backlogs
+
+Then, take a look at the available versions that have been tagged in the repo:
+
+bc. git tag
+
+This will display the versions in *alphabetical order*. Choose the latest version (recommended), or whichever you prefer by running the following command:
+
+bc. git checkout vX.Y.Z
+
+bq(info). *NOTE:* Replace 'X.Y.Z' with the version of your choice.
+
+That's it for Method #1. If you want to try out some of the experimental features, feel free to poke around by checking out the master branch or any other available branches. See the section titled _Optional: Getting the latest code_ below for information on how to do that.
+
+h3. Method #2
+
+This second method involves going to "the project's page in Github":http://github.com/relaxdiego/redmine_backlogs and downloading the source archive. To download the archive, click the *Download* button found near the top right corner:
+
+!../../assets/images/download_button.png!
+
+This will display a page where you can download the available versions tagged in the repo. Download the version of your choice by clicking either the tgz or zip link. For Windows users, it's usually zip. After this, go ahead and extract the contents of the downloaded archive into the `vendor/plugins` directory of your Redmine instance. Also, make sure that the extracted directory is named exactly as `redmine_backlogs`.
+
+h2. Pre-install Tasks
+
+bq(info). *IMPORTANT:* Before you continue, keep in mind that most rake tasks run on the development environment when you don't specify a value for RAILS_ENV. If you want to ensure that the rake tasks run on the production environment, run the following in the terminal:
+
+bc. RAILS_ENV=production
+export RAILS_ENV
+
+Up next, we need to ensure that your Redmine instance is set-up correctly. So make sure to execute the following rake commands from the command line while in your Redmine installation's top directory:
+
+bc. rake generate_session_store
+rake config/initializers/session_store.rb
+rake db:migrate
+rake db:migrate:upgrade_plugin_migrations
+
+For more information on the above rake tasks, execute `rake -T` from within your Redmine installation. You may also want to run the following rake tasks.
+
+bq(warning). *WARNING:* Be careful when running the following rake tasks in a production environment as it might produce unwanted results.
+
+bc. rake tmp:cache:clear
+rake tmp:sessions:clear
+
+h2. Configure Backlogs
+
+Now that Backlogs has been downloaded, let's go ahead and tell it how to behave. To do that, go to your terminal again and do the following:
+
+bc. cd path/to/redmine
+rake redmine:backlogs:install
+
+This will download some needed files, help you set up your story and
+task trackers, run the plugin's database migrations, and, if you're
+nice enough, maybe even make breakfast for you!
+
+bq(info). *About story and task trackers:* These settings tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Some of us like to use Bug, Feature, and Support as story trackers and Task as the task tracker. Others prefer to make it simple by creating a Story tracker and a Task tracker. It's really up to you.
+
+Once you're done with the installer, restart Redmine to proceed to the next step.
+
+h2. Additional Configuration
+
+This step is not required at this point, but it helps to know there is this page for redoing the configuration. Access your Redmine instance using your preferred browser, log in as an administrator and head on to _Administration_ > _Plugins_. Then click the _Configure_ link to the right of the Redmine Backlogs Plugin record. You should then see a screen similar to the one below:
+
+!../../assets/images/configure_screen.png!
+
+bq(info). NOTE: Redmine ships with just the Feature, Bug, and Support tracker. To add custom trackers such as Task and Impediment in the above screen, go to _Administration > Trackers_ in Redmine.
+
+A quick description of the fields:
+
+* _Story Trackers_ and _Task Tracker_ - These fields tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Make sure that you don't use the same tracker in both fields! If you do this, the _Apply_ button will automatically be disabled.
+* _Points burn up/down_ - Tells Backlogs how to display the sprint progress chart. Some of us like it to go up, others like it to go down. Choose which one you prefer.
+* _Label types for card printing_ - If you like physical task boards (and you do, right?), you can select one of 250 preconfigured label types that are commercially available. Your product/sprint backlog will print neatly onto these.
+* _Template for sprint wiki page_ - Backlogs helps you keep your sprint retrospectives or review notes on a wiki. If you want to have some template text on this page you can fill in the page that will be used as a template, which will be copied onto the sprint wiki page if that page does not already exist. Note that this template page must be created per-project.
+
+Once you're done, go ahead and click _Apply_. If that button is disabled, it means you're using a task tracker that's also a story tracker. Fix the error so you can proceed.
+
+h2. Set Permissions
+
+Now let's tell Redmine which project roles have permission to use the plugin. To do that, go to _Administration_ > _Roles and permissions_ > _Permissions report_. This should lead you to a page that looks like something below:
+
+!../../assets/images/permissions_report.png!
+
+Check or uncheck any of the permissions under the Backlogs section for any of the roles in your system. 
+
+h2. Enable Backlogs in Your Projects
+
+Now that Redmine and Backlogs are properly configured, all that's left is to enable the plugin in each of the projects you want to use it in. To do that, login to your Redmine instance, choose a project then click on its _Settings_ tab. Once in the settings page, click the _Modules_ tab and then check _Backlogs_.
+
+!(../../assets/images/project_settings.png!
+
+Afterwards, click _Save_ and you should see the _Backlogs_ tab appear in your project's menu. Do the same thing for each project in which you want to use Backlogs.
+
+h2. Charts
+
+OK, so we lied. There's one other thing you need to do. To ensure that each day of your project has a corresponding data point in the charts generated by the Backlogs plugin, schedule a cron job to run the following command *inside of your Redmine instance's root directory*:
+
+bc. rake redmine:backlogs:generate_chart_data
+
+We recommend that you make this cron job run at least once a day.
+
+h2. Optional: Getting the latest code
+
+If you want to grab the latest & greatest from the repo, here's what you do:
+
+bc. cd path/to/backlogs
+git checkout master
+git pull origin
+rake redmine:backlogs:install
+
+bq(info). *NOTE:* Obviously, you can only do this if you used _Method #1_ in the installation process above.
+
+bq(warning). *WARNING:* The master is constantly in flux and might be broken at times. Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
+
+bq(warning). *ANOTHER WARNING:* If you decide to checkout any of the topic branches (topic branches are prefixed by the dev's name. example: relaxdiego-super-crazy-idea), keep in mind that these are very early stage work and may break the build at times. Topic branches are unsupported and we don't recommend you pull from them unless you know what you're doing.
+
+h2. Optional: Upgrading with git
+
+We release new versions of the product often. To grab the latest version in the repo, here's what you do:
+
+bc. cd path/to/backlogs
+git fetch --tags origin
+git tag
+
+The last line above will show you a list of available versions. To upgrade to one of the versions, do the following:
+   
+bc. git checkout vX.Y.Z
+rake redmine:backlogs:install
+
+bq(info). *NOTE:* Replace vX.Y.Z with the correct tag.
+
+bq(warning). *WARNING:* Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
