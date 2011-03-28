@@ -91,7 +91,7 @@ bq(error). Brazilian Portuguese (74%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). Russian
+bq(warning). Russian
 
 *Old-style variable substitution*
 
