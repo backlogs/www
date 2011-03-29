@@ -273,7 +273,7 @@ h2. Enable Backlogs in Your Projects
 
 Now that Redmine and Backlogs are properly configured, all that's left is to enable the plugin in each of the projects you want to use it in. To do that, login to your Redmine instance, choose a project then click on its _Settings_ tab. Once in the settings page, click the _Modules_ tab and then check _Backlogs_.
 
-!(../../assets/images/project_settings.png!
+!../../assets/images/project_settings.png!
 
 Afterwards, click _Save_ and you should see the _Backlogs_ tab appear in your project's menu. Do the same thing for each project in which you want to use Backlogs.
 

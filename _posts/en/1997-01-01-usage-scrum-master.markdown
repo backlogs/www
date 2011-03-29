@@ -45,6 +45,8 @@ When you're done planning the sprint, you might want to pick the "printable card
 
 > **NOTE:** If you happen to use Adobe Acrobat Reader, make sure you turn off the scaling options in the print dialog.
 
+![Acrobat printer settings](../../assets/images/printer_settings.png)
+
 ## The daily scrum
 
 The taskboard provides a number of functionalities you can use during daily scrums:
