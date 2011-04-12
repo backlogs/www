@@ -62,19 +62,7 @@ bq(error). French (69%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Dutch (74%)
-
-*Missing*
-
-|backlogs_impediment|error_release_end_after_start|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_impediments|label_release|
-|label_release_end_date|label_release_new|
-|label_release_planning|label_release_plural|
-|label_release_start_date|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
+bq(warning). Dutch
 
 *Old-style variable substitution*
 
