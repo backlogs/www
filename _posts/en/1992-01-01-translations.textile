@@ -62,14 +62,7 @@ bq(error). French (69%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(warning). Dutch
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
+bq(success). Dutch
 
 bq(error). Brazilian Portuguese (73%)
 
