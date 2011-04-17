@@ -138,7 +138,7 @@ Add the following to `~/.bash_profile`
 bc. export GEM_HOME="$RUN/.gem"
 export GEM_PATH="$GEM_HOME:/usr/lib/ruby/gems/1.8"
 export PATH="$RUN/.gem/bin:$PATH"
-export RUBYLIB="$RUN/lib:$RUBYLIB"</pre>
+export RUBYLIB="$RUN/lib:$RUBYLIB"
 
 Create file `~/.gemrc` with this content (there must be an empty line at the end):
 
