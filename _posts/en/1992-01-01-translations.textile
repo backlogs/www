@@ -64,15 +64,7 @@ bq(error). French (68%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Dutch (98%)
-
-*Missing*
-
-|error_inclusion||
-
-*Obsolete*
-
-|inclusion||
+bq(success). Dutch
 
 bq(error). Brazilian Portuguese (72%)
 
