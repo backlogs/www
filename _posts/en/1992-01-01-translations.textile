@@ -9,18 +9,23 @@ bq(success). US English
 
 serves as a base for all other translations
 
-bq(error). German (76%)
+bq(error). German (75%)
 
 *Missing*
 
 |backlogs_impediment|error_blank|
-|error_greater_than_start_date|field_blocks|
-|field_subject|field_tracker_id|
-|label_impediments|label_master_backlog|
-|label_product_cards|label_sprint_cards|
-|label_webcal|rb_label_copy_tasks|
-|rb_label_copy_tasks_all|rb_label_copy_tasks_none|
-|rb_label_copy_tasks_open|rb_label_link_to_original|
+|error_greater_than_start_date|error_inclusion|
+|field_blocks|field_subject|
+|field_tracker_id|label_impediments|
+|label_master_backlog|label_product_cards|
+|label_sprint_cards|label_webcal|
+|rb_label_copy_tasks|rb_label_copy_tasks_all|
+|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
+|rb_label_link_to_original||
+
+*Obsolete*
+
+|inclusion||
 
 *Old-style variable substitution*
 
@@ -31,83 +36,112 @@ bq(error). German (76%)
 
 bq(success). UK English
 
-bq(error). French (69%)
+bq(error). French (68%)
 
 *Missing*
 
-|backlogs_impediment|error_release_end_after_start|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
+|backlogs_impediment|error_inclusion|
+|error_release_end_after_start|field_initial_story_points|
+|field_number_of_snapshots|field_release_end_date|
+|field_release_start_date|label_impediments|
+|label_release|label_release_end_date|
+|label_release_new|label_release_planning|
+|label_release_plural|label_release_start_date|
+|rb_label_copy_tasks|rb_label_copy_tasks_all|
+|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
+|rb_label_link_to_original|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|today_not_in_release_msg|today_not_in_release_warning|
+
+*Obsolete*
+
+|inclusion||
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Dutch (98%)
+
+*Missing*
+
+|error_inclusion||
+
+*Obsolete*
+
+|inclusion||
+
+bq(error). Brazilian Portuguese (72%)
+
+*Missing*
+
+|backlogs_impediment|error_inclusion|
+|error_release_end_after_start|field_initial_story_points|
+|field_number_of_snapshots|field_release_end_date|
+|field_release_start_date|field_tracker_id|
 |label_impediments|label_release|
 |label_release_end_date|label_release_new|
 |label_release_planning|label_release_plural|
-|label_release_start_date|rb_label_copy_tasks|
+|label_release_start_date|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|today_not_in_release_msg|today_not_in_release_warning|
+
+*Obsolete*
+
+|inclusion||
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Russian (91%)
+
+*Missing*
+
+|error_inclusion||
+
+*Obsolete*
+
+|inclusion||
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Chinese (59%)
+
+*Missing*
+
+|backlogs_impediment|error_blank|
+|error_greater_than_start_date|error_inclusion|
+|error_release_end_after_start|field_blocks|
+|field_initial_story_points|field_name|
+|field_number_of_snapshots|field_release_end_date|
+|field_release_start_date|field_subject|
+|field_tracker_id|label_impediments|
+|label_product_cards|label_release|
+|label_release_end_date|label_release_new|
+|label_release_planning|label_release_plural|
+|label_release_start_date|label_sprint_cards|
+|label_webcal|rb_label_copy_tasks|
 |rb_label_copy_tasks_all|rb_label_copy_tasks_none|
 |rb_label_copy_tasks_open|rb_label_link_to_original|
 |release_create_snapshot_today|release_update_snapshot_today|
 |remaining_story_points|today_not_in_release_msg|
 |today_not_in_release_warning||
 
-*Old-style variable substitution*
+*Obsolete*
 
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(success). Dutch
-
-bq(error). Brazilian Portuguese (73%)
-
-*Missing*
-
-|backlogs_impediment|error_release_end_after_start|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|field_tracker_id|label_impediments|
-|label_release|label_release_end_date|
-|label_release_new|label_release_planning|
-|label_release_plural|label_release_start_date|
-|release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|today_not_in_release_msg|
-|today_not_in_release_warning||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(warning). Russian
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). Chinese (60%)
-
-*Missing*
-
-|backlogs_impediment|error_blank|
-|error_greater_than_start_date|error_release_end_after_start|
-|field_blocks|field_initial_story_points|
-|field_name|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|field_subject|field_tracker_id|
-|label_impediments|label_product_cards|
-|label_release|label_release_end_date|
-|label_release_new|label_release_planning|
-|label_release_plural|label_release_start_date|
-|label_sprint_cards|label_webcal|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
+|inclusion||
 
 *Old-style variable substitution*
 
