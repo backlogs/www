@@ -41,5 +41,6 @@ You will need the following gems:
 * rcov
 * rspec-rails 1.3.3
 * cucumber-rails 0.3.2
+* open-uri-cached
 
 Unfortunately, cucumber-rails pulls in gherkin 2.3.5 which conflicts with the gherkin 2.1.5 we really want (which is already installed as a dependency), so you'll want to explicitly uninstall gherkin 2.3.5
