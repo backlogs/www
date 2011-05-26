@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-task_rb.html">vendor/plugins/redmine_backlogs/app/models/task.rb</a></td>
-            <td class='right_align'><tt>127</tt></td>
-            <td class='right_align'><tt>103</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.17%</tt></div>
+            <td class='right_align'><tt>132</tt></td>
+            <td class='right_align'><tt>107</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>74.24%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:77px"></div>
-            <div class="uncovered" style="width:23px"></div>
+            <div class="covered" style="width:74px"></div>
+            <div class="uncovered" style="width:26px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>71.84%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>69.16%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:72px"></div>
-            <div class="uncovered" style="width:28px"></div>
+            <div class="covered" style="width:69px"></div>
+            <div class="uncovered" style="width:31px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -243,7 +243,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line32">32</a>       task.move_after params[:prev]</pre></td>
+            <td><pre><a name="line32">32</a>       task.move_before params[:next]</pre></td>
           </tr>
         
           
@@ -291,7 +291,7 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line40">40</a>   # task-tracker as their tracker.</pre></td>
+            <td><pre><a name="line40">40</a>   # task-tracker as their tracker, and are top-level issues.</pre></td>
           </tr>
         
           
@@ -345,43 +345,43 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line49">49</a>     Task.find(:all,</pre></td>
+            <td><pre><a name="line49">49</a>     story = Story.find_by_id(story_id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line50">50</a>               :conditions =&gt; ['tracker_id = ? and not parent_id is NULL and root_id = ?', Task.tracker, story_id],</pre></td>
+            <td><pre><a name="line50">50</a>     if Story.trackers.include?(story.tracker_id)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line51">51</a>               :order =&gt; :lft</pre></td>
+            <td><pre><a name="line51">51</a>       story.descendants.each_with_index {|task, i|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line52">52</a>               ).each_with_index {|task, i|</pre></td>
+            <td><pre><a name="line52">52</a>         task.rank = i + 1</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line53">53</a>       task.rank = i + 1</pre></td>
+            <td><pre><a name="line53">53</a>         tasks &lt;&lt; task </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line54">54</a>       tasks &lt;&lt; task</pre></td>
+            <td><pre><a name="line54">54</a>       }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line55">55</a>     }</pre></td>
+            <td><pre><a name="line55">55</a>     end</pre></td>
           </tr>
         
           
@@ -495,7 +495,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line74">74</a>       move_after params[:prev]</pre></td>
+            <td><pre><a name="line74">74</a>       move_before params[:next]</pre></td>
           </tr>
         
           
@@ -705,7 +705,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line109">109</a>   def move_after(id)</pre></td>
+            <td><pre><a name="line109">109</a>   def move_before(id)</pre></td>
           </tr>
         
           
@@ -729,7 +729,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line113">113</a>       move_to_left_of sib[0].id if sib.any?</pre></td>
+            <td><pre><a name="line113">113</a>       move_to_right_of sib[-1].id if sib.any?</pre></td>
           </tr>
         
           
@@ -741,7 +741,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line115">115</a>       move_to_right_of id</pre></td>
+            <td><pre><a name="line115">115</a>       move_to_left_of id</pre></td>
           </tr>
         
           
@@ -795,31 +795,61 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line124">124</a>     @rank ||= Issue.count(:conditions =&gt; ['tracker_id = ? and not parent_id is NULL and root_id = ? and lft &lt;= ?', Task.tracker, story_id, self.lft])</pre></td>
+            <td><pre><a name="line124">124</a>     s = self.story</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line125">125</a>     return @rank</pre></td>
+            <td><pre><a name="line125">125</a>     return nil if !s</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line126">126</a>   end</pre></td>
+            <td><pre><a name="line126">126</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line127">127</a> end</pre></td>
+            <td><pre><a name="line127">127</a>     @rank ||= Issue.count(</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line128">128</a>       :conditions =&gt; ['tracker_id = ? and root_id = ? and lft &gt; ? and lft &lt;= ?',</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line129">129</a>                       Task.tracker, s.root_id, s.lft, self.lft])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line130">130</a>     return @rank</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line131">131</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line132">132</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Mon Mar 28 13:06:38 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Thu May 26 08:12:41 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

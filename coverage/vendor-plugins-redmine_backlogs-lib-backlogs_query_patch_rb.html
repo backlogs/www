@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_query_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_query_patch.rb</a></td>
-            <td class='right_align'><tt>126</tt></td>
-            <td class='right_align'><tt>87</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>84.13%</tt></div>
+            <td class='right_align'><tt>135</tt></td>
+            <td class='right_align'><tt>97</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.26%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:84px"></div>
-            <div class="uncovered" style="width:16px"></div>
+            <div class="covered" style="width:79px"></div>
+            <div class="uncovered" style="width:21px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.01%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>71.13%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:77px"></div>
-            <div class="uncovered" style="width:23px"></div>
+            <div class="covered" style="width:71px"></div>
+            <div class="uncovered" style="width:29px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -146,122 +146,122 @@
         
           
           
+          <tr class="inferred">
+            <td><pre><a name="line16">16</a>             # couldn't get HAVING to work, so a subselect will have to</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line17">17</a>             # do</pre></td>
+          </tr>
+        
+          
+          
           <tr class="marked">
-            <td><pre><a name="line16">16</a>             base.add_available_column(QueryColumn.new(:position,</pre></td>
+            <td><pre><a name="line18">18</a>             story_sql = &quot;from issues story</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>                          where</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a>                           story.root_id = issues.root_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line21">21</a>                           and story.lft in (</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line22">22</a>                             select max(story_lft.lft)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line23">23</a>                             from issues story_lft</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line24">24</a>                             where story_lft.root_id = issues.root_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line25">25</a>                             and story_lft.tracker_id in (#{Story.trackers(:string)})</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line26">26</a>                             and issues.lft &gt;= story_lft.lft and issues.rgt &lt;= story_lft.rgt</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line27">27</a>                           )&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>                                       :sortable =&gt; [</pre></td>
+            <td><pre><a name="line28">28</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line29">29</a>             base.add_available_column(QueryColumn.new(:position,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>                                         # sprint startdate</pre></td>
+            <td><pre><a name="line30">30</a>                                       :sortable =&gt; [</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a>                                         &quot;coalesce((select sprint_start_date from versions where versions.id = issues.fixed_version_id), '1900-01-01')&quot;,</pre></td>
+            <td><pre><a name="line31">31</a>                                         # sprint startdate</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a> </pre></td>
+            <td><pre><a name="line32">32</a>                                         &quot;coalesce((select sprint_start_date from versions where versions.id = issues.fixed_version_id), '1900-01-01')&quot;,</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a>                                         # sprint name, in case start dates are the same</pre></td>
+            <td><pre><a name="line33">33</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a>                                         &quot;(select name from versions where versions.id = issues.fixed_version_id)&quot;,</pre></td>
+            <td><pre><a name="line34">34</a>                                         # sprint id, in case start dates are the same</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line24">24</a>                                         # make sure stories with NULL</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line25">25</a>                                         # position sort-last</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line26">26</a>                                         &quot;(select case when root.position is null then 1 else 0 end from issues root where issues.root_id = root.id)&quot;,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line27">27</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line28">28</a>                                         # story position</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line29">29</a>                                         &quot;(select root.position from issues root where issues.root_id = root.id)&quot;,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line30">30</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line31">31</a>                                         # story ID, in case positions</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line32">32</a>                                         # are the same (SHOULD NOT HAPPEN!).</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line33">33</a>                                         # DO NOT CHANGE; root_id is the only field that sorts the same for stories _and_</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line34">34</a>                                         # the tasks it has.</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line35">35</a>                                         &quot;issues.root_id&quot;,</pre></td>
+            <td><pre><a name="line35">35</a>                                         &quot;(select id from versions where versions.id = issues.fixed_version_id)&quot;,</pre></td>
           </tr>
         
           
@@ -273,205 +273,205 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line37">37</a>                                         # order in task tree</pre></td>
+            <td><pre><a name="line37">37</a>                                         # make sure stories with NULL position sort-last</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line38">38</a>                                         &quot;issues.lft&quot;</pre></td>
+            <td><pre><a name="line38">38</a>                                         &quot;(select case when story.position is null then 1 else 0 end #{story_sql})&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line39">39</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line40">40</a>                                         # story position</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line41">41</a>                                         &quot;(select story.position #{story_sql})&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line42">42</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line43">43</a>                                         # story ID, in case story positions are the same (SHOULD NOT HAPPEN!).</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line44">44</a>                                         &quot;(select story.id #{story_sql})&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line45">45</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line46">46</a>                                         # order in task tree</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line47">47</a>                                         &quot;issues.lft&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line39">39</a>                                       ],</pre></td>
+            <td><pre><a name="line48">48</a>                                       ],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line40">40</a>                                       :default_order =&gt; 'asc'))</pre></td>
+            <td><pre><a name="line49">49</a>                                       :default_order =&gt; 'asc'))</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line41">41</a> </pre></td>
+            <td><pre><a name="line50">50</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a>   </pre></td>
+            <td><pre><a name="line51">51</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line43">43</a>             alias_method_chain :available_filters, :backlogs_issue_type</pre></td>
+            <td><pre><a name="line52">52</a>             alias_method_chain :available_filters, :backlogs_issue_type</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line44">44</a>             alias_method_chain :sql_for_field, :backlogs_issue_type</pre></td>
+            <td><pre><a name="line53">53</a>             alias_method_chain :sql_for_field, :backlogs_issue_type</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line45">45</a>         end</pre></td>
+            <td><pre><a name="line54">54</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line46">46</a>   </pre></td>
+            <td><pre><a name="line55">55</a>   </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line47">47</a>     end</pre></td>
+            <td><pre><a name="line56">56</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line48">48</a>   </pre></td>
+            <td><pre><a name="line57">57</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line49">49</a>     module InstanceMethods</pre></td>
+            <td><pre><a name="line58">58</a>     module InstanceMethods</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line50">50</a>         def available_filters_with_backlogs_issue_type</pre></td>
+            <td><pre><a name="line59">59</a>         def available_filters_with_backlogs_issue_type</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line51">51</a>             @available_filters = available_filters_without_backlogs_issue_type</pre></td>
+            <td><pre><a name="line60">60</a>             @available_filters = available_filters_without_backlogs_issue_type</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line52">52</a>   </pre></td>
+            <td><pre><a name="line61">61</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line53">53</a>             if Story.trackers.length == 0 or Task.tracker.blank?</pre></td>
+            <td><pre><a name="line62">62</a>             if Story.trackers.length == 0 or Task.tracker.blank?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line54">54</a>                 backlogs_filters = { }</pre></td>
+            <td><pre><a name="line63">63</a>                 backlogs_filters = { }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line55">55</a>             else</pre></td>
+            <td><pre><a name="line64">64</a>             else</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>                 backlogs_filters = {</pre></td>
+            <td><pre><a name="line65">65</a>                 backlogs_filters = {</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line57">57</a>                         &quot;backlogs_issue_type&quot; =&gt; {  :type =&gt; :list,</pre></td>
+            <td><pre><a name="line66">66</a>                         &quot;backlogs_issue_type&quot; =&gt; {  :type =&gt; :list,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line58">58</a>                                                     :values =&gt; [[l(:backlogs_story), &quot;story&quot;], [l(:backlogs_task), &quot;task&quot;], [l(:backlogs_impediment), &quot;impediment&quot;], [l(:backlogs_any), &quot;any&quot;]],</pre></td>
+            <td><pre><a name="line67">67</a>                                                     :values =&gt; [[l(:backlogs_story), &quot;story&quot;], [l(:backlogs_task), &quot;task&quot;], [l(:backlogs_impediment), &quot;impediment&quot;], [l(:backlogs_any), &quot;any&quot;]],</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line59">59</a>                                                     :order =&gt; 20 } </pre></td>
+            <td><pre><a name="line68">68</a>                                                     :order =&gt; 20 } </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line60">60</a>                     }</pre></td>
+            <td><pre><a name="line69">69</a>                     }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line61">61</a>             end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line62">62</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line63">63</a>             return @available_filters.merge(backlogs_filters)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line64">64</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line65">65</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line66">66</a>         def sql_for_field_with_backlogs_issue_type(field, operator, v, db_table, db_field, is_custom_filter=false)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line67">67</a>             if field == &quot;backlogs_issue_type&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line68">68</a>                 db_table = Issue.table_name</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line69">69</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line70">70</a>                 sql = []</pre></td>
+            <td><pre><a name="line70">70</a>             end</pre></td>
           </tr>
         
           
@@ -483,337 +483,391 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line72">72</a>                 selected_values = values_for(field)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line73">73</a>                 selected_values = ['story', 'task'] if selected_values.include?('any')</pre></td>
+            <td><pre><a name="line72">72</a>             return @available_filters.merge(backlogs_filters)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line74">74</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line75">75</a>                 story_trackers = Story.trackers.collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line76">76</a>                 all_trackers = (Story.trackers + [Task.tracker]).collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;)</pre></td>
+            <td><pre><a name="line73">73</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line77">77</a> </pre></td>
+            <td><pre><a name="line74">74</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line78">78</a>                 selected_values.each { |val|</pre></td>
+            <td><pre><a name="line75">75</a>         def sql_for_field_with_backlogs_issue_type(field, operator, v, db_table, db_field, is_custom_filter=false)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line79">79</a>                     case val</pre></td>
+            <td><pre><a name="line76">76</a>             if field == &quot;backlogs_issue_type&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line80">80</a>                         when &quot;story&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line81">81</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id in (#{story_trackers}) and #{db_table}.parent_id is NULL)&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line82">82</a>                         when &quot;task&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line83">83</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id = #{Task.tracker} and not #{db_table}.parent_id is NULL)&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line84">84</a>                         when &quot;impediment&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line85">85</a>                             sql &lt;&lt; &quot;(#{db_table}.id in (</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line86">86</a>                                   select issue_from_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line87">87</a>                                   from issue_relations ir</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line88">88</a>                                   join issues blocked on</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line89">89</a>                                     blocked.id = ir.issue_to_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line90">90</a>                                     and blocked.tracker_id in (#{all_trackers})</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line91">91</a>                                   where ir.relation_type = 'blocks'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line92">92</a>                                 ))&quot;</pre></td>
+            <td><pre><a name="line77">77</a>                 db_table = Issue.table_name</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line93">93</a>                     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line94">94</a>                 }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line95">95</a>   </pre></td>
+            <td><pre><a name="line78">78</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line96">96</a>                 case operator</pre></td>
+            <td><pre><a name="line79">79</a>                 sql = []</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line80">80</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line97">97</a>                     when &quot;=&quot;</pre></td>
+            <td><pre><a name="line81">81</a>                 selected_values = values_for(field)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line98">98</a>                         sql = sql.join(&quot; or &quot;)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line99">99</a>                     when &quot;!&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line100">100</a>                         sql = &quot;not (&quot; + sql.join(&quot; or &quot;) + &quot;)&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line101">101</a>                 end</pre></td>
+            <td><pre><a name="line82">82</a>                 selected_values = ['story', 'task'] if selected_values.include?('any')</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line102">102</a>   </pre></td>
+            <td><pre><a name="line83">83</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line103">103</a>                 return sql</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line104">104</a>         </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line105">105</a>             else</pre></td>
+            <td><pre><a name="line84">84</a>                 story_trackers = Story.trackers.collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line106">106</a>                 return sql_for_field_without_backlogs_issue_type(field, operator, v, db_table, db_field, is_custom_filter)</pre></td>
+            <td><pre><a name="line85">85</a>                 all_trackers = (Story.trackers + [Task.tracker]).collect{|val| &quot;#{val}&quot;}.join(&quot;,&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line107">107</a>             end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line108">108</a>       </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line109">109</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line110">110</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line111">111</a>     </pre></td>
+            <td><pre><a name="line86">86</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line112">112</a>     module ClassMethods</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line113">113</a>         # Setter for +available_columns+ that isn't provided by the core.</pre></td>
+            <td><pre><a name="line87">87</a>                 selected_values.each { |val|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line114">114</a>         def available_columns=(v)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line115">115</a>             self.available_columns = (v)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line116">116</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line117">117</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line118">118</a>         # Method to add a column to the +available_columns+ that isn't provided by the core.</pre></td>
+            <td><pre><a name="line88">88</a>                     case val</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line119">119</a>         def add_available_column(column)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line120">120</a>             self.available_columns &lt;&lt; (column)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line121">121</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line122">122</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line123">123</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line124">124</a> end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line125">125</a> </pre></td>
+            <td><pre><a name="line89">89</a>                         when &quot;story&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line126">126</a> Query.send(:include, Backlogs::QueryPatch) unless Query.included_modules.include? Backlogs::QueryPatch</pre></td>
+            <td><pre><a name="line90">90</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id in (#{story_trackers}))&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line91">91</a>                         when &quot;task&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line92">92</a>                             sql &lt;&lt; &quot;(#{db_table}.tracker_id = #{Task.tracker})&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line93">93</a>                         when &quot;impediment&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line94">94</a>                             sql &lt;&lt; &quot;(#{db_table}.id in (</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line95">95</a>                                   select issue_from_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line96">96</a>                                   from issue_relations ir</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line97">97</a>                                   join issues blocked on</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line98">98</a>                                     blocked.id = ir.issue_to_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line99">99</a>                                     and blocked.tracker_id in (#{all_trackers})</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line100">100</a>                                   where ir.relation_type = 'blocks'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line101">101</a>                                 ))&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line102">102</a>                     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line103">103</a>                 }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line104">104</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line105">105</a>                 case operator</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line106">106</a>                     when &quot;=&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line107">107</a>                         sql = sql.join(&quot; or &quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line108">108</a>                     when &quot;!&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line109">109</a>                         sql = &quot;not (&quot; + sql.join(&quot; or &quot;) + &quot;)&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line110">110</a>                 end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line111">111</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line112">112</a>                 return sql</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line113">113</a>         </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line114">114</a>             else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line115">115</a>                 return sql_for_field_without_backlogs_issue_type(field, operator, v, db_table, db_field, is_custom_filter)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line116">116</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line117">117</a>       </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line118">118</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line119">119</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line120">120</a>     </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line121">121</a>     module ClassMethods</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line122">122</a>         # Setter for +available_columns+ that isn't provided by the core.</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line123">123</a>         def available_columns=(v)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line124">124</a>             self.available_columns = (v)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line125">125</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line126">126</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line127">127</a>         # Method to add a column to the +available_columns+ that isn't provided by the core.</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line128">128</a>         def add_available_column(column)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line129">129</a>             self.available_columns &lt;&lt; (column)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line130">130</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line131">131</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line132">132</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line133">133</a> end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line134">134</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line135">135</a> Query.send(:include, Backlogs::QueryPatch) unless Query.included_modules.include? Backlogs::QueryPatch</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Mon Mar 28 13:06:38 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Thu May 26 08:12:41 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

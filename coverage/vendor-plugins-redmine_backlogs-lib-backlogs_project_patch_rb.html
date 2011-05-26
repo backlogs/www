@@ -28,14 +28,14 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_project_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_project_patch.rb</a></td>
-            <td class='right_align'><tt>221</tt></td>
-            <td class='right_align'><tt>180</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.19%</tt></div>
+            <td class='right_align'><tt>220</tt></td>
+            <td class='right_align'><tt>179</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.55%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:79px"></div>
-            <div class="uncovered" style="width:21px"></div>
+            <div class="covered" style="width:80px"></div>
+            <div class="uncovered" style="width:20px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>77.78%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>78.21%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:78px"></div>
             <div class="uncovered" style="width:22px"></div>
@@ -831,13 +831,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line130">130</a>         @scrum_statistics[:error, :sprint, :unsized] = Issue.exists?([&quot;story_points is null and parent_id is null and fixed_version_id in (?) and tracker_id in (?)&quot;, all_sprints.collect{|s| s.id}, Story.trackers])</pre></td>
+            <td><pre><a name="line130">130</a>         @scrum_statistics[:error, :sprint, :unsized] = Issue.exists?([&quot;story_points is null and fixed_version_id in (?) and tracker_id in (?)&quot;, all_sprints.collect{|s| s.id}, Story.trackers])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line131">131</a>         @scrum_statistics[:error, :sprint, :unestimated] = Issue.exists?([&quot;estimated_hours is null and not parent_id is null and fixed_version_id in (?) and tracker_id = ?&quot;, all_sprints.collect{|s| s.id}, Task.tracker])</pre></td>
+            <td><pre><a name="line131">131</a>         @scrum_statistics[:error, :sprint, :unestimated] = Issue.exists?([&quot;estimated_hours is null and fixed_version_id in (?) and tracker_id = ?&quot;, all_sprints.collect{|s| s.id}, Task.tracker])</pre></td>
           </tr>
         
           
@@ -1215,175 +1215,169 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line194">194</a>             and not parent_id is null</pre></td>
+            <td><pre><a name="line194">194</a>             and tracker_id in (#{story_trackers})</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line195">195</a>             and tracker_id in (#{story_trackers})</pre></td>
+            <td><pre><a name="line195">195</a>           &quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line196">196</a>           &quot;</pre></td>
+            <td><pre><a name="line196">196</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line197">197</a>   </pre></td>
+            <td><pre><a name="line197">197</a>           points_per_hour = Story.find_by_sql(&quot;select avg(story_points) / avg(estimated_hours) as points_per_hour from issues where #{select_stories}&quot;)[0].points_per_hour</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line198">198</a>           points_per_hour = Story.find_by_sql(&quot;select avg(story_points) / avg(estimated_hours) as points_per_hour from issues where #{select_stories}&quot;)[0].points_per_hour</pre></td>
+            <td><pre><a name="line198">198</a>   </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line199">199</a>   </pre></td>
+            <td><pre><a name="line199">199</a>           if points_per_hour</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line200">200</a>           if points_per_hour</pre></td>
+            <td><pre><a name="line200">200</a>             points_per_hour = Float(points_per_hour)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line201">201</a>             points_per_hour = Float(points_per_hour)</pre></td>
+            <td><pre><a name="line201">201</a>             stories = Story.find(:all, :conditions =&gt; [select_stories])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line202">202</a>             stories = Story.find(:all, :conditions =&gt; [select_stories])</pre></td>
+            <td><pre><a name="line202">202</a>             error = stories.inject(0) {|err, story|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line203">203</a>             error = stories.inject(0) {|err, story|</pre></td>
+            <td><pre><a name="line203">203</a>               err + (1 - (points_per_hour / (story.story_points / story.estimated_hours)))</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line204">204</a>               err + (1 - (points_per_hour / (story.story_points / story.estimated_hours)))</pre></td>
+            <td><pre><a name="line204">204</a>             }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line205">205</a>             }</pre></td>
+            <td><pre><a name="line205">205</a>             sizing_divergance = error * 100</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line206">206</a>             sizing_divergance = error * 100</pre></td>
+            <td><pre><a name="line206">206</a>             # magic constant</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line207">207</a>             # magic constant</pre></td>
+            <td><pre><a name="line207">207</a>             sizing_is_consistent = (error &lt; 0.1)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line208">208</a>             sizing_is_consistent = (error &lt; 0.1)</pre></td>
+            <td><pre><a name="line208">208</a>           end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line209">209</a>           end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line210">210</a>         end</pre></td>
+            <td><pre><a name="line209">209</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line211">211</a>         @scrum_statistics[:info, :sizing_divergance] = sizing_divergance</pre></td>
+            <td><pre><a name="line210">210</a>         @scrum_statistics[:info, :sizing_divergance] = sizing_divergance</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line212">212</a>         @scrum_statistics[:error, :sizing_inconsistent] = !sizing_is_consistent</pre></td>
+            <td><pre><a name="line211">211</a>         @scrum_statistics[:error, :sizing_inconsistent] = !sizing_is_consistent</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line213">213</a>   </pre></td>
+            <td><pre><a name="line212">212</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line214">214</a>         return @scrum_statistics</pre></td>
+            <td><pre><a name="line213">213</a>         return @scrum_statistics</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line215">215</a>       end</pre></td>
+            <td><pre><a name="line214">214</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line216">216</a>     </pre></td>
+            <td><pre><a name="line215">215</a>     </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line217">217</a>     end</pre></td>
+            <td><pre><a name="line216">216</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line218">218</a>   end</pre></td>
+            <td><pre><a name="line217">217</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line219">219</a> end</pre></td>
+            <td><pre><a name="line218">218</a> end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line220">220</a> </pre></td>
+            <td><pre><a name="line219">219</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line221">221</a> Project.send(:include, Backlogs::ProjectPatch) unless Project.included_modules.include? Backlogs::ProjectPatch</pre></td>
+            <td><pre><a name="line220">220</a> Project.send(:include, Backlogs::ProjectPatch) unless Project.included_modules.include? Backlogs::ProjectPatch</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Mon Mar 28 13:06:38 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Thu May 26 08:12:41 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
