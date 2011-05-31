@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_stories_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_stories_controller.rb</a></td>
-            <td class='right_align'><tt>57</tt></td>
-            <td class='right_align'><tt>47</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.44%</tt></div>
+            <td class='right_align'><tt>42</tt></td>
+            <td class='right_align'><tt>33</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:75px"></div>
-            <div class="uncovered" style="width:25px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>70.21%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:70px"></div>
-            <div class="uncovered" style="width:30px"></div>
+            <div class="covered" style="width:100px"></div>
+            <div class="uncovered" style="width:0px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -303,103 +303,13 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line43">43</a>   def transitions</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line44">44</a>     transitions = Hash.new</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line45">45</a>     @project.trackers.each do |tid|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line46">46</a>       tracker = Tracker.find_by_id(tid)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line47">47</a>       transitions[tracker.id] = Hash.new</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line48">48</a>       IssueStatus.find(:all, :order =&gt; &quot;position ASC&quot;).each do |status|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line49">49</a>         allowed = status.find_new_statuses_allowed_to(User.current.roles_for_project(@project), tracker)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line50">50</a>         to = transitions[tracker.id][&quot;from-#{status.id}&quot;] = allowed &lt;&lt; status</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line51">51</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line52">52</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line53">53</a>     respond_to do |format|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line54">54</a>       format.json { render :json =&gt; transitions }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line55">55</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line56">56</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line57">57</a> end</pre></td>
+            <td><pre><a name="line42">42</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue May 31 23:50:48 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Jun 01 00:25:54 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
