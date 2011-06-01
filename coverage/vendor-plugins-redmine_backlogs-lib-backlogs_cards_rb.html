@@ -30,12 +30,12 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_cards_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_cards.rb</a></td>
             <td class='right_align'><tt>433</tt></td>
             <td class='right_align'><tt>347</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>62.12%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>61.89%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:62px"></div>
             <div class="uncovered" style="width:38px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>59.94%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>59.65%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:60px"></div>
             <div class="uncovered" style="width:40px"></div>
@@ -80,668 +80,668 @@
         
           
           
+          <tr class="inferred">
+            <td><pre><a name="line5">5</a> </pre></td>
+          </tr>
+        
+          
+          
           <tr class="marked">
-            <td><pre><a name="line5">5</a> require 'rexml/document'</pre></td>
+            <td><pre><a name="line6">6</a> require 'yaml'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line7">7</a> require 'uri/common'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line8">8</a> require 'open-uri/cached'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line9">9</a> require 'zlib'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line10">10</a> require 'nokogiri'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line11">11</a> require 'ruby-units'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line6">6</a> </pre></td>
+            <td><pre><a name="line12">12</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a> require 'yaml'</pre></td>
+            <td><pre><a name="line13">13</a> class String</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line8">8</a> require 'uri/common'</pre></td>
+            <td><pre><a name="line14">14</a>   def to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line9">9</a> require 'open-uri/cached'</pre></td>
+            <td><pre><a name="line15">15</a>     return Float(self) if self =~/[0-9]$/</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line10">10</a> require 'zlib'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line11">11</a> require 'nokogiri'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line12">12</a> require 'ruby-units'</pre></td>
+            <td><pre><a name="line16">16</a>     return self.to_unit.to('pt').scalar</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line13">13</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line14">14</a> class String</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line15">15</a>   def to_points</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line16">16</a>     return Float(self) if self =~/[0-9]$/</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line17">17</a>     return self.to_unit.to('pt').scalar</pre></td>
+            <td><pre><a name="line17">17</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>   end</pre></td>
+            <td><pre><a name="line18">18</a> end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a> end</pre></td>
+            <td><pre><a name="line19">19</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line20">20</a> module BacklogsCards</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>   class LabelStock</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line22">22</a>     begin</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line23">23</a>       LAYOUTS = YAML::load_file(File.dirname(__FILE__) + '/labels.yaml')</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line24">24</a>       LAYOUTS.keys.each{|k| LAYOUTS[k]['name'] = k }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line25">25</a>     rescue</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line26">26</a>       LAYOUTS = {}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line27">27</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line20">20</a> </pre></td>
+            <td><pre><a name="line28">28</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a> module BacklogsCards</pre></td>
+            <td><pre><a name="line29">29</a>     def initialize</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line22">22</a>   class LabelStock</pre></td>
+            <td><pre><a name="line30">30</a>       raise &quot;No label stock selected&quot; unless LabelStock.selected_label</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line23">23</a>     begin</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line24">24</a>       LAYOUTS = YAML::load_file(File.dirname(__FILE__) + '/labels.yaml')</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line25">25</a>       LAYOUTS.keys.each{|k| LAYOUTS[k]['name'] = k }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line26">26</a>     rescue</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line27">27</a>       LAYOUTS = {}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line28">28</a>     end</pre></td>
+            <td><pre><a name="line31">31</a>       layout = LabelStock.selected_label</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line29">29</a> </pre></td>
+            <td><pre><a name="line32">32</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line30">30</a>     def initialize</pre></td>
+            <td><pre><a name="line33">33</a>       @top_margin = layout['top_margin'].to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>       raise &quot;No label stock selected&quot; unless LabelStock.selected_label</pre></td>
+            <td><pre><a name="line34">34</a>       @vertical_pitch = layout['vertical_pitch'].to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line32">32</a>       layout = LabelStock.selected_label</pre></td>
+            <td><pre><a name="line35">35</a>       @height = layout['height'].to_points</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line33">33</a> </pre></td>
+            <td><pre><a name="line36">36</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line34">34</a>       @top_margin = layout['top_margin'].to_points</pre></td>
+            <td><pre><a name="line37">37</a>       @left_margin = layout['left_margin'].to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line35">35</a>       @vertical_pitch = layout['vertical_pitch'].to_points</pre></td>
+            <td><pre><a name="line38">38</a>       @horizontal_pitch = layout['horizontal_pitch'].to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line36">36</a>       @height = layout['height'].to_points</pre></td>
+            <td><pre><a name="line39">39</a>       @width = layout['width'].to_points</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line37">37</a>   </pre></td>
+            <td><pre><a name="line40">40</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line38">38</a>       @left_margin = layout['left_margin'].to_points</pre></td>
+            <td><pre><a name="line41">41</a>       @across = Integer(layout['across'])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line39">39</a>       @horizontal_pitch = layout['horizontal_pitch'].to_points</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line40">40</a>       @width = layout['width'].to_points</pre></td>
+            <td><pre><a name="line42">42</a>       @down = Integer(layout['down'])</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line41">41</a> </pre></td>
+            <td><pre><a name="line43">43</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line42">42</a>       @across = Integer(layout['across'])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line43">43</a>       @down = Integer(layout['down'])</pre></td>
+            <td><pre><a name="line44">44</a>       layout['papersize'].upcase!</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line44">44</a>   </pre></td>
+            <td><pre><a name="line45">45</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line45">45</a>       layout['papersize'].upcase!</pre></td>
+            <td><pre><a name="line46">46</a>       geom = Prawn::Document::PageGeometry::SIZES[layout['papersize']]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line47">47</a>       raise &quot;Paper size '#{label['papersize']}' not supported&quot; if geom.nil?</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line46">46</a> </pre></td>
+            <td><pre><a name="line48">48</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line47">47</a>       geom = Prawn::Document::PageGeometry::SIZES[layout['papersize']]</pre></td>
+            <td><pre><a name="line49">49</a>       @paper_width = geom[0]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line48">48</a>       raise &quot;Paper size '#{label['papersize']}' not supported&quot; if geom.nil?</pre></td>
+            <td><pre><a name="line50">50</a>       @paper_height = geom[1]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line51">51</a>       @paper_size = layout['papersize']</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line49">49</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line50">50</a>       @paper_width = geom[0]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line51">51</a>       @paper_height = geom[1]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line52">52</a>       @paper_size = layout['papersize']</pre></td>
+            <td><pre><a name="line52">52</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line53">53</a>     end</pre></td>
+            <td><pre><a name="line53">53</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line54">54</a>     attr_reader :left_margin, :horizontal_pitch, :width</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line55">55</a>     attr_reader :top_margin, :vertical_pitch, :height</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line56">56</a>     attr_reader :across, :down</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line57">57</a>     attr_reader :paper_width, :paper_height, :paper_size</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line54">54</a> </pre></td>
+            <td><pre><a name="line58">58</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line55">55</a>     attr_reader :left_margin, :horizontal_pitch, :width</pre></td>
+            <td><pre><a name="line59">59</a>     def self.selected_label</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>     attr_reader :top_margin, :vertical_pitch, :height</pre></td>
+            <td><pre><a name="line60">60</a>       return nil unless Setting.plugin_redmine_backlogs[:card_spec]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line57">57</a>     attr_reader :across, :down</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line58">58</a>     attr_reader :paper_width, :paper_height, :paper_size</pre></td>
+            <td><pre><a name="line61">61</a>       return LAYOUTS[Setting.plugin_redmine_backlogs[:card_spec]]</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line59">59</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line60">60</a>     def self.selected_label</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line61">61</a>       return nil unless Setting.plugin_redmine_backlogs[:card_spec]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line62">62</a>       return LAYOUTS[Setting.plugin_redmine_backlogs[:card_spec]]</pre></td>
+            <td><pre><a name="line62">62</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line63">63</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line64">64</a> </pre></td>
+            <td><pre><a name="line63">63</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line65">65</a>     def self.malformed(label)</pre></td>
+            <td><pre><a name="line64">64</a>     def self.malformed(label)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line66">66</a>       return true if label['down'] &gt; 1 &amp;&amp; label['height'] &gt; label['vertical_pitch']</pre></td>
+            <td><pre><a name="line65">65</a>       return true if label['down'] &gt; 1 &amp;&amp; label['height'] &gt; label['vertical_pitch']</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line67">67</a>       return true if label['across'] &gt; 1 &amp;&amp; label['width'] &gt; label['horizontal_pitch']</pre></td>
+            <td><pre><a name="line66">66</a>       return true if label['across'] &gt; 1 &amp;&amp; label['width'] &gt; label['horizontal_pitch']</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line68">68</a>       return false</pre></td>
+            <td><pre><a name="line67">67</a>       return false</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line69">69</a>     end</pre></td>
+            <td><pre><a name="line68">68</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line70">70</a>   </pre></td>
+            <td><pre><a name="line69">69</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line71">71</a>     def self.fetch_labels</pre></td>
+            <td><pre><a name="line70">70</a>     def self.fetch_labels</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line72">72</a>       # clean up existing labels</pre></td>
+            <td><pre><a name="line71">71</a>       # clean up existing labels</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line73">73</a>       LAYOUTS.keys.each {|label|</pre></td>
+            <td><pre><a name="line72">72</a>       LAYOUTS.keys.each {|label|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line74">74</a>         if LabelStock.malformed(LAYOUTS[label])</pre></td>
+            <td><pre><a name="line73">73</a>         if LabelStock.malformed(LAYOUTS[label])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line75">75</a>           LAYOUTS.delete(label)</pre></td>
+            <td><pre><a name="line74">74</a>           LAYOUTS.delete(label)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line76">76</a>           puts &quot;Removing malformed label '#{label}'&quot;</pre></td>
+            <td><pre><a name="line75">75</a>           puts &quot;Removing malformed label '#{label}'&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line77">77</a>         end</pre></td>
+            <td><pre><a name="line76">76</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line78">78</a>       }</pre></td>
+            <td><pre><a name="line77">77</a>       }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line79">79</a> </pre></td>
+            <td><pre><a name="line78">78</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line80">80</a>       malformed_labels = {}</pre></td>
+            <td><pre><a name="line79">79</a>       malformed_labels = {}</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line81">81</a> </pre></td>
+            <td><pre><a name="line80">80</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line82">82</a>       ['avery-iso-templates.xml', 'avery-other-templates.xml', 'avery-us-templates.xml', 'brother-other-templates.xml', 'dymo-other-templates.xml',</pre></td>
+            <td><pre><a name="line81">81</a>       ['avery-iso-templates.xml', 'avery-other-templates.xml', 'avery-us-templates.xml', 'brother-other-templates.xml', 'dymo-other-templates.xml',</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line83">83</a>        'maco-us-templates.xml', 'misc-iso-templates.xml', 'misc-other-templates.xml', 'misc-us-templates.xml', 'pearl-iso-templates.xml',  </pre></td>
+            <td><pre><a name="line82">82</a>        'maco-us-templates.xml', 'misc-iso-templates.xml', 'misc-other-templates.xml', 'misc-us-templates.xml', 'pearl-iso-templates.xml',  </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line84">84</a>        'uline-us-templates.xml', 'worldlabel-us-templates.xml', 'zweckform-iso-templates.xml'].each {|filename|</pre></td>
+            <td><pre><a name="line83">83</a>        'uline-us-templates.xml', 'worldlabel-us-templates.xml', 'zweckform-iso-templates.xml'].each {|filename|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line85">85</a> </pre></td>
+            <td><pre><a name="line84">84</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line86">86</a>         uri = URI.parse(&quot;http://git.gnome.org/browse/glabels/plain/templates/#{filename}&quot;)</pre></td>
+            <td><pre><a name="line85">85</a>         uri = URI.parse(&quot;http://git.gnome.org/browse/glabels/plain/templates/#{filename}&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line87">87</a>         labels = nil</pre></td>
+            <td><pre><a name="line86">86</a>         labels = nil</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line88">88</a> </pre></td>
+            <td><pre><a name="line87">87</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line89">89</a>         if ! ENV['http_proxy'].blank?</pre></td>
+            <td><pre><a name="line88">88</a>         if ! ENV['http_proxy'].blank?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line90">90</a>           begin</pre></td>
+            <td><pre><a name="line89">89</a>           begin</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line91">91</a>             proxy = URI.parse(ENV['http_proxy'])</pre></td>
+            <td><pre><a name="line90">90</a>             proxy = URI.parse(ENV['http_proxy'])</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line92">92</a>             if proxy.userinfo</pre></td>
+            <td><pre><a name="line91">91</a>             if proxy.userinfo</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line93">93</a>               user, pass = proxy.userinfo.split(/:/)</pre></td>
+            <td><pre><a name="line92">92</a>               user, pass = proxy.userinfo.split(/:/)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line94">94</a>             else</pre></td>
+            <td><pre><a name="line93">93</a>             else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line95">95</a>               user = pass = nil</pre></td>
+            <td><pre><a name="line94">94</a>               user = pass = nil</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line96">96</a>             end</pre></td>
+            <td><pre><a name="line95">95</a>             end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line97">97</a>             labels = Net::HTTP::Proxy(proxy.host, proxy.port, user, pass).start(uri.host) {|http| http.get(uri.path)}.body</pre></td>
+            <td><pre><a name="line96">96</a>             labels = Net::HTTP::Proxy(proxy.host, proxy.port, user, pass).start(uri.host) {|http| http.get(uri.path)}.body</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line98">98</a>           rescue URI::Error =&gt; e</pre></td>
+            <td><pre><a name="line97">97</a>           rescue URI::Error =&gt; e</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line99">99</a>             puts &quot;Setup proxy failed: #{e}&quot;</pre></td>
+            <td><pre><a name="line98">98</a>             puts &quot;Setup proxy failed: #{e}&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line100">100</a>             labels = nil</pre></td>
+            <td><pre><a name="line99">99</a>             labels = nil</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line101">101</a>           end</pre></td>
+            <td><pre><a name="line100">100</a>           end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line102">102</a>         end</pre></td>
+            <td><pre><a name="line101">101</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line103">103</a> </pre></td>
+            <td><pre><a name="line102">102</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line104">104</a>         begin</pre></td>
+            <td><pre><a name="line103">103</a>         begin</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line105">105</a>           labels = Net::HTTP.get_response(uri).body if labels.nil?</pre></td>
+            <td><pre><a name="line104">104</a>           labels = Net::HTTP.get_response(uri).body if labels.nil?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line106">106</a>         rescue</pre></td>
+            <td><pre><a name="line105">105</a>         rescue</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line107">107</a>           labels = nil</pre></td>
+            <td><pre><a name="line106">106</a>           labels = nil</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line108">108</a>         end</pre></td>
+            <td><pre><a name="line107">107</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line109">109</a> </pre></td>
+            <td><pre><a name="line108">108</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line110">110</a>         if labels.nil?</pre></td>
+            <td><pre><a name="line109">109</a>         if labels.nil?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line111">111</a>           puts &quot;Could not fetch #{filename}&quot;</pre></td>
+            <td><pre><a name="line110">110</a>           puts &quot;Could not fetch #{filename}&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line112">112</a>           next</pre></td>
+            <td><pre><a name="line111">111</a>           next</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line113">113</a>         end</pre></td>
+            <td><pre><a name="line112">112</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line114">114</a> </pre></td>
+            <td><pre><a name="line113">113</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line115">115</a>         doc = REXML::Document.new(labels)</pre></td>
+            <td><pre><a name="line114">114</a>         doc = Nokogiri::XML(labels)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line115">115</a>         doc.remove_namespaces!</pre></td>
           </tr>
         
           
@@ -753,7 +753,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line117">117</a>         doc.elements.each('Glabels-templates/Template') { |specs|</pre></td>
+            <td><pre><a name="line117">117</a>         doc.xpath('Glabels-templates/Template').each { |specs|</pre></td>
           </tr>
         
           
@@ -771,7 +771,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line120">120</a>           papersize = specs.attributes['size']</pre></td>
+            <td><pre><a name="line120">120</a>           papersize = specs['size']</pre></td>
           </tr>
         
           
@@ -789,7 +789,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line123">123</a>           specs.elements.each('Label-rectangle') { |geom|</pre></td>
+            <td><pre><a name="line123">123</a>           specs.xpath('Label-rectangle').each { |geom|</pre></td>
           </tr>
         
           
@@ -801,7 +801,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line125">125</a>             geom.elements.each('Markup-margin') { |m| margin = m.attributes['size'] }</pre></td>
+            <td><pre><a name="line125">125</a>             geom.xpath('Markup-margin').each { |m| margin = m['size'] }</pre></td>
           </tr>
         
           
@@ -819,7 +819,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line128">128</a>             geom.elements.each('Layout') { |layout|</pre></td>
+            <td><pre><a name="line128">128</a>             geom.xpath('Layout').each { |layout|</pre></td>
           </tr>
         
           
@@ -837,49 +837,49 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line131">131</a>                 'across' =&gt; Integer(layout.attributes['nx']),</pre></td>
+            <td><pre><a name="line131">131</a>                 'across' =&gt; Integer(layout['nx']),</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line132">132</a>                 'down' =&gt; Integer(layout.attributes['ny']),</pre></td>
+            <td><pre><a name="line132">132</a>                 'down' =&gt; Integer(layout['ny']),</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line133">133</a>                 'top_margin' =&gt; layout.attributes['y0'],</pre></td>
+            <td><pre><a name="line133">133</a>                 'top_margin' =&gt; layout['y0'],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line134">134</a>                 'height' =&gt; geom.attributes['height'],</pre></td>
+            <td><pre><a name="line134">134</a>                 'height' =&gt; geom['height'],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line135">135</a>                 'horizontal_pitch' =&gt; layout.attributes['dx'],</pre></td>
+            <td><pre><a name="line135">135</a>                 'horizontal_pitch' =&gt; layout['dx'],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line136">136</a>                 'left_margin' =&gt; layout.attributes['x0'],</pre></td>
+            <td><pre><a name="line136">136</a>                 'left_margin' =&gt; layout['x0'],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line137">137</a>                 'width' =&gt; geom.attributes['width'],</pre></td>
+            <td><pre><a name="line137">137</a>                 'width' =&gt; geom['width'],</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line138">138</a>                 'vertical_pitch' =&gt; layout.attributes['dy'],</pre></td>
+            <td><pre><a name="line138">138</a>                 'vertical_pitch' =&gt; layout['dy'],</pre></td>
           </tr>
         
           
@@ -933,7 +933,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line147">147</a>           key = &quot;#{specs.attributes['brand']} #{specs.attributes['part']}&quot;</pre></td>
+            <td><pre><a name="line147">147</a>           key = &quot;#{specs['brand']} #{specs['part']}&quot;</pre></td>
           </tr>
         
           
@@ -981,13 +981,13 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line155">155</a>             specs.elements.each('Alias') { |also|</pre></td>
+            <td><pre><a name="line155">155</a>             specs.xpath('Alias').each { |also|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line156">156</a>               key = &quot;#{also.attributes['brand']} #{also.attributes['part']}&quot;</pre></td>
+            <td><pre><a name="line156">156</a>               key = &quot;#{also['brand']} #{also['part']}&quot;</pre></td>
           </tr>
         
           
@@ -2655,7 +2655,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Wed Jun 01 13:44:10 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Jun 01 21:19:19 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
