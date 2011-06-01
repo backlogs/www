@@ -51,33 +51,33 @@ In the card you can include text, which will be copied verbatim, or variables us
 
 *Story cards*
 
-* story.id: the story id
-* story.subject: the story subject
-* story.description: the story description, or the story subject if no description was filled out
-* story.category: the story category, if any
-* story.size: the size of the story in points
-* story.position: relative position of the story, within a sprint or within the product backlog (whichever is relevant)
-* story.path: a full "path" (Story -> Prio) to the story
-* story.owner: the name of the person the story is assigned to (if any)
+* id: the story id
+* subject: the story subject
+* description: the story description, or the story subject if no description was filled out
+* category: the story category, if any
+* size: the size of the story in points
+* position: relative position of the story, within a sprint or within the product backlog (whichever is relevant)
+* path: a full "path" (Story -> Prio) to the story
+* owner: the name of the person the story is assigned to (if any)
 * sprint.name: name of the sprint the story belongs to, or 'Product backlog' if it is not part of a sprint
-* email: email address of the story.owner (if any)
+* owner.email: email address of the story.owner (if any)
 
 *Task cards*
 
 * story.position: relative position of the parent story, within a sprint or within the product backlog (whichever is relevant)
 * story.id: the id of the parent story
 * story.subject: the subject of the parent story
-* task.id: the task id
-* task.subject: the task subject
-* task.description: the task description, or the task subject if no description was filled out
-* task.category: the task category, if any
-* task.hours.estimated: the hours estimated initially for this task
-* task.hours.remaining: the hours remaining at time of rendering
-* task.position: relative position of the task among the tasks belonging to the same parent story
-* task.path: a full "path" (Story -> Task -> Task) to the task
+* id: the task id
+* subject: the task subject
+* description: the task description, or the task subject if no description was filled out
+* category: the task category, if any
+* hours.estimated: the hours estimated initially for this task
+* hours.remaining: the hours remaining at time of rendering
+* position: relative position of the task among the tasks belonging to the same parent story
+* path: a full "path" (Story -> Task -> Task) to the task
 * sprint.name: the sprint the task belongs to
-* task.owner: the name of the person the task is assigned to (if any)
-* email: email address of the task.owner (if any)
+* owner: the name of the person the task is assigned to (if any)
+* owner.email: email address of the task.owner (if any)
 
 
 ![Printable Cards](../../assets/images/sprint_context_menu.png)
