@@ -112,8 +112,7 @@ permissions which prevented apache from reading the ruby files.
 Don't forget to restart apache.
  </div>
 
-The Backlogs plugin requires Redmine 1.1.2 to be installed; any 1.1.x version might also work although we have not tested it yet. Anything lower
-than 1.1.2 is not supported. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/.
+The Backlogs plugin requires Redmine 1.2.0 to be installed; 1.1.x is known to work but is not supported. Anything lower will not work, period. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/.
 
 h2. Check Those Gems!
 
