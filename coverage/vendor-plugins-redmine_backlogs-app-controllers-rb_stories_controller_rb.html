@@ -30,15 +30,15 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_stories_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_stories_controller.rb</a></td>
             <td class='right_align'><tt>42</tt></td>
             <td class='right_align'><tt>33</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>73.81%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:100px"></div>
-            <div class="uncovered" style="width:0px"></div>
+            <div class="covered" style="width:74px"></div>
+            <div class="uncovered" style="width:26px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>72.73%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:100px"></div>
-            <div class="uncovered" style="width:0px"></div>
+            <div class="covered" style="width:73px"></div>
+            <div class="uncovered" style="width:27px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -104,67 +104,67 @@
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line9">9</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line10">10</a>     if params[:sprint_id]</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line11">11</a>       @sprint.stories.each { |story| cards.add(story) }</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line12">12</a>     else</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line13">13</a>       Story.product_backlog(@project).each { |story| cards.add(story, false) }</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line14">14</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line15">15</a>     </pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line16">16</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line17">17</a>       format.pdf { send_data(cards.pdf.render, :disposition =&gt; 'attachment', :type =&gt; 'application/pdf') }</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line18">18</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
             <td><pre><a name="line19">19</a>   end</pre></td>
           </tr>
         
@@ -309,7 +309,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Wed Jun 01 00:25:54 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Wed Jun 01 13:12:22 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
