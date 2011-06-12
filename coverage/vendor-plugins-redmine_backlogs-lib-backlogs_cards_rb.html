@@ -135,7 +135,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>   def to_points</pre></td>
+            <td><pre><a name="line14">14</a>   def units_to_points</pre></td>
           </tr>
         
           
@@ -249,19 +249,19 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line33">33</a>       @top_margin = layout['top_margin'].to_points</pre></td>
+            <td><pre><a name="line33">33</a>       @top_margin = layout['top_margin'].units_to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line34">34</a>       @vertical_pitch = layout['vertical_pitch'].to_points</pre></td>
+            <td><pre><a name="line34">34</a>       @vertical_pitch = layout['vertical_pitch'].units_to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line35">35</a>       @height = layout['height'].to_points</pre></td>
+            <td><pre><a name="line35">35</a>       @height = layout['height'].units_to_points</pre></td>
           </tr>
         
           
@@ -273,19 +273,19 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line37">37</a>       @left_margin = layout['left_margin'].to_points</pre></td>
+            <td><pre><a name="line37">37</a>       @left_margin = layout['left_margin'].units_to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line38">38</a>       @horizontal_pitch = layout['horizontal_pitch'].to_points</pre></td>
+            <td><pre><a name="line38">38</a>       @horizontal_pitch = layout['horizontal_pitch'].units_to_points</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line39">39</a>       @width = layout['width'].to_points</pre></td>
+            <td><pre><a name="line39">39</a>       @width = layout['width'].units_to_points</pre></td>
           </tr>
         
           
@@ -441,13 +441,13 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line65">65</a>       return true if label['down'] &gt; 1 &amp;&amp; label['height'] &gt; label['vertical_pitch']</pre></td>
+            <td><pre><a name="line65">65</a>       return true if (label['down'] &gt; 1) &amp;&amp; (label['height'].units_to_points &gt; label['vertical_pitch'].units_to_points)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line66">66</a>       return true if label['across'] &gt; 1 &amp;&amp; label['width'] &gt; label['horizontal_pitch']</pre></td>
+            <td><pre><a name="line66">66</a>       return true if (label['across'] &gt; 1) &amp;&amp; (label['width'].units_to_points &gt; label['horizontal_pitch'].units_to_points)</pre></td>
           </tr>
         
           
@@ -1317,7 +1317,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line211">211</a>       @template = { :x =&gt; bounds['width'].to_points, :y =&gt; bounds['height'].to_points}</pre></td>
+            <td><pre><a name="line211">211</a>       @template = { :x =&gt; bounds['width'].units_to_points, :y =&gt; bounds['height'].units_to_points}</pre></td>
           </tr>
         
           
@@ -1371,25 +1371,25 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line220">220</a>         :x =&gt; (b['x'].to_points / @template[:x]) * @width,</pre></td>
+            <td><pre><a name="line220">220</a>         :x =&gt; (b['x'].units_to_points / @template[:x]) * @width,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line221">221</a>         :y =&gt; (1 - (b['y'].to_points / @template[:y])) * @height,</pre></td>
+            <td><pre><a name="line221">221</a>         :y =&gt; (1 - (b['y'].units_to_points / @template[:y])) * @height,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line222">222</a>         :w =&gt; (b['w'].to_points / @template[:x]) * @width,</pre></td>
+            <td><pre><a name="line222">222</a>         :w =&gt; (b['w'].units_to_points / @template[:x]) * @width,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line223">223</a>         :h =&gt; (b['h'].to_points / @template[:y]) * @height</pre></td>
+            <td><pre><a name="line223">223</a>         :h =&gt; (b['h'].units_to_points / @template[:y]) * @height</pre></td>
           </tr>
         
           
@@ -1479,7 +1479,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line238">238</a>       return obj['line_width'].to_points</pre></td>
+            <td><pre><a name="line238">238</a>       return obj['line_width'].units_to_points</pre></td>
           </tr>
         
           
@@ -1551,25 +1551,25 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line250">250</a>         :x1 =&gt; (l['x'].to_points / @template[:x]) * @width,</pre></td>
+            <td><pre><a name="line250">250</a>         :x1 =&gt; (l['x'].units_to_points / @template[:x]) * @width,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line251">251</a>         :y1 =&gt; (1 - (l['y'].to_points / @template[:y])) * @height,</pre></td>
+            <td><pre><a name="line251">251</a>         :y1 =&gt; (1 - (l['y'].units_to_points / @template[:y])) * @height,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line252">252</a>         :x2 =&gt; ((l['x'].to_points + l['dx'].to_points) / @template[:x]) * @width,</pre></td>
+            <td><pre><a name="line252">252</a>         :x2 =&gt; ((l['x'].units_to_points + l['dx'].units_to_points) / @template[:x]) * @width,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line253">253</a>         :y2 =&gt; (1 - ((l['y'].to_points + l['dy'].to_points) / @template[:y])) * @height</pre></td>
+            <td><pre><a name="line253">253</a>         :y2 =&gt; (1 - ((l['y'].units_to_points + l['dy'].units_to_points) / @template[:y])) * @height</pre></td>
           </tr>
         
           
@@ -2655,7 +2655,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Wed Jun 01 21:19:19 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sun Jun 12 11:39:27 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
