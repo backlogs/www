@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_cards_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_cards.rb</a></td>
-            <td class='right_align'><tt>433</tt></td>
-            <td class='right_align'><tt>347</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>61.89%</tt></div>
+            <td class='right_align'><tt>464</tt></td>
+            <td class='right_align'><tt>372</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>59.48%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:62px"></div>
-            <div class="uncovered" style="width:38px"></div>
+            <div class="covered" style="width:59px"></div>
+            <div class="uncovered" style="width:41px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>59.65%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>56.99%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:60px"></div>
-            <div class="uncovered" style="width:40px"></div>
+            <div class="covered" style="width:57px"></div>
+            <div class="uncovered" style="width:43px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -2240,356 +2240,356 @@
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line365">365</a>       stories.each { |story| </pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line365">365</a>       </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line366">366</a>         if with_tasks</pre></td>
+            <td><pre><a name="line366">366</a>       case Setting.plugin_redmine_backlogs[:taskboard_card_order]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line367">367</a>           story.descendants.each {|task|</pre></td>
+            <td><pre><a name="line367">367</a>         when 'tasks_follow_story'</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line368">368</a>             add(task)</pre></td>
+            <td><pre><a name="line368">368</a>           stories.each { |story| </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line369">369</a>           }</pre></td>
+            <td><pre><a name="line369">369</a>             add(story)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line370">370</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line371">371</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line372">372</a>         add(story)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line373">373</a>       }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line374">374</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line375">375</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line376">376</a>     attr_reader :pdf</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line377">377</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line378">378</a>     def add(issue)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line379">379</a>       row = @cards % @label.down</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line380">380</a>       col = Integer(@cards / @label.down) % @label.across</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line381">381</a>       @cards += 1</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line382">382</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line383">383</a>       @pdf.start_new_page if row == 0 and col == 0 and @cards != 1</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line384">384</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line385">385</a>       x = @label.left_margin + (@label.horizontal_pitch * col)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line386">386</a>       y = @label.paper_height - (@label.top_margin + (@label.vertical_pitch * row))</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line387">387</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line388">388</a>       data = {}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line389">389</a>       if issue.is_task?</pre></td>
+            <td><pre><a name="line370">370</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line390">390</a>         data['story.position'] = issue.story.position ? issue.story.position : l(:label_not_prioritized)</pre></td>
+            <td><pre><a name="line371">371</a>             if with_tasks</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line391">391</a>         data['story.id'] = issue.story.id</pre></td>
+            <td><pre><a name="line372">372</a>               story.descendants.each {|task|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line392">392</a>         data['story.subject'] = issue.story.subject</pre></td>
+            <td><pre><a name="line373">373</a>                 add(task)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
+            <td><pre><a name="line374">374</a>               }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line375">375</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line376">376</a>           }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line377">377</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line378">378</a>         when 'stories_then_tasks'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line379">379</a>           stories.each { |story| </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line380">380</a>             add(story)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line381">381</a>           }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line382">382</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line383">383</a>           if with_tasks</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line384">384</a>             @cards  = 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line385">385</a>             @pdf.start_new_page</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line386">386</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line387">387</a>             stories.each { |story| </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line388">388</a>               story.descendants.each {|task|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line389">389</a>                 add(task)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line390">390</a>               }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line391">391</a>             }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line392">392</a>           end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
             <td><pre><a name="line393">393</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line394">394</a>         data['id'] = issue.id</pre></td>
+          <tr class="inferred">
+            <td><pre><a name="line394">394</a>         else # 'story_follows_tasks'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line395">395</a>           stories.each { |story| </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line396">396</a>             if with_tasks</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line397">397</a>               story.descendants.each {|task|</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line395">395</a>         data['subject'] = issue.subject.to_s.strip</pre></td>
+            <td><pre><a name="line398">398</a>                 add(task)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line396">396</a>         data['description'] = issue.description.to_s.strip; data['description'] = data['subject'] if data['description'] == ''</pre></td>
+            <td><pre><a name="line399">399</a>               }</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line397">397</a>         data['category'] = issue.category ? issue.category.name : ''</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line398">398</a>         data['hours.estimated'] = (issue.estimated_hours ? &quot;#{issue.estimated_hours}&quot; : '?') + ' ' + l(:label_hours)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line399">399</a>         data['hours.remaining'] = (issue.remaining_hours ? &quot;#{issue.remaining_hours}&quot; : '?') + ' ' + l(:label_hours)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line400">400</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line401">401</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line402">402</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line403">403</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line404">404</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line405">405</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line406">406</a>         card = @task</pre></td>
+            <td><pre><a name="line400">400</a>             end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line407">407</a> </pre></td>
+            <td><pre><a name="line401">401</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line408">408</a>       elsif issue.is_story?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line409">409</a>         data['id'] = issue.id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line410">410</a>         data['subject'] = issue.subject</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line411">411</a>         data['description'] = issue.description.to_s.strip; data['description'] = data['subject'] if data['description'] == ''</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line412">412</a>         data['category'] = issue.category ? issue.category.name : ''</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line413">413</a>         data['size'] = (issue.story_points ? &quot;#{issue.story_points}&quot; : '?') + ' ' + l(:label_points)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line414">414</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line415">415</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line416">416</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line417">417</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line418">418</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
+            <td><pre><a name="line402">402</a>             add(story)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line419">419</a> </pre></td>
+            <td><pre><a name="line403">403</a>           }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line404">404</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line405">405</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line406">406</a>   </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line420">420</a>         card = @story</pre></td>
+            <td><pre><a name="line407">407</a>     attr_reader :pdf</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line408">408</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line409">409</a>     def add(issue)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line410">410</a>       row = @cards % @label.down</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line411">411</a>       col = Integer(@cards / @label.down) % @label.across</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line412">412</a>       @cards += 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line413">413</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line414">414</a>       @pdf.start_new_page if row == 0 and col == 0 and @cards != 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line415">415</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line416">416</a>       x = @label.left_margin + (@label.horizontal_pitch * col)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line417">417</a>       y = @label.paper_height - (@label.top_margin + (@label.vertical_pitch * row))</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line418">418</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line419">419</a>       data = {}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line420">420</a>       if issue.is_task?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line421">421</a> </pre></td>
+            <td><pre><a name="line421">421</a>         data['story.position'] = issue.story.position ? issue.story.position : l(:label_not_prioritized)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line422">422</a>       else</pre></td>
+            <td><pre><a name="line422">422</a>         data['story.id'] = issue.story.id</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line423">423</a>         raise &quot;Unsupported card type '#{type}'&quot;</pre></td>
+            <td><pre><a name="line423">423</a>         data['story.subject'] = issue.story.subject</pre></td>
           </tr>
         
           
@@ -2601,61 +2601,247 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line425">425</a>       end</pre></td>
+            <td><pre><a name="line425">425</a>         data['id'] = issue.id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line426">426</a>         data['subject'] = issue.subject.to_s.strip</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line427">427</a>         data['description'] = issue.description.to_s.strip; data['description'] = data['subject'] if data['description'] == ''</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line428">428</a>         data['category'] = issue.category ? issue.category.name : ''</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line429">429</a>         data['hours.estimated'] = (issue.estimated_hours ? &quot;#{issue.estimated_hours}&quot; : '?') + ' ' + l(:label_hours)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line430">430</a>         data['hours.remaining'] = (issue.remaining_hours ? &quot;#{issue.remaining_hours}&quot; : '?') + ' ' + l(:label_hours)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line431">431</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line432">432</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line433">433</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line434">434</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line435">435</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line436">436</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line437">437</a>         card = @task</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line426">426</a> </pre></td>
+            <td><pre><a name="line438">438</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line427">427</a>       data.keys.each {|d| data[d] = data[d].to_s }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line428">428</a> </pre></td>
+            <td><pre><a name="line439">439</a>       elsif issue.is_story?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line429">429</a>       card.render(x, y, @pdf, data)</pre></td>
+            <td><pre><a name="line440">440</a>         data['id'] = issue.id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line441">441</a>         data['subject'] = issue.subject</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line442">442</a>         data['description'] = issue.description.to_s.strip; data['description'] = data['subject'] if data['description'] == ''</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line443">443</a>         data['category'] = issue.category ? issue.category.name : ''</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line444">444</a>         data['size'] = (issue.story_points ? &quot;#{issue.story_points}&quot; : '?') + ' ' + l(:label_points)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line445">445</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line446">446</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line447">447</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line448">448</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line449">449</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line430">430</a>     end</pre></td>
+            <td><pre><a name="line450">450</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line451">451</a>         card = @story</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line452">452</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line453">453</a>       else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line454">454</a>         raise &quot;Unsupported card type '#{type}'&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line455">455</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line456">456</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line431">431</a>   </pre></td>
+            <td><pre><a name="line457">457</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line458">458</a>       data.keys.each {|d| data[d] = data[d].to_s }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line432">432</a>   end</pre></td>
+            <td><pre><a name="line459">459</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line460">460</a>       card.render(x, y, @pdf, data)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line433">433</a> end</pre></td>
+            <td><pre><a name="line461">461</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line462">462</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line463">463</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line464">464</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Jun 12 11:39:27 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Thu Jun 23 18:12:13 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
