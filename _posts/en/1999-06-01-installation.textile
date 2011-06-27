@@ -166,7 +166,6 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 * prawn
 * holidays
 * open-uri-cached
-* ruby-units
 * nokogiri
 
 h2. Install Backlogs
