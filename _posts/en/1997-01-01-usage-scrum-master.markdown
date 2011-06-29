@@ -39,7 +39,46 @@ To add tasks, just click on the "+" button to the right of a story.
 
 ### Printing out cards
 
-When you're done planning the sprint, you might want to pick the "printable cards" option from the sprint drop-down menu. You can use these cards for your cork board (if you're using one, that is).
+When you're done planning the sprint, you might want to pick the "printable cards" option from the sprint drop-down menu. You can use these cards for your cork board (if you're using one, that is). A basic card layout is included with Backlogs; if you want it just-so, you can design your own cards!
+
+I would suggest you leave the default cards in lib (story-default.glabels and task-default.glabels) as-is; you can create your own story.glabels and/or task.glabels and Backlogs will pick them up instead of the default cards. That way, you can always easily get back to a working situation should you happen to mess up your fancy design.
+
+The cards can be edited using <a href="http://www.glabels.org/" target="_blank">gLabels</a>. For best fidelity you will want to create your card using the label stock (gLabels calls it a template) matching the one you will use in Backlogs, but Backlogs will scale the design up or down to match the cards if you happen to pick something else.
+
+In the card design you can use lines, boxes, and text blocks; for each of these, line width and color is supported, and for text blocks you can set font size, weight (bold or not, and italics. The font you choose will be ignored, and ellipses and barcodes are currently not supported. If you add one or more images, each of them will be replaced with the task/story owners' gravatar picture. Gravatars must be square, so the scaling that may be applied could distort the image; in this case, the smaller of the scaled height/width will be used for the gravatar size.
+
+In the card you can include text, which will be copied verbatim, or variables using the ${varname} syntax, which will be filled during rendering. You can use the following variables:
+
+*Story cards*
+
+* id: the story id
+* subject: the story subject
+* description: the story description, or the story subject if no description was filled out
+* category: the story category, if any
+* size: the size of the story in points
+* position: relative position of the story, within a sprint or within the product backlog (whichever is relevant)
+* path: a full "path" (Story -> Prio) to the story
+* owner: the name of the person the story is assigned to (if any)
+* sprint.name: name of the sprint the story belongs to, or 'Product backlog' if it is not part of a sprint
+* owner.email: email address of the story.owner (if any)
+
+*Task cards*
+
+* story.position: relative position of the parent story, within a sprint or within the product backlog (whichever is relevant)
+* story.id: the id of the parent story
+* story.subject: the subject of the parent story
+* id: the task id
+* subject: the task subject
+* description: the task description, or the task subject if no description was filled out
+* category: the task category, if any
+* hours.estimated: the hours estimated initially for this task
+* hours.remaining: the hours remaining at time of rendering
+* position: relative position of the task among the tasks belonging to the same parent story
+* path: a full "path" (Story -> Task -> Task) to the task
+* sprint.name: the sprint the task belongs to
+* owner: the name of the person the task is assigned to (if any)
+* owner.email: email address of the task.owner (if any)
+
 
 ![Printable Cards](../../assets/images/sprint_context_menu.png)
 
