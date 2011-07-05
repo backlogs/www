@@ -243,6 +243,19 @@ This will download some needed files, help you set up your story and
 task trackers, run the plugin's database migrations, and, if you're
 nice enough, maybe even make breakfast for you!
 
+If you don't want the installer to bother you with questions, you can
+pass it parameters to automate (parts of) the install process by
+calling it with
+
+bc. rake redmine:backlogs:install parameter=value parameter=value ...
+
+| *Parameter* | *Value* | *Effect* |
+| story_trackers | comma-separated list of trackers names | Overwrites the current setting for story trackers |
+| task_tracker| tracker name | Overwrites the current setting for task tracker |
+| corruptiontest| 'true' or 'false' | May be used to disable the (time-consuming) Redmine database corruption test. It's not required, but if you disable this you cannot complain that the migration fails |
+| labels | 'true' or 'false' | May be used to disable the label download |
+
+
 bq(info). *About story and task trackers:* These settings tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Some of us like to use Bug, Feature, and Support as story trackers and Task as the task tracker. Others prefer to make it simple by creating a Story tracker and a Task tracker. It's really up to you.
 
 Once you're done with the installer, restart Redmine to proceed to the next step.
