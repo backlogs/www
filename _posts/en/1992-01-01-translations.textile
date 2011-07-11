@@ -27,7 +27,7 @@ The messages below mean the following:
 
 | *Missing* | the key is not present in the translation. |
 | *Obsolete* | the key is present but no longer in use, so it should be removed. |
-| *Old-style variable substitution* | the translation uses {{keyword}} instead of %{keyword}. This works for now, but redmine is in the process of phasing it out. |
+| *Old-style variable substitution* | the translation uses { { keyword } } instead of %{keyword}. This works for now, but redmine is in the process of phasing it out. |
 
  </div>
 
