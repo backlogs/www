@@ -5,6 +5,25 @@ categories: en
 ---
 h1. Translations
 
+<script>
+    $(document).ready(function() {
+        $('a.show-instructions').attr('href', '#');
+        $('.instructions').hide();
+
+        $('a.show-instructions').click(function() {
+          $('.instructions').toggle();
+        });
+    });
+</script>
+
+h2. Want to help out with translating Backlogs? Excellent! Click "(show-instructions)here":http://www.example.com for more info!
+
+ <div class="instructions">
+Create an account at GitHub:http://www.github.com if you don't have one yet. Fork:https://github.com/relaxdiego/redmine_backlogs/fork the Backlogs:http://github.com/relaxdiego/redmine_backlogs repository, check it out to your local PC, and change the translation files in config/locales. Check it into your clone, and then issue a "pull request":https://github.com/relaxdiego/redmine_backlogs/pull/new/master, and I'll be able to fetch your changes. The changes will automatically be attributed to you.
+
+Alternately, but this won't get you attribution, download:http://github.com/relaxdiego/redmine_backlogs/tree/master/config/locales the raw translation file, change them as you wish, and then post them in a gist:https://gist.github.com/, and add an issue in our "issue tracker":https://github.com/relaxdiego/redmine_backlogs/issue with a link to your gist.
+ </div>
+
 bq(success). US English
 
 serves as a base for all other translations
