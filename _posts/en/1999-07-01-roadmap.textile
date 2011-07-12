@@ -22,3 +22,7 @@ Right a story in a "closed" state is considered to be "accepted" by the PO, and 
 h2. Easy time logging
 
 I'm going to add a desktop gadget to allow quick time logging
+
+h2. Allow any tracker as task
+
+h2. Story state loosely follows task progress
