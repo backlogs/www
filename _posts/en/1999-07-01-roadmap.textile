@@ -1,0 +1,24 @@
+---
+title: Roadmap
+layout: default
+categories: en
+---
+h1. Roadmap
+
+The following items are pretty certain to happen, in roughly this order:
+
+h2. Version/story sharing between projects
+
+This is currently in progress, but the complexity of the matter is enormously underestimated by the people clamoring for it. I've seen a few naive (sorry, but it's true) patches come in, which do show these shared versions/stories, but also introduce one or more of the following problems:
+
+* Workflow breakage
+* AJAX failures on the master backlogs page because it is no longer safe to assume any story can be dropped anywhere. Version sharing is pretty flexible *up and down* the tree, so the drag-and-drop stuff on the master page must adapt *dynamically* to only allow valid drop targets. This is currently implemented but I'm still working on tests for this. None of the other patches even considered this.
+* AJAX failures on the taskboard because tasks can't assume they can be dropped on any story but their own, and impediments cannot be created for all combinations of tasks because a "blocks" relatinoship cannot transgress project lines. None of the other patches consider this. Not implemented yet.
+
+h2. Proper "rejected" state for stories/tasks
+
+Right a story in a "closed" state is considered to be "accepted" by the PO, and a task in a "closed" state is considered finished sucessfully. This has the problem that you're either keeping stories/tasks open indefinately (polluting your view of what remains to be done), or it will at some point screw subtly with your burndown. Proof of concept is done.
+
+h2. Easy time logging
+
+I'm going to add a desktop gadget to allow quick time logging
