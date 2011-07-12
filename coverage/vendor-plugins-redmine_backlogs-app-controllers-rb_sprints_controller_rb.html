@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_sprints_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_sprints_controller.rb</a></td>
-            <td class='right_align'><tt>34</tt></td>
-            <td class='right_align'><tt>24</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class='right_align'><tt>45</tt></td>
+            <td class='right_align'><tt>33</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.22%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:100px"></div>
-            <div class="uncovered" style="width:0px"></div>
+            <div class="covered" style="width:82px"></div>
+            <div class="uncovered" style="width:18px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.76%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:100px"></div>
-            <div class="uncovered" style="width:0px"></div>
+            <div class="covered" style="width:76px"></div>
+            <div class="uncovered" style="width:24px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -117,7 +117,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line11">11</a>     attribs = params.select{|k,v| k != 'id' and Sprint.column_names.include? k }</pre></td>
+            <td><pre><a name="line11">11</a>     attribs = params.select{|k,v| k != 'id' and RbSprint.column_names.include? k }</pre></td>
           </tr>
         
           
@@ -129,139 +129,205 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>     @sprint = Sprint.new(attribs)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line14">14</a>     @sprint.save!</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line15">15</a>     result = @sprint.errors.length</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line16">16</a>     status = (result == 0 ? 200 : 400)</pre></td>
+            <td><pre><a name="line13">13</a>     @sprint = RbSprint.new(attribs)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a> </pre></td>
+            <td><pre><a name="line14">14</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line15">15</a>     begin</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line19">19</a>       format.html { render :partial =&gt; &quot;sprint&quot;, :status =&gt; status }</pre></td>
+            <td><pre><a name="line16">16</a>       @sprint.save!</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
+          <tr class="uncovered">
+            <td><pre><a name="line17">17</a>     rescue =&gt; e</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a>       render :text =&gt; e.to_s, :status =&gt; 400</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>       return</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
             <td><pre><a name="line20">20</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a>   end</pre></td>
+            <td><pre><a name="line21">21</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line22">22</a>     result = @sprint.errors.length</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line23">23</a>     status = (result == 0 ? 200 : 400)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a> </pre></td>
+            <td><pre><a name="line24">24</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line23">23</a>   def update</pre></td>
+            <td><pre><a name="line25">25</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line24">24</a>     attribs = params.select{|k,v| k != 'id' and Sprint.column_names.include? k }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line25">25</a>     attribs = Hash[*attribs.flatten]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line26">26</a>     result  = @sprint.update_attributes attribs</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line27">27</a>     status  = (result ? 200 : 400)</pre></td>
+            <td><pre><a name="line26">26</a>       format.html { render :partial =&gt; &quot;sprint&quot;, :status =&gt; status }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line28">28</a>     </pre></td>
+            <td><pre><a name="line27">27</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line28">28</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line29">29</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line29">29</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line30">30</a>   def update</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line30">30</a>       format.html { render :partial =&gt; &quot;sprint&quot;, :status =&gt; status }</pre></td>
+            <td><pre><a name="line31">31</a>     attribs = params.select{|k,v| k != 'id' and RbSprint.column_names.include? k }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line32">32</a>     attribs = Hash[*attribs.flatten]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line33">33</a>     begin</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line34">34</a>       result  = @sprint.update_attributes attribs</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line35">35</a>     rescue =&gt; e</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line36">36</a>       render :text =&gt; e.to_s, :status =&gt; 400</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line37">37</a>       return</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line38">38</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line31">31</a>     end</pre></td>
+            <td><pre><a name="line39">39</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line40">40</a>     respond_to do |format|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line41">41</a>       format.html { render :partial =&gt; &quot;sprint&quot;, :status =&gt; (result ? 200 : 400) }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line32">32</a>   end</pre></td>
+            <td><pre><a name="line42">42</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line33">33</a>   </pre></td>
+            <td><pre><a name="line43">43</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line34">34</a> end</pre></td>
+            <td><pre><a name="line44">44</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line45">45</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Thu Jun 23 18:20:57 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

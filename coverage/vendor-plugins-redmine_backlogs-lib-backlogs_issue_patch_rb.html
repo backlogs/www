@@ -387,7 +387,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>         return Story.trackers.include?(self.tracker_id)</pre></td>
+            <td><pre><a name="line56">56</a>         return RbStory.trackers.include?(self.tracker_id)</pre></td>
           </tr>
         
           
@@ -411,7 +411,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line60">60</a>         return (self.parent_id &amp;&amp; self.tracker_id == Task.tracker)</pre></td>
+            <td><pre><a name="line60">60</a>         return (self.parent_id &amp;&amp; self.tracker_id == RbTask.tracker)</pre></td>
           </tr>
         
           
@@ -465,7 +465,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line69">69</a>           :conditions =&gt; [ &quot;root_id = ? and lft &lt; ? and tracker_id in (?)&quot;, self.root_id, self.lft, Story.trackers ])</pre></td>
+            <td><pre><a name="line69">69</a>           :conditions =&gt; [ &quot;root_id = ? and lft &lt; ? and tracker_id in (?)&quot;, self.root_id, self.lft, RbStory.trackers ])</pre></td>
           </tr>
         
           
@@ -699,7 +699,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line108">108</a>         if self.tracker_id == Task.tracker</pre></td>
+            <td><pre><a name="line108">108</a>         if self.tracker_id == RbTask.tracker</pre></td>
           </tr>
         
           
@@ -855,7 +855,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line134">134</a>           if not Task.tracker.nil?</pre></td>
+            <td><pre><a name="line134">134</a>           if not RbTask.tracker.nil?</pre></td>
           </tr>
         
           
@@ -873,7 +873,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line137">137</a>               connection.execute(&quot;update issues set tracker_id=#{connection.quote(Task.tracker)}, fixed_version_id=#{connection.quote(self.fixed_version_id)} where id in (#{tasks})&quot;)</pre></td>
+            <td><pre><a name="line137">137</a>               connection.execute(&quot;update issues set tracker_id=#{connection.quote(RbTask.tracker)}, fixed_version_id=#{connection.quote(self.fixed_version_id)} where id in (#{tasks})&quot;)</pre></td>
           </tr>
         
           
@@ -903,7 +903,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line142">142</a>           touched_sprints = touched_sprints.collect{|s| Sprint.find(s)}.compact</pre></td>
+            <td><pre><a name="line142">142</a>           touched_sprints = touched_sprints.collect{|s| RbSprint.find(s)}.compact</pre></td>
           </tr>
         
           
@@ -915,7 +915,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line144">144</a>         elsif not Task.tracker.nil?</pre></td>
+            <td><pre><a name="line144">144</a>         elsif not RbTask.tracker.nil?</pre></td>
           </tr>
         
           
@@ -939,7 +939,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line148">148</a>               connection.execute &quot;update issues set tracker_id = #{connection.quote(Task.tracker)}, fixed_version_id = #{connection.quote(story.fixed_version_id)} where id = #{connection.quote(self.id)}&quot;</pre></td>
+            <td><pre><a name="line148">148</a>               connection.execute &quot;update issues set tracker_id = #{connection.quote(RbTask.tracker)}, fixed_version_id = #{connection.quote(story.fixed_version_id)} where id = #{connection.quote(self.id)}&quot;</pre></td>
           </tr>
         
           
@@ -957,7 +957,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line151">151</a>             touched_sprints = [self.parent_id, self.parent_id_was].compact.uniq.collect{|t| Task.find(t).story }.compact.uniq.collect{|s| s.fixed_version}.compact</pre></td>
+            <td><pre><a name="line151">151</a>             touched_sprints = [self.parent_id, self.parent_id_was].compact.uniq.collect{|t| RbTask.find(t).story }.compact.uniq.collect{|s| s.fixed_version}.compact</pre></td>
           </tr>
         
           
@@ -1041,7 +1041,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Thu Jun 23 18:20:58 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

@@ -681,7 +681,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line105">105</a>         return Sprint.find(:first,</pre></td>
+            <td><pre><a name="line105">105</a>         return RbSprint.find(:first,</pre></td>
           </tr>
         
           
@@ -747,7 +747,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line116">116</a>         backlog = Story.product_backlog(self, 10)</pre></td>
+            <td><pre><a name="line116">116</a>         backlog = RbStory.product_backlog(self, 10)</pre></td>
           </tr>
         
           
@@ -759,7 +759,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line118">118</a>         closed_sprints = Sprint.find(:all,</pre></td>
+            <td><pre><a name="line118">118</a>         closed_sprints = RbSprint.find(:all,</pre></td>
           </tr>
         
           
@@ -831,13 +831,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line130">130</a>         @scrum_statistics[:error, :sprint, :unsized] = Issue.exists?([&quot;story_points is null and fixed_version_id in (?) and tracker_id in (?)&quot;, all_sprints.collect{|s| s.id}, Story.trackers])</pre></td>
+            <td><pre><a name="line130">130</a>         @scrum_statistics[:error, :sprint, :unsized] = Issue.exists?([&quot;story_points is null and fixed_version_id in (?) and tracker_id in (?)&quot;, all_sprints.collect{|s| s.id}, RbStory.trackers])</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line131">131</a>         @scrum_statistics[:error, :sprint, :unestimated] = Issue.exists?([&quot;estimated_hours is null and fixed_version_id in (?) and tracker_id = ?&quot;, all_sprints.collect{|s| s.id}, Task.tracker])</pre></td>
+            <td><pre><a name="line131">131</a>         @scrum_statistics[:error, :sprint, :unestimated] = Issue.exists?([&quot;estimated_hours is null and fixed_version_id in (?) and tracker_id = ?&quot;, all_sprints.collect{|s| s.id}, RbTask.tracker])</pre></td>
           </tr>
         
           
@@ -1173,7 +1173,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line187">187</a>         story_trackers = Story.trackers.collect{|t| &quot;#{t}&quot;}.join(',')</pre></td>
+            <td><pre><a name="line187">187</a>         story_trackers = RbStory.trackers.collect{|t| &quot;#{t}&quot;}.join(',')</pre></td>
           </tr>
         
           
@@ -1233,7 +1233,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line197">197</a>           points_per_hour = Story.find_by_sql(&quot;select avg(story_points) / avg(estimated_hours) as points_per_hour from issues where #{select_stories}&quot;)[0].points_per_hour</pre></td>
+            <td><pre><a name="line197">197</a>           points_per_hour = RbStory.find_by_sql(&quot;select avg(story_points) / avg(estimated_hours) as points_per_hour from issues where #{select_stories}&quot;)[0].points_per_hour</pre></td>
           </tr>
         
           
@@ -1257,7 +1257,7 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line201">201</a>             stories = Story.find(:all, :conditions =&gt; [select_stories])</pre></td>
+            <td><pre><a name="line201">201</a>             stories = RbStory.find(:all, :conditions =&gt; [select_stories])</pre></td>
           </tr>
         
           
@@ -1377,7 +1377,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Thu Jun 23 18:20:58 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

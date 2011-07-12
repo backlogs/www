@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_taskboards_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_taskboards_controller.rb</a></td>
-            <td class='right_align'><tt>24</tt></td>
-            <td class='right_align'><tt>19</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>95.83%</tt></div>
+            <td class='right_align'><tt>23</tt></td>
+            <td class='right_align'><tt>18</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>95.65%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:96px"></div>
             <div class="uncovered" style="width:4px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>94.74%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>94.44%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:95px"></div>
-            <div class="uncovered" style="width:5px"></div>
+            <div class="covered" style="width:94px"></div>
+            <div class="uncovered" style="width:6px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -93,7 +93,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>     @statuses     = Tracker.find_by_id(Task.tracker).issue_statuses</pre></td>
+            <td><pre><a name="line7">7</a>     @statuses     = Tracker.find_by_id(RbTask.tracker).issue_statuses</pre></td>
           </tr>
         
           
@@ -129,79 +129,73 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>       @last_updated = Task.find(:first,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line14">14</a>                         :conditions =&gt; ['tracker_id = ? and fixed_version_id = ?',</pre></td>
+            <td><pre><a name="line13">13</a>       @last_updated = RbTask.find(:first,</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>                           Task.tracker, @sprint.stories[0].fixed_version_id],</pre></td>
+            <td><pre><a name="line14">14</a>                         :conditions =&gt; ['tracker_id = ? and fixed_version_id = ?', RbTask.tracker, @sprint.stories[0].fixed_version_id],</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line16">16</a>                         :order      =&gt; &quot;updated_on DESC&quot;)</pre></td>
+            <td><pre><a name="line15">15</a>                         :order      =&gt; &quot;updated_on DESC&quot;)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line17">17</a>     end</pre></td>
+            <td><pre><a name="line16">16</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a> </pre></td>
+            <td><pre><a name="line17">17</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line19">19</a>     respond_to do |format|</pre></td>
+            <td><pre><a name="line18">18</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line20">20</a>       format.html { render :layout =&gt; &quot;rb&quot; }</pre></td>
+            <td><pre><a name="line19">19</a>       format.html { render :layout =&gt; &quot;rb&quot; }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a>     end</pre></td>
+            <td><pre><a name="line20">20</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line22">22</a>   end</pre></td>
+            <td><pre><a name="line21">21</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a>   </pre></td>
+            <td><pre><a name="line22">22</a>   </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line24">24</a> end</pre></td>
+            <td><pre><a name="line23">23</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Thu Jun 23 18:20:58 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

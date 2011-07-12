@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>vendor/plugins/redmine_backlogs/app/models/sprint.rb</title>
+    <title>vendor/plugins/redmine_backlogs/app/models/rb_sprint.rb</title>
     <link href="screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="print.css" media="print" rel="stylesheet" type="text/css" />
     
@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>Redmine C0 Coverage Information - RCov</h1>
-    <h2>vendor/plugins/redmine_backlogs/app/models/sprint.rb</h2>
+    <h2>vendor/plugins/redmine_backlogs/app/models/rb_sprint.rb</h2>
 
     
 
@@ -27,18 +27,18 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-sprint_rb.html">vendor/plugins/redmine_backlogs/app/models/sprint.rb</a></td>
+            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-rb_sprint_rb.html">vendor/plugins/redmine_backlogs/app/models/rb_sprint.rb</a></td>
             <td class='right_align'><tt>291</tt></td>
             <td class='right_align'><tt>218</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>81.79%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.13%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:82px"></div>
             <div class="uncovered" style="width:18px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.28%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.73%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:80px"></div>
-            <div class="uncovered" style="width:20px"></div>
+            <div class="covered" style="width:81px"></div>
+            <div class="uncovered" style="width:19px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -686,67 +686,67 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line106">106</a>       @ideal.each_with_index{|v, i| @ideal[i] = @points_committed[i] - v}</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line107">107</a>       @points_accepted.display = false</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line108">108</a>       @points_resolved.display = false</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line109">109</a>       @available_series.delete(:points_accepted)</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line110">110</a>       @available_series.delete(:points_resolved)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line111">111</a>     else</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line112">112</a>       @points_to_accept.display = false</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line113">113</a>       @points_to_resolve.display = false</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line114">114</a>       @available_series.delete(:points_to_accept)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line115">115</a>       @available_series.delete(:points_to_resolve)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line116">116</a>     end</pre></td>
           </tr>
         
@@ -1071,7 +1071,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line170">170</a> class Sprint &lt; Version</pre></td>
+            <td><pre><a name="line170">170</a> class RbSprint &lt; Version</pre></td>
           </tr>
         
           
@@ -1173,7 +1173,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line187">187</a>         return Story.sprint_backlog(self)</pre></td>
+            <td><pre><a name="line187">187</a>         return RbStory.sprint_backlog(self)</pre></td>
           </tr>
         
           
@@ -1767,7 +1767,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line286">286</a>                         Story.trackers + [Task.tracker],</pre></td>
+            <td><pre><a name="line286">286</a>                         RbStory.trackers + [RbTask.tracker],</pre></td>
           </tr>
         
           
@@ -1803,7 +1803,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Thu Jun 23 18:20:58 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
