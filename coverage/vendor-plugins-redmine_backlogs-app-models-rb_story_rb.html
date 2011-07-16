@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-rb_story_rb.html">vendor/plugins/redmine_backlogs/app/models/rb_story.rb</a></td>
-            <td class='right_align'><tt>189</tt></td>
-            <td class='right_align'><tt>144</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.66%</tt></div>
+            <td class='right_align'><tt>206</tt></td>
+            <td class='right_align'><tt>154</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>78.64%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:76px"></div>
-            <div class="uncovered" style="width:24px"></div>
+            <div class="covered" style="width:79px"></div>
+            <div class="uncovered" style="width:21px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>72.22%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.32%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:72px"></div>
-            <div class="uncovered" style="width:28px"></div>
+            <div class="covered" style="width:75px"></div>
+            <div class="uncovered" style="width:25px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -548,13 +548,13 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line83">83</a>       return RbTask.tasks_for(self.id)</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line84">84</a>     end</pre></td>
           </tr>
         
@@ -1185,13 +1185,115 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line189">189</a> end</pre></td>
+            <td><pre><a name="line189">189</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line190">190</a>   def burndown(dates)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line191">191</a>     bd = {}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line192">192</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line193">193</a>     bd[:status] = dates.collect{|d| IssueStatus.find(Integer(historic(d, 'status_id'))) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line194">194</a>     bd[:points] = dates.collect{|d| historic(d, 'story_points')}.collect{|p| p.nil? ? nil : Integer(p) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line195">195</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line196">196</a>     bd[:points_accepted] = (0..dates.size - 1).collect{|i| bd[:status][i].backlog == :accepted ? bd[:points][i] : 0 }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line197">197</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line198">198</a>     taskdata = tasks.collect{|t| t.burndown(dates) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line199">199</a>     bd[:hours] = (0..dates.size - 1).collect{|i| taskdata.collect{|t| t[:hours][i] }.compact.inject(0) {|total, h| total + h}}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line200">200</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line201">201</a>     bd[:points_resolved] = (0..dates.size - 1).collect{|i| bd[:hours][i] == 0 ? bd[:points][i] : 0}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line202">202</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line203">203</a>     return bd</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line204">204</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line205">205</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line206">206</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sat Jul 16 09:27:18 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

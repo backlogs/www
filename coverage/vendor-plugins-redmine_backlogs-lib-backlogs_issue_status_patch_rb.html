@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang='en' xml:lang='en' xmlns='http://www.w3.org/1999/xhtml'>
   <head>
-    <title>vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</title>
+    <title>vendor/plugins/redmine_backlogs/lib/backlogs_issue_status_patch.rb</title>
     <link href="screen.css" media="all" rel="stylesheet" type="text/css" />
     <link href="print.css" media="print" rel="stylesheet" type="text/css" />
     
@@ -10,7 +10,7 @@
   </head>
   <body>
     <h1>Redmine C0 Coverage Information - RCov</h1>
-    <h2>vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</h2>
+    <h2>vendor/plugins/redmine_backlogs/lib/backlogs_issue_status_patch.rb</h2>
 
     
 
@@ -27,18 +27,18 @@
         </thead>
         <tbody>
           <tr>
-            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_version_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_version_patch.rb</a></td>
-            <td class='right_align'><tt>22</tt></td>
-            <td class='right_align'><tt>17</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>72.73%</tt></div>
+            <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_issue_status_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_issue_status_patch.rb</a></td>
+            <td class='right_align'><tt>24</tt></td>
+            <td class='right_align'><tt>20</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.17%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:73px"></div>
-            <div class="uncovered" style="width:27px"></div>
+            <div class="covered" style="width:79px"></div>
+            <div class="uncovered" style="width:21px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>70.59%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:71px"></div>
-            <div class="uncovered" style="width:29px"></div>
+            <div class="covered" style="width:75px"></div>
+            <div class="uncovered" style="width:25px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -57,7 +57,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line1">1</a> require_dependency 'version'</pre></td>
+            <td><pre><a name="line1">1</a> require_dependency 'user'</pre></td>
           </tr>
         
           
@@ -75,7 +75,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line4">4</a>   module VersionPatch</pre></td>
+            <td><pre><a name="line4">4</a>   module IssueStatusPatch</pre></td>
           </tr>
         
           
@@ -87,13 +87,13 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line6">6</a>       base.extend(ClassMethods)</pre></td>
+            <td><pre><a name="line6">6</a>         base.extend(ClassMethods)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>       base.send(:include, InstanceMethods)</pre></td>
+            <td><pre><a name="line7">7</a>         base.send(:include, InstanceMethods)</pre></td>
           </tr>
         
           
@@ -135,55 +135,67 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>       def burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line15">15</a>         return RbSprint.find_by_id(self.id).burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line16">16</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line17">17</a>   </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line18">18</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line19">19</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line20">20</a> end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line21">21</a> </pre></td>
+            <td><pre><a name="line14">14</a>       def backlog</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line22">22</a> Version.send(:include, Backlogs::VersionPatch) unless Version.included_modules.include? Backlogs::VersionPatch</pre></td>
+            <td><pre><a name="line15">15</a>         return :success if is_closed? &amp;&amp; (default_done_ratio.nil? || default_done_ratio == 100)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line16">16</a>         return :failure if is_closed?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line17">17</a>         return :new if is_default? || default_done_ratio == 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line18">18</a>         return :in_progress</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line19">19</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line20">20</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line21">21</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line22">22</a> end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line23">23</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line24">24</a> IssueStatus.send(:include, Backlogs::IssueStatusPatch) unless IssueStatus.included_modules.include? Backlogs::IssueStatusPatch</pre></td>
           </tr>
         
       </tbody>

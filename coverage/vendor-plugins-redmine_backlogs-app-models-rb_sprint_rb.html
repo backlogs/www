@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-models-rb_sprint_rb.html">vendor/plugins/redmine_backlogs/app/models/rb_sprint.rb</a></td>
-            <td class='right_align'><tt>291</tt></td>
-            <td class='right_align'><tt>218</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.13%</tt></div>
+            <td class='right_align'><tt>209</tt></td>
+            <td class='right_align'><tt>153</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.90%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:82px"></div>
-            <div class="uncovered" style="width:18px"></div>
+            <div class="covered" style="width:80px"></div>
+            <div class="uncovered" style="width:20px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>80.73%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>78.43%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:81px"></div>
-            <div class="uncovered" style="width:19px"></div>
+            <div class="covered" style="width:78px"></div>
+            <div class="uncovered" style="width:22px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -75,31 +75,31 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line4">4</a>   class Series &lt; Array</pre></td>
+            <td><pre><a name="line4">4</a>   def initialize(sprint, burn_direction = nil)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line5">5</a>     def initialize(*args)</pre></td>
+            <td><pre><a name="line5">5</a>     burn_direction = burn_direction || Setting.plugin_redmine_backlogs[:points_burn_direction]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line6">6</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line6">6</a>       @units = args.pop</pre></td>
+            <td><pre><a name="line7">7</a>     @days = sprint.days</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line7">7</a>       @name = args.pop</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line8">8</a>       @display = true</pre></td>
+            <td><pre><a name="line8">8</a>     @sprint_id = sprint.id</pre></td>
           </tr>
         
           
@@ -111,25 +111,25 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line10">10</a>       raise &quot;Unsupported unit '#{@units}'&quot; unless [:points, :hours].include? @units</pre></td>
+            <td><pre><a name="line10">10</a>     now = Time.now</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line11">11</a>       raise &quot;Name '#{@name}' must be a symbol&quot; unless @name.is_a?  Symbol</pre></td>
+            <td><pre><a name="line11">11</a>     days = @days.collect{|d| Time.local(d.year, d.mon, d.mday, 0, 0, 0) }.select{|d| d &lt;= now }</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line12">12</a>       super(*args)</pre></td>
+            <td><pre><a name="line12">12</a>     days[0] = :first</pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line13">13</a>     end</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line13">13</a>     days &lt;&lt; :last</pre></td>
           </tr>
         
           
@@ -141,43 +141,43 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>     attr_reader :units</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line16">16</a>     attr_reader :name</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line17">17</a>     attr_accessor :display</pre></td>
+            <td><pre><a name="line15">15</a>     data = sprint.stories.collect{|s| s.burndown(days) }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line18">18</a>   end</pre></td>
+            <td><pre><a name="line16">16</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line17">17</a>     filler = [nil] * ((@days.size + 1) - days.size)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line19">19</a> </pre></td>
+            <td><pre><a name="line18">18</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line20">20</a>   def initialize(sprint, burn_direction = nil)</pre></td>
+            <td><pre><a name="line19">19</a>     alldays = (0 .. @days.size)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line21">21</a>     burn_direction = burn_direction || Setting.plugin_redmine_backlogs[:points_burn_direction]</pre></td>
+            <td><pre><a name="line20">20</a>     ndays = days.size</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>     days = (0..days.size)</pre></td>
           </tr>
         
           
@@ -189,211 +189,211 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line23">23</a>     @days = sprint.days</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line24">24</a>     @sprint_id = sprint.id</pre></td>
+            <td><pre><a name="line23">23</a>     @data = {}</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line25">25</a> </pre></td>
+            <td><pre><a name="line24">24</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line25">25</a>     @data[:points_committed] = days.collect{|i| data.collect{|s| s[:points][i] }.compact.inject(0) {|total, p| total + p}} + filler</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line26">26</a>     @data[:hours_remaining] = days.collect{|i| data.collect{|s| s[:hours][i] }.compact.inject(0) {|total, h| total + h}} + filler</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line27">27</a>     @data[:hours_ideal] = alldays.collect{|i| (@data[:hours_remaining][0] / ndays) * i}.reverse</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line26">26</a>     # end date for graph</pre></td>
+            <td><pre><a name="line28">28</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line27">27</a>     days = @days</pre></td>
+            <td><pre><a name="line29">29</a>     @data[:points_accepted] = days.collect{|i| data.collect{|s| s[:points_accepted][i] }.compact.inject(0) {|total, p| total + p}} + filler</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>     daycount = days.size</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line29">29</a>     days = sprint.days(Date.today) if sprint.effective_date &gt; Date.today</pre></td>
+            <td><pre><a name="line30">30</a>     @data[:points_resolved] = days.collect{|i| data.collect{|s| s[:points_resolved][i] }.compact.inject(0) {|total, p| total + p}} + filler</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line30">30</a> </pre></td>
+            <td><pre><a name="line31">31</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>     _series = ([nil] * days.size)</pre></td>
+            <td><pre><a name="line32">32</a>     @data[:points_to_resolve] = days.collect{|i| @data[:points_committed][i] - @data[:points_resolved][i] } + filler</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line33">33</a>     @data[:points_to_accept] = days.collect{|i| @data[:points_accepted][i] - @data[:points_resolved][i] } + filler</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line32">32</a> </pre></td>
+            <td><pre><a name="line34">34</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line35">35</a>     @data[:points_required_burn_rate] = days.collect{|i| Float(@data[:points_to_resolve][i]) / ((ndays - i) + 0.01) } + filler</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line36">36</a>     @data[:hours_required_burn_rate] = days.collect{|i| Float(@data[:hours_remaining][i]) / ((ndays - i) + 0.01) } + filler</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line33">33</a>     # load cache</pre></td>
+            <td><pre><a name="line37">37</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line34">34</a>     day_index = to_h(days, (0..(days.size - 1)).to_a)</pre></td>
+            <td><pre><a name="line38">38</a>     if burn_direction == 'down'</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line35">35</a>     starts = sprint.sprint_start_date</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line39">39</a>       @data.delete(:points_to_resolve)</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line36">36</a>     BurndownDay.find(:all, :order=&gt;'created_at', :conditions =&gt; [&quot;version_id = ?&quot;, sprint.id]).each {|data|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line37">37</a>       day = day_index[data.created_at.to_date]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line38">38</a>       next if !day</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line40">40</a>       @data.delete(:points_to_accept)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line39">39</a> </pre></td>
+            <td><pre><a name="line41">41</a>     else</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line40">40</a>       _series[day] = [data.points_committed.to_f, data.points_resolved.to_f, data.points_accepted.to_f, data.remaining_hours.to_f]</pre></td>
+            <td><pre><a name="line42">42</a>       @data.delete(:points_resolved)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line43">43</a>       @data.delete(:points_accepted)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line41">41</a>     }</pre></td>
+            <td><pre><a name="line44">44</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line42">42</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line43">43</a>     backlog = nil</pre></td>
+            <td><pre><a name="line45">45</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line44">44</a> </pre></td>
+            <td><pre><a name="line46">46</a>     # delete any series that is flat-line 0/nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line47">47</a>     max = {'hours' =&gt; nil, 'points' =&gt; nil}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line48">48</a>     @data.keys.each{|series|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line49">49</a>       units = series.to_s.gsub(/_.*/, '')</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line50">50</a>       next unless ['points', 'hours'].include?(units)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line45">45</a>     # calculate first day if not loaded from cache</pre></td>
+            <td><pre><a name="line51">51</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line46">46</a>     if !_series[0]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line47">47</a>       assume = (days[0] != Date.today)</pre></td>
+            <td><pre><a name="line52">52</a>       max[units] = ([max[units]] + @data[series]).compact.max</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line48">48</a> </pre></td>
+            <td><pre><a name="line53">53</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line49">49</a>       backlog ||= sprint.stories</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line50">50</a>       _series[0] = [</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line51">51</a>         backlog.inject(0) {|sum, story| sum + story.story_points.to_f }, # committed</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line52">52</a>         (assume ? 0 : backlog.select {|s| s.descendants.select{|t| !t.closed?}.size == 0 }.inject(0) {|sum, story| sum + story.story_points.to_f }),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line53">53</a>         (assume ? 0 : backlog.select {|s| s.closed? }.inject(0) {|sum, story| sum + story.story_points.to_f }),</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line54">54</a>         backlog.inject(0) {|sum, story| sum + story.estimated_hours.to_f } # remaining</pre></td>
+            <td><pre><a name="line54">54</a>       next if series == :points_committed</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line55">55</a>       ]</pre></td>
+            <td><pre><a name="line55">55</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line56">56</a>       cache(days[0], _series[0])</pre></td>
+            <td><pre><a name="line56">56</a>       @data.delete(series) if @data[series].collect{|d| d.to_f }.uniq == [0.0]</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line57">57</a>     end</pre></td>
+            <td><pre><a name="line57">57</a>     }</pre></td>
           </tr>
         
           
@@ -404,68 +404,68 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line59">59</a>     # calculate last day if not loaded from cache</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line59">59</a>     @data[:max_points] = max['points']</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line60">60</a>     if !_series[-1]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line61">61</a>       backlog ||= sprint.stories</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line62">62</a>       _series[-1] = [</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line63">63</a>         backlog.inject(0) {|sum, story| sum + story.story_points.to_f },</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line64">64</a>         backlog.select {|s| s.descendants.select{|t| !t.closed?}.size == 0}.inject(0) {|sum, story| sum + story.story_points.to_f },</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line65">65</a>         backlog.select {|s| s.closed? }.inject(0) {|sum, story| sum + story.story_points.to_f },</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line66">66</a>         backlog.select {|s| not s.closed? &amp;&amp; s.descendants.select{|t| !t.closed?}.size != 0}.inject(0) {|sum, story| sum + story.remaining_hours.to_f } </pre></td>
+            <td><pre><a name="line60">60</a>     @data[:max_hours] = max['hours']</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line67">67</a>       ]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line68">68</a>       cache(days[-1], _series[-1])</pre></td>
+            <td><pre><a name="line61">61</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line69">69</a>     end</pre></td>
+            <td><pre><a name="line62">62</a>     # delete :points:committed if flatline</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line63">63</a>     @data.delete(:points_committed) if @data[:points_committed].uniq.compact.size &lt; 1</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line64">64</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line65">65</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line66">66</a>   def [](i)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line67">67</a>     i = i.intern if i.is_a?(String)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line68">68</a>     return @data[i]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line69">69</a>   end</pre></td>
           </tr>
         
           
@@ -476,20 +476,20 @@
         
           
           
+          <tr class="marked">
+            <td><pre><a name="line71">71</a>   def series</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line72">72</a>     return @data.keys.collect{|k| k.to_s}.select{|k| k =~ /^(points|hours)_/}.sort</pre></td>
+          </tr>
+        
+          
+          
           <tr class="inferred">
-            <td><pre><a name="line71">71</a>     # fill out series</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line72">72</a>     last = nil</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line73">73</a>     _series = _series.enum_for(:each_with_index).collect{|v, i| v.nil? ? last : (last = v; v) }</pre></td>
+            <td><pre><a name="line73">73</a>   end</pre></td>
           </tr>
         
           
@@ -500,74 +500,74 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line75">75</a>     # make registered series</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line75">75</a>   attr_reader :days</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line76">76</a>     points_committed, points_resolved, points_accepted, remaining_hours = _series.transpose</pre></td>
+            <td><pre><a name="line76">76</a>   attr_reader :sprint_id</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line77">77</a>     make_series :points_committed, :points, points_committed</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line78">78</a>     make_series :points_resolved, :points, points_resolved</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line79">79</a>     make_series :points_accepted, :points, points_accepted</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line80">80</a>     make_series :remaining_hours, :hours, remaining_hours</pre></td>
+            <td><pre><a name="line77">77</a>   attr_reader :data</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line81">81</a> </pre></td>
+            <td><pre><a name="line78">78</a> end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line82">82</a>     # calculate burn-up ideal</pre></td>
+            <td><pre><a name="line79">79</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line83">83</a>     if daycount == 1 # should never happen</pre></td>
+            <td><pre><a name="line80">80</a> class RbSprint &lt; Version</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
-            <td><pre><a name="line84">84</a>       make_series :ideal, :points, [points_committed]</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line81">81</a>     unloadable</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line85">85</a>     else</pre></td>
+            <td><pre><a name="line82">82</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line86">86</a>       make_series :ideal, :points, points_committed.enum_for(:each_with_index).collect{|c, i| c * i * (1.0 / (daycount - 1)) }</pre></td>
+            <td><pre><a name="line83">83</a>     validate :start_and_end_dates</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line84">84</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line85">85</a>     def start_and_end_dates</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line86">86</a>         errors.add_to_base(&quot;Sprint cannot end before it starts&quot;) if self.effective_date &amp;&amp; self.sprint_start_date &amp;&amp; self.sprint_start_date &gt;= self.effective_date</pre></td>
           </tr>
         
           
@@ -584,314 +584,314 @@
         
           
           
+          <tr class="marked">
+            <td><pre><a name="line89">89</a>     named_scope :open_sprints, lambda { |project|</pre></td>
+          </tr>
+        
+          
+          
           <tr class="inferred">
-            <td><pre><a name="line89">89</a>     # burn-down equivalents to the burn-up chart</pre></td>
+            <td><pre><a name="line90">90</a>         {</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line91">91</a>             :order =&gt; 'sprint_start_date ASC, effective_date ASC',</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line90">90</a>     make_series :points_to_resolve, :points, points_committed.zip(points_resolved).collect{|c, r| c - r}</pre></td>
+            <td><pre><a name="line92">92</a>             :conditions =&gt; [ &quot;status = 'open' and project_id = ?&quot;, project.id ]</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line91">91</a>     make_series :points_to_accept, :points, points_committed.zip(points_accepted).collect{|c, a| c - a}</pre></td>
+            <td><pre><a name="line93">93</a>         }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line92">92</a> </pre></td>
+            <td><pre><a name="line94">94</a>     }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line93">93</a>     # required burn-rate</pre></td>
+            <td><pre><a name="line95">95</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line94">94</a>     make_series :required_burn_rate_points, :points, @points_to_resolve.enum_for(:each_with_index).collect{|p, i| p / (daycount - i) }</pre></td>
+            <td><pre><a name="line96">96</a>     def stories</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line95">95</a>     make_series :required_burn_rate_hours, :hours, remaining_hours.enum_for(:each_with_index).collect{|r, i| r / (daycount-i) }</pre></td>
+            <td><pre><a name="line97">97</a>         return RbStory.sprint_backlog(self)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line96">96</a> </pre></td>
+            <td><pre><a name="line98">98</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line97">97</a>     # mark series to be displayed if they're not constant-zero, or</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line98">98</a>     # just constant in case of points-committed</pre></td>
+            <td><pre><a name="line99">99</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line99">99</a>     @available_series.values.each{|s|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line100">100</a>       const_val = (s.name == :points_committed ? s[0] : 0)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line101">101</a>       @available_series[s.name].display = (s.select{|v| v != const_val}.size != 0)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line102">102</a>     }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line103">103</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line104">104</a>     # decide whether you want burn-up or down</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line105">105</a>     if burn_direction == 'down'</pre></td>
+            <td><pre><a name="line100">100</a>     def points</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line106">106</a>       @ideal.each_with_index{|v, i| @ideal[i] = @points_committed[i] - v}</pre></td>
+            <td><pre><a name="line101">101</a>         return stories.inject(0){|sum, story| sum + story.story_points.to_i}</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line107">107</a>       @points_accepted.display = false</pre></td>
+            <td><pre><a name="line102">102</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line103">103</a>    </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line104">104</a>     def has_wiki_page</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line108">108</a>       @points_resolved.display = false</pre></td>
+            <td><pre><a name="line105">105</a>         return false if wiki_page_title.blank?</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line109">109</a>       @available_series.delete(:points_accepted)</pre></td>
+            <td><pre><a name="line106">106</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line110">110</a>       @available_series.delete(:points_resolved)</pre></td>
+            <td><pre><a name="line107">107</a>         page = project.wiki.find_page(self.wiki_page_title)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line108">108</a>         return false if !page</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line109">109</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line110">110</a>         template = find_wiki_template</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line111">111</a>         return false if template &amp;&amp; page.text == template.text</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line112">112</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line113">113</a>         return true</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line114">114</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line111">111</a>     else</pre></td>
+            <td><pre><a name="line115">115</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line112">112</a>       @points_to_accept.display = false</pre></td>
+            <td><pre><a name="line116">116</a>     def find_wiki_template</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line113">113</a>       @points_to_resolve.display = false</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line114">114</a>       @available_series.delete(:points_to_accept)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line115">115</a>       @available_series.delete(:points_to_resolve)</pre></td>
+            <td><pre><a name="line117">117</a>         projects = [self.project] + self.project.ancestors</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line116">116</a>     end</pre></td>
+            <td><pre><a name="line118">118</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line119">119</a>         template = Setting.plugin_redmine_backlogs[:wiki_template]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line120">120</a>         if template =~ /:/</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line117">117</a> </pre></td>
+            <td><pre><a name="line121">121</a>           p, template = *template.split(':', 2)</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line118">118</a>     @max = {</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line122">122</a>           projects &lt;&lt; Project.find(p)</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line119">119</a>       :points =&gt; @available_series.values.select{|s| s.units == :points}.flatten.compact.max,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line120">120</a>       :hours =&gt; @available_series.values.select{|s| s.units == :hours}.flatten.compact.max</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line123">123</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line121">121</a>     }</pre></td>
+            <td><pre><a name="line124">124</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line125">125</a>         projects.compact!</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line122">122</a>   end</pre></td>
+            <td><pre><a name="line126">126</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line127">127</a>         projects.each{|p|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line128">128</a>           next unless p.wiki</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line129">129</a>           t = p.wiki.find_page(template)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line130">130</a>           return t if t</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line123">123</a> </pre></td>
+            <td><pre><a name="line131">131</a>         }</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line124">124</a>   attr_reader :days</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line132">132</a>         return nil</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line125">125</a>   attr_reader :sprint_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line126">126</a>   attr_reader :max</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line133">133</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line127">127</a> </pre></td>
+            <td><pre><a name="line134">134</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line128">128</a>   attr_reader :points_committed</pre></td>
+            <td><pre><a name="line135">135</a>     def wiki_page</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line129">129</a>   attr_reader :points_resolved</pre></td>
+            <td><pre><a name="line136">136</a>         if ! project.wiki</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line130">130</a>   attr_reader :points_accepted</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line137">137</a>             return ''</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line131">131</a>   attr_reader :remaining_hours</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line132">132</a>   attr_reader :ideal</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line133">133</a>   attr_reader :points_to_resolve</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line134">134</a>   attr_reader :points_to_accept</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line135">135</a>   attr_reader :required_burn_rate_points</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line136">136</a>   attr_reader :required_burn_rate_hours</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line138">138</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line137">137</a> </pre></td>
+            <td><pre><a name="line139">139</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line138">138</a>   def series(select = :active)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line139">139</a>     return @available_series.values.select{|s| (select == :all) || s.display }.sort{|x,y| &quot;#{x.name}&quot; &lt;=&gt; &quot;#{y.name}&quot;}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line140">140</a>   end</pre></td>
+            <td><pre><a name="line140">140</a>         self.update_attribute(:wiki_page_title, Wiki.titleize(self.name)) if wiki_page_title.blank?</pre></td>
           </tr>
         
           
@@ -903,181 +903,181 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line142">142</a>   private</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line143">143</a> </pre></td>
+            <td><pre><a name="line142">142</a>         page = project.wiki.find_page(self.wiki_page_title)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line144">144</a>   def cache(day, datapoint)</pre></td>
+            <td><pre><a name="line143">143</a>         if !page</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line145">145</a>     datapoint = {</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line146">146</a>       :points_committed =&gt; datapoint[0],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line147">147</a>       :points_resolved =&gt; datapoint[1],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line148">148</a>       :points_accepted =&gt; datapoint[2],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line149">149</a>       :remaining_hours =&gt; datapoint[3],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line150">150</a>       :created_at =&gt; day,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line151">151</a>       :version_id =&gt; @sprint_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line152">152</a>     }</pre></td>
+            <td><pre><a name="line144">144</a>           template = find_wiki_template</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line153">153</a>     bdd = BurndownDay.new datapoint</pre></td>
+            <td><pre><a name="line145">145</a>           if template</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line154">154</a>     bdd.save!</pre></td>
+            <td><pre><a name="line146">146</a>             page = WikiPage.new(:wiki =&gt; project.wiki, :title =&gt; self.wiki_page_title)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line147">147</a>             page.content = WikiContent.new</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line148">148</a>             page.content.text = &quot;h1. #{self.name}\n\n#{template.text}&quot;</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line149">149</a>             page.save!</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line155">155</a>   end</pre></td>
+            <td><pre><a name="line150">150</a>           end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line156">156</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line157">157</a>   def make_series(name, units, data)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line158">158</a>     @available_series ||= {}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line159">159</a>     s = Burndown::Series.new(data, name, units)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line160">160</a>     @available_series[name] = s</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line161">161</a>     instance_variable_set(&quot;@#{name}&quot;, s)</pre></td>
+            <td><pre><a name="line151">151</a>         end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line162">162</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line163">163</a> </pre></td>
+            <td><pre><a name="line152">152</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line164">164</a>   def to_h(keys, values)</pre></td>
+            <td><pre><a name="line153">153</a>         return wiki_page_title</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line154">154</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line155">155</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line165">165</a>     return Hash[*keys.zip(values).flatten]</pre></td>
+            <td><pre><a name="line156">156</a>     def days(cutoff = nil)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line166">166</a>   end</pre></td>
+            <td><pre><a name="line157">157</a>         # assumes mon-fri are working days, sat-sun are not. this</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line167">167</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line168">168</a> end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line169">169</a> </pre></td>
+            <td><pre><a name="line158">158</a>         # assumption is not globally right, we need to make this configurable.</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line170">170</a> class RbSprint &lt; Version</pre></td>
+            <td><pre><a name="line159">159</a>         cutoff = self.effective_date if cutoff.nil?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line171">171</a>     unloadable</pre></td>
+            <td><pre><a name="line160">160</a>         return (self.sprint_start_date .. cutoff).select {|d| (d.wday &gt; 0 and d.wday &lt; 6) }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line161">161</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line162">162</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line163">163</a>     def eta</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line164">164</a>         return nil if ! self.start_date</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line165">165</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line166">166</a>         dpp = self.project.scrum_statistics.info[:average_days_per_point]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line167">167</a>         return nil if !dpp</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line168">168</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line169">169</a>         # assume 5 out of 7 are working days</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line170">170</a>         return self.start_date + Integer(self.points * dpp * 7.0/5)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line171">171</a>     end</pre></td>
           </tr>
         
           
@@ -1089,721 +1089,229 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line173">173</a>     validate :start_and_end_dates</pre></td>
+            <td><pre><a name="line173">173</a>     def has_burndown</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line174">174</a>         return !!(self.effective_date and self.sprint_start_date)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line174">174</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line175">175</a>     def start_and_end_dates</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line176">176</a>         errors.add_to_base(&quot;Sprint cannot end before it starts&quot;) if self.effective_date &amp;&amp; self.sprint_start_date &amp;&amp; self.sprint_start_date &gt;= self.effective_date</pre></td>
+            <td><pre><a name="line175">175</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line177">177</a>     end</pre></td>
+            <td><pre><a name="line176">176</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line177">177</a>     def activity</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line178">178</a>         bd = self.burndown('up')</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line179">179</a>         return false if !bd</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line180">180</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line181">181</a>         # assume a sprint is active if it's only 2 days old</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line182">182</a>         return true if bd[:hours_remaining].compact.size &lt;= 2</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line183">183</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line184">184</a>         return Issue.exists?(['fixed_version_id = ? and ((updated_on between ? and ?) or (created_on between ? and ?))', self.id, -2.days.from_now, Time.now, -2.days.from_now, Time.now])</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line185">185</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line178">178</a> </pre></td>
+            <td><pre><a name="line186">186</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line179">179</a>     named_scope :open_sprints, lambda { |project|</pre></td>
+            <td><pre><a name="line187">187</a>     def burndown(burn_direction = nil)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line188">188</a>         return nil if not self.has_burndown</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line189">189</a>         @cached_burndown ||= Burndown.new(self, burn_direction)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line190">190</a>         return @cached_burndown</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line180">180</a>         {</pre></td>
+            <td><pre><a name="line191">191</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line181">181</a>             :order =&gt; 'sprint_start_date ASC, effective_date ASC',</pre></td>
+            <td><pre><a name="line192">192</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line182">182</a>             :conditions =&gt; [ &quot;status = 'open' and project_id = ?&quot;, project.id ]</pre></td>
+            <td><pre><a name="line193">193</a>     def impediments</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line183">183</a>         }</pre></td>
+            <td><pre><a name="line194">194</a>         return Issue.find(:all, </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line184">184</a>     }</pre></td>
+            <td><pre><a name="line195">195</a>             :conditions =&gt; [&quot;id in (</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line185">185</a> </pre></td>
+            <td><pre><a name="line196">196</a>                             select issue_from_id</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line186">186</a>     def stories</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line197">197</a>                             from issue_relations ir</pre></td>
           </tr>
         
           
           
-          <tr class="marked">
-            <td><pre><a name="line187">187</a>         return RbStory.sprint_backlog(self)</pre></td>
+          <tr class="uncovered">
+            <td><pre><a name="line198">198</a>                             join issues blocked</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line199">199</a>                                 on blocked.id = ir.issue_to_id</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line200">200</a>                                 and blocked.tracker_id in (?)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line201">201</a>                                 and blocked.fixed_version_id = (?)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line202">202</a>                             where ir.relation_type = 'blocks'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line188">188</a>     end</pre></td>
+            <td><pre><a name="line203">203</a>                             )&quot;,</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line204">204</a>                         RbStory.trackers + [RbTask.tracker],</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line205">205</a>                         self.id]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line206">206</a>             ) #.sort {|a,b| a.closed? == b.closed? ?  a.updated_on &lt;=&gt; b.updated_on : (a.closed? ? 1 : -1) }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line189">189</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line190">190</a>     def points</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line191">191</a>         return stories.inject(0){|sum, story| sum + story.story_points.to_i}</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line192">192</a>     end</pre></td>
+            <td><pre><a name="line207">207</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line193">193</a>    </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line194">194</a>     def has_wiki_page</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line195">195</a>         return false if wiki_page_title.blank?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line196">196</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line197">197</a>         page = project.wiki.find_page(self.wiki_page_title)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line198">198</a>         return false if !page</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line199">199</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line200">200</a>         template = project.wiki.find_page(Setting.plugin_redmine_backlogs[:wiki_template])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line201">201</a>         return false if template &amp;&amp; page.text == template.text</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line202">202</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line203">203</a>         return true</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line204">204</a>     end</pre></td>
+            <td><pre><a name="line208">208</a> </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line205">205</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line206">206</a>     def wiki_page</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line207">207</a>         if ! project.wiki</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line208">208</a>             return ''</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line209">209</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line210">210</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line211">211</a>         self.update_attribute(:wiki_page_title, Wiki.titleize(self.name)) if wiki_page_title.blank?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line212">212</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line213">213</a>         page = project.wiki.find_page(self.wiki_page_title)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line214">214</a>         template = project.wiki.find_page(Setting.plugin_redmine_backlogs[:wiki_template])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line215">215</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line216">216</a>         if template and not page</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line217">217</a>             page = WikiPage.new(:wiki =&gt; project.wiki, :title =&gt; self.wiki_page_title)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line218">218</a>             page.content = WikiContent.new</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line219">219</a>             page.content.text = &quot;h1. #{self.name}\n\n#{template.text}&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line220">220</a>             page.save!</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line221">221</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line222">222</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line223">223</a>         return wiki_page_title</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line224">224</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line225">225</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line226">226</a>     def days(cutoff = nil)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line227">227</a>         # assumes mon-fri are working days, sat-sun are not. this</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line228">228</a>         # assumption is not globally right, we need to make this configurable.</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line229">229</a>         cutoff = self.effective_date if cutoff.nil?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line230">230</a>         return (self.sprint_start_date .. cutoff).select {|d| (d.wday &gt; 0 and d.wday &lt; 6) }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line231">231</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line232">232</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line233">233</a>     def eta</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line234">234</a>         return nil if ! self.start_date</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line235">235</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line236">236</a>         dpp = self.project.scrum_statistics.info[:average_days_per_point]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line237">237</a>         return nil if !dpp</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line238">238</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line239">239</a>         # assume 5 out of 7 are working days</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line240">240</a>         return self.start_date + Integer(self.points * dpp * 7.0/5)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line241">241</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line242">242</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line243">243</a>     def has_burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line244">244</a>         return !!(self.effective_date and self.sprint_start_date)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line245">245</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line246">246</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line247">247</a>     def activity</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line248">248</a>         bd = self.burndown('up')</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line249">249</a>         return false if !bd</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line250">250</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line251">251</a>         # assume a sprint is active if it's only 2 days old</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line252">252</a>         return true if bd.remaining_hours.size &lt;= 2</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line253">253</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line254">254</a>         return Issue.exists?(['fixed_version_id = ? and ((updated_on between ? and ?) or (created_on between ? and ?))', self.id, -2.days.from_now, Time.now, -2.days.from_now, Time.now])</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line255">255</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line256">256</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line257">257</a>     def burndown(burn_direction = nil)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line258">258</a>         return nil if not self.has_burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line259">259</a>         @cached_burndown ||= Burndown.new(self, burn_direction)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line260">260</a>         return @cached_burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line261">261</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line262">262</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line263">263</a>     def self.generate_burndown(only_current = true)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line264">264</a>         if only_current</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line265">265</a>             conditions = [&quot;? between sprint_start_date and effective_date&quot;, Date.today]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line266">266</a>         else</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line267">267</a>             conditions = &quot;1 = 1&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line268">268</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line269">269</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line270">270</a>         Version.find(:all, :conditions =&gt; conditions).each { |sprint|</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line271">271</a>             sprint.burndown</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line272">272</a>         }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line273">273</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line274">274</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line275">275</a>     def impediments</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line276">276</a>         return Issue.find(:all, </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line277">277</a>             :conditions =&gt; [&quot;id in (</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line278">278</a>                             select issue_from_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line279">279</a>                             from issue_relations ir</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line280">280</a>                             join issues blocked</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line281">281</a>                                 on blocked.id = ir.issue_to_id</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line282">282</a>                                 and blocked.tracker_id in (?)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line283">283</a>                                 and blocked.fixed_version_id = (?)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line284">284</a>                             where ir.relation_type = 'blocks'</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line285">285</a>                             )&quot;,</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line286">286</a>                         RbStory.trackers + [RbTask.tracker],</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line287">287</a>                         self.id]</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line288">288</a>             ) #.sort {|a,b| a.closed? == b.closed? ?  a.updated_on &lt;=&gt; b.updated_on : (a.closed? ? 1 : -1) }</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line289">289</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line290">290</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line291">291</a> end</pre></td>
+            <td><pre><a name="line209">209</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sat Jul 16 09:27:18 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

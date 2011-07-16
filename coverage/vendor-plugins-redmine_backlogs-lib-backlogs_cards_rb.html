@@ -28,14 +28,14 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_cards_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_cards.rb</a></td>
-            <td class='right_align'><tt>480</tt></td>
-            <td class='right_align'><tt>383</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>58.33%</tt></div>
+            <td class='right_align'><tt>479</tt></td>
+            <td class='right_align'><tt>382</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>58.46%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:58px"></div>
             <div class="uncovered" style="width:42px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>55.87%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>56.02%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:56px"></div>
             <div class="uncovered" style="width:44px"></div>
@@ -2727,217 +2727,211 @@
           
           
           <tr class="uncovered">
-            <td><pre><a name="line446">446</a>         data['hours.remaining'] = (issue.remaining_hours ? &quot;#{issue.remaining_hours}&quot; : '?') + ' ' + l(:label_hours)</pre></td>
+            <td><pre><a name="line446">446</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line447">447</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
+            <td><pre><a name="line447">447</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line448">448</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
+            <td><pre><a name="line448">448</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line449">449</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
+            <td><pre><a name="line449">449</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line450">450</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
+            <td><pre><a name="line450">450</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line451">451</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
+            <td><pre><a name="line451">451</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line452">452</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="uncovered">
-            <td><pre><a name="line453">453</a>         card = @task</pre></td>
+            <td><pre><a name="line452">452</a>         card = @task</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line454">454</a> </pre></td>
+            <td><pre><a name="line453">453</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line455">455</a>       elsif issue.is_story?</pre></td>
+            <td><pre><a name="line454">454</a>       elsif issue.is_story?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line456">456</a>         data['id'] = issue.id</pre></td>
+            <td><pre><a name="line455">455</a>         data['id'] = issue.id</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line457">457</a>         data['subject'] = issue.subject</pre></td>
+            <td><pre><a name="line456">456</a>         data['subject'] = issue.subject</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line458">458</a>         data['description'] = issue.description.to_s.strip; data['description'] = data['subject'] if data['description'] == ''</pre></td>
+            <td><pre><a name="line457">457</a>         data['description'] = issue.description.to_s.strip; data['description'] = data['subject'] if data['description'] == ''</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line459">459</a>         data['category'] = issue.category ? issue.category.name : ''</pre></td>
+            <td><pre><a name="line458">458</a>         data['category'] = issue.category ? issue.category.name : ''</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line460">460</a>         data['size'] = (issue.story_points ? &quot;#{issue.story_points}&quot; : '?') + ' ' + l(:label_points)</pre></td>
+            <td><pre><a name="line459">459</a>         data['size'] = (issue.story_points ? &quot;#{issue.story_points}&quot; : '?') + ' ' + l(:label_points)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line461">461</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
+            <td><pre><a name="line460">460</a>         data['position'] = issue.position ? issue.position : l(:label_not_prioritized)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line462">462</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
+            <td><pre><a name="line461">461</a>         data['path'] = (issue.self_and_ancestors.reverse.collect{|i| &quot;#{i.tracker.name} ##{i.id}&quot;}.join(&quot; : &quot;)) + &quot; (#{data['story.position']})&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line463">463</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
+            <td><pre><a name="line462">462</a>         data['sprint.name'] = issue.fixed_version ? issue.fixed_version.name : I18n.t(:backlogs_product_backlog)</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line464">464</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
+            <td><pre><a name="line463">463</a>         data['owner'] = issue.assigned_to.blank? ? &quot;&quot; : &quot;#{issue.assigned_to.firstname} #{issue.assigned_to.lastname}&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line465">465</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
+            <td><pre><a name="line464">464</a>         data['owner.email'] = issue.assigned_to.blank? ? nil : issue.assigned_to.mail.to_s.downcase</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line466">466</a> </pre></td>
+            <td><pre><a name="line465">465</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line467">467</a>         card = @story</pre></td>
+            <td><pre><a name="line466">466</a>         card = @story</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line468">468</a> </pre></td>
+            <td><pre><a name="line467">467</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line469">469</a>       else</pre></td>
+            <td><pre><a name="line468">468</a>       else</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line470">470</a>         raise &quot;Unsupported card type '#{type}'&quot;</pre></td>
+            <td><pre><a name="line469">469</a>         raise &quot;Unsupported card type '#{type}'&quot;</pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line471">471</a> </pre></td>
+            <td><pre><a name="line470">470</a> </pre></td>
           </tr>
         
           
           
           <tr class="uncovered">
-            <td><pre><a name="line472">472</a>       end</pre></td>
+            <td><pre><a name="line471">471</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line473">473</a> </pre></td>
+            <td><pre><a name="line472">472</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line474">474</a>       data.keys.each {|d| data[d] = data[d].to_s }</pre></td>
+            <td><pre><a name="line473">473</a>       data.keys.each {|d| data[d] = data[d].to_s }</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line475">475</a> </pre></td>
+            <td><pre><a name="line474">474</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line476">476</a>       card.render(x, y, @pdf, data)</pre></td>
+            <td><pre><a name="line475">475</a>       card.render(x, y, @pdf, data)</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line477">477</a>     end</pre></td>
+            <td><pre><a name="line476">476</a>     end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line478">478</a>   </pre></td>
+            <td><pre><a name="line477">477</a>   </pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line479">479</a>   end</pre></td>
+            <td><pre><a name="line478">478</a>   end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line480">480</a> end</pre></td>
+            <td><pre><a name="line479">479</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Tue Jul 12 11:45:59 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Sat Jul 16 09:27:18 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
