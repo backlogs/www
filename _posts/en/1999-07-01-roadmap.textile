@@ -23,6 +23,10 @@ h2. Easy time logging
 
 I'm going to add a desktop gadget to allow quick time logging
 
+h2. Burndown calculation overhaul
+
 h2. Allow any tracker as task
 
 h2. Story state loosely follows task progress
+
+h2. Sprints as objects separate from versions
