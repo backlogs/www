@@ -1,0 +1,343 @@
+<?xml version="1.0"?>
+<xliff version="1.2">
+  <file target-language="fr" source-language="en" original="Redmine Backlogs"/>
+  <header/>
+  <body>
+    <trans-unit id="event_sprint_summary">
+      <source xml:lang="en-US">%{project}: %{summary}</source>
+      <target xml:lang="fr" state="needs-adaptation">{{project}}: {{summary}}</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="label_webcal">
+      <source xml:lang="en-US">Webcal Feed</source>
+      <target xml:lang="fr">Fil Calendrier Web</target>
+    </trans-unit>
+    <trans-unit id="field_backlogs_issue_type">
+      <source xml:lang="en-US">Backlog type</source>
+      <target xml:lang="fr">Type de carnet</target>
+    </trans-unit>
+    <trans-unit id="field_remaining_hours">
+      <source xml:lang="en-US">Remaining hours</source>
+      <target xml:lang="fr">Heures restantes</target>
+    </trans-unit>
+    <trans-unit id="error_intro_singular">
+      <source xml:lang="en-US">The following error was encountered:</source>
+      <target xml:lang="fr">L'erreur suivante a &#xE9;t&#xE9; rencontr&#xE9;e:</target>
+    </trans-unit>
+    <trans-unit id="button_edit_wiki">
+      <source xml:lang="en-US">Edit wiki page</source>
+      <target xml:lang="fr">Modifier la page wiki</target>
+    </trans-unit>
+    <trans-unit id="rb_label_copy_tasks_open">
+      <source xml:lang="en-US">Open</source>
+      <note>Needs translation</note>
+      <note>Obsolete -- only kept for reference</note>
+    </trans-unit>
+    <trans-unit id="label_points_burn_up">
+      <source xml:lang="en-US">Up</source>
+      <target xml:lang="fr">Haut</target>
+    </trans-unit>
+    <trans-unit id="label_not_prioritized">
+      <source xml:lang="en-US">not prioritized</source>
+      <target xml:lang="fr">non prioris&#xE9;s</target>
+    </trans-unit>
+    <trans-unit id="label_sprint_cards">
+      <source xml:lang="en-US">Sprint cards</source>
+      <target xml:lang="fr">Cartes de sprint</target>
+    </trans-unit>
+    <trans-unit id="points_resolved">
+      <source xml:lang="en-US">[[points_resolved]]</source>
+      <target xml:lang="fr" state="needs-review-translation">points r&#xE9;solus</target>
+    </trans-unit>
+    <trans-unit id="error_must_have_comma_delimited_list">
+      <source xml:lang="en-US">must have a comma delimited list of story or task IDs</source>
+      <target xml:lang="fr">doit avoir une liste de sc&#xE9;narios ou num&#xE9;ros de t&#xE2;ches s&#xE9;par&#xE9;es de virgules</target>
+    </trans-unit>
+    <trans-unit id="label_stories">
+      <source xml:lang="en-US">Stories</source>
+      <target xml:lang="fr">Sc&#xE9;narios</target>
+    </trans-unit>
+    <trans-unit id="field_name">
+      <source xml:lang="en-US">Name</source>
+      <target xml:lang="fr">Nom</target>
+    </trans-unit>
+    <trans-unit id="todo_issue_summary">
+      <source xml:lang="en-US">%{type}: %{summary}</source>
+      <target xml:lang="fr" state="needs-adaptation">{{type}}: {{summary}}</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="field_tracker_id">
+      <source xml:lang="en-US">Tracker ID</source>
+      <target xml:lang="fr">Tracker ID</target>
+    </trans-unit>
+    <trans-unit id="label_product_backlog">
+      <source xml:lang="en-US">product backlog</source>
+      <target xml:lang="fr">carnet du produit</target>
+    </trans-unit>
+    <trans-unit id="required_burn_rate_hours">
+      <source xml:lang="en-US">[[required_burn_rate_hours]]</source>
+      <target xml:lang="fr" state="needs-review-translation">taux progression requis (hours)</target>
+    </trans-unit>
+    <trans-unit id="backlogs_velocity_missing">
+      <source xml:lang="en-US">No velocity could be calculated for this project</source>
+      <target xml:lang="fr">Aucune v&#xE9;locit&#xE9; n'a pu &#xEA;tre calcu&#xE9;e pour ce projet</target>
+    </trans-unit>
+    <trans-unit id="label_sprint_name">
+      <source xml:lang="en-US">Sprint "%{name}"</source>
+      <target xml:lang="fr" state="needs-adaptation">Sprint "{{name}}"</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="backlogs_any">
+      <source xml:lang="en-US">any</source>
+      <target xml:lang="fr">tous</target>
+    </trans-unit>
+    <trans-unit id="label_stories_tasks">
+      <source xml:lang="en-US">Stories/Tasks</source>
+      <target xml:lang="fr">Sc&#xE9;narios/T&#xE2;ches</target>
+    </trans-unit>
+    <trans-unit id="label_task_board">
+      <source xml:lang="en-US">Task board</source>
+      <target xml:lang="fr">Tableau des t&#xE2;ches</target>
+    </trans-unit>
+    <trans-unit id="label_backlogs_unconfigured">
+      <source xml:lang="en-US">You have not configured Backlogs yet. Please go to %{administration} &gt; %{plugins}, then click on the %{configure} link for this plugin. Once you have set the fields, come back to this page to start using the tool.</source>
+      <target xml:lang="fr" state="needs-adaptation">Vous n'avez pas encore configur&#xE9; les Carnets. Veuillez aller &#xE0; {{administration}} &gt; {{plugins}}, et cliquez sur le lien {{configure}} pour ce plugin. Une fois que vous aurez d&#xE9;fini ces champs, revenez &#xE0; cette page pour utiliser l'outil</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="backlogs_sprints">
+      <source xml:lang="en-US">Sprints</source>
+      <target xml:lang="fr">Sprints</target>
+    </trans-unit>
+    <trans-unit id="field_position">
+      <source xml:lang="en-US">Position</source>
+      <target xml:lang="fr">Position</target>
+    </trans-unit>
+    <trans-unit id="backlogs_active">
+      <source xml:lang="en-US">active</source>
+      <target xml:lang="fr">actif</target>
+    </trans-unit>
+    <trans-unit id="inclusion">
+      <source xml:lang="en-US">[[inclusion]]</source>
+      <target xml:lang="fr" state="needs-review-translation">n'est pas inclut dans la liste</target>
+    </trans-unit>
+    <trans-unit id="backlogs_product_backlog_is_empty">
+      <source xml:lang="en-US">Product backlog is empty</source>
+      <target xml:lang="fr">Le carnet de produit est vide</target>
+    </trans-unit>
+    <trans-unit id="backlogs_task_tracker">
+      <source xml:lang="en-US">Task tracker</source>
+      <target xml:lang="fr">Tracker de t&#xE2;ches</target>
+    </trans-unit>
+    <trans-unit id="backlogs_inactive">
+      <source xml:lang="en-US">Project shows no activity</source>
+      <target xml:lang="fr">Le projet ne montre aucune activit&#xE9;</target>
+    </trans-unit>
+    <trans-unit id="field_story_points">
+      <source xml:lang="en-US">Story points</source>
+      <target xml:lang="fr">Points de sc&#xE9;narios</target>
+    </trans-unit>
+    <trans-unit id="label_Product_backlog">
+      <source xml:lang="en-US">Product backlog</source>
+      <target xml:lang="fr">Carnet du produit</target>
+    </trans-unit>
+    <trans-unit id="backlogs_task">
+      <source xml:lang="en-US">Task</source>
+      <target xml:lang="fr">T&#xE2;che</target>
+    </trans-unit>
+    <trans-unit id="backlogs_sprint_unsized">
+      <source xml:lang="en-US">Project has stories on active or recently closed sprints that were not sized</source>
+      <target xml:lang="fr">Le projet a des sc&#xE9;narios sur des sprints actifs ou r&#xE9;cemment ferm&#xE9;s qui n'ont pas de taille d&#xE9;finie</target>
+    </trans-unit>
+    <trans-unit id="points_committed">
+      <source xml:lang="en-US">[[points_committed]]</source>
+      <target xml:lang="fr" state="needs-review-translation">points commis</target>
+    </trans-unit>
+    <trans-unit id="rb_label_copy_tasks_none">
+      <source xml:lang="en-US">None</source>
+      <note>Needs translation</note>
+      <note>Obsolete -- only kept for reference</note>
+    </trans-unit>
+    <trans-unit id="label_sprint_impediments">
+      <source xml:lang="en-US">Sprint Impediments</source>
+      <target xml:lang="fr">Bloquants du Sprint</target>
+    </trans-unit>
+    <trans-unit id="points_to_resolve">
+      <source xml:lang="en-US">[[points_to_resolve]]</source>
+      <target xml:lang="fr" state="needs-review-translation">points non-r&#xE9;solus</target>
+    </trans-unit>
+    <trans-unit id="label_master_backlog">
+      <source xml:lang="en-US">Master Backlog</source>
+      <target xml:lang="fr">Carnet Ma&#xEE;tre</target>
+    </trans-unit>
+    <trans-unit id="field_blocks">
+      <source xml:lang="en-US">Blocks</source>
+      <target xml:lang="fr">Blocks</target>
+    </trans-unit>
+    <trans-unit id="label_select_all">
+      <source xml:lang="en-US">Select all</source>
+      <target xml:lang="fr">S&#xE9;lectionner tout</target>
+    </trans-unit>
+    <trans-unit id="backlogs_sprint_unestimated">
+      <source xml:lang="en-US">Closed or active sprints with unestimated stories</source>
+      <target xml:lang="fr">Sprints ferm&#xE9;s ou actifs avec sc&#xE9;narios non-estim&#xE9;s</target>
+    </trans-unit>
+    <trans-unit id="label_scrum_statistics">
+      <source xml:lang="en-US">Scrum statistics</source>
+      <target xml:lang="fr">Statistiques du Scrum</target>
+    </trans-unit>
+    <trans-unit id="required_burn_rate_points">
+      <source xml:lang="en-US">[[required_burn_rate_points]]</source>
+      <target xml:lang="fr" state="needs-review-translation">taux de progression requis (points)</target>
+    </trans-unit>
+    <trans-unit id="error_blank">
+      <source xml:lang="en-US">cannot be blank</source>
+      <target xml:lang="fr">ne peut &#xEA;tre vide</target>
+    </trans-unit>
+    <trans-unit id="points_to_accept">
+      <source xml:lang="en-US">[[points_to_accept]]</source>
+      <target xml:lang="fr" state="needs-review-translation">points non-accept&#xE9;s</target>
+    </trans-unit>
+    <trans-unit id="label_backlogs">
+      <source xml:lang="en-US">Backlogs</source>
+      <target xml:lang="fr">Carnets</target>
+    </trans-unit>
+    <trans-unit id="label_back_to_project">
+      <source xml:lang="en-US">Back to project page</source>
+      <target xml:lang="fr">Retour &#xE0; la page produit</target>
+    </trans-unit>
+    <trans-unit id="backlogs_points_burn_direction">
+      <source xml:lang="en-US">Points burn up/down</source>
+      <target xml:lang="fr">progression des points</target>
+    </trans-unit>
+    <trans-unit id="rb_label_link_to_original">
+      <source xml:lang="en-US">Include link to original story</source>
+      <note>Needs translation</note>
+      <note>Obsolete -- only kept for reference</note>
+    </trans-unit>
+    <trans-unit id="backlogs_product_backlog_unsized">
+      <source xml:lang="en-US">The top of the product backlog has unsized stories</source>
+      <target xml:lang="fr">La portion du haut du carnet de produit a des sc&#xE9;narios qui n'ont pas de taille d&#xE9;finie</target>
+    </trans-unit>
+    <trans-unit id="points_accepted">
+      <source xml:lang="en-US">[[points_accepted]]</source>
+      <target xml:lang="fr" state="needs-review-translation">points accept&#xE9;s</target>
+    </trans-unit>
+    <trans-unit id="backlogs_sprint_notes_missing">
+      <source xml:lang="en-US">Closed sprints without retrospective/review notes</source>
+      <target xml:lang="fr">Sprints ferm&#xE9;s sans notes de r&#xE9;trospective/revue</target>
+    </trans-unit>
+    <trans-unit id="label_sprint_velocity">
+      <source xml:lang="en-US">Velocity %{velocity}, based on %{sprints} sprints with an average %{days} days</source>
+      <target xml:lang="fr" state="needs-adaptation">V&#xE9;locit&#xE9; {{velocity}}, bas&#xE9;e sur  les sprints {{sprints}} avec une moyenne de {{days}} jours</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="field_subject">
+      <source xml:lang="en-US">Subject</source>
+      <target xml:lang="fr">Sujet</target>
+    </trans-unit>
+    <trans-unit id="backlogs_story">
+      <source xml:lang="en-US">Story</source>
+      <target xml:lang="fr">Sc&#xE9;anario</target>
+    </trans-unit>
+    <trans-unit id="label_sprint_backlog">
+      <source xml:lang="en-US">sprint backlog</source>
+      <target xml:lang="fr">carnet du sprint</target>
+    </trans-unit>
+    <trans-unit id="backlogs_wiki_template">
+      <source xml:lang="en-US">Template for sprint wiki page</source>
+      <target xml:lang="fr">Maquette pour page wiki de sc&#xE9;anario</target>
+    </trans-unit>
+    <trans-unit id="ideal">
+      <source xml:lang="en-US">[[ideal]]</source>
+      <target xml:lang="fr" state="needs-review-translation">id&#xE9;al</target>
+    </trans-unit>
+    <trans-unit id="label_points">
+      <source xml:lang="en-US">points</source>
+      <target xml:lang="fr">points</target>
+    </trans-unit>
+    <trans-unit id="backlogs_sizing_inconsistent">
+      <source xml:lang="en-US">Story sizes vary against their estimates</source>
+      <target xml:lang="fr">Les tailles des sc&#xE9;narios varient par rapport &#xE0; leurs estimations</target>
+    </trans-unit>
+    <trans-unit id="error_intro_plural">
+      <source xml:lang="en-US">The following errors were encountered:</source>
+      <target xml:lang="fr">Les erreurs suivantes ont &#xE9;t&#xE9; rencontr&#xE9;es:</target>
+    </trans-unit>
+    <trans-unit id="backlogs_velocity_varies">
+      <source xml:lang="en-US">Velocity varies significantly over sprints</source>
+      <target xml:lang="fr">La v&#xE9;locit&#xE9; varie de fa&#xE7;on significative &#xE0; travers les diff&#xE9;rents sprints</target>
+    </trans-unit>
+    <trans-unit id="backlogs_card_specification">
+      <source xml:lang="en-US">Label types for card printing</source>
+      <target xml:lang="fr">Types d'&#xE9;tiquettes pour impression de cartes</target>
+    </trans-unit>
+    <trans-unit id="label_points_burn_down">
+      <source xml:lang="en-US">Down</source>
+      <target xml:lang="fr">Bas</target>
+    </trans-unit>
+    <trans-unit id="label_hours">
+      <source xml:lang="en-US">hours</source>
+      <target xml:lang="fr">heures</target>
+    </trans-unit>
+    <trans-unit id="rb_label_copy_tasks">
+      <source xml:lang="en-US">Copy tasks</source>
+      <note>Needs translation</note>
+      <note>Obsolete -- only kept for reference</note>
+    </trans-unit>
+    <trans-unit id="error_greater_than_start_date">
+      <source xml:lang="en-US">cannot be earlier than Start Date</source>
+      <target xml:lang="fr">ne peut pas &#xEA;tre plus t&#xF4;t que la date de d&#xE9;but</target>
+    </trans-unit>
+    <trans-unit id="backlogs_story_tracker">
+      <source xml:lang="en-US">Story trackers</source>
+      <target xml:lang="fr">Tracker de sc&#xE9;narios</target>
+    </trans-unit>
+    <trans-unit id="label_burndown">
+      <source xml:lang="en-US">Burndown</source>
+      <target xml:lang="fr">Progression</target>
+    </trans-unit>
+    <trans-unit id="event_sprint_description">
+      <source xml:lang="en-US">%{summary}: %{url}
+%{description}</source>
+      <target xml:lang="fr" state="needs-adaptation">{{summary}}: {{url}}
+{{description}}</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="label_chart_options">
+      <source xml:lang="en-US">Chart Options</source>
+      <target xml:lang="fr">Options du graphique</target>
+    </trans-unit>
+    <trans-unit id="todo_issue_description">
+      <source xml:lang="en-US">%{summary}: %{url}
+%{description}</source>
+      <target xml:lang="fr" state="needs-adaptation">{{summary}}: {{url}}
+{{description}}</target>
+      <note>Uses {{...}} variable substitution, please change to %{...}</note>
+    </trans-unit>
+    <trans-unit id="label_product_cards">
+      <source xml:lang="en-US">Product backlog cards</source>
+      <target xml:lang="fr">Cartes de carnet du produit</target>
+    </trans-unit>
+    <trans-unit id="field_velocity_based_estimate">
+      <source xml:lang="en-US">Velocity based estimate</source>
+      <target xml:lang="fr">Estim&#xE9; bas&#xE9; sur la v&#xE9;locit&#xE9;</target>
+    </trans-unit>
+    <trans-unit id="rb_label_copy_tasks_all">
+      <source xml:lang="en-US">All</source>
+      <note>Needs translation</note>
+      <note>Obsolete -- only kept for reference</note>
+    </trans-unit>
+    <trans-unit id="error_outro">
+      <source xml:lang="en-US">Please correct the above errors before submitting again.</source>
+      <target xml:lang="fr">Veuillez corriger les erreurs ci-dessus avant de soumettre &#xE0; nouveau.</target>
+    </trans-unit>
+    <trans-unit id="remaining_hours">
+      <source xml:lang="en-US">[[remaining_hours]]</source>
+      <target xml:lang="fr" state="needs-review-translation">heures restantes</target>
+    </trans-unit>
+    <trans-unit id="backlogs_product_backlog">
+      <source xml:lang="en-US">Product backlog</source>
+      <target xml:lang="fr">Carnet de produit</target>
+    </trans-unit>
+  </body>
+</xliff>
