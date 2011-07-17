@@ -47,6 +47,7 @@
     <trans-unit id="points_resolved">
       <source xml:lang="en-US">[[points_resolved]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Pontos resolvidos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_must_have_comma_delimited_list">
       <source xml:lang="en-US">must have a comma delimited list of story or task IDs</source>
@@ -68,7 +69,6 @@
     <trans-unit id="field_tracker_id">
       <source xml:lang="en-US">Tracker ID</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_product_backlog">
       <source xml:lang="en-US">product backlog</source>
@@ -77,6 +77,7 @@
     <trans-unit id="required_burn_rate_hours">
       <source xml:lang="en-US">[[required_burn_rate_hours]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Taxa de horas necess&#xE1;rias</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_velocity_missing">
       <source xml:lang="en-US">No velocity could be calculated for this project</source>
@@ -119,6 +120,7 @@
     <trans-unit id="inclusion">
       <source xml:lang="en-US">[[inclusion]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">N&#xE3;o esta inclu&#xED;da na lista.</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog_is_empty">
       <source xml:lang="en-US">Product backlog is empty</source>
@@ -151,6 +153,7 @@
     <trans-unit id="points_committed">
       <source xml:lang="en-US">[[points_committed]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">pontos comprometidos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="rb_label_copy_tasks_none">
       <source xml:lang="en-US">None</source>
@@ -163,6 +166,7 @@
     <trans-unit id="points_to_resolve">
       <source xml:lang="en-US">[[points_to_resolve]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Pontos n&#xE3;o resolvidos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_master_backlog">
       <source xml:lang="en-US">Master Backlog</source>
@@ -187,6 +191,7 @@
     <trans-unit id="required_burn_rate_points">
       <source xml:lang="en-US">[[required_burn_rate_points]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Taxa pontos necess&#xE1;ria</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_blank">
       <source xml:lang="en-US">cannot be blank</source>
@@ -195,6 +200,7 @@
     <trans-unit id="points_to_accept">
       <source xml:lang="en-US">[[points_to_accept]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Pontos n&#xE3;o aceitos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_backlogs">
       <source xml:lang="en-US">Backlogs</source>
@@ -219,6 +225,7 @@
     <trans-unit id="points_accepted">
       <source xml:lang="en-US">[[points_accepted]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Pontos aceitos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_sprint_notes_missing">
       <source xml:lang="en-US">Closed sprints without retrospective/review notes</source>
@@ -248,6 +255,7 @@
     <trans-unit id="ideal">
       <source xml:lang="en-US">[[ideal]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Ideal</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_points">
       <source xml:lang="en-US">points</source>
@@ -330,6 +338,7 @@
     <trans-unit id="remaining_hours">
       <source xml:lang="en-US">[[remaining_hours]]</source>
       <target xml:lang="pt-BR" state="needs-review-translation">Horas restantes</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog">
       <source xml:lang="en-US">Product backlog</source>

@@ -54,6 +54,7 @@
     <trans-unit id="points_resolved">
       <source xml:lang="en-US">[[points_resolved]]</source>
       <target xml:lang="es" state="needs-review-translation">puntos resueltos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="field_name">
       <source xml:lang="en-US">Name</source>
@@ -82,6 +83,7 @@
     <trans-unit id="required_burn_rate_hours">
       <source xml:lang="en-US">[[required_burn_rate_hours]]</source>
       <target xml:lang="es" state="needs-review-translation">burn rate (horas) necesaria</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_velocity_missing">
       <source xml:lang="en-US">No velocity could be calculated for this project</source>
@@ -142,6 +144,7 @@
     <trans-unit id="inclusion">
       <source xml:lang="en-US">[[inclusion]]</source>
       <target xml:lang="es" state="needs-review-translation">is not included in the list</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog_is_empty">
       <source xml:lang="en-US">Product backlog is empty</source>
@@ -186,6 +189,7 @@
     <trans-unit id="points_committed">
       <source xml:lang="en-US">[[points_committed]]</source>
       <target xml:lang="es" state="needs-review-translation">puntos comprometidos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_master_backlog">
       <source xml:lang="en-US">Master Backlog</source>
@@ -198,6 +202,7 @@
     <trans-unit id="points_to_resolve">
       <source xml:lang="en-US">[[points_to_resolve]]</source>
       <target xml:lang="es" state="needs-review-translation">puntos no resueltos</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_select_all">
       <source xml:lang="en-US">Select all</source>
@@ -218,6 +223,7 @@
     <trans-unit id="required_burn_rate_points">
       <source xml:lang="en-US">[[required_burn_rate_points]]</source>
       <target xml:lang="es" state="needs-review-translation">burn rate (puntos) necesaria</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_blank">
       <source xml:lang="en-US">cannot be blank</source>
@@ -234,6 +240,7 @@
     <trans-unit id="points_to_accept">
       <source xml:lang="en-US">[[points_to_accept]]</source>
       <target xml:lang="es" state="needs-review-translation">puntos no aceptados</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_impediments">
       <source xml:lang="en-US">Impediments</source>
@@ -266,6 +273,7 @@
     <trans-unit id="points_accepted">
       <source xml:lang="en-US">[[points_accepted]]</source>
       <target xml:lang="es" state="needs-review-translation">puntos aceptados</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_sprint_notes_missing">
       <source xml:lang="en-US">Closed sprints without retrospective/review notes</source>
@@ -298,6 +306,7 @@
     <trans-unit id="ideal">
       <source xml:lang="en-US">[[ideal]]</source>
       <target xml:lang="es" state="needs-review-translation">ideal</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_points">
       <source xml:lang="en-US">points</source>
@@ -398,6 +407,7 @@
     <trans-unit id="remaining_hours">
       <source xml:lang="en-US">[[remaining_hours]]</source>
       <target xml:lang="es" state="needs-review-translation">horas pendientes</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
   </body>
 </xliff>

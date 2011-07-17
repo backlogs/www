@@ -11,7 +11,6 @@
     <trans-unit id="label_webcal">
       <source xml:lang="en-US">Webcal Feed</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="field_backlogs_issue_type">
       <source xml:lang="en-US">Backlog type</source>
@@ -32,7 +31,6 @@
     <trans-unit id="rb_label_copy_tasks_open">
       <source xml:lang="en-US">Open</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_points_burn_up">
       <source xml:lang="en-US">Up</source>
@@ -45,11 +43,11 @@
     <trans-unit id="label_sprint_cards">
       <source xml:lang="en-US">Sprint cards</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="points_resolved">
       <source xml:lang="en-US">[[points_resolved]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x5DF2;&#x89E3;&#x51B3;&#x70B9;&#x6570;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_must_have_comma_delimited_list">
       <source xml:lang="en-US">must have a comma delimited list of story or task IDs</source>
@@ -62,7 +60,6 @@
     <trans-unit id="field_name">
       <source xml:lang="en-US">Name</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="todo_issue_summary">
       <source xml:lang="en-US">%{type}: %{summary}</source>
@@ -72,7 +69,6 @@
     <trans-unit id="field_tracker_id">
       <source xml:lang="en-US">Tracker ID</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_product_backlog">
       <source xml:lang="en-US">product backlog</source>
@@ -81,6 +77,7 @@
     <trans-unit id="required_burn_rate_hours">
       <source xml:lang="en-US">[[required_burn_rate_hours]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x5FC5;&#x8981;&#x71C3;&#x70E7;&#x7387; (&#x5C0F;&#x65F6;)</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_velocity_missing">
       <source xml:lang="en-US">No velocity could be calculated for this project</source>
@@ -123,6 +120,7 @@
     <trans-unit id="inclusion">
       <source xml:lang="en-US">[[inclusion]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x672A;&#x5305;&#x542B;&#x4E8E;&#x5F53;&#x524D;&#x5217;&#x8868;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog_is_empty">
       <source xml:lang="en-US">Product backlog is empty</source>
@@ -155,11 +153,11 @@
     <trans-unit id="points_committed">
       <source xml:lang="en-US">[[points_committed]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x5DF2;&#x63D0;&#x4EA4;&#x70B9;&#x6570;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="rb_label_copy_tasks_none">
       <source xml:lang="en-US">None</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_sprint_impediments">
       <source xml:lang="en-US">Sprint Impediments</source>
@@ -168,6 +166,7 @@
     <trans-unit id="points_to_resolve">
       <source xml:lang="en-US">[[points_to_resolve]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x672A;&#x89E3;&#x51B3;&#x70B9;&#x6570;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_master_backlog">
       <source xml:lang="en-US">Master Backlog</source>
@@ -176,7 +175,6 @@
     <trans-unit id="field_blocks">
       <source xml:lang="en-US">Blocks</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_select_all">
       <source xml:lang="en-US">Select all</source>
@@ -193,15 +191,16 @@
     <trans-unit id="required_burn_rate_points">
       <source xml:lang="en-US">[[required_burn_rate_points]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x5FC5;&#x8981;&#x71C3;&#x70E7;&#x7387; (&#x70B9;&#x6570;)</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_blank">
       <source xml:lang="en-US">cannot be blank</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="points_to_accept">
       <source xml:lang="en-US">[[points_to_accept]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x672A;&#x63A5;&#x53D7;&#x70B9;&#x6570;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_backlogs">
       <source xml:lang="en-US">Backlogs</source>
@@ -218,7 +217,6 @@
     <trans-unit id="rb_label_link_to_original">
       <source xml:lang="en-US">Include link to original story</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog_unsized">
       <source xml:lang="en-US">The top of the product backlog has unsized stories</source>
@@ -227,6 +225,7 @@
     <trans-unit id="points_accepted">
       <source xml:lang="en-US">[[points_accepted]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x5DF2;&#x63A5;&#x53D7;&#x70B9;&#x6570;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_sprint_notes_missing">
       <source xml:lang="en-US">Closed sprints without retrospective/review notes</source>
@@ -240,7 +239,6 @@
     <trans-unit id="field_subject">
       <source xml:lang="en-US">Subject</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_story">
       <source xml:lang="en-US">Story</source>
@@ -257,6 +255,7 @@
     <trans-unit id="ideal">
       <source xml:lang="en-US">[[ideal]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x7406;&#x60F3;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_points">
       <source xml:lang="en-US">points</source>
@@ -289,12 +288,10 @@
     <trans-unit id="rb_label_copy_tasks">
       <source xml:lang="en-US">Copy tasks</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_greater_than_start_date">
       <source xml:lang="en-US">cannot be earlier than Start Date</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_story_tracker">
       <source xml:lang="en-US">Story trackers</source>
@@ -329,12 +326,10 @@
     <trans-unit id="rb_label_copy_tasks_all">
       <source xml:lang="en-US">All</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="label_product_cards">
       <source xml:lang="en-US">Product backlog cards</source>
       <note>Needs translation</note>
-      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="error_outro">
       <source xml:lang="en-US">Please correct the above errors before submitting again.</source>
@@ -343,6 +338,7 @@
     <trans-unit id="remaining_hours">
       <source xml:lang="en-US">[[remaining_hours]]</source>
       <target xml:lang="zh" state="needs-review-translation">&#x5269;&#x4F59;&#x5C0F;&#x65F6;&#x6570;</target>
+      <note>Obsolete -- only kept for reference</note>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog">
       <source xml:lang="en-US">Product backlog</source>
