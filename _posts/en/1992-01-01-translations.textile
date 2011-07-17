@@ -36,7 +36,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). "Deutsch":http://www.redminebacklogs.net/assets/translations/de.xliff (63%)
+bq(error). "Deutsch":http://www.redminebacklogs.net/assets/translations/res/valuesde/strings.xml (63%)
 
 *Missing*
 
@@ -72,9 +72,9 @@ bq(error). "Deutsch":http://www.redminebacklogs.net/assets/translations/de.xliff
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). "English (British)":http://www.redminebacklogs.net/assets/translations/en-GB.xliff 
+bq(success). "English (British)":http://www.redminebacklogs.net/assets/translations/res/valuesen-GB/strings.xml 
 
-bq(error). "Español":http://www.redminebacklogs.net/assets/translations/es.xliff (85%)
+bq(error). "Español":http://www.redminebacklogs.net/assets/translations/res/valueses/strings.xml (85%)
 
 *Missing*
 
@@ -95,7 +95,7 @@ bq(error). "Español":http://www.redminebacklogs.net/assets/translations/es.xlif
 |points_to_resolve|remaining_hours|
 |required_burn_rate_hours|required_burn_rate_points|
 
-bq(error). "Français":http://www.redminebacklogs.net/assets/translations/fr.xliff (56%)
+bq(error). "Français":http://www.redminebacklogs.net/assets/translations/res/valuesfr/strings.xml (56%)
 
 *Missing*
 
@@ -134,9 +134,9 @@ bq(error). "Français":http://www.redminebacklogs.net/assets/translations/fr.xli
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). "Nederlands":http://www.redminebacklogs.net/assets/translations/nl.xliff 
+bq(success). "Nederlands":http://www.redminebacklogs.net/assets/translations/res/valuesnl/strings.xml 
 
-bq(error). "Português(Brasil)":http://www.redminebacklogs.net/assets/translations/pt-BR.xliff (60%)
+bq(error). "Português(Brasil)":http://www.redminebacklogs.net/assets/translations/res/valuespt-BR/strings.xml (60%)
 
 *Missing*
 
@@ -173,7 +173,7 @@ bq(error). "Português(Brasil)":http://www.redminebacklogs.net/assets/translatio
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "Russian (Русский)":http://www.redminebacklogs.net/assets/translations/ru.xliff (78%)
+bq(error). "Russian (Русский)":http://www.redminebacklogs.net/assets/translations/res/valuesru/strings.xml (78%)
 
 *Missing*
 
@@ -201,7 +201,7 @@ bq(error). "Russian (Русский)":http://www.redminebacklogs.net/assets/tran
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/assets/translations/zh.xliff (47%)
+bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/assets/translations/res/valueszh/strings.xml (47%)
 
 *Missing*
 
