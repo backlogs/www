@@ -36,7 +36,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). "Deutsch":/assets/translations/de.xliff (63%)
+bq(error). "Deutsch":http://www.redminebacklogs.net/assets/translations/de.xliff (63%)
 
 *Missing*
 
@@ -72,9 +72,9 @@ bq(error). "Deutsch":/assets/translations/de.xliff (63%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). "English (British)":/assets/translations/en-GB.xliff 
+bq(success). "English (British)":http://www.redminebacklogs.net/assets/translations/en-GB.xliff 
 
-bq(error). "Español":/assets/translations/es.xliff (85%)
+bq(error). "Español":http://www.redminebacklogs.net/assets/translations/es.xliff (85%)
 
 *Missing*
 
@@ -95,7 +95,7 @@ bq(error). "Español":/assets/translations/es.xliff (85%)
 |points_to_resolve|remaining_hours|
 |required_burn_rate_hours|required_burn_rate_points|
 
-bq(error). "Français":/assets/translations/fr.xliff (56%)
+bq(error). "Français":http://www.redminebacklogs.net/assets/translations/fr.xliff (56%)
 
 *Missing*
 
@@ -134,9 +134,9 @@ bq(error). "Français":/assets/translations/fr.xliff (56%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). "Nederlands":/assets/translations/nl.xliff 
+bq(success). "Nederlands":http://www.redminebacklogs.net/assets/translations/nl.xliff 
 
-bq(error). "Português(Brasil)":/assets/translations/pt-BR.xliff (60%)
+bq(error). "Português(Brasil)":http://www.redminebacklogs.net/assets/translations/pt-BR.xliff (60%)
 
 *Missing*
 
@@ -173,7 +173,7 @@ bq(error). "Português(Brasil)":/assets/translations/pt-BR.xliff (60%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "Russian (Русский)":/assets/translations/ru.xliff (78%)
+bq(error). "Russian (Русский)":http://www.redminebacklogs.net/assets/translations/ru.xliff (78%)
 
 *Missing*
 
@@ -201,7 +201,7 @@ bq(error). "Russian (Русский)":/assets/translations/ru.xliff (78%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "Simplified Chinese (简体中文)":/assets/translations/zh.xliff (47%)
+bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/assets/translations/zh.xliff (47%)
 
 *Missing*
 
