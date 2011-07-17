@@ -32,7 +32,7 @@ The messages below mean the following:
  </div>
 
 
-bq(success). "English"http://www.redminebacklogs.net/assets/translations/res/valuesen/strings.xml
+bq(success). "English":http://www.redminebacklogs.net/assets/translations/res/valuesen/strings.xml
 
 serves as a base for all other translations
 
