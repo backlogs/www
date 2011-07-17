@@ -3,421 +3,421 @@
   <file target-language="nl" source-language="en" original="Redmine Backlogs"/>
   <header/>
   <body>
+    <trans-unit id="rb_label_copy_tasks_open">
+      <source xml:lang="en-US">Open</source>
+      <target xml:lang="nl" state="final">Open</target>
+    </trans-unit>
     <trans-unit id="field_release_end_date">
       <source xml:lang="en-US">Release end date</source>
-      <target xml:lang="nl">Eind datum van de release</target>
+      <target xml:lang="nl" state="final">Eind datum van de release</target>
     </trans-unit>
     <trans-unit id="label_release_new">
       <source xml:lang="en-US">New release</source>
-      <target xml:lang="nl">Nieuwe release</target>
-    </trans-unit>
-    <trans-unit id="event_sprint_summary">
-      <source xml:lang="en-US">%{project}: %{summary}</source>
-      <target xml:lang="nl">%{project}: %{summary}</target>
+      <target xml:lang="nl" state="final">Nieuwe release</target>
     </trans-unit>
     <trans-unit id="label_webcal">
       <source xml:lang="en-US">Webcal Feed</source>
-      <target xml:lang="nl">Agenda</target>
+      <target xml:lang="nl" state="final">Agenda</target>
+    </trans-unit>
+    <trans-unit id="event_sprint_summary">
+      <source xml:lang="en-US">%{project}: %{summary}</source>
+      <target xml:lang="nl" state="final">%{project}: %{summary}</target>
     </trans-unit>
     <trans-unit id="field_backlogs_issue_type">
       <source xml:lang="en-US">Backlog type</source>
-      <target xml:lang="nl">Backlog type</target>
+      <target xml:lang="nl" state="final">Backlog type</target>
     </trans-unit>
     <trans-unit id="label_hours_ideal">
       <source xml:lang="en-US">ideal</source>
-      <target xml:lang="nl">ideaal</target>
-    </trans-unit>
-    <trans-unit id="error_intro_singular">
-      <source xml:lang="en-US">The following error was encountered:</source>
-      <target xml:lang="nl">De volgende fout is opgetreden:</target>
+      <target xml:lang="nl" state="final">ideaal</target>
     </trans-unit>
     <trans-unit id="field_remaining_hours">
       <source xml:lang="en-US">Remaining hours</source>
-      <target xml:lang="nl">Resterende uren</target>
+      <target xml:lang="nl" state="final">Resterende uren</target>
+    </trans-unit>
+    <trans-unit id="error_intro_singular">
+      <source xml:lang="en-US">The following error was encountered:</source>
+      <target xml:lang="nl" state="final">De volgende fout is opgetreden:</target>
     </trans-unit>
     <trans-unit id="button_edit_wiki">
       <source xml:lang="en-US">Edit wiki page</source>
-      <target xml:lang="nl">Wijzig wiki page</target>
+      <target xml:lang="nl" state="final">Wijzig wiki page</target>
     </trans-unit>
     <trans-unit id="label_points_accepted">
       <source xml:lang="en-US">points accepted</source>
-      <target xml:lang="nl">points geaccepteerd</target>
-    </trans-unit>
-    <trans-unit id="rb_label_copy_tasks_open">
-      <source xml:lang="en-US">Open</source>
-      <target xml:lang="nl">Open</target>
+      <target xml:lang="nl" state="final">points geaccepteerd</target>
     </trans-unit>
     <trans-unit id="rb_task_cards_story_follows_tasks">
       <source xml:lang="en-US">Tasks followed by their story</source>
-      <target xml:lang="nl">Taken gevolgd door hun bijbehorende story</target>
+      <target xml:lang="nl" state="final">Taken gevolgd door hun bijbehorende story</target>
     </trans-unit>
     <trans-unit id="label_points_burn_up">
       <source xml:lang="en-US">Up</source>
-      <target xml:lang="nl">Omhoog</target>
+      <target xml:lang="nl" state="final">Omhoog</target>
     </trans-unit>
     <trans-unit id="label_not_prioritized">
       <source xml:lang="en-US">not prioritized</source>
-      <target xml:lang="nl">geen prioriteit</target>
+      <target xml:lang="nl" state="final">geen prioriteit</target>
     </trans-unit>
     <trans-unit id="label_sprint_cards">
       <source xml:lang="en-US">Sprint cards</source>
-      <target xml:lang="nl">Sprint kaarten</target>
-    </trans-unit>
-    <trans-unit id="error_must_have_comma_delimited_list">
-      <source xml:lang="en-US">must have a comma delimited list of story or task IDs</source>
-      <target xml:lang="nl">moet een komma-gescheiden lijst van story of taak IDs hebben</target>
-    </trans-unit>
-    <trans-unit id="label_stories">
-      <source xml:lang="en-US">Stories</source>
-      <target xml:lang="nl">Stories</target>
+      <target xml:lang="nl" state="final">Sprint kaarten</target>
     </trans-unit>
     <trans-unit id="field_name">
       <source xml:lang="en-US">Name</source>
-      <target xml:lang="nl">Naam</target>
-    </trans-unit>
-    <trans-unit id="todo_issue_summary">
-      <source xml:lang="en-US">%{type}: %{summary}</source>
-      <target xml:lang="nl">%{type}: %{summary}</target>
+      <target xml:lang="nl" state="final">Naam</target>
     </trans-unit>
     <trans-unit id="field_tracker_id">
       <source xml:lang="en-US">Tracker ID</source>
-      <target xml:lang="nl">Tracker ID</target>
+      <target xml:lang="nl" state="final">Tracker ID</target>
+    </trans-unit>
+    <trans-unit id="error_must_have_comma_delimited_list">
+      <source xml:lang="en-US">must have a comma delimited list of story or task IDs</source>
+      <target xml:lang="nl" state="final">moet een komma-gescheiden lijst van story of taak IDs hebben</target>
+    </trans-unit>
+    <trans-unit id="label_stories">
+      <source xml:lang="en-US">Stories</source>
+      <target xml:lang="nl" state="final">Stories</target>
+    </trans-unit>
+    <trans-unit id="todo_issue_summary">
+      <source xml:lang="en-US">%{type}: %{summary}</source>
+      <target xml:lang="nl" state="final">%{type}: %{summary}</target>
     </trans-unit>
     <trans-unit id="label_product_backlog">
       <source xml:lang="en-US">product backlog</source>
-      <target xml:lang="nl">product backlog</target>
+      <target xml:lang="nl" state="final">product backlog</target>
     </trans-unit>
     <trans-unit id="backlogs_velocity_missing">
       <source xml:lang="en-US">No velocity could be calculated for this project</source>
-      <target xml:lang="nl">De velocity voor dit project kan niet worden berekend</target>
+      <target xml:lang="nl" state="final">De velocity voor dit project kan niet worden berekend</target>
     </trans-unit>
     <trans-unit id="today_not_in_release_warning">
       <source xml:lang="en-US">Warning: current date is not within release date range.</source>
-      <target xml:lang="nl">Waarschuwing: huidige datum ligt niet binnen de release.</target>
+      <target xml:lang="nl" state="final">Waarschuwing: huidige datum ligt niet binnen de release.</target>
     </trans-unit>
     <trans-unit id="backlogs_impediment">
       <source xml:lang="en-US">Impediment</source>
-      <target xml:lang="nl">Impediment</target>
+      <target xml:lang="nl" state="final">Impediment</target>
     </trans-unit>
     <trans-unit id="label_sprint_name">
       <source xml:lang="en-US">Sprint "%{name}"</source>
-      <target xml:lang="nl">Sprint "%{name}"</target>
+      <target xml:lang="nl" state="final">Sprint "%{name}"</target>
     </trans-unit>
     <trans-unit id="backlogs_any">
       <source xml:lang="en-US">any</source>
-      <target xml:lang="nl">alle</target>
+      <target xml:lang="nl" state="final">alle</target>
     </trans-unit>
     <trans-unit id="label_stories_tasks">
       <source xml:lang="en-US">Stories/Tasks</source>
-      <target xml:lang="nl">Stories/Taken</target>
+      <target xml:lang="nl" state="final">Stories/Taken</target>
     </trans-unit>
     <trans-unit id="label_task_board">
       <source xml:lang="en-US">Task board</source>
-      <target xml:lang="nl">Taakbord</target>
+      <target xml:lang="nl" state="final">Taakbord</target>
     </trans-unit>
     <trans-unit id="field_release_start_date">
       <source xml:lang="en-US">Release start date</source>
-      <target xml:lang="nl">Startdaum release</target>
+      <target xml:lang="nl" state="final">Startdaum release</target>
     </trans-unit>
     <trans-unit id="label_backlogs_unconfigured">
       <source xml:lang="en-US">You have not configured Backlogs yet. Please go to %{administration} &gt; %{plugins}, then click on the %{configure} link for this plugin. Once you have set the fields, come back to this page to start using the tool.</source>
-      <target xml:lang="nl">U heeft Backlogs nog niet geconfigureerd. Gaat u asltublieft naar %{administration} &gt; %{plugins}, en klik dan op de %{configure} link voor deze plugin. Nadat u de configuratie hebt opgeslagen kunt u teruggaan naar deze pagina om de plugin in gebruik te nemen.</target>
+      <target xml:lang="nl" state="final">U heeft Backlogs nog niet geconfigureerd. Gaat u asltublieft naar %{administration} &gt; %{plugins}, en klik dan op de %{configure} link voor deze plugin. Nadat u de configuratie hebt opgeslagen kunt u teruggaan naar deze pagina om de plugin in gebruik te nemen.</target>
     </trans-unit>
     <trans-unit id="backlogs_sprints">
       <source xml:lang="en-US">Sprints</source>
-      <target xml:lang="nl">Sprints</target>
+      <target xml:lang="nl" state="final">Sprints</target>
     </trans-unit>
     <trans-unit id="field_position">
       <source xml:lang="en-US">Position</source>
-      <target xml:lang="nl">Positie</target>
+      <target xml:lang="nl" state="final">Positie</target>
     </trans-unit>
     <trans-unit id="backlogs_active">
       <source xml:lang="en-US">active</source>
-      <target xml:lang="nl">lopend</target>
-    </trans-unit>
-    <trans-unit id="label_release_end_date">
-      <source xml:lang="en-US">Release end date</source>
-      <target xml:lang="nl">Einddatum release</target>
+      <target xml:lang="nl" state="final">lopend</target>
     </trans-unit>
     <trans-unit id="field_number_of_snapshots">
       <source xml:lang="en-US">Saved point snapshots</source>
-      <target xml:lang="nl">Opgeslagen point snapshots</target>
+      <target xml:lang="nl" state="final">Opgeslagen point snapshots</target>
     </trans-unit>
-    <trans-unit id="backlogs_product_backlog_is_empty">
-      <source xml:lang="en-US">Product backlog is empty</source>
-      <target xml:lang="nl">Product backlog is leeg</target>
-    </trans-unit>
-    <trans-unit id="backlogs_task_tracker">
-      <source xml:lang="en-US">Task tracker</source>
-      <target xml:lang="nl">Task tracker</target>
-    </trans-unit>
-    <trans-unit id="backlogs_inactive">
-      <source xml:lang="en-US">Project shows no activity</source>
-      <target xml:lang="nl">Project lijkt inactief</target>
-    </trans-unit>
-    <trans-unit id="field_story_points">
-      <source xml:lang="en-US">Story points</source>
-      <target xml:lang="nl">Story points</target>
+    <trans-unit id="label_release_end_date">
+      <source xml:lang="en-US">Release end date</source>
+      <target xml:lang="nl" state="final">Einddatum release</target>
     </trans-unit>
     <trans-unit id="error_inclusion">
       <source xml:lang="en-US">is not included in the list</source>
-      <target xml:lang="nl">is geen onderdeel van de lijst</target>
+      <target xml:lang="nl" state="final">is geen onderdeel van de lijst</target>
+    </trans-unit>
+    <trans-unit id="backlogs_product_backlog_is_empty">
+      <source xml:lang="en-US">Product backlog is empty</source>
+      <target xml:lang="nl" state="final">Product backlog is leeg</target>
+    </trans-unit>
+    <trans-unit id="backlogs_task_tracker">
+      <source xml:lang="en-US">Task tracker</source>
+      <target xml:lang="nl" state="final">Task tracker</target>
+    </trans-unit>
+    <trans-unit id="backlogs_inactive">
+      <source xml:lang="en-US">Project shows no activity</source>
+      <target xml:lang="nl" state="final">Project lijkt inactief</target>
+    </trans-unit>
+    <trans-unit id="field_story_points">
+      <source xml:lang="en-US">Story points</source>
+      <target xml:lang="nl" state="final">Story points</target>
     </trans-unit>
     <trans-unit id="label_Product_backlog">
       <source xml:lang="en-US">Product backlog</source>
-      <target xml:lang="nl">Product backlog</target>
+      <target xml:lang="nl" state="final">Product backlog</target>
     </trans-unit>
     <trans-unit id="label_points_required_burn_rate">
       <source xml:lang="en-US">required burn rate (points)</source>
-      <target xml:lang="nl">benodigde burn rate (points)</target>
+      <target xml:lang="nl" state="final">benodigde burn rate (points)</target>
     </trans-unit>
     <trans-unit id="label_hours_required_burn_rate">
       <source xml:lang="en-US">required burn rate (hours)</source>
-      <target xml:lang="nl">benodigde burn rate (hours)</target>
+      <target xml:lang="nl" state="final">benodigde burn rate (hours)</target>
     </trans-unit>
     <trans-unit id="rb_task_cards_tasks_follow_story">
       <source xml:lang="en-US">Story followed by their tasks</source>
-      <target xml:lang="nl">Story gevolg door de bijbehorende taken</target>
+      <target xml:lang="nl" state="final">Story gevolg door de bijbehorende taken</target>
     </trans-unit>
     <trans-unit id="label_release_plural">
       <source xml:lang="en-US">Releases</source>
-      <target xml:lang="nl">Releases</target>
+      <target xml:lang="nl" state="final">Releases</target>
     </trans-unit>
     <trans-unit id="label_hours_remaining">
       <source xml:lang="en-US">remaining hours</source>
-      <target xml:lang="nl">resterende uren</target>
+      <target xml:lang="nl" state="final">resterende uren</target>
     </trans-unit>
     <trans-unit id="rb_taskboard_card_order">
       <source xml:lang="en-US">Card print order</source>
-      <target xml:lang="nl">Afdruk volgorde taakbord kaarten</target>
-    </trans-unit>
-    <trans-unit id="backlogs_sprint_unsized">
-      <source xml:lang="en-US">Project has stories on active or recently closed sprints that were not sized</source>
-      <target xml:lang="nl">Er zijn stories in de active of recent afgesloten sprints zonder sizes</target>
-    </trans-unit>
-    <trans-unit id="backlogs_task">
-      <source xml:lang="en-US">Task</source>
-      <target xml:lang="nl">Task</target>
+      <target xml:lang="nl" state="final">Afdruk volgorde taakbord kaarten</target>
     </trans-unit>
     <trans-unit id="rb_label_copy_tasks_none">
       <source xml:lang="en-US">None</source>
-      <target xml:lang="nl">Geen</target>
+      <target xml:lang="nl" state="final">Geen</target>
     </trans-unit>
     <trans-unit id="label_sprint_impediments">
       <source xml:lang="en-US">Sprint Impediments</source>
-      <target xml:lang="nl">Sprint Impediments</target>
+      <target xml:lang="nl" state="final">Sprint Impediments</target>
+    </trans-unit>
+    <trans-unit id="backlogs_task">
+      <source xml:lang="en-US">Task</source>
+      <target xml:lang="nl" state="final">Task</target>
+    </trans-unit>
+    <trans-unit id="backlogs_sprint_unsized">
+      <source xml:lang="en-US">Project has stories on active or recently closed sprints that were not sized</source>
+      <target xml:lang="nl" state="final">Er zijn stories in de active of recent afgesloten sprints zonder sizes</target>
     </trans-unit>
     <trans-unit id="label_master_backlog">
       <source xml:lang="en-US">Master Backlog</source>
-      <target xml:lang="nl">Master Backlog</target>
+      <target xml:lang="nl" state="final">Master Backlog</target>
     </trans-unit>
     <trans-unit id="field_blocks">
       <source xml:lang="en-US">Blocks</source>
-      <target xml:lang="nl">Blokkeert</target>
+      <target xml:lang="nl" state="final">Blokkeert</target>
     </trans-unit>
     <trans-unit id="label_select_all">
       <source xml:lang="en-US">Select all</source>
-      <target xml:lang="nl">Selecteer alles</target>
+      <target xml:lang="nl" state="final">Selecteer alles</target>
     </trans-unit>
     <trans-unit id="backlogs_sprint_unestimated">
       <source xml:lang="en-US">Closed or active sprints with unestimated stories</source>
-      <target xml:lang="nl">Gesloten of actieve sprints bevatten stories zonder tijdschattingen</target>
+      <target xml:lang="nl" state="final">Gesloten of actieve sprints bevatten stories zonder tijdschattingen</target>
     </trans-unit>
     <trans-unit id="today_not_in_release_msg">
       <source xml:lang="en-US">Current date is not within release date range. Really save snapshot?</source>
-      <target xml:lang="nl">Huidige datum valt niet binnen de release.  Wilt u echt opslaan?</target>
+      <target xml:lang="nl" state="final">Huidige datum valt niet binnen de release.  Wilt u echt opslaan?</target>
     </trans-unit>
     <trans-unit id="label_scrum_statistics">
       <source xml:lang="en-US">Scrum statistics</source>
-      <target xml:lang="nl">Scrum statistieken</target>
+      <target xml:lang="nl" state="final">Scrum statistieken</target>
     </trans-unit>
     <trans-unit id="label_points_to_resolve">
       <source xml:lang="en-US">points not resolved</source>
-      <target xml:lang="nl">points niet opgelost</target>
+      <target xml:lang="nl" state="final">points niet opgelost</target>
     </trans-unit>
     <trans-unit id="label_points_committed">
       <source xml:lang="en-US">points committed</source>
-      <target xml:lang="nl">points toegezegd</target>
-    </trans-unit>
-    <trans-unit id="label_release_start_date">
-      <source xml:lang="en-US">Release start date</source>
-      <target xml:lang="nl">Startdatum release</target>
-    </trans-unit>
-    <trans-unit id="error_release_end_after_start">
-      <source xml:lang="en-US">Release end date has to be after start date</source>
-      <target xml:lang="nl">De einddatum van de release moet na de startdatum liggen</target>
-    </trans-unit>
-    <trans-unit id="label_impediments">
-      <source xml:lang="en-US">Impediments</source>
-      <target xml:lang="nl">Impediments</target>
+      <target xml:lang="nl" state="final">points toegezegd</target>
     </trans-unit>
     <trans-unit id="error_blank">
       <source xml:lang="en-US">cannot be blank</source>
-      <target xml:lang="nl">mag niet leeg zijn</target>
+      <target xml:lang="nl" state="final">mag niet leeg zijn</target>
+    </trans-unit>
+    <trans-unit id="error_release_end_after_start">
+      <source xml:lang="en-US">Release end date has to be after start date</source>
+      <target xml:lang="nl" state="final">De einddatum van de release moet na de startdatum liggen</target>
+    </trans-unit>
+    <trans-unit id="label_release_start_date">
+      <source xml:lang="en-US">Release start date</source>
+      <target xml:lang="nl" state="final">Startdatum release</target>
+    </trans-unit>
+    <trans-unit id="label_impediments">
+      <source xml:lang="en-US">Impediments</source>
+      <target xml:lang="nl" state="final">Impediments</target>
     </trans-unit>
     <trans-unit id="label_backlogs">
       <source xml:lang="en-US">Backlogs</source>
-      <target xml:lang="nl">Backlogs</target>
+      <target xml:lang="nl" state="final">Backlogs</target>
     </trans-unit>
     <trans-unit id="label_back_to_project">
       <source xml:lang="en-US">Back to project page</source>
-      <target xml:lang="nl">Terug naar het project</target>
+      <target xml:lang="nl" state="final">Terug naar het project</target>
     </trans-unit>
     <trans-unit id="backlogs_points_burn_direction">
       <source xml:lang="en-US">Points burn up/down</source>
-      <target xml:lang="nl">Points burn omhoog/omlaag</target>
+      <target xml:lang="nl" state="final">Points burn omhoog/omlaag</target>
     </trans-unit>
     <trans-unit id="rb_label_link_to_original">
       <source xml:lang="en-US">Include link to original story</source>
-      <target xml:lang="nl">Relateer aan originele story</target>
-    </trans-unit>
-    <trans-unit id="backlogs_product_backlog_unsized">
-      <source xml:lang="en-US">The top of the product backlog has unsized stories</source>
-      <target xml:lang="nl">De top van de product backlog heeft stories zonder size</target>
-    </trans-unit>
-    <trans-unit id="label_sprint_velocity">
-      <source xml:lang="en-US">Velocity %{velocity}, based on %{sprints} sprints with an average %{days} days</source>
-      <target xml:lang="nl">Velocity %{velocity}, berekend over %{sprints} sprints met gemiddeld %{days} dagen</target>
-    </trans-unit>
-    <trans-unit id="backlogs_sprint_notes_missing">
-      <source xml:lang="en-US">Closed sprints without retrospective/review notes</source>
-      <target xml:lang="nl">Gesloten sprints zonder retrospective/review aantekeningen</target>
-    </trans-unit>
-    <trans-unit id="label_points_resolved">
-      <source xml:lang="en-US">points resolved</source>
-      <target xml:lang="nl">points opgelost</target>
+      <target xml:lang="nl" state="final">Relateer aan originele story</target>
     </trans-unit>
     <trans-unit id="field_subject">
       <source xml:lang="en-US">Subject</source>
-      <target xml:lang="nl">Onderwerp</target>
+      <target xml:lang="nl" state="final">Onderwerp</target>
+    </trans-unit>
+    <trans-unit id="backlogs_product_backlog_unsized">
+      <source xml:lang="en-US">The top of the product backlog has unsized stories</source>
+      <target xml:lang="nl" state="final">De top van de product backlog heeft stories zonder size</target>
+    </trans-unit>
+    <trans-unit id="backlogs_sprint_notes_missing">
+      <source xml:lang="en-US">Closed sprints without retrospective/review notes</source>
+      <target xml:lang="nl" state="final">Gesloten sprints zonder retrospective/review aantekeningen</target>
+    </trans-unit>
+    <trans-unit id="label_sprint_velocity">
+      <source xml:lang="en-US">Velocity %{velocity}, based on %{sprints} sprints with an average %{days} days</source>
+      <target xml:lang="nl" state="final">Velocity %{velocity}, berekend over %{sprints} sprints met gemiddeld %{days} dagen</target>
+    </trans-unit>
+    <trans-unit id="label_points_resolved">
+      <source xml:lang="en-US">points resolved</source>
+      <target xml:lang="nl" state="final">points opgelost</target>
     </trans-unit>
     <trans-unit id="label_release">
       <source xml:lang="en-US">Release</source>
-      <target xml:lang="nl">Release</target>
+      <target xml:lang="nl" state="final">Release</target>
     </trans-unit>
     <trans-unit id="backlogs_story">
       <source xml:lang="en-US">Story</source>
-      <target xml:lang="nl">Story</target>
+      <target xml:lang="nl" state="final">Story</target>
     </trans-unit>
     <trans-unit id="label_sprint_backlog">
       <source xml:lang="en-US">sprint backlog</source>
-      <target xml:lang="nl">sprint backlog</target>
+      <target xml:lang="nl" state="final">sprint backlog</target>
     </trans-unit>
     <trans-unit id="backlogs_wiki_template">
       <source xml:lang="en-US">Template for sprint wiki page</source>
-      <target xml:lang="nl">Template voor sprint wiki pagina</target>
+      <target xml:lang="nl" state="final">Template voor sprint wiki pagina</target>
     </trans-unit>
     <trans-unit id="release_create_snapshot_today">
       <source xml:lang="en-US">Save story point snapshot for today</source>
-      <target xml:lang="nl">Story point snapshot voor vandaag opslaan</target>
-    </trans-unit>
-    <trans-unit id="remaining_story_points">
-      <source xml:lang="en-US">remaining story points</source>
-      <target xml:lang="nl">resterende story points</target>
+      <target xml:lang="nl" state="final">Story point snapshot voor vandaag opslaan</target>
     </trans-unit>
     <trans-unit id="label_points_to_accept">
       <source xml:lang="en-US">points not accepted</source>
-      <target xml:lang="nl">points niet geaccepteerd</target>
+      <target xml:lang="nl" state="final">points niet geaccepteerd</target>
     </trans-unit>
     <trans-unit id="label_points">
       <source xml:lang="en-US">points</source>
-      <target xml:lang="nl">points</target>
+      <target xml:lang="nl" state="final">points</target>
+    </trans-unit>
+    <trans-unit id="remaining_story_points">
+      <source xml:lang="en-US">remaining story points</source>
+      <target xml:lang="nl" state="final">resterende story points</target>
     </trans-unit>
     <trans-unit id="backlogs_sizing_inconsistent">
       <source xml:lang="en-US">Story sizes vary against their estimates</source>
-      <target xml:lang="nl">Story sizes varieren ten opzichte van hun tijdsschattingen</target>
+      <target xml:lang="nl" state="final">Story sizes varieren ten opzichte van hun tijdsschattingen</target>
     </trans-unit>
     <trans-unit id="error_intro_plural">
       <source xml:lang="en-US">The following errors were encountered:</source>
-      <target xml:lang="nl">De volgende fouten zijn opgetreden:</target>
+      <target xml:lang="nl" state="final">De volgende fouten zijn opgetreden:</target>
     </trans-unit>
     <trans-unit id="backlogs_velocity_varies">
       <source xml:lang="en-US">Velocity varies significantly over sprints</source>
-      <target xml:lang="nl">Velocity varieert per sprint</target>
-    </trans-unit>
-    <trans-unit id="backlogs_card_specification">
-      <source xml:lang="en-US">Label types for card printing</source>
-      <target xml:lang="nl">Label type voor kaartjes</target>
-    </trans-unit>
-    <trans-unit id="label_points_burn_down">
-      <source xml:lang="en-US">Down</source>
-      <target xml:lang="nl">Omlaag</target>
-    </trans-unit>
-    <trans-unit id="label_hours">
-      <source xml:lang="en-US">hours</source>
-      <target xml:lang="nl">uren</target>
-    </trans-unit>
-    <trans-unit id="error_greater_than_start_date">
-      <source xml:lang="en-US">cannot be earlier than Start Date</source>
-      <target xml:lang="nl">mag niet voor Start Datum liggen</target>
+      <target xml:lang="nl" state="final">Velocity varieert per sprint</target>
     </trans-unit>
     <trans-unit id="rb_label_copy_tasks">
       <source xml:lang="en-US">Copy tasks</source>
-      <target xml:lang="nl">Kopieer taken</target>
+      <target xml:lang="nl" state="final">Kopieer taken</target>
+    </trans-unit>
+    <trans-unit id="error_greater_than_start_date">
+      <source xml:lang="en-US">cannot be earlier than Start Date</source>
+      <target xml:lang="nl" state="final">mag niet voor Start Datum liggen</target>
+    </trans-unit>
+    <trans-unit id="label_hours">
+      <source xml:lang="en-US">hours</source>
+      <target xml:lang="nl" state="final">uren</target>
+    </trans-unit>
+    <trans-unit id="label_points_burn_down">
+      <source xml:lang="en-US">Down</source>
+      <target xml:lang="nl" state="final">Omlaag</target>
+    </trans-unit>
+    <trans-unit id="backlogs_card_specification">
+      <source xml:lang="en-US">Label types for card printing</source>
+      <target xml:lang="nl" state="final">Label type voor kaartjes</target>
     </trans-unit>
     <trans-unit id="rb_task_cards_stories_then_tasks">
       <source xml:lang="en-US">First all stories, then all tasks</source>
-      <target xml:lang="nl">Eerst alle stories, dan alle taken</target>
+      <target xml:lang="nl" state="final">Eerst alle stories, dan alle taken</target>
     </trans-unit>
     <trans-unit id="field_initial_story_points">
       <source xml:lang="en-US">Initial story points</source>
-      <target xml:lang="nl">Initiele story points</target>
+      <target xml:lang="nl" state="final">Initiele story points</target>
     </trans-unit>
     <trans-unit id="label_release_planning">
       <source xml:lang="en-US">Release Planning</source>
-      <target xml:lang="nl">Release Planning</target>
+      <target xml:lang="nl" state="final">Release Planning</target>
     </trans-unit>
     <trans-unit id="backlogs_story_tracker">
       <source xml:lang="en-US">Story trackers</source>
-      <target xml:lang="nl">Story trackers</target>
+      <target xml:lang="nl" state="final">Story trackers</target>
+    </trans-unit>
+    <trans-unit id="error_taken">
+      <source xml:lang="en-US">is already in use</source>
+      <target xml:lang="nl" state="final">is al in gebruik</target>
     </trans-unit>
     <trans-unit id="event_sprint_description">
       <source xml:lang="en-US">%{summary}: %{url}
 %{description}</source>
-      <target xml:lang="nl">%{summary}: %{url}
+      <target xml:lang="nl" state="final">%{summary}: %{url}
 %{description}</target>
     </trans-unit>
     <trans-unit id="label_burndown">
       <source xml:lang="en-US">Burndown</source>
-      <target xml:lang="nl">Burndown</target>
+      <target xml:lang="nl" state="final">Burndown</target>
     </trans-unit>
-    <trans-unit id="error_taken">
-      <source xml:lang="en-US">is already in use</source>
-      <target xml:lang="nl">is al in gebruik</target>
-    </trans-unit>
-    <trans-unit id="label_product_cards">
-      <source xml:lang="en-US">Product backlog cards</source>
-      <target xml:lang="nl">Product backlog kaarten</target>
+    <trans-unit id="rb_label_copy_tasks_all">
+      <source xml:lang="en-US">All</source>
+      <target xml:lang="nl" state="final">Alle</target>
     </trans-unit>
     <trans-unit id="field_velocity_based_estimate">
       <source xml:lang="en-US">Velocity based estimate</source>
-      <target xml:lang="nl">Schatting obv velocity</target>
+      <target xml:lang="nl" state="final">Schatting obv velocity</target>
     </trans-unit>
-    <trans-unit id="label_chart_options">
-      <source xml:lang="en-US">Chart Options</source>
-      <target xml:lang="nl">Grafiek Opties</target>
+    <trans-unit id="label_product_cards">
+      <source xml:lang="en-US">Product backlog cards</source>
+      <target xml:lang="nl" state="final">Product backlog kaarten</target>
     </trans-unit>
     <trans-unit id="todo_issue_description">
       <source xml:lang="en-US">%{summary}: %{url}
 %{description}</source>
-      <target xml:lang="nl">%{summary}: %{url}
+      <target xml:lang="nl" state="final">%{summary}: %{url}
 %{description}</target>
     </trans-unit>
-    <trans-unit id="rb_label_copy_tasks_all">
-      <source xml:lang="en-US">All</source>
-      <target xml:lang="nl">Alle</target>
+    <trans-unit id="label_chart_options">
+      <source xml:lang="en-US">Chart Options</source>
+      <target xml:lang="nl" state="final">Grafiek Opties</target>
     </trans-unit>
     <trans-unit id="release_update_snapshot_today">
       <source xml:lang="en-US">Update story point snapshot for today</source>
-      <target xml:lang="nl">Story point snapshot voor vandaag bijwerken</target>
+      <target xml:lang="nl" state="final">Story point snapshot voor vandaag bijwerken</target>
     </trans-unit>
     <trans-unit id="error_outro">
       <source xml:lang="en-US">Please correct the above errors before submitting again.</source>
-      <target xml:lang="nl">Verbeter a.u.b de eerdergenoemde problemen voordat u nogmaals verzend.</target>
+      <target xml:lang="nl" state="final">Verbeter a.u.b de eerdergenoemde problemen voordat u nogmaals verzend.</target>
     </trans-unit>
     <trans-unit id="backlogs_product_backlog">
       <source xml:lang="en-US">Product backlog</source>
-      <target xml:lang="nl">Product backlog</target>
+      <target xml:lang="nl" state="final">Product backlog</target>
     </trans-unit>
   </body>
 </xliff>
