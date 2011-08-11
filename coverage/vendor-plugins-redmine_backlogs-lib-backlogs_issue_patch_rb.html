@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-lib-backlogs_issue_patch_rb.html">vendor/plugins/redmine_backlogs/lib/backlogs_issue_patch.rb</a></td>
-            <td class='right_align'><tt>146</tt></td>
-            <td class='right_align'><tt>102</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>81.51%</tt></div>
+            <td class='right_align'><tt>170</tt></td>
+            <td class='right_align'><tt>120</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>64.71%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:82px"></div>
-            <div class="uncovered" style="width:18px"></div>
+            <div class="covered" style="width:65px"></div>
+            <div class="uncovered" style="width:35px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>79.41%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>59.17%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:79px"></div>
-            <div class="uncovered" style="width:21px"></div>
+            <div class="covered" style="width:59px"></div>
+            <div class="uncovered" style="width:41px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -453,7 +453,7 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line67">67</a>           :conditions =&gt; [ &quot;root_id = ? and lft &lt; ? and tracker_id in (?)&quot;, self.root_id, self.lft, RbStory.trackers ])</pre></td>
+            <td><pre><a name="line67">67</a>           :conditions =&gt; [ &quot;root_id = ? and lft &lt; ? and tracker_id in (?)&quot;, self.root_id, self.lft, RbStory.trackers ]).becomes(RbStory)</pre></td>
           </tr>
         
           
@@ -747,43 +747,43 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line116">116</a>         elsif not RbTask.tracker.nil?</pre></td>
+            <td><pre><a name="line116">116</a>         elsif self.is_task?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line117">117</a>           begin</pre></td>
+            <td><pre><a name="line117">117</a>           story = self.story</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line118">118</a>             story = self.story</pre></td>
+            <td><pre><a name="line118">118</a>           if not story.blank?</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line119">119</a>             if not story.blank?</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line120">120</a>               connection.execute &quot;update issues set tracker_id = #{connection.quote(RbTask.tracker)}, fixed_version_id = #{connection.quote(story.fixed_version_id)} where id = #{connection.quote(self.id)}&quot;</pre></td>
+            <td><pre><a name="line119">119</a>             connection.execute &quot;update issues set tracker_id = #{connection.quote(RbTask.tracker)}, fixed_version_id = #{connection.quote(story.fixed_version_id)} where id = #{connection.quote(self.id)}&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line121">121</a>             end</pre></td>
+            <td><pre><a name="line120">120</a>           end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line122">122</a>           end</pre></td>
+            <td><pre><a name="line121">121</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line122">122</a>           connection.execute(&quot;update issues set estimated_hours = 0 where id = #{connection.quote(self.id)}&quot;) if self.status.backlog == :success</pre></td>
           </tr>
         
           
@@ -824,7 +824,7 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line129">129</a>             return self.send(property.intern)</pre></td>
           </tr>
         
@@ -842,7 +842,7 @@
         
           
           
-          <tr class="marked">
+          <tr class="uncovered">
             <td><pre><a name="line132">132</a>             conditions = [&quot;property = 'attr' and prop_key = '#{property}' and journalized_type = 'Issue' and journalized_id = ?&quot;, id]</pre></td>
           </tr>
         
@@ -854,86 +854,230 @@
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line134">134</a>           else</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line134">134</a>           when nil</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line135">135</a>             conditions = [&quot;property = 'attr' and prop_key = '#{property}' and journalized_type = 'Issue' and journalized_id = ? and journals.created_on &gt; ?&quot;, id, date]</pre></td>
+            <td><pre><a name="line135">135</a>             return nil</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line136">136</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line137">137</a>           else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line138">138</a>             conditions = [&quot;property = 'attr' and prop_key = '#{property}' and journalized_type = 'Issue' and journalized_id = ? and journals.created_on &gt; ?&quot;, id, date]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line139">139</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line140">140</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line141">141</a>         obj = JournalDetail.find(:first, :order =&gt; &quot;journals.created_on asc&quot;, :joins =&gt; :journal, :conditions =&gt; conditions)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line142">142</a>         v = if obj &amp;&amp; obj.old_value</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line143">143</a>               obj.old_value</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line144">144</a>             elsif obj &amp;&amp; obj.value</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line145">145</a>               obj.value</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line146">146</a>             else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line147">147</a>               self.send(property.intern)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line148">148</a>             end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line149">149</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line150">150</a>         v = yield(v) if v &amp;&amp; block_given?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line151">151</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line152">152</a>         return v</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line153">153</a>       end</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line136">136</a>         end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line137">137</a> </pre></td>
+            <td><pre><a name="line154">154</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line138">138</a>         obj = JournalDetail.find(:first, :order =&gt; &quot;journals.created_on asc&quot;, :joins =&gt; :journal, :conditions =&gt; conditions)</pre></td>
+            <td><pre><a name="line155">155</a>       def initial_estimate</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line156">156</a>         return nil unless (RbStory.trackers + [RbTask.tracker]).include?(tracker_id)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line157">157</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line158">158</a>         if self.leaf?</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line159">159</a>           return self.historic(:first, 'estimated_hours'){|h| Float(h)}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line160">160</a>         else</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line161">161</a>           e = self.leaves.collect{|t| t.initial_estimate}.compact</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line162">162</a>           return nil if e.size == 0</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line163">163</a>           return e.sum</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line164">164</a>         end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line165">165</a>       end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line166">166</a>     end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line167">167</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line168">168</a> end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line169">169</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line139">139</a>         return obj.old_value if obj</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line140">140</a>         return self.send(property.intern)</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line141">141</a>       end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line142">142</a>     end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line143">143</a>   end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line144">144</a> end</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="inferred">
-            <td><pre><a name="line145">145</a> </pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line146">146</a> Issue.send(:include, Backlogs::IssuePatch) unless Issue.included_modules.include? Backlogs::IssuePatch</pre></td>
+            <td><pre><a name="line170">170</a> Issue.send(:include, Backlogs::IssuePatch) unless Issue.included_modules.include? Backlogs::IssuePatch</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Jul 17 10:26:28 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Aug 05 23:15:03 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

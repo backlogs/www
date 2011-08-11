@@ -28,8 +28,8 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-config-routes_rb.html">vendor/plugins/redmine_backlogs/config/routes.rb</a></td>
-            <td class='right_align'><tt>39</tt></td>
-            <td class='right_align'><tt>30</tt></td>
+            <td class='right_align'><tt>44</tt></td>
+            <td class='right_align'><tt>33</tt></td>
             <td class="left_align"><div class="percent_graph_legend"><tt class=''>100.00%</tt></div>
           <div class="percent_graph">
             <div class="covered" style="width:100px"></div>
@@ -117,127 +117,127 @@
           
           
           <tr class="marked">
-            <td><pre><a name="line11">11</a>     rb.resource   :calendars,        :only =&gt; :show,               :controller =&gt; :rb_calendars,        :as =&gt; &quot;calendars/:project_id&quot;</pre></td>
+            <td><pre><a name="line11">11</a>     rb.resource   :task,             :except =&gt; :index,            :controller =&gt; :rb_tasks,            :as =&gt; &quot;task/:id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line12">12</a>     rb.resource   :burndown_chart,   :only =&gt; :show,               :controller =&gt; :rb_burndown_charts,  :as =&gt; &quot;burndown_charts/:sprint_id&quot;</pre></td>
+            <td><pre><a name="line12">12</a>     rb.resources  :tasks,            :only =&gt; :index,              :controller =&gt; :rb_tasks,            :as =&gt; &quot;tasks/:story_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line13">13</a>     rb.resource   :task,             :except =&gt; :index,            :controller =&gt; :rb_tasks,            :as =&gt; &quot;task/:id&quot;</pre></td>
+            <td><pre><a name="line13">13</a>     rb.resource   :taskboard,        :only =&gt; :show,               :controller =&gt; :rb_taskboards,       :as =&gt; &quot;taskboards/:sprint_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line14">14</a>     rb.resources  :tasks,            :only =&gt; :index,              :controller =&gt; :rb_tasks,            :as =&gt; &quot;tasks/:story_id&quot;</pre></td>
+            <td><pre><a name="line14">14</a>     rb.resource   :release,          :only =&gt; :show,               :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line15">15</a>     rb.resource   :taskboard,        :only =&gt; :show,               :controller =&gt; :rb_taskboards,       :as =&gt; &quot;taskboards/:sprint_id&quot;</pre></td>
+            <td><pre><a name="line15">15</a>     rb.resources  :release,          :only =&gt; :edit,               :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line16">16</a>     rb.resource   :release,          :only =&gt; :show,               :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
+            <td><pre><a name="line16">16</a>     rb.resources  :release,          :only =&gt; :destroy,            :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line17">17</a>     rb.resources  :release,          :only =&gt; :edit,               :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
+            <td><pre><a name="line17">17</a>     rb.resources  :releases,         :only =&gt; :index,              :controller =&gt; :rb_releases,         :as =&gt; &quot;releases/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line18">18</a>     rb.resources  :release,          :only =&gt; :destroy,            :controller =&gt; :rb_releases,         :as =&gt; &quot;release/:release_id&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line19">19</a>     rb.resources  :releases,         :only =&gt; :index,              :controller =&gt; :rb_releases,         :as =&gt; &quot;releases/:project_id&quot;</pre></td>
-          </tr>
-        
-          
-          
-          <tr class="marked">
-            <td><pre><a name="line20">20</a>     rb.resources  :releases,         :only =&gt; :snapshot,           :controller =&gt; :rb_releases,         :as =&gt; &quot;releases/:project_id&quot;</pre></td>
+            <td><pre><a name="line18">18</a>     rb.resources  :releases,         :only =&gt; :snapshot,           :controller =&gt; :rb_releases,         :as =&gt; &quot;releases/:project_id&quot;</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line21">21</a> </pre></td>
+            <td><pre><a name="line19">19</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line22">22</a>     rb.connect    'server_variables/:project_id.:format',          :controller =&gt; :rb_server_variables, :action =&gt; 'show'</pre></td>
+            <td><pre><a name="line20">20</a>     rb.connect    'server_variables/:project_id.:format',          :controller =&gt; :rb_server_variables, :action =&gt; 'show'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line21">21</a>     rb.connect    ':project_id/conditional-jquery.:format',        :controller =&gt; :rb_server_variables, :action =&gt; 'jquery'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line23">23</a> </pre></td>
+            <td><pre><a name="line22">22</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line24">24</a>     rb.connect    'master_backlog/:project_id',                    :controller =&gt; :rb_master_backlogs,  :action =&gt; 'show'</pre></td>
+            <td><pre><a name="line23">23</a>     rb.connect    'master_backlog/:project_id',                    :controller =&gt; :rb_master_backlogs,  :action =&gt; 'show'</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line25">25</a>     rb.connect    'master_backlog/:project_id/menu.:format',       :controller =&gt; :rb_master_backlogs,  :action =&gt; 'menu'</pre></td>
+            <td><pre><a name="line24">24</a>     rb.connect    'master_backlog/:project_id/menu.:format',       :controller =&gt; :rb_master_backlogs,  :action =&gt; 'menu'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line26">26</a> </pre></td>
+            <td><pre><a name="line25">25</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line27">27</a>     rb.connect    'impediment/create',                             :controller =&gt; :rb_impediments,      :action =&gt; 'create'# ,  :via =&gt; :post</pre></td>
+            <td><pre><a name="line26">26</a>     rb.connect    'impediment/create',                             :controller =&gt; :rb_impediments,      :action =&gt; 'create'</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line28">28</a>     rb.connect    'impediment/update/:id',                         :controller =&gt; :rb_impediments,      :action =&gt; 'update'# ,  :via =&gt; :put</pre></td>
+            <td><pre><a name="line27">27</a>     rb.connect    'impediment/update/:id',                         :controller =&gt; :rb_impediments,      :action =&gt; 'update'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line29">29</a> </pre></td>
+            <td><pre><a name="line28">28</a> </pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line30">30</a>     rb.connect    'sprint/create',                                 :controller =&gt; :rb_sprints,          :action =&gt; 'create'#,  :via =&gt; :post</pre></td>
+            <td><pre><a name="line29">29</a>     rb.connect    'sprint/create',                                 :controller =&gt; :rb_sprints,          :action =&gt; 'create'</pre></td>
           </tr>
         
           
           
           <tr class="marked">
-            <td><pre><a name="line31">31</a>     rb.connect    'sprint/update/:sprint_id',                      :controller =&gt; :rb_sprints,          :action =&gt; 'update'#,  :via =&gt; :put</pre></td>
+            <td><pre><a name="line30">30</a>     rb.connect    'sprint/update/:sprint_id',                      :controller =&gt; :rb_sprints,          :action =&gt; 'update'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line31">31</a>     rb.connect    'sprint/download/:sprint_id.:format',            :controller =&gt; :rb_sprints,          :action =&gt; 'download'</pre></td>
           </tr>
         
           
@@ -273,25 +273,55 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line37">37</a>   end</pre></td>
+            <td><pre><a name="line37">37</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line38">38</a>     rb.connect    'calendar/:key/:project_id.:format',             :controller =&gt; :rb_calendars,        :action =&gt; 'show'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line38">38</a> </pre></td>
+            <td><pre><a name="line39">39</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line40">40</a>     rb.connect    'burndown/:sprint_id',                           :controller =&gt; :rb_burndown_charts,  :action =&gt; 'show'</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="marked">
+            <td><pre><a name="line41">41</a>     rb.connect    'burndown/print/:sprint_id',                     :controller =&gt; :rb_burndown_charts,  :action =&gt; 'print'</pre></td>
           </tr>
         
           
           
           <tr class="inferred">
-            <td><pre><a name="line39">39</a> end</pre></td>
+            <td><pre><a name="line42">42</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line43">43</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="inferred">
+            <td><pre><a name="line44">44</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Jul 17 10:26:28 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Aug 05 23:15:03 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>

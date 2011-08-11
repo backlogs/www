@@ -28,17 +28,17 @@
         <tbody>
           <tr>
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_sprints_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_sprints_controller.rb</a></td>
-            <td class='right_align'><tt>45</tt></td>
-            <td class='right_align'><tt>33</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>82.22%</tt></div>
+            <td class='right_align'><tt>72</tt></td>
+            <td class='right_align'><tt>57</tt></td>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>51.39%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:82px"></div>
-            <div class="uncovered" style="width:18px"></div>
+            <div class="covered" style="width:51px"></div>
+            <div class="uncovered" style="width:49px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.76%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>43.86%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:76px"></div>
-            <div class="uncovered" style="width:24px"></div>
+            <div class="covered" style="width:44px"></div>
+            <div class="uncovered" style="width:56px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -315,19 +315,181 @@
           
           
           <tr class="inferred">
-            <td><pre><a name="line44">44</a>   </pre></td>
+            <td><pre><a name="line44">44</a> </pre></td>
           </tr>
         
           
           
-          <tr class="inferred">
-            <td><pre><a name="line45">45</a> end</pre></td>
+          <tr class="marked">
+            <td><pre><a name="line45">45</a>   def download</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line46">46</a>     bold = {:font =&gt; {:bold =&gt; true}}</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line47">47</a>     dump = BacklogsSpreadsheet::WorkBook.new</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line48">48</a>     ws = dump[@sprint.name]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line49">49</a>     ws &lt;&lt; [nil, @sprint.id, nil, nil, {:value =&gt; @sprint.name, :style =&gt; bold}, {:value =&gt; 'Start', :style =&gt; bold}] + @sprint.days(:all).collect{|d| {:value =&gt; d, :style =&gt; bold} }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line50">50</a>     bd = @sprint.burndown</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line51">51</a>     bd.series(false).sort{|a, b| l(&quot;label_#{a}&quot;) &lt;=&gt; l(&quot;label_#{b}&quot;)}.each{ |k|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line52">52</a>       ws &lt;&lt; [ nil, nil, nil, nil, l(&quot;label_#{k}&quot;) ] + bd[k]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line53">53</a>     }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line54">54</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line55">55</a>     @sprint.stories.each{|s|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line56">56</a>       ws &lt;&lt; [s.tracker.name, s.id, nil, nil, {:value =&gt; s.subject, :style =&gt; bold}]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line57">57</a>       bd = s.burndown</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line58">58</a>       bd.delete(:status)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line59">59</a>       bd.keys.sort{|a, b| l(&quot;label_#{a}&quot;) &lt;=&gt; l(&quot;label_#{b}&quot;)}.each{ |k|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line60">60</a>         label = l(&quot;label_#{k}&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line61">61</a>         label = {:value =&gt; label, :comment =&gt; k.to_s} if [:points, :points_accepted].include?(k)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line62">62</a>         ws &lt;&lt; [nil, nil, nil, nil, label ] + bd[k]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line63">63</a>       }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line64">64</a>       s.tasks.each {|t|</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line65">65</a>         ws &lt;&lt; [nil, nil, t.tracker.name, t.id, {:value =&gt; t.subject, :style =&gt; bold}] + t.burndown[:hours]</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line66">66</a>       }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line67">67</a>     }</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line68">68</a> </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line69">69</a>     send_data(dump.to_xml, :disposition =&gt; 'attachment', :type =&gt; 'application/vnd.ms-exce', :filename =&gt; &quot;#{@project.identifier}-#{@sprint.name.gsub(/[^a-z0-9]/i, '')}.xml&quot;)</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line70">70</a>   end</pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line71">71</a>   </pre></td>
+          </tr>
+        
+          
+          
+          <tr class="uncovered">
+            <td><pre><a name="line72">72</a> end</pre></td>
           </tr>
         
       </tbody>
     </table>
 
-    <p>Generated on Sun Jul 17 10:26:28 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
+    <p>Generated on Fri Aug 05 23:15:03 +0200 2011 with <a href="http://github.com/relevance/rcov">rcov 0.9.8</a></p>
 
   </body>
 </html>
