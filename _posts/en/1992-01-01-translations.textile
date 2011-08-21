@@ -19,9 +19,7 @@ h1. Translations
 *Want to help out with translating Backlogs? Excellent! Click "(show-instructions)here":http://www.example.com for more info!*
 
  <div class="instructions">
-Create an account at "GitHub":http://www.github.com if you don't have one yet. "Fork":https://github.com/relaxdiego/redmine_backlogs/fork the "Backlogs":http://github.com/relaxdiego/redmine_backlogs repository, check it out to your local PC, and change the translation files in config/locales. Check it into your clone, and then issue a "pull request":https://github.com/relaxdiego/redmine_backlogs/pull/new/master, and I'll be able to fetch your changes. The changes will automatically be attributed to you.
-
-Alternately, but this won't get you attribution, "download":http://github.com/relaxdiego/redmine_backlogs/tree/master/config/locales the raw translation file, change them as you wish, and then post them in a "gist":https://gist.github.com/, and add an issue in our "issue tracker":https://github.com/relaxdiego/redmine_backlogs/issue with a link to your gist.
+Create an account at "GitHub":http://www.github.com if you don't have one yet. "Fork":https://github.com/relaxdiego/redmine_backlogs/fork the "Backlogs":http://github.com/relaxdiego/redmine_backlogs repository, in that repository browse to Source -> config -> locales, click on the translation you want to adapt, en click the "Edit this file" button. Change what you want, and then issue a "pull request":https://github.com/relaxdiego/redmine_backlogs/pull/new/master, and I'll be able to fetch your changes. The changes will automatically be attributed to you.
 
 The messages below mean the following:
 
@@ -36,13 +34,14 @@ bq(success). "English":http://www.redminebacklogs.net/translations/en.ts
 
 serves as a base for all other translations
 
-bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (63%)
+bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (58%)
 
 *Missing*
 
-|backlogs_impediment|error_blank|
-|error_greater_than_start_date|error_inclusion|
-|error_taken|field_blocks|
+|backlogs_impediment|comma_delimited_numbers|
+|error_blank|error_greater_than_start_date|
+|error_inclusion|error_taken|
+|field_blocks|field_initial_estimate|
 |field_subject|field_tracker_id|
 |label_hours_ideal|label_hours_remaining|
 |label_hours_required_burn_rate|label_impediments|
@@ -55,15 +54,19 @@ bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (63%)
 |rb_label_copy_tasks_none|rb_label_copy_tasks_open|
 |rb_label_link_to_original|rb_task_cards_stories_then_tasks|
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order||
+|rb_taskboard_card_order|story_description|
+|story_estimation_hours|story_points|
+|story_remaining_hours|story_spent_time|
+|story_status|use_free_text_if_empty|
 
 *Obsolete*
 
-|ideal|inclusion|
-|points_accepted|points_committed|
-|points_resolved|points_to_accept|
-|points_to_resolve|remaining_hours|
-|required_burn_rate_hours|required_burn_rate_points|
+|field_remaining_hours|ideal|
+|inclusion|points_accepted|
+|points_committed|points_resolved|
+|points_to_accept|points_to_resolve|
+|remaining_hours|required_burn_rate_hours|
+|required_burn_rate_points||
 
 *Old-style variable substitution*
 
@@ -72,35 +75,48 @@ bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (63%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). "English (British)":http://www.redminebacklogs.net/translations/en-GB.ts 
-
-bq(error). "Español":http://www.redminebacklogs.net/translations/es.ts (85%)
+bq(error). "English (British)":http://www.redminebacklogs.net/translations/en-GB.ts (92%)
 
 *Missing*
 
-|error_inclusion|error_taken|
+|comma_delimited_numbers|story_description|
+|story_estimation_hours|story_points|
+|story_remaining_hours|story_spent_time|
+|story_status|use_free_text_if_empty|
+
+bq(error). "Español":http://www.redminebacklogs.net/translations/es.ts (78%)
+
+*Missing*
+
+|comma_delimited_numbers|error_inclusion|
+|error_taken|field_initial_estimate|
 |label_hours_ideal|label_hours_remaining|
 |label_hours_required_burn_rate|label_points_accepted|
 |label_points_committed|label_points_required_burn_rate|
 |label_points_resolved|label_points_to_accept|
 |label_points_to_resolve|rb_task_cards_stories_then_tasks|
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order||
+|rb_taskboard_card_order|story_description|
+|story_estimation_hours|story_points|
+|story_remaining_hours|story_spent_time|
+|story_status|use_free_text_if_empty|
 
 *Obsolete*
 
-|ideal|inclusion|
-|points_accepted|points_committed|
-|points_resolved|points_to_accept|
-|points_to_resolve|remaining_hours|
-|required_burn_rate_hours|required_burn_rate_points|
+|field_remaining_hours|ideal|
+|inclusion|points_accepted|
+|points_committed|points_resolved|
+|points_to_accept|points_to_resolve|
+|remaining_hours|required_burn_rate_hours|
+|required_burn_rate_points||
 
-bq(error). "Français":http://www.redminebacklogs.net/translations/fr.ts (56%)
+bq(error). "Français":http://www.redminebacklogs.net/translations/fr.ts (51%)
 
 *Missing*
 
-|backlogs_impediment|error_inclusion|
-|error_release_end_after_start|error_taken|
+|backlogs_impediment|comma_delimited_numbers|
+|error_inclusion|error_release_end_after_start|
+|error_taken|field_initial_estimate|
 |field_initial_story_points|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
 |label_hours_ideal|label_hours_remaining|
@@ -117,15 +133,20 @@ bq(error). "Français":http://www.redminebacklogs.net/translations/fr.ts (56%)
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
 |rb_taskboard_card_order|release_create_snapshot_today|
 |release_update_snapshot_today|remaining_story_points|
+|story_description|story_estimation_hours|
+|story_points|story_remaining_hours|
+|story_spent_time|story_status|
 |today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty||
 
 *Obsolete*
 
-|ideal|inclusion|
-|points_accepted|points_committed|
-|points_resolved|points_to_accept|
-|points_to_resolve|remaining_hours|
-|required_burn_rate_hours|required_burn_rate_points|
+|field_remaining_hours|ideal|
+|inclusion|points_accepted|
+|points_committed|points_resolved|
+|points_to_accept|points_to_resolve|
+|remaining_hours|required_burn_rate_hours|
+|required_burn_rate_points||
 
 *Old-style variable substitution*
 
@@ -134,14 +155,22 @@ bq(error). "Français":http://www.redminebacklogs.net/translations/fr.ts (56%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). "Nederlands":http://www.redminebacklogs.net/translations/nl.ts 
-
-bq(error). "Português(Brasil)":http://www.redminebacklogs.net/translations/pt-BR.ts (60%)
+bq(error). "Nederlands":http://www.redminebacklogs.net/translations/nl.ts (92%)
 
 *Missing*
 
-|backlogs_impediment|error_inclusion|
-|error_release_end_after_start|error_taken|
+|comma_delimited_numbers|story_description|
+|story_estimation_hours|story_points|
+|story_remaining_hours|story_spent_time|
+|story_status|use_free_text_if_empty|
+
+bq(error). "Português(Brasil)":http://www.redminebacklogs.net/translations/pt-BR.ts (55%)
+
+*Missing*
+
+|backlogs_impediment|comma_delimited_numbers|
+|error_inclusion|error_release_end_after_start|
+|error_taken|field_initial_estimate|
 |field_initial_story_points|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
 |field_tracker_id|label_hours_ideal|
@@ -156,15 +185,20 @@ bq(error). "Português(Brasil)":http://www.redminebacklogs.net/translations/pt-B
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
 |rb_taskboard_card_order|release_create_snapshot_today|
 |release_update_snapshot_today|remaining_story_points|
+|story_description|story_estimation_hours|
+|story_points|story_remaining_hours|
+|story_spent_time|story_status|
 |today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty||
 
 *Obsolete*
 
-|ideal|inclusion|
-|points_accepted|points_committed|
-|points_resolved|points_to_accept|
-|points_to_resolve|remaining_hours|
-|required_burn_rate_hours|required_burn_rate_points|
+|field_remaining_hours|ideal|
+|inclusion|points_accepted|
+|points_committed|points_resolved|
+|points_to_accept|points_to_resolve|
+|remaining_hours|required_burn_rate_hours|
+|required_burn_rate_points||
 
 *Old-style variable substitution*
 
@@ -173,26 +207,31 @@ bq(error). "Português(Brasil)":http://www.redminebacklogs.net/translations/pt-B
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "Russian (Русский)":http://www.redminebacklogs.net/translations/ru.ts (78%)
+bq(error). "Russian (Русский)":http://www.redminebacklogs.net/translations/ru.ts (72%)
 
 *Missing*
 
-|error_inclusion|error_taken|
+|comma_delimited_numbers|error_inclusion|
+|error_taken|field_initial_estimate|
 |label_hours_ideal|label_hours_remaining|
 |label_hours_required_burn_rate|label_points_accepted|
 |label_points_committed|label_points_required_burn_rate|
 |label_points_resolved|label_points_to_accept|
 |label_points_to_resolve|rb_task_cards_stories_then_tasks|
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order||
+|rb_taskboard_card_order|story_description|
+|story_estimation_hours|story_points|
+|story_remaining_hours|story_spent_time|
+|story_status|use_free_text_if_empty|
 
 *Obsolete*
 
-|ideal|inclusion|
-|points_accepted|points_committed|
-|points_resolved|points_to_accept|
-|points_to_resolve|remaining_hours|
-|required_burn_rate_hours|required_burn_rate_points|
+|field_remaining_hours|ideal|
+|inclusion|points_accepted|
+|points_committed|points_resolved|
+|points_to_accept|points_to_resolve|
+|remaining_hours|required_burn_rate_hours|
+|required_burn_rate_points||
 
 *Old-style variable substitution*
 
@@ -201,14 +240,15 @@ bq(error). "Russian (Русский)":http://www.redminebacklogs.net/translation
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/translations/zh.ts (47%)
+bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/translations/zh.ts (43%)
 
 *Missing*
 
-|backlogs_impediment|error_blank|
-|error_greater_than_start_date|error_inclusion|
-|error_release_end_after_start|error_taken|
-|field_blocks|field_initial_story_points|
+|backlogs_impediment|comma_delimited_numbers|
+|error_blank|error_greater_than_start_date|
+|error_inclusion|error_release_end_after_start|
+|error_taken|field_blocks|
+|field_initial_estimate|field_initial_story_points|
 |field_name|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
 |field_subject|field_tracker_id|
@@ -227,16 +267,20 @@ bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/tr
 |rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
 |rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
 |release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|today_not_in_release_msg|
-|today_not_in_release_warning||
+|remaining_story_points|story_description|
+|story_estimation_hours|story_points|
+|story_remaining_hours|story_spent_time|
+|story_status|today_not_in_release_msg|
+|today_not_in_release_warning|use_free_text_if_empty|
 
 *Obsolete*
 
-|ideal|inclusion|
-|points_accepted|points_committed|
-|points_resolved|points_to_accept|
-|points_to_resolve|remaining_hours|
-|required_burn_rate_hours|required_burn_rate_points|
+|field_remaining_hours|ideal|
+|inclusion|points_accepted|
+|points_committed|points_resolved|
+|points_to_accept|points_to_resolve|
+|remaining_hours|required_burn_rate_hours|
+|required_burn_rate_points||
 
 *Old-style variable substitution*
 
