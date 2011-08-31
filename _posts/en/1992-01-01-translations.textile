@@ -195,4 +195,14 @@ bq(error). Simplified Chinese (简体中文) 68%)
 |rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
 |rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
 |rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining
+|release_update_snapshot_today|remaining_story_points|
+|today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty|warning_reset_sprint|
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
