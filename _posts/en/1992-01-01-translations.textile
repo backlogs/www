@@ -19,7 +19,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch 80%)
+bq(error). Deutsch (80%)
 
 *Untranslated*
 
@@ -38,7 +38,7 @@ bq(error). Deutsch 80%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(error). English (British) 52%)
+bq(error). English (British) (52%)
 
 *Untranslated*
 
@@ -69,7 +69,7 @@ bq(error). English (British) 52%)
 |today_not_in_release_warning|use_free_text_if_empty|
 |warning_reset_sprint||
 
-bq(error). Español 60%)
+bq(error). Español (60%)
 
 *Untranslated*
 
@@ -89,112 +89,4 @@ bq(error). Español 60%)
 |label_hours_required_burn_rate|label_points_required_burn_rate|
 |label_points_to_accept|label_points_to_resolve|
 |label_sprint_velocity|rb_label_link_to_original|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
-|warning_reset_sprint||
-
-bq(error). Français 69%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_release_end_after_start|error_taken|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
-|label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_start_date|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_summary|label_backlogs_unconfigured|
-|label_sprint_name|label_sprint_velocity|
-|todo_issue_summary||
-
-bq(error). Nederlands 94%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_no_workflow_for_task_tracker|rb_timelog_from_taskboard|
-|use_free_text_if_empty|warning_reset_sprint|
-
-bq(error). Português(Brasil) 69%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_release_end_after_start|error_taken|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
-|label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_start_date|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_summary|label_backlogs_unconfigured|
-|label_sprint_name|label_sprint_velocity|
-|todo_issue_summary||
-
-bq(error). Russian (Русский) 80%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_taken|label_hours_required_burn_rate|
-|label_points_required_burn_rate|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|rb_timelog_from_taskboard|
-|use_free_text_if_empty|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_summary|label_backlogs_unconfigured|
-|label_sprint_name|label_sprint_velocity|
-|todo_issue_summary||
-
-bq(error). Simplified Chinese (简体中文) 69%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_release_end_after_start|error_taken|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
-|label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_start_date|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_summary|label_backlogs_unconfigured|
-|label_sprint_name|label_sprint_velocity|
-|todo_issue_summary||
-
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_
