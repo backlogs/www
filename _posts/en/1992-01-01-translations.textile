@@ -38,36 +38,7 @@ bq(error). Deutsch (80%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(error). English (British) (52%)
-
-*Untranslated*
-
-|backlogs_card_specification|backlogs_inactive|
-|backlogs_points_burn_direction|backlogs_product_backlog_is_empty|
-|backlogs_product_backlog_unsized|backlogs_sizing_inconsistent|
-|backlogs_sprint_notes_missing|backlogs_sprint_unestimated|
-|backlogs_sprint_unsized|backlogs_velocity_missing|
-|backlogs_velocity_varies|backlogs_wiki_template|
-|button_edit_wiki|comma_delimited_numbers|
-|current_open_story_points|error_blank|
-|error_greater_than_start_date|error_inclusion|
-|error_intro_plural|error_intro_singular|
-|error_must_have_comma_delimited_list|error_no_workflow_for_task_tracker|
-|error_outro|error_release_end_after_start|
-|error_taken|field_initial_story_points|
-|field_number_of_snapshots|field_release_end_date|
-|field_release_start_date|field_velocity_based_estimate|
-|label_back_to_project|label_backlogs_unconfigured|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
-|label_points_to_accept|label_points_to_resolve|
-|label_product_cards|label_sprint_velocity|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|rb_timelog_from_taskboard|
-|release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
-|warning_reset_sprint||
+bq(success). English (British)
 
 bq(error). Español (60%)
 
@@ -121,13 +92,7 @@ bq(error). Français (69%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(error). Nederlands (94%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_no_workflow_for_task_tracker|rb_timelog_from_taskboard|
-|use_free_text_if_empty|warning_reset_sprint|
+bq(success). Nederlands
 
 bq(error). Português(Brasil) (69%)
 
