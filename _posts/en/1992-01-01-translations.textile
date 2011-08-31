@@ -5,20 +5,8 @@ categories: en
 ---
 h1. Translations
 
-<script>
-    $(document).ready(function() {
-        $('a.show-instructions').attr('href', '#');
-        $('.instructions').hide();
+*Want to help out with translating Backlogs? Excellent!
 
-        $('a.show-instructions').click(function() {
-          $('.instructions').toggle();
-        });
-    });
-</script>
-
-*Want to help out with translating Backlogs? Excellent! Click "(show-instructions)here":http://www.example.com for more info!*
-
- <div class="instructions">
 Create an account at "GitHub":http://www.github.com if you don't have one yet. "Fork":https://github.com/relaxdiego/redmine_backlogs/fork the "Backlogs":http://github.com/relaxdiego/redmine_backlogs repository, in that repository browse to Source -> config -> locales, click on the translation you want to adapt, en click the "Edit this file" button. Change what you want, and then issue a "pull request":https://github.com/relaxdiego/redmine_backlogs/pull/new/master, and I'll be able to fetch your changes. The changes will automatically be attributed to you.
 
 The messages below mean the following:
@@ -27,29 +15,19 @@ The messages below mean the following:
 | *Obsolete* | the key is present but no longer in use, so it should be removed. |
 | *Old-style variable substitution* | the translation uses { { keyword } } instead of %{keyword}. This works for now, but redmine is in the process of phasing it out. |
 
- </div>
-
-
 bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (66%)
+bq(error). Deutsch 79%)
 
-*Missing*
+*Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
-|error_blank|error_greater_than_start_date|
 |error_inclusion|error_no_workflow_for_task_tracker|
-|error_taken|field_blocks|
-|field_subject|field_tracker_id|
-|label_hours_required_burn_rate|label_master_backlog|
+|error_taken|label_hours_required_burn_rate|
 |label_points_required_burn_rate|label_points_to_accept|
-|label_points_to_resolve|label_product_cards|
-|label_sprint_cards|label_webcal|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
+|label_points_to_resolve|rb_task_cards_stories_then_tasks|
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
 |rb_taskboard_card_order|rb_timelog_from_taskboard|
 |use_free_text_if_empty|warning_reset_sprint|
@@ -61,9 +39,9 @@ bq(error). Deutsch (66%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). English (British) (51%)
+bq(error). English (British) 51%)
 
-*Missing*
+*Untranslated*
 
 |backlogs_card_specification|backlogs_inactive|
 |backlogs_points_burn_direction|backlogs_product_backlog_is_empty|
@@ -93,9 +71,9 @@ bq(error). English (British) (51%)
 |todo_issue_description|use_free_text_if_empty|
 |warning_reset_sprint||
 
-bq(error). Español (59%)
+bq(error). Español 59%)
 
-*Missing*
+*Untranslated*
 
 |backlogs_inactive|backlogs_product_backlog_is_empty|
 |backlogs_product_backlog_unsized|backlogs_sizing_inconsistent|
@@ -121,9 +99,9 @@ bq(error). Español (59%)
 |todo_issue_description|use_free_text_if_empty|
 |warning_reset_sprint||
 
-bq(error). Français (63%)
+bq(error). Français 68%)
 
-*Missing*
+*Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
 |error_inclusion|error_no_workflow_for_task_tracker|
@@ -133,15 +111,12 @@ bq(error). Français (63%)
 |label_hours_required_burn_rate|label_points_required_burn_rate|
 |label_points_to_accept|label_points_to_resolve|
 |label_release_end_date|label_release_start_date|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|rb_timelog_from_taskboard|
-|release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
-|warning_reset_sprint||
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
+|rb_timelog_from_taskboard|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty|warning_reset_sprint|
 
 *Old-style variable substitution*
 
@@ -150,34 +125,33 @@ bq(error). Français (63%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Nederlands (92%)
+bq(error). Nederlands 92%)
 
-*Missing*
+*Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
 |error_no_workflow_for_task_tracker|event_sprint_description|
 |rb_timelog_from_taskboard|todo_issue_description|
 |use_free_text_if_empty|warning_reset_sprint|
 
-bq(error). Português(Brasil) (67%)
+bq(error). Português(Brasil) 68%)
 
-*Missing*
+*Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
 |error_inclusion|error_no_workflow_for_task_tracker|
 |error_release_end_after_start|error_taken|
 |field_initial_story_points|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
-|field_tracker_id|label_hours_required_burn_rate|
-|label_points_required_burn_rate|label_points_to_accept|
-|label_points_to_resolve|label_release_end_date|
-|label_release_start_date|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|rb_timelog_from_taskboard|
-|release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
-|warning_reset_sprint||
+|label_hours_required_burn_rate|label_points_required_burn_rate|
+|label_points_to_accept|label_points_to_resolve|
+|label_release_end_date|label_release_start_date|
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
+|rb_timelog_from_taskboard|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty|warning_reset_sprint|
 
 *Old-style variable substitution*
 
@@ -186,9 +160,9 @@ bq(error). Português(Brasil) (67%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Russian (Русский) (79%)
+bq(error). Russian (Русский) 79%)
 
-*Missing*
+*Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
 |error_inclusion|error_no_workflow_for_task_tracker|
@@ -206,36 +180,19 @@ bq(error). Russian (Русский) (79%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Simplified Chinese (简体中文) (55%)
+bq(error). Simplified Chinese (简体中文) 68%)
 
-*Missing*
+*Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
-|error_blank|error_greater_than_start_date|
 |error_inclusion|error_no_workflow_for_task_tracker|
 |error_release_end_after_start|error_taken|
-|field_blocks|field_initial_story_points|
-|field_name|field_number_of_snapshots|
+|field_initial_story_points|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
-|field_subject|field_tracker_id|
 |label_hours_required_burn_rate|label_points_required_burn_rate|
 |label_points_to_accept|label_points_to_resolve|
-|label_product_cards|label_release_end_date|
-|label_release_start_date|label_sprint_cards|
-|label_webcal|rb_label_copy_tasks|
-|rb_label_copy_tasks_all|rb_label_copy_tasks_none|
-|rb_label_copy_tasks_open|rb_label_link_to_original|
+|label_release_end_date|label_release_start_date|
 |rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
 |rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
 |rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
+|release_update_snapshot_today|remaining
