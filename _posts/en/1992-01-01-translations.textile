@@ -18,7 +18,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (33%)
+bq(error). Deutsch (33%) (Bo Hansen, Frank Blendinger, friflaj, Mark Maglana)
 
 *Untranslated*
 
@@ -63,7 +63,7 @@ bq(error). Deutsch (33%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(error). English (British) (91%)
+bq(error). English (British) (91%) (Bo Hansen, Frank Blendinger, friflaj)
 
 *Untranslated*
 
@@ -73,7 +73,7 @@ bq(error). English (British) (91%)
 |label_webcal|rb_timelog_from_taskboard|
 |use_free_text_if_empty||
 
-bq(error). Español (31%)
+bq(error). Español (31%) (Bo Hansen, friflaj, Jorge Uriarte)
 
 *Untranslated*
 
@@ -115,7 +115,7 @@ bq(error). Español (31%)
 |today_not_in_release_msg|today_not_in_release_warning|
 |use_free_text_if_empty|warning_reset_sprint|
 
-bq(error). Français (50%)
+bq(error). Français (50%) (Bo Hansen, friflaj, ibussieres)
 
 *Untranslated*
 
@@ -151,9 +151,9 @@ bq(error). Français (50%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(success). Nederlands
+bq(success). Nederlands (Bo Hansen, friflaj, Mark Maglana)
 
-bq(error). Português(Brasil) (43%)
+bq(error). Português(Brasil) (43%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana)
 
 *Untranslated*
 
@@ -193,7 +193,7 @@ bq(error). Português(Brasil) (43%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(error). Russian (Русский) (70%)
+bq(error). Russian (Русский) (70%) (Bo Hansen, Emiliano Heyns, friflaj)
 
 *Untranslated*
 
@@ -218,7 +218,7 @@ bq(error). Russian (Русский) (70%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(warning). Simplified Chinese (简体中文) (95%)
+bq(warning). Simplified Chinese (简体中文) (95%) (Bo Hansen, friflaj, Mark Maglana)
 
 *Old-style variable substitution*
 
