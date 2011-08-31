@@ -30,43 +30,22 @@ The messages below mean the following:
  </div>
 
 
-bq(success). "English":http://www.redminebacklogs.net/translations/en.ts
+bq(success). English
 
 serves as a base for all other translations
 
-bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (58%)
+bq(error). Deutsch (79%)
 
 *Missing*
 
-|backlogs_impediment|comma_delimited_numbers|
 |error_blank|error_greater_than_start_date|
-|error_inclusion|error_taken|
-|field_blocks|field_initial_estimate|
+|error_no_workflow_for_task_tracker|field_blocks|
 |field_subject|field_tracker_id|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_impediments|
-|label_master_backlog|label_points_accepted|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|label_product_cards|
+|label_master_backlog|label_product_cards|
 |label_sprint_cards|label_webcal|
 |rb_label_copy_tasks|rb_label_copy_tasks_all|
 |rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
+|rb_label_link_to_original|warning_reset_sprint|
 
 *Old-style variable substitution*
 
@@ -75,212 +54,79 @@ bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (58%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). "English (British)":http://www.redminebacklogs.net/translations/en-GB.ts (92%)
+bq(error). English (British) (98%)
 
 *Missing*
 
-|comma_delimited_numbers|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
+|error_no_workflow_for_task_tracker|warning_reset_sprint|
 
-bq(error). "Español":http://www.redminebacklogs.net/translations/es.ts (78%)
+bq(error). Español (98%)
 
 *Missing*
 
-|comma_delimited_numbers|error_inclusion|
-|error_taken|field_initial_estimate|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_points_accepted|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
+|error_no_workflow_for_task_tracker|warning_reset_sprint|
 
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-bq(error). "Français":http://www.redminebacklogs.net/translations/fr.ts (51%)
+bq(error). Français (87%)
 
 *Missing*
 
-|backlogs_impediment|comma_delimited_numbers|
-|error_inclusion|error_release_end_after_start|
-|error_taken|field_initial_estimate|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_impediments|
-|label_points_accepted|label_points_committed|
-|label_points_required_burn_rate|label_points_resolved|
-|label_points_to_accept|label_points_to_resolve|
-|label_release|label_release_end_date|
-|label_release_new|label_release_planning|
-|label_release_plural|label_release_start_date|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|story_description|story_estimation_hours|
-|story_points|story_remaining_hours|
-|story_spent_time|story_status|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty||
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). "Nederlands":http://www.redminebacklogs.net/translations/nl.ts (92%)
-
-*Missing*
-
-|comma_delimited_numbers|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-bq(error). "Português(Brasil)":http://www.redminebacklogs.net/translations/pt-BR.ts (55%)
-
-*Missing*
-
-|backlogs_impediment|comma_delimited_numbers|
-|error_inclusion|error_release_end_after_start|
-|error_taken|field_initial_estimate|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|field_tracker_id|label_hours_ideal|
-|label_hours_remaining|label_hours_required_burn_rate|
-|label_impediments|label_points_accepted|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|label_release|
-|label_release_end_date|label_release_new|
-|label_release_planning|label_release_plural|
-|label_release_start_date|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|story_description|story_estimation_hours|
-|story_points|story_remaining_hours|
-|story_spent_time|story_status|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty||
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). "Russian (Русский)":http://www.redminebacklogs.net/translations/ru.ts (72%)
-
-*Missing*
-
-|comma_delimited_numbers|error_inclusion|
-|error_taken|field_initial_estimate|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_points_accepted|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/translations/zh.ts (43%)
-
-*Missing*
-
-|backlogs_impediment|comma_delimited_numbers|
-|error_blank|error_greater_than_start_date|
-|error_inclusion|error_release_end_after_start|
-|error_taken|field_blocks|
-|field_initial_estimate|field_initial_story_points|
-|field_name|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|field_subject|field_tracker_id|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_impediments|
-|label_points_accepted|label_points_committed|
-|label_points_required_burn_rate|label_points_resolved|
-|label_points_to_accept|label_points_to_resolve|
-|label_product_cards|label_release|
-|label_release_end_date|label_release_new|
-|label_release_planning|label_release_plural|
-|label_release_start_date|label_sprint_cards|
-|label_webcal|rb_label_copy_tasks|
+|error_no_workflow_for_task_tracker|rb_label_copy_tasks|
 |rb_label_copy_tasks_all|rb_label_copy_tasks_none|
 |rb_label_copy_tasks_open|rb_label_link_to_original|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
+|warning_reset_sprint||
 
-*Obsolete*
+*Old-style variable substitution*
 
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Nederlands (98%)
+
+*Missing*
+
+|error_no_workflow_for_task_tracker|warning_reset_sprint|
+
+bq(error). Português(Brasil) (90%)
+
+*Missing*
+
+|error_no_workflow_for_task_tracker|field_tracker_id|
+|warning_reset_sprint||
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Russian (Русский) (91%)
+
+*Missing*
+
+|error_no_workflow_for_task_tracker|warning_reset_sprint|
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Simplified Chinese (简体中文) (79%)
+
+*Missing*
+
+|error_blank|error_greater_than_start_date|
+|error_no_workflow_for_task_tracker|field_blocks|
+|field_name|field_subject|
+|field_tracker_id|label_product_cards|
+|label_sprint_cards|label_webcal|
+|rb_label_copy_tasks|rb_label_copy_tasks_all|
+|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
+|rb_label_link_to_original|warning_reset_sprint|
 
 *Old-style variable substitution*
 
