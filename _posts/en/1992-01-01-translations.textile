@@ -34,7 +34,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (80%)
+bq(error). Deutsch (79%)
 
 *Missing*
 
@@ -45,6 +45,7 @@ bq(error). Deutsch (80%)
 |label_webcal|rb_label_copy_tasks|
 |rb_label_copy_tasks_all|rb_label_copy_tasks_none|
 |rb_label_copy_tasks_open|rb_label_link_to_original|
+|use_free_text_if_empty|warning_reset_sprint|
 
 *Old-style variable substitution*
 
@@ -72,7 +73,11 @@ bq(error). Français (89%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(success). Nederlands 
+bq(error). Nederlands (98%)
+
+*Missing*
+
+|use_free_text_if_empty|warning_reset_sprint|
 
 bq(error). Português(Brasil) (92%)
 
