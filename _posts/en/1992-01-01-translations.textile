@@ -19,17 +19,43 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (80%)
+bq(error). Deutsch (33%)
 
 *Untranslated*
 
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_taken|label_hours_required_burn_rate|
-|label_points_required_burn_rate|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|rb_timelog_from_taskboard|
+|backlogs_card_specification|backlogs_impediment|
+|backlogs_points_burn_direction|backlogs_product_backlog_unsized|
+|backlogs_sprint_notes_missing|backlogs_sprint_unsized|
+|backlogs_velocity_missing|comma_delimited_numbers|
+|current_open_story_points|error_blank|
+|error_greater_than_start_date|error_inclusion|
+|error_must_have_comma_delimited_list|error_no_workflow_for_task_tracker|
+|error_release_end_after_start|error_taken|
+|field_blocks|field_initial_estimate|
+|field_initial_story_points|field_number_of_snapshots|
+|field_release_end_date|field_release_start_date|
+|field_story_points|field_subject|
+|field_tracker_id|field_velocity_based_estimate|
+|label_back_to_project|label_backlogs_unconfigured|
+|label_hours_remaining|label_hours_required_burn_rate|
+|label_master_backlog|label_points_accepted|
+|label_points_committed|label_points_required_burn_rate|
+|label_points_resolved|label_points_to_accept|
+|label_points_to_resolve|label_product_cards|
+|label_release|label_release_end_date|
+|label_release_new|label_release_planning|
+|label_release_plural|label_release_start_date|
+|label_scrum_statistics|label_select_all|
+|label_sprint_cards|label_task_board|
+|label_webcal|rb_label_copy_tasks|
+|rb_label_copy_tasks_all|rb_label_copy_tasks_none|
+|rb_label_copy_tasks_open|rb_label_link_to_original|
+|rb_label_timelog_disable|rb_label_timelog_enable|
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
+|rb_timelog_from_taskboard|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|today_not_in_release_msg|today_not_in_release_warning|
 |use_free_text_if_empty|warning_reset_sprint|
 
 *Old-style variable substitution*
@@ -38,53 +64,87 @@ bq(error). Deutsch (80%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(success). English (British)
-
-bq(error). Español (60%)
+bq(error). English (British) (91%)
 
 *Untranslated*
 
-|backlogs_inactive|backlogs_product_backlog_is_empty|
+|backlogs_product_backlog_unsized|backlogs_sprint_unestimated|
+|error_no_workflow_for_task_tracker|label_not_prioritized|
+|label_release_end_date|label_release_start_date|
+|label_webcal|rb_timelog_from_taskboard|
+|use_free_text_if_empty||
+
+bq(error). Español (31%)
+
+*Untranslated*
+
+|backlogs_card_specification|backlogs_inactive|
+|backlogs_points_burn_direction|backlogs_product_backlog_is_empty|
 |backlogs_product_backlog_unsized|backlogs_sizing_inconsistent|
 |backlogs_sprint_notes_missing|backlogs_sprint_unestimated|
-|backlogs_sprint_unsized|backlogs_velocity_missing|
-|backlogs_velocity_varies|comma_delimited_numbers|
+|backlogs_sprint_unsized|backlogs_sprints|
+|backlogs_velocity_missing|backlogs_velocity_varies|
+|backlogs_wiki_template|comma_delimited_numbers|
 |current_open_story_points|error_blank|
 |error_greater_than_start_date|error_inclusion|
 |error_intro_plural|error_intro_singular|
 |error_must_have_comma_delimited_list|error_no_workflow_for_task_tracker|
 |error_outro|error_release_end_after_start|
-|error_taken|field_initial_story_points|
-|field_number_of_snapshots|field_release_end_date|
-|field_release_start_date|label_backlogs_unconfigured|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
-|label_points_to_accept|label_points_to_resolve|
-|label_sprint_velocity|rb_label_link_to_original|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
-|warning_reset_sprint||
+|error_taken|field_blocks|
+|field_initial_estimate|field_initial_story_points|
+|field_name|field_number_of_snapshots|
+|field_release_end_date|field_release_start_date|
+|field_subject|label_backlogs_unconfigured|
+|label_chart_options|label_hours|
+|label_hours_remaining|label_hours_required_burn_rate|
+|label_master_backlog|label_not_prioritized|
+|label_points_accepted|label_points_burn_down|
+|label_points_burn_up|label_points_committed|
+|label_points_required_burn_rate|label_points_to_accept|
+|label_points_to_resolve|label_release|
+|label_release_end_date|label_release_new|
+|label_release_planning|label_release_plural|
+|label_release_start_date|label_scrum_statistics|
+|label_sprint_velocity|label_webcal|
+|rb_label_copy_tasks|rb_label_copy_tasks_all|
+|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
+|rb_label_link_to_original|rb_label_timelog_disable|
+|rb_label_timelog_enable|rb_task_cards_stories_then_tasks|
+|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
+|rb_taskboard_card_order|rb_timelog_from_taskboard|
+|release_create_snapshot_today|release_update_snapshot_today|
+|today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty|warning_reset_sprint|
 
-bq(error). Français (69%)
+bq(error). Français (50%)
 
 *Untranslated*
 
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_release_end_after_start|error_taken|
-|field_initial_story_points|field_number_of_snapshots|
+|backlogs_impediment|comma_delimited_numbers|
+|current_open_story_points|error_inclusion|
+|error_no_workflow_for_task_tracker|error_release_end_after_start|
+|error_taken|field_blocks|
+|field_initial_estimate|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
+|label_backlogs_unconfigured|label_hours_ideal|
+|label_hours_remaining|label_hours_required_burn_rate|
+|label_points_accepted|label_points_committed|
+|label_points_required_burn_rate|label_points_resolved|
 |label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_start_date|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
+|label_release|label_release_end_date|
+|label_release_new|label_release_planning|
+|label_release_plural|label_release_start_date|
+|label_scrum_statistics|label_webcal|
+|rb_label_copy_tasks|rb_label_copy_tasks_all|
+|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
+|rb_label_link_to_original|rb_label_timelog_disable|
+|rb_label_timelog_enable|rb_task_cards_stories_then_tasks|
+|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
+|rb_taskboard_card_order|rb_timelog_from_taskboard|
+|release_create_snapshot_today|release_update_snapshot_today|
+|remaining_story_points|today_not_in_release_msg|
+|today_not_in_release_warning|use_free_text_if_empty|
+|warning_reset_sprint||
 
 *Old-style variable substitution*
 
@@ -94,43 +154,39 @@ bq(error). Français (69%)
 
 bq(success). Nederlands
 
-bq(error). Português(Brasil) (69%)
+bq(error). Português(Brasil) (43%)
 
 *Untranslated*
 
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_release_end_after_start|error_taken|
+|backlogs_impediment|backlogs_sprint_notes_missing|
+|backlogs_sprint_unestimated|backlogs_sprint_unsized|
+|backlogs_sprints|backlogs_velocity_varies|
+|backlogs_wiki_template|comma_delimited_numbers|
+|current_open_story_points|error_inclusion|
+|error_must_have_comma_delimited_list|error_no_workflow_for_task_tracker|
+|error_outro|error_release_end_after_start|
+|error_taken|field_initial_estimate|
 |field_initial_story_points|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
+|field_tracker_id|label_hours_remaining|
+|label_hours_required_burn_rate|label_master_backlog|
+|label_points_accepted|label_points_committed|
+|label_points_required_burn_rate|label_points_resolved|
 |label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_start_date|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_summary|label_backlogs_unconfigured|
-|label_sprint_name|label_sprint_velocity|
-|todo_issue_summary||
-
-bq(error). Russian (Русский) (80%)
-
-*Untranslated*
-
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_taken|label_hours_required_burn_rate|
-|label_points_required_burn_rate|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
+|label_release|label_release_end_date|
+|label_release_new|label_release_planning|
+|label_release_plural|label_release_start_date|
+|label_scrum_statistics|label_select_all|
+|label_sprint_backlog|label_sprint_cards|
+|label_sprint_impediments|label_sprint_name|
+|label_webcal|rb_label_timelog_disable|
+|rb_label_timelog_enable|rb_task_cards_stories_then_tasks|
 |rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
 |rb_taskboard_card_order|rb_timelog_from_taskboard|
-|use_free_text_if_empty|warning_reset_sprint|
+|release_create_snapshot_today|release_update_snapshot_today|
+|remaining_story_points|today_not_in_release_msg|
+|today_not_in_release_warning|use_free_text_if_empty|
+|warning_reset_sprint||
 
 *Old-style variable substitution*
 
@@ -138,24 +194,32 @@ bq(error). Russian (Русский) (80%)
 |label_sprint_name|label_sprint_velocity|
 |todo_issue_summary||
 
-bq(error). Simplified Chinese (简体中文) (69%)
+bq(error). Russian (Русский) (70%)
 
 *Untranslated*
 
 |comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_release_end_after_start|error_taken|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_hours_required_burn_rate|label_points_required_burn_rate|
-|label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_start_date|
+|error_inclusion|error_must_have_comma_delimited_list|
+|error_no_workflow_for_task_tracker|error_taken|
+|field_initial_estimate|field_tracker_id|
+|label_hours_ideal|label_hours_remaining|
+|label_hours_required_burn_rate|label_points_accepted|
+|label_points_committed|label_points_required_burn_rate|
+|label_points_resolved|label_points_to_accept|
+|label_points_to_resolve|label_webcal|
+|rb_label_timelog_disable|rb_label_timelog_enable|
 |rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
 |rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty|warning_reset_sprint|
+|rb_timelog_from_taskboard|use_free_text_if_empty|
+|warning_reset_sprint||
+
+*Old-style variable substitution*
+
+|event_sprint_summary|label_backlogs_unconfigured|
+|label_sprint_name|label_sprint_velocity|
+|todo_issue_summary||
+
+bq(warning). Simplified Chinese (简体中文) (95%)
 
 *Old-style variable substitution*
 
