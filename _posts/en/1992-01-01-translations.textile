@@ -34,46 +34,17 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (79%)
+bq(error). Deutsch (80%)
 
 *Missing*
 
 |error_blank|error_greater_than_start_date|
-|error_no_workflow_for_task_tracker|field_blocks|
-|field_subject|field_tracker_id|
-|label_master_backlog|label_product_cards|
-|label_sprint_cards|label_webcal|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|warning_reset_sprint|
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). English (British) (98%)
-
-*Missing*
-
-|error_no_workflow_for_task_tracker|warning_reset_sprint|
-
-bq(error). Español (98%)
-
-*Missing*
-
-|error_no_workflow_for_task_tracker|warning_reset_sprint|
-
-bq(error). Français (87%)
-
-*Missing*
-
-|error_no_workflow_for_task_tracker|rb_label_copy_tasks|
+|field_blocks|field_subject|
+|field_tracker_id|label_master_backlog|
+|label_product_cards|label_sprint_cards|
+|label_webcal|rb_label_copy_tasks|
 |rb_label_copy_tasks_all|rb_label_copy_tasks_none|
 |rb_label_copy_tasks_open|rb_label_link_to_original|
-|warning_reset_sprint||
 
 *Old-style variable substitution*
 
@@ -82,18 +53,17 @@ bq(error). Français (87%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Nederlands (98%)
+bq(success). English (British) 
+
+bq(success). Español 
+
+bq(error). Français (89%)
 
 *Missing*
 
-|error_no_workflow_for_task_tracker|warning_reset_sprint|
-
-bq(error). Português(Brasil) (90%)
-
-*Missing*
-
-|error_no_workflow_for_task_tracker|field_tracker_id|
-|warning_reset_sprint||
+|rb_label_copy_tasks|rb_label_copy_tasks_all|
+|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
+|rb_label_link_to_original||
 
 *Old-style variable substitution*
 
@@ -102,11 +72,13 @@ bq(error). Português(Brasil) (90%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Russian (Русский) (91%)
+bq(success). Nederlands 
+
+bq(error). Português(Brasil) (92%)
 
 *Missing*
 
-|error_no_workflow_for_task_tracker|warning_reset_sprint|
+|field_tracker_id||
 
 *Old-style variable substitution*
 
@@ -115,18 +87,26 @@ bq(error). Russian (Русский) (91%)
 |label_sprint_velocity|todo_issue_description|
 |todo_issue_summary||
 
-bq(error). Simplified Chinese (简体中文) (79%)
+bq(warning). Russian (Русский) (93%)
+
+*Old-style variable substitution*
+
+|event_sprint_description|event_sprint_summary|
+|label_backlogs_unconfigured|label_sprint_name|
+|label_sprint_velocity|todo_issue_description|
+|todo_issue_summary||
+
+bq(error). Simplified Chinese (简体中文) (80%)
 
 *Missing*
 
 |error_blank|error_greater_than_start_date|
-|error_no_workflow_for_task_tracker|field_blocks|
-|field_name|field_subject|
-|field_tracker_id|label_product_cards|
-|label_sprint_cards|label_webcal|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|warning_reset_sprint|
+|field_blocks|field_name|
+|field_subject|field_tracker_id|
+|label_product_cards|label_sprint_cards|
+|label_webcal|rb_label_copy_tasks|
+|rb_label_copy_tasks_all|rb_label_copy_tasks_none|
+|rb_label_copy_tasks_open|rb_label_link_to_original|
 
 *Old-style variable substitution*
 
