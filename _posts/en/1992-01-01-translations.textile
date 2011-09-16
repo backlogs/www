@@ -142,15 +142,7 @@ bq(error). Français (62%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil)
 |event_sprint_summary|label_backlogs_unconfigured|
 |label_sprint_name|todo_issue_summary|
 
-bq(error). Nederlands (92%) (Bo Hansen, friflaj, Mark Maglana)
-
-*Untranslated*
-
-|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
-|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
-|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_velocity_stddev|
-|story_description|story_estimation_hours|
-|story_remaining_hours|story_spent_time|
+bq(success). Nederlands (Bo Hansen, friflaj, Mark Maglana)
 
 bq(error). Norwegian (Norsk bokmål) (66%) (friflaj, Geir Helland, Riley W.)
 
