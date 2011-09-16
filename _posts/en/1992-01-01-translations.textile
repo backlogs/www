@@ -5,287 +5,291 @@ categories: en
 ---
 h1. Translations
 
-<script>
-    $(document).ready(function() {
-        $('a.show-instructions').attr('href', '#');
-        $('.instructions').hide();
+*Want to help out with translating Backlogs? Excellent!*
 
-        $('a.show-instructions').click(function() {
-          $('.instructions').toggle();
-        });
-    });
-</script>
-
-*Want to help out with translating Backlogs? Excellent! Click "(show-instructions)here":http://www.example.com for more info!*
-
- <div class="instructions">
 Create an account at "GitHub":http://www.github.com if you don't have one yet. "Fork":https://github.com/relaxdiego/redmine_backlogs/fork the "Backlogs":http://github.com/relaxdiego/redmine_backlogs repository, in that repository browse to Source -> config -> locales, click on the translation you want to adapt, en click the "Edit this file" button. Change what you want, and then issue a "pull request":https://github.com/relaxdiego/redmine_backlogs/pull/new/master, and I'll be able to fetch your changes. The changes will automatically be attributed to you.
 
 The messages below mean the following:
 
-| *Missing* | the key is not present in the translation. |
-| *Obsolete* | the key is present but no longer in use, so it should be removed. |
+| *Untranslated* | The translation contains words that aspell thinks doesn't belong to that language. |
 | *Old-style variable substitution* | the translation uses { { keyword } } instead of %{keyword}. This works for now, but redmine is in the process of phasing it out. |
 
- </div>
-
-
-bq(success). "English":http://www.redminebacklogs.net/translations/en.ts
+bq(success). English
 
 serves as a base for all other translations
 
-bq(error). "Deutsch":http://www.redminebacklogs.net/translations/de.ts (58%)
+bq(error). Deutsch (27%) (Bo Hansen, Frank Blendinger, friflaj, Mark Maglana)
 
-*Missing*
+*Untranslated*
 
-|backlogs_impediment|comma_delimited_numbers|
-|error_blank|error_greater_than_start_date|
-|error_inclusion|error_taken|
+|backlogs_card_specification|backlogs_impediment|
+|backlogs_points_burn_direction|backlogs_statistics_active|
+|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
+|backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
+|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
+|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
+|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
+|backlogs_statistics_yield_failed|comma_delimited_numbers|
+|current_open_story_points|error_blank|
+|error_greater_than_start_date|error_inclusion|
+|error_must_have_comma_delimited_list|error_no_workflow_for_task_tracker|
+|error_release_end_after_start|error_taken|
 |field_blocks|field_initial_estimate|
-|field_subject|field_tracker_id|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_impediments|
+|field_initial_story_points|field_number_of_snapshots|
+|field_release_end_date|field_release_start_date|
+|field_story_points|field_subject|
+|field_tracker_id|field_velocity_based_estimate|
+|label_back_to_project|label_backlogs_unconfigured|
+|label_hours_remaining|label_hours_required_burn_rate|
 |label_master_backlog|label_points_accepted|
 |label_points_committed|label_points_required_burn_rate|
 |label_points_resolved|label_points_to_accept|
 |label_points_to_resolve|label_product_cards|
-|label_sprint_cards|label_webcal|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). "English (British)":http://www.redminebacklogs.net/translations/en-GB.ts (92%)
-
-*Missing*
-
-|comma_delimited_numbers|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-bq(error). "Español":http://www.redminebacklogs.net/translations/es.ts (78%)
-
-*Missing*
-
-|comma_delimited_numbers|error_inclusion|
-|error_taken|field_initial_estimate|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_points_accepted|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-bq(error). "Français":http://www.redminebacklogs.net/translations/fr.ts (51%)
-
-*Missing*
-
-|backlogs_impediment|comma_delimited_numbers|
-|error_inclusion|error_release_end_after_start|
-|error_taken|field_initial_estimate|
-|field_initial_story_points|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_impediments|
-|label_points_accepted|label_points_committed|
-|label_points_required_burn_rate|label_points_resolved|
-|label_points_to_accept|label_points_to_resolve|
 |label_release|label_release_end_date|
 |label_release_new|label_release_planning|
 |label_release_plural|label_release_start_date|
-|rb_label_copy_tasks|rb_label_copy_tasks_all|
-|rb_label_copy_tasks_none|rb_label_copy_tasks_open|
-|rb_label_link_to_original|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|release_create_snapshot_today|
+|label_scrum_statistics|label_select_all|
+|label_sprint_cards|label_task_board|
+|label_webcal|rb_label_copy_tasks|
+|rb_label_copy_tasks_all|rb_label_copy_tasks_none|
+|rb_label_copy_tasks_open|rb_label_link_to_original|
+|rb_label_timelog_disable|rb_label_timelog_enable|
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
+|rb_timelog_from_taskboard|release_create_snapshot_today|
 |release_update_snapshot_today|remaining_story_points|
 |story_description|story_estimation_hours|
-|story_points|story_remaining_hours|
-|story_spent_time|story_status|
+|story_remaining_hours|story_spent_time|
 |today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty||
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
+|use_free_text_if_empty|warning_reset_sprint|
 
 *Old-style variable substitution*
 
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
+|event_sprint_summary|label_backlogs_unconfigured|
+|label_sprint_name|todo_issue_summary|
 
-bq(error). "Nederlands":http://www.redminebacklogs.net/translations/nl.ts (92%)
+bq(error). English (British) (92%) (Bo Hansen, Frank Blendinger, friflaj)
 
-*Missing*
+*Untranslated*
 
-|comma_delimited_numbers|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
+|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sprints_estimated_failed|
+|error_no_workflow_for_task_tracker|label_not_prioritized|
+|label_release_end_date|label_release_start_date|
+|label_webcal|rb_timelog_from_taskboard|
+|use_free_text_if_empty||
 
-bq(error). "Português(Brasil)":http://www.redminebacklogs.net/translations/pt-BR.ts (55%)
+bq(error). Español (64%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uriarte)
 
-*Missing*
+*Untranslated*
 
-|backlogs_impediment|comma_delimited_numbers|
-|error_inclusion|error_release_end_after_start|
-|error_taken|field_initial_estimate|
-|field_initial_story_points|field_number_of_snapshots|
+|backlogs_card_specification|backlogs_points_burn_direction|
+|backlogs_sprints|backlogs_statistics_active|
+|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
+|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
+|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
+|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
+|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
+|backlogs_statistics_yield_failed|backlogs_wiki_template|
+|error_blank|error_must_have_comma_delimited_list|
+|error_release_end_after_start|field_number_of_snapshots|
 |field_release_end_date|field_release_start_date|
-|field_tracker_id|label_hours_ideal|
-|label_hours_remaining|label_hours_required_burn_rate|
-|label_impediments|label_points_accepted|
+|label_backlogs_unconfigured|label_hours_remaining|
+|label_release|label_release_end_date|
+|label_release_new|label_release_planning|
+|label_release_plural|label_release_start_date|
+|label_scrum_statistics|label_webcal|
+|rb_timelog_from_taskboard|story_remaining_hours|
+|today_not_in_release_msg|today_not_in_release_warning|
+|warning_reset_sprint||
+
+bq(error). Français (38%) (Bo Hansen, friflaj, ibussieres)
+
+*Untranslated*
+
+|backlogs_impediment|backlogs_statistics_active|
+|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
+|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_product_backlog_filled|
+|backlogs_statistics_product_backlog_filled_failed|backlogs_statistics_product_backlog_sized|
+|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
+|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sizing_stddev|
+|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
+|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
+|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
+|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
+|backlogs_statistics_yield|backlogs_statistics_yield_failed|
+|comma_delimited_numbers|current_open_story_points|
+|error_inclusion|error_no_workflow_for_task_tracker|
+|error_release_end_after_start|error_taken|
+|field_blocks|field_initial_estimate|
+|field_number_of_snapshots|field_release_end_date|
+|field_release_start_date|label_backlogs_unconfigured|
+|label_hours_ideal|label_hours_remaining|
+|label_hours_required_burn_rate|label_points_accepted|
 |label_points_committed|label_points_required_burn_rate|
 |label_points_resolved|label_points_to_accept|
 |label_points_to_resolve|label_release|
 |label_release_end_date|label_release_new|
 |label_release_planning|label_release_plural|
-|label_release_start_date|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|release_create_snapshot_today|
-|release_update_snapshot_today|remaining_story_points|
-|story_description|story_estimation_hours|
-|story_points|story_remaining_hours|
-|story_spent_time|story_status|
-|today_not_in_release_msg|today_not_in_release_warning|
-|use_free_text_if_empty||
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). "Russian (Русский)":http://www.redminebacklogs.net/translations/ru.ts (72%)
-
-*Missing*
-
-|comma_delimited_numbers|error_inclusion|
-|error_taken|field_initial_estimate|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_points_accepted|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|use_free_text_if_empty|
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
-
-*Old-style variable substitution*
-
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
-
-bq(error). "Simplified Chinese (简体中文)":http://www.redminebacklogs.net/translations/zh.ts (43%)
-
-*Missing*
-
-|backlogs_impediment|comma_delimited_numbers|
-|error_blank|error_greater_than_start_date|
-|error_inclusion|error_release_end_after_start|
-|error_taken|field_blocks|
-|field_initial_estimate|field_initial_story_points|
-|field_name|field_number_of_snapshots|
-|field_release_end_date|field_release_start_date|
-|field_subject|field_tracker_id|
-|label_hours_ideal|label_hours_remaining|
-|label_hours_required_burn_rate|label_impediments|
-|label_points_accepted|label_points_committed|
-|label_points_required_burn_rate|label_points_resolved|
-|label_points_to_accept|label_points_to_resolve|
-|label_product_cards|label_release|
-|label_release_end_date|label_release_new|
-|label_release_planning|label_release_plural|
-|label_release_start_date|label_sprint_cards|
+|label_release_start_date|label_scrum_statistics|
 |label_webcal|rb_label_copy_tasks|
 |rb_label_copy_tasks_all|rb_label_copy_tasks_none|
 |rb_label_copy_tasks_open|rb_label_link_to_original|
+|rb_label_timelog_disable|rb_label_timelog_enable|
 |rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
 |rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|release_create_snapshot_today|release_update_snapshot_today|
-|remaining_story_points|story_description|
-|story_estimation_hours|story_points|
-|story_remaining_hours|story_spent_time|
-|story_status|today_not_in_release_msg|
-|today_not_in_release_warning|use_free_text_if_empty|
-
-*Obsolete*
-
-|field_remaining_hours|ideal|
-|inclusion|points_accepted|
-|points_committed|points_resolved|
-|points_to_accept|points_to_resolve|
-|remaining_hours|required_burn_rate_hours|
-|required_burn_rate_points||
+|rb_timelog_from_taskboard|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|story_estimation_hours|story_remaining_hours|
+|story_spent_time|story_status|
+|today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty|warning_reset_sprint|
 
 *Old-style variable substitution*
 
-|event_sprint_description|event_sprint_summary|
-|label_backlogs_unconfigured|label_sprint_name|
-|label_sprint_velocity|todo_issue_description|
-|todo_issue_summary||
+|event_sprint_summary|label_backlogs_unconfigured|
+|label_sprint_name|todo_issue_summary|
+
+bq(error). Nederlands (80%) (Bo Hansen, friflaj, Mark Maglana)
+
+*Untranslated*
+
+|backlogs_statistics_active|backlogs_statistics_active_failed|
+|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
+|backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
+|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sizing_stddev|
+|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
+|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
+|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
+|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
+|backlogs_statistics_yield|backlogs_statistics_yield_failed|
+|story_description|story_estimation_hours|
+|story_remaining_hours|story_spent_time|
+
+bq(error). Norwegian (Norsk bokmål) (66%) (Geir Helland, Riley W.)
+
+*Untranslated*
+
+|backlogs_card_specification|backlogs_statistics_active|
+|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
+|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
+|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
+|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
+|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
+|backlogs_statistics_yield_failed|backlogs_task|
+|backlogs_task_tracker|backlogs_wiki_template|
+|button_edit_wiki|error_must_have_comma_delimited_list|
+|error_no_workflow_for_task_tracker|field_number_of_snapshots|
+|label_chart_options|label_product_cards|
+|label_scrum_statistics|label_stories_tasks|
+|label_webcal|rb_label_copy_tasks|
+|rb_label_link_to_original|rb_label_timelog_disable|
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_timelog_from_taskboard|
+|use_free_text_if_empty|warning_reset_sprint|
+
+bq(error). Português(Brasil) (35%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana)
+
+*Untranslated*
+
+|backlogs_impediment|backlogs_sprints|
+|backlogs_statistics_active|backlogs_statistics_active_failed|
+|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
+|backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
+|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
+|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
+|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
+|backlogs_statistics_yield_failed|backlogs_wiki_template|
+|comma_delimited_numbers|current_open_story_points|
+|error_inclusion|error_must_have_comma_delimited_list|
+|error_no_workflow_for_task_tracker|error_outro|
+|error_release_end_after_start|error_taken|
+|field_initial_estimate|field_initial_story_points|
+|field_number_of_snapshots|field_release_end_date|
+|field_release_start_date|field_tracker_id|
+|label_hours_remaining|label_hours_required_burn_rate|
+|label_master_backlog|label_points_accepted|
+|label_points_committed|label_points_required_burn_rate|
+|label_points_resolved|label_points_to_accept|
+|label_points_to_resolve|label_release|
+|label_release_end_date|label_release_new|
+|label_release_planning|label_release_plural|
+|label_release_start_date|label_scrum_statistics|
+|label_select_all|label_sprint_backlog|
+|label_sprint_cards|label_sprint_impediments|
+|label_sprint_name|label_webcal|
+|rb_label_timelog_disable|rb_label_timelog_enable|
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
+|rb_timelog_from_taskboard|release_create_snapshot_today|
+|release_update_snapshot_today|remaining_story_points|
+|story_description|story_estimation_hours|
+|story_remaining_hours|story_spent_time|
+|today_not_in_release_msg|today_not_in_release_warning|
+|use_free_text_if_empty|warning_reset_sprint|
+
+*Old-style variable substitution*
+
+|event_sprint_summary|label_backlogs_unconfigured|
+|label_sprint_name|todo_issue_summary|
+
+bq(error). Russian (Русский) (54%) (Bo Hansen, Emiliano Heyns, friflaj)
+
+*Untranslated*
+
+|backlogs_statistics_active|backlogs_statistics_active_failed|
+|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
+|backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
+|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
+|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
+|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
+|backlogs_statistics_yield_failed|comma_delimited_numbers|
+|current_open_story_points|error_inclusion|
+|error_must_have_comma_delimited_list|error_no_workflow_for_task_tracker|
+|error_taken|field_initial_estimate|
+|field_tracker_id|label_hours_ideal|
+|label_hours_remaining|label_hours_required_burn_rate|
+|label_points_accepted|label_points_committed|
+|label_points_required_burn_rate|label_points_resolved|
+|label_points_to_accept|label_points_to_resolve|
+|label_webcal|rb_label_timelog_disable|
+|rb_label_timelog_enable|rb_task_cards_stories_then_tasks|
+|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
+|rb_taskboard_card_order|rb_timelog_from_taskboard|
+|story_description|story_estimation_hours|
+|story_remaining_hours|story_spent_time|
+|story_status|use_free_text_if_empty|
+|warning_reset_sprint||
+
+*Old-style variable substitution*
+
+|event_sprint_summary|label_backlogs_unconfigured|
+|label_sprint_name|todo_issue_summary|
+
+bq(warning). Simplified Chinese (简体中文) (96%) (Bo Hansen, friflaj, Mark Maglana)
+
+*Old-style variable substitution*
+
+|event_sprint_summary|label_backlogs_unconfigured|
+|label_sprint_name|todo_issue_summary|
 
