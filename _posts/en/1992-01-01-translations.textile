@@ -110,7 +110,7 @@ bq(error). Español (64%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uri
 |today_not_in_release_msg|today_not_in_release_warning|
 |warning_reset_sprint||
 
-bq(error). Français (62%) (Bo Hansen, friflaj, ibussieres)
+bq(error). Français (62%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil)
 
 *Untranslated*
 
