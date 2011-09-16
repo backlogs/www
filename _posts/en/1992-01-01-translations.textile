@@ -174,7 +174,7 @@ bq(error). Nederlands (80%) (Bo Hansen, friflaj, Mark Maglana)
 |story_description|story_estimation_hours|
 |story_remaining_hours|story_spent_time|
 
-bq(error). Norwegian (Norsk bokmål) (66%) (Geir Helland, Riley W.)
+bq(error). Norwegian (Norsk bokmål) (66%) (friflaj, Geir Helland, Riley W.)
 
 *Untranslated*
 
