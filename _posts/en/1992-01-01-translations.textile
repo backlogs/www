@@ -152,12 +152,7 @@ bq(error). Français (54%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, m
 
 bq(success). Japanese (日本語) (mikoto20000)
 
-bq(error). Nederlands (97%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
-
-*Untranslated*
-
-|label_show_completed_sprints|rb_auto_refresh|
-|rb_show_burndown_in_sidebar||
+bq(success). Nederlands (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
 
 bq(error). Norwegian (Norsk bokmål) (60%) (friflaj, Geir Helland, mikoto20000, Riley W.)
 
