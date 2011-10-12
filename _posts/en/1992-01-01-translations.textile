@@ -152,15 +152,10 @@ bq(error). Français (54%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, m
 
 bq(success). Japanese (日本語) (mikoto20000)
 
-bq(error). Nederlands (91%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
+bq(error). Nederlands (97%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
 
 *Untranslated*
 
-|field_assigned_to|field_estimated_hours|
-|field_priority|field_time_entry_comments|
-|field_time_entry_hours|field_time_entry_spend_on|
-|field_time_entry_user_id|label_close_completed_sprints|
-|label_column_width|label_hide_completed_sprints|
 |label_show_completed_sprints|rb_auto_refresh|
 |rb_show_burndown_in_sidebar||
 
