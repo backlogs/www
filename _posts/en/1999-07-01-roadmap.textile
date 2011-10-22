@@ -7,6 +7,10 @@ h1. Roadmap
 
 The following items are pretty certain to happen, in roughly this order:
 
+h2. Reverting burndown calculation to estimated_hours + remaining_hours
+
+I've introduced a change a few months ago that calculates the burndown from the history of estimated_hours, thereby defining estimated_hours as "estimated_hours remaining at time X" instead of "estimated_hours at start". I still think this is conceptually sound, and that re-introducing estimated_hours as "estimated_hours at start" and remaining_hours as "estimated_hours remaining at time X" re-introduces the problem of what to do with changes to estimated_hours. Anyhow, many people seem to hate this change, so it's being reverted in the remaining_hours branch. As soon as the tests pass on that branch, it gets merged into master, and that will be that.
+
 h2. Version/story sharing between projects
 
 This is currently in progress, but the complexity of the matter is enormously underestimated by the people clamoring for it. I've seen a few naive (sorry, but it's true) patches come in, which do show these shared versions/stories, but also introduce one or more of the following problems:
@@ -17,10 +21,29 @@ This is currently in progress, but the complexity of the matter is enormously un
 
 h2. Easy time logging
 
-I'm going to add a desktop gadget to allow quick time logging
+Bo Hansen already did lots of the work on backlogs itself. I'd like to add some desktop widgets to this so people can log time without having the site open. I'd also want to investigate "TimeSheet":http://www.businessrunner.net/TimeSheet/ , which is free and has a plugin structure that might allow for easy integration.
 
 h2. Allow any tracker as task
 
+There have been multiple requests to allow for more than one tracker for tasks. If we were to just allow multiple trackers the taskboard would become complex to build and complex to use (not every task can have all available states). I'd want to propose a mapping where the taskboard gets spedific per-project columns, and then assign the possible task states to such columns. That would mean if you have, for example
+
+Task Trackers
+
+* Bug, with states New, Feedback required, In progress, Done
+* Feature, with states New, In progress, Done
+
+Taskboard columns
+
+* "New" (states: New)
+* "In Progress" (states: Feedback required, In progress)
+* "Done" (states: Done)
+
+then a task of type Bug with state Feedback required would be shown in the "In Progress" column. When a Bug type task would be moved into the "In progress" column, it would be assigned the first available state according to workflow (so Feedback required if the user is allowed to make the transition to that state, otherwise In progress)
+
 h2. Story state loosely follows task progress
 
+What I mean by loosely is that a story would go to a "In Progress" state, being a state that is not the default state and not a closed state, when any of it's tasks enter a non-default state, and that the story would fall back to the default state if all of its tasks are in the default state. All tasks closed would *not* lead to the story getting a closed state; story-closure is akin to a sign-off of the product owner, so that should not be done without his or her explicit approval.
+
 h2. Sprints as objects separate from versions
+
+We're currently re-using versions as sprints, but versions are valuable in their own right. We must at some point create a separate object type for sprint and implement the UI to manage them.
