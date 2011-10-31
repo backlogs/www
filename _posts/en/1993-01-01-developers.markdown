@@ -34,7 +34,7 @@ You will need the following gems:
 * cucumber 0.8.5
 * spork
 * database_cleaner
-* capybara
+* capybara 0.4.1.2
 * ZenTest
 * autotest-rails
 * redgreen
