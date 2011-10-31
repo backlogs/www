@@ -7,7 +7,7 @@ h1. Roadmap
 
 The following items are pretty certain to happen, in roughly this order:
 
-h2. Reverting burndown calculation to estimated_hours + remaining_hours
+h2. -Reverting burndown calculation to estimated_hours + remaining_hours-
 
 I've introduced a change a few months ago that calculates the burndown from the history of estimated_hours, thereby defining estimated_hours as "estimated_hours remaining at time X" instead of "estimated_hours at start". I still think this is conceptually sound, and that re-introducing estimated_hours as "estimated_hours at start" and remaining_hours as "estimated_hours remaining at time X" re-introduces the problem of what to do with changes to estimated_hours. Anyhow, many people seem to hate this change, so it's being reverted in the remaining_hours branch. As soon as the tests pass on that branch, it gets merged into master, and that will be that.
 
