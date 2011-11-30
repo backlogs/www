@@ -171,6 +171,11 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 * open-uri-cached
 * nokogiri
 
+there is currently a known problem with the installer for the holidays gem (1.0.4). You can work around the problem by first installing an older version and then upgrading:
+
+bc. gem install holidays --version 1.0.3
+gem install holidays
+
 h2. Install Backlogs
 
 Now let's download the Backlogs source code from "the official repo":git://github.com/relaxdiego/redmine_backlogs.git into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
