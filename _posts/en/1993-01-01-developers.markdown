@@ -9,7 +9,7 @@ This page is being reconstructed from memory, sorry for the mess
 
 ## Setting up for automated testing
 
-* Install Redmine 1.1.2
+* Install Redmine 1.2.1
 * Install Backlogs and checkout the master branch
 * Symlink your backlogs install into the redmine/vendor/plugins directory
 * Remove the redmine/features directory and symlink redmine/vendor/plugins/redmine_backlogs/features/ to redmine/features
