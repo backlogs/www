@@ -15,6 +15,7 @@ This page is being reconstructed from memory, sorry for the mess
 * Remove the redmine/features directory and symlink redmine/vendor/plugins/redmine_backlogs/features/ to redmine/features
 * run 'script/generate cucumber --spork' from the redmine directory
 * Change to the redmine directory and execute 'rake db:migrate; rake db:migrate_plugins; rake redmine:backlogs:rcov'
+* run 'cp lib/labels.yaml.default lib/labels.yaml' if the file "lib/labels.yaml" doesn't exist
 
 doing this will probably blow your database to bits, so *don't do this
 anywhere near production*. You have been warned.
