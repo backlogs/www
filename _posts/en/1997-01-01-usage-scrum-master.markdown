@@ -100,7 +100,7 @@ The burndown chart offers the following data series:
 
 * *points committed*: points the team has committed to deliver in the sprint.
 * *remaining hours*: remaining hours on the sprint.
-* *points accepted*: points accepted by the product owner. See <a href="usage-scrum-master.html#storystates">here</a> for more information on story states.
+* *points accepted*: points accepted by the product owner. See <a href="installation.html#storystates">here</a> for more information on story states.
 * *points resolved*: points resolved by the team. A story counts as resolved when it is accepted by the product owner, or if it's not closed and its remaining hours are 0.
 * *points not resolved*: the difference between *points committed* and *points resolved*.
 * *points not accepted*: the difference between *points committed* and *points accepted*.
