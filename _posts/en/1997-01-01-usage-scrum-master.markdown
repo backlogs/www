@@ -117,6 +117,7 @@ To close a sprint, ensure that all stories are closed. Then, go to your project'
 
 > **TIP:** You may record your review/retro notes in the wiki. The backlogs pane and the issues list will have convenience links that will bring you to a wiki page linked to your sprint; it will be created if it doesn't yet exist. If you want to bring some structure into this, your system administrator can designate one of your wiki pages to be the template page; if you have this set up, a copy of that page will be used to initialize a sprint wiki page, but only if it didn't exist when you requested it. Later changes to the template won't affect existing pages.
 
+> **TIP:** If your sprint ended with stories unfinished, you can click "Duplicate" in the Issue screen for those stories to copy (not move!) them into the new sprint. We've added an option to automatically copy open (or all) attached tasks.
 
 ## How are we doing?
 
