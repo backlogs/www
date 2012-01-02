@@ -96,6 +96,18 @@ The taskboard provides a number of functionalities you can use during daily scru
 * Edit any attribute of the task by clicking the task and modifying any of the fields.
 * Show the **burndown chart** by clicking on the _Burndown_ link at the top of the page.
 
+The burndown chart offers the following data series:
+
+* *points committed*: points the team has committed to deliver in the sprint.
+* *remaining hours*: remaining hours on the sprint.
+* *points accepted*: points accepted by the product owner. See <a href="usage-scrum-master.html#storystates">here</a> for more information on story states.
+* *points resolved*: points resolved by the team. A story counts as resolved when it is accepted by the product owner, or if it's not closed and its remaining hours are 0.
+* *points not resolved*: the difference between *points committed* and *points resolved*.
+* *points not accepted*: the difference between *points committed* and *points accepted*.
+* *ideal*: the number of hours that should be remaining if the planned hours were burned down evenly each day.
+* *required burn rate (points)*: required number of points to resolve per day for the rest of the sprint.
+* *required burn rate (hours)*: required number of hours to burn down per day for the rest of the sprint.
+
 > **NOTE:** Task colors are determined by the assignee's preferred color. This preference is randomly assigned by Backlogs if a user doesn't have a color yet. To modify your preferred color, go to your account page in Redmine.
 
 

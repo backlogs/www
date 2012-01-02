@@ -1,4 +1,4 @@
-permalink: /:categories/:title
+permalink: /:categories/:title.html
 auto: true
 url: http://www.redminebacklogs.net
 name: Redmine Backlogs

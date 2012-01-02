@@ -298,7 +298,7 @@ Now that Redmine and Backlogs are properly configured, all that's left is to ena
 
 Afterwards, click _Save_ and you should see the _Backlogs_ tab appear in your project's menu. Do the same thing for each project in which you want to use Backlogs.
 
-h2. Creating non-accepted closed states for stories/tasks
+h2(#storystates). Creating non-accepted closed states for stories/tasks
 
 By default, Backlogs will treat any story or task that is in a "closed" state as completed succesfully. You may want the option to close stories or tasks so they don't clutter your administration but without marking them as succesful. To do this, go to "Administration" -> "Settings" -> "Issue Tracking" and set "Calculate the issue done ratio with:" to "Use the issue status".
 
