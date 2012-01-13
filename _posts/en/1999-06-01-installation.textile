@@ -170,6 +170,7 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 * holidays
 * open-uri-cached
 * nokogiri
+* system_timer
 
 h2. Install Backlogs
 
