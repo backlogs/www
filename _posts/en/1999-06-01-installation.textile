@@ -30,7 +30,7 @@ don't hesitate to "ask for help":http://forum.redminebacklogs.net.
 
 bq(info). NOTE: These instructions always apply to current master on github until we have a decent baseline.
 
-Select your target platform: "(select-platform generic)generic":http://www.example.com, "(select-platform rhel5x)RHEL 5.x":http://www.example.com, "(select-platform dreamhost)Dreamhost":http://www.example.com
+Select your target platform: "(select-platform generic)generic":http://www.example.com, "(select-platform rhel5x)RHEL 5.x":http://www.example.com, "(select-platform dreamhost)Dreamhost":http://www.example.com, "(select-platform bitnami)Bitnami Redmine stack":http://www.example.com
 
 h2. Install Redmine
 
@@ -125,6 +125,14 @@ You need an up-to-date version of rubygems for rails 2.3.5, so:
 bc. gem install rubygems-update -d --no-rdoc --no-ri
 update_rubygems
 gem update --system
+
+ </div>
+
+ <div class="platform bitnami">
+Before installing the required gems, make sure they're getting installed in the Bitnami environment, not your system ruby environment:
+
+bc. export GEM_HOME=<path to bitnami stack>/redmine-<version>/ruby/lib/ruby/gems/1.8/gems 
+export PATH=<path to bitnami stack>/redmine-<version>/ruby/bin:$PATH
 
  </div>
 
