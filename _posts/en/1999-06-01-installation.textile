@@ -180,7 +180,9 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 * nokogiri
 * system_timer
 
-there is currently a known problem with the installer for the holidays gem (1.0.4). You can work around the problem by first installing an older version and then upgrading:
+If backlogs claims the required gems cannot be found after installation, you may need to add gem "_gemname_" for each of those to the _Gemfile_ of your Redmine installation.
+
+There is currently a known problem with the installer for the holidays gem (1.0.4). You can work around the problem by first installing an older version and then upgrading:
 
 bc. gem install holidays --version 1.0.3
 gem install holidays
