@@ -30,7 +30,7 @@ don't hesitate to "ask for help":http://forum.redminebacklogs.net.
 
 bq(info). NOTE: These instructions always apply to current master on github until we have a decent baseline.
 
-Select your target platform: "(select-platform generic)generic":http://www.example.com, "(select-platform rhel5x)RHEL 5.x":http://www.example.com, "(select-platform dreamhost)Dreamhost":http://www.example.com
+Select your target platform: "(select-platform generic)generic":http://www.example.com, "(select-platform rhel5x)RHEL 5.x":http://www.example.com, "(select-platform dreamhost)Dreamhost":http://www.example.com, "(select-platform bitnami)Bitnami Redmine stack":http://www.example.com
 
 h2. Install Redmine
 
@@ -114,8 +114,12 @@ permissions which prevented apache from reading the ruby files.
 Don't forget to restart apache.
  </div>
 
-The Backlogs plugin requires Redmine 1.2.0 to be installed. 1.1.x is
-known to work but is not supported. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/.
+The Backlogs plugin is supported on Redmine 1.3.0 or ChiliProject
+2.6.0. Other versions are 
+known to work but are not supported. For more information on Redmine and how to install it, please visit
+"the official Redmine website":http://www.redmine.org/
+or
+"the official ChiliProject website":https://www.chiliproject.org/ .
 
 h2. Check Those Gems!
 
@@ -125,6 +129,14 @@ You need an up-to-date version of rubygems for rails 2.3.5, so:
 bc. gem install rubygems-update -d --no-rdoc --no-ri
 update_rubygems
 gem update --system
+
+ </div>
+
+ <div class="platform bitnami">
+Before installing the required gems, make sure they're getting installed in the Bitnami environment, not your system ruby environment:
+
+bc. export GEM_HOME=<path to bitnami stack>/redmine-<version>/ruby/lib/ruby/gems/1.8/gems 
+export PATH=<path to bitnami stack>/redmine-<version>/ruby/bin:$PATH
 
  </div>
 
@@ -170,8 +182,17 @@ Backlogs requires a few gems to run properly. Make sure the following gems (and 
 * holidays
 * open-uri-cached
 * nokogiri
+* system_timer
 
-there is currently a known problem with the installer for the holidays gem (1.0.4). You can work around the problem by first installing an older version and then upgrading:
+Some of these gems are not pure-ruby gems, so if no pre-compiled gems are available for your platforms, you will have to have a compiler available to the gems can be built during install. Some guides to accomplish this are available for "windows":http://rubyonwindowsguides.github.com/book/ch02-05.html and "Ubuntu/Mac OS X":http://wiki.netbeans.org/RubyGems#Problem_with_installing_Gems_that_use_native_extensions, but (I'm sorry) you're on your own to get this resolved. It's not my expertise. I run Ubuntu using "RVM":https://rvm.beginrescueend.com/, that's what I know.
+
+If backlogs claims the required gems cannot be found after installation, you may need to add 
+
+bc. gem "_gemname_"
+
+for each of those to the _Gemfile_ of your Redmine installation.
+
+There is currently a known problem with the installer for the holidays gem (1.0.4). You can work around the problem by first installing an older version and then upgrading:
 
 bc. gem install holidays --version 1.0.3
 gem install holidays
