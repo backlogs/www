@@ -1,5 +1,5 @@
 permalink: /:categories/:title.html
 auto: true
 url: http://www.redminebacklogs.net
-name: Redmine Backlogs
-description: A Redmine plugin for agile teams
+name: (Redmine) Backlogs
+description: A Redmine/ChiliProject plugin for agile teams
