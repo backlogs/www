@@ -30,15 +30,15 @@
             <td class="left_align"><a href="vendor-plugins-redmine_backlogs-app-controllers-rb_stories_controller_rb.html">vendor/plugins/redmine_backlogs/app/controllers/rb_stories_controller.rb</a></td>
             <td class='right_align'><tt>62</tt></td>
             <td class='right_align'><tt>50</tt></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>58.06%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>75.81%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:58px"></div>
-            <div class="uncovered" style="width:42px"></div>
+            <div class="covered" style="width:76px"></div>
+            <div class="uncovered" style="width:24px"></div>
           </div></td>
-            <td class="left_align"><div class="percent_graph_legend"><tt class=''>52.00%</tt></div>
+            <td class="left_align"><div class="percent_graph_legend"><tt class=''>70.00%</tt></div>
           <div class="percent_graph">
-            <div class="covered" style="width:52px"></div>
-            <div class="uncovered" style="width:48px"></div>
+            <div class="covered" style="width:70px"></div>
+            <div class="uncovered" style="width:30px"></div>
           </div></td>
           </tr>
         </tbody>
@@ -110,7 +110,7 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line10">10</a>     if ! BacklogsPrintableCards::CardPageLayout.selected</pre></td>
           </tr>
         
@@ -134,19 +134,19 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line14">14</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line15">15</a>     begin</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line16">16</a>       cards = BacklogsPrintableCards::PrintableCards.new(params[:sprint_id] ? @sprint.stories : RbStory.product_backlog(@project), params[:sprint_id], current_language)</pre></td>
           </tr>
         
@@ -176,43 +176,43 @@
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line21">21</a> </pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line22">22</a>     respond_to do |format|</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line23">23</a>       format.pdf {</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="marked">
             <td><pre><a name="line24">24</a>         send_data(cards.pdf.render, :disposition =&gt; 'attachment', :type =&gt; 'application/pdf')</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line25">25</a>       }</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line26">26</a>     end</pre></td>
           </tr>
         
           
           
-          <tr class="uncovered">
+          <tr class="inferred">
             <td><pre><a name="line27">27</a>   end</pre></td>
           </tr>
         
@@ -429,7 +429,7 @@
       </tbody>
     </table>
 
-    <p>Generated on Sat Mar 10 16:49:25 +0100 2012 with <a href="http://github.com/relevance/rcov">rcov 1.0.0</a></p>
+    <p>Generated on Sat Mar 10 17:10:57 +0100 2012 with <a href="http://github.com/relevance/rcov">rcov 1.0.0</a></p>
 
   </body>
 </html>
