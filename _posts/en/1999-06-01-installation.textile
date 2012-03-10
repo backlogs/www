@@ -199,7 +199,7 @@ gem install holidays
 
 h2. Install Backlogs
 
-Now let's download the Backlogs source code from "the official repo":git://github.com/relaxdiego/redmine_backlogs.git into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
+Now let's download the Backlogs source code from "the official repo":git://github.com/backlogs/redmine_backlogs.git into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
 
 h3. Method #1
 
@@ -207,7 +207,7 @@ bq(info). *NOTE*: This first method requires some knowledge of git. For more inf
 
 First, make sure that you're inside the `vendor/plugins` directory of your Redmine instance. Now, clone the source from Github by executing the following command:
 
-bc. git clone git://github.com/relaxdiego/redmine_backlogs.git
+bc. git clone git://github.com/backlogs/redmine_backlogs.git
 
 This will create a directory named `redmine_backlogs` which is exactly what we need. 
 
@@ -231,7 +231,7 @@ That's it for Method #1. If you want to try out some of the experimental feature
 
 h3. Method #2
 
-This second method involves going to "the project's page in Github":http://github.com/relaxdiego/redmine_backlogs and downloading the source archive. To download the archive, click the *Download* button found near the top right corner:
+This second method involves going to "the project's page in Github":http://github.com/backlogs/redmine_backlogs and downloading the source archive. To download the archive, click the *Download* button found near the top right corner:
 
 !../../assets/images/download_button.png!
 
@@ -340,7 +340,7 @@ bq(info). *NOTE:* Obviously, you can only do this if you used _Method #1_ in the
 
 bq(warning). *WARNING:* The master is constantly in flux and might be broken at times. Make sure to do the above in your test or staging environment first before pulling the code into production! We try to make sure new versions don't break existing data, but we don't have enough resources to test all possible scenarios.
 
-bq(warning). *ANOTHER WARNING:* If you decide to checkout any of the topic branches (topic branches are prefixed by the dev's name. example: relaxdiego-super-crazy-idea), keep in mind that these are very early stage work and may break the build at times. Topic branches are unsupported and we don't recommend you pull from them unless you know what you're doing.
+bq(warning). *ANOTHER WARNING:* If you decide to checkout any of the topic branches (topic branches are prefixed by the dev's name. example: backlogs-super-crazy-idea), keep in mind that these are very early stage work and may break the build at times. Topic branches are unsupported and we don't recommend you pull from them unless you know what you're doing.
 
 h2. Optional: Upgrading with git
 

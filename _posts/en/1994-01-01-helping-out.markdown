@@ -11,13 +11,13 @@ There's currently just two of us diligently plugging away to make Backlogs absol
 
 We're not perfect; as you're reading this, at least 400 changes have gone into Backlogs since we restarted the new branch. Something is bound to be broken at any given time, 
 as we can't catch all the corner cases with the limited amount of time and test cases/test data we have available. 
-So if something is broken, or you think of a way Backlogs could be even better than it is now, please let us know at the [bug tracker](https://github.com/relaxdiego/redmine_backlogs/issues).
+So if something is broken, or you think of a way Backlogs could be even better than it is now, please let us know at the [bug tracker](https://github.com/backlogs/redmine_backlogs/issues).
 
 ## We'd like to speak your language
 
 We currently have translations for German, UK-English, US-English,
 French, Brazilian Portuguese, Dutch and Chinese.
-Adding a new translation is fairly easy: grab one of the existing [translation files](http://github.com/relaxdiego/redmine_backlogs/tree/master/config/locales/) 
+Adding a new translation is fairly easy: grab one of the existing [translation files](http://github.com/backlogs/redmine_backlogs/tree/master/config/locales/) 
 and replace the text after the colons.
 
 ## Have a story? Do tell!
@@ -38,4 +38,4 @@ or cleaning up old ones. If you can write code, but have no Ruby experience: pic
 
 ## Webmasters
 
-We love open source. Heck, even this website is open source! If you want to help out in keeping the information here on the website current, you can start by forking [its code on Github](http://github.com/relaxdiego/www.redminebacklogs.net).
+We love open source. Heck, even this website is open source! If you want to help out in keeping the information here on the website current, you can start by forking [its code on Github](http://github.com/backlogs/www.redminebacklogs.net).

@@ -35,7 +35,7 @@ start a conversation in [the forums](http://forum.redminebacklogs.net). You may 
 
 ## Bugs and Feature Requests
 
-If you find any bugs or maybe want to suggest improvements, feel free to file a ticket in the project's [bug tracker](https://github.com/relaxdiego/redmine_backlogs/issues). Better yet, go ahead and fork the project on github so you can fix the bugs yourself, then send us a pull request so that we can incorporate it into the main repo.
+If you find any bugs or maybe want to suggest improvements, feel free to file a ticket in the project's [bug tracker](https://github.com/backlogs/redmine_backlogs/issues). Better yet, go ahead and fork the project on github so you can fix the bugs yourself, then send us a pull request so that we can incorporate it into the main repo.
 
 
 ## Compatibility
@@ -48,4 +48,4 @@ We're building this tool during our free time and, therefore, have only been abl
 * PostgreSQL 8.4.4
 * MySQL 5.0.83
 
-So if you come across any problems, please don't hesitate to [file a ticket](https://github.com/relaxdiego/redmine_backlogs/issues).
+So if you come across any problems, please don't hesitate to [file a ticket](https://github.com/backlogs/redmine_backlogs/issues).
