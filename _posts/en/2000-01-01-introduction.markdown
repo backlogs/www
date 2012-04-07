@@ -23,7 +23,7 @@ Redmine Backlogs is still a work in progress but can already do a number of usef
 * Produce printable task board cards
 * Track impediments within each iteration
 
-And a lot more! There are a few more things below that you should know before getting started, but if you can't wait, go ahead and [install the plugin now](../installation).
+And a lot more! There are a few more things below that you should know before getting started, but if you can't wait, go ahead and [install the plugin now](installation.html).
 
 
 ## Getting Additional Help
