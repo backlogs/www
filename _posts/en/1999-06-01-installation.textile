@@ -114,12 +114,7 @@ permissions which prevented apache from reading the ruby files.
 Don't forget to restart apache.
  </div>
 
-The Backlogs plugin is supported on Redmine 1.3.0 or ChiliProject
-2.6.0. Other versions are 
-known to work but are not supported. For more information on Redmine and how to install it, please visit
-"the official Redmine website":http://www.redmine.org/
-or
-"the official ChiliProject website":https://www.chiliproject.org/ .
+The Backlogs plugin is supported on Redmine 1.3.0 or ChiliProject 2.6.0. Other versions are known to work but are not supported. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/ or "the official ChiliProject website":https://www.chiliproject.org/ .
 
 h2. Check Those Gems!
 
@@ -171,17 +166,11 @@ bc. ENV['GEM_PATH'] = '/home/YOURUSERNAME/.gem:/usr/lib/ruby/gems/1.8'
 
  </div>
 
-Backlogs requires a few gems to run properly. The included Gemfile lists all requirements, so bundler ought to install them all including
-their dependencies. Just re-run the bundler call you executed during redmine install, something to the effect of
+Backlogs requires a few gems to run properly. The included Gemfile lists all requirements, so bundler ought to install them all including their dependencies. Just re-run the bundler call you executed during redmine install, something to the effect of
 
 bc. bundle install --without development test
 
-Some of these gems are not pure-ruby gems, so if no pre-compiled gems are available for your platforms,
-you will have to have a compiler available to the gems can be built during install. Some guides to accomplish
-this are available for "windows":http://rubyonwindowsguides.github.com/book/ch02-05.html
-and "Ubuntu/Mac OS X":http://wiki.netbeans.org/RubyGems#Problem_with_installing_Gems_that_use_native_extensions,
-but (I'm sorry) you're on your own to get this resolved. It's not my expertise. I run Ubuntu
-using "RVM":https://rvm.beginrescueend.com/, that's what I know.
+Some of these gems are not pure-ruby gems, so if no pre-compiled gems are available for your platforms, you will have to have a compiler available to the gems can be built during install. Some guides to accomplish this are available for "windows":http://rubyonwindowsguides.github.com/book/ch02-05.html and "Ubuntu/Mac OS X":http://wiki.netbeans.org/RubyGems#Problem_with_installing_Gems_that_use_native_extensions, but (I'm sorry) you're on your own to get this resolved. It's not my expertise. I run Ubuntu using "RVM":https://rvm.beginrescueend.com/, that's what I know.
 
 There is currently a known problem with the installer for the holidays gem (1.0.4). You can work around the problem by first installing an older version and then upgrading:
 
