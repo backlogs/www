@@ -262,7 +262,7 @@ bc. bundle exec rake redmine:backlogs:install parameter=value parameter=value ..
 
 bq(info). *About story and task trackers:* These settings tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Some of us like to use Bug, Feature, and Support as story trackers and Task as the task tracker. Others prefer to make it simple by creating a Story tracker and a Task tracker. It's really up to you.
 
-Once you're done with the installer, restart Redmine to proceed to the next step.
+At this point you can go to the Redmine/Chiliproject installation directory and run 'thin start'. Redmine/Chiliproject ought to start, and backlogs ought to be functional. You might want to set up Redmine/ChiliProject to run behind Apache or nginx; the configuration of these is beyond the scope of setting up backlogs itself.
 
 h2. Additional Configuration
 
