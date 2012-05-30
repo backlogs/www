@@ -119,11 +119,12 @@ The Backlogs plugin is supported on Redmine 1.3.0 or ChiliProject 2.6.0. Other v
 h2. Check Those Gems!
 
  <div class="platform rhel5x">
-You need an up-to-date version of rubygems for rails 2.3.14, so:
+You need bundler and an up-to-date version of rubygems for rails 2.3.14, so:
 
 bc. gem install rubygems-update -d --no-rdoc --no-ri
 update_rubygems
 gem update --system
+gem install bundler
 
  </div>
 
