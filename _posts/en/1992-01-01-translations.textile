@@ -101,7 +101,7 @@ bq(error). Norwegian (Norsk bokmål) (71%) (friflaj, Geir Helland, mikoto20000, 
 |label_stories_tasks|rb_auto_refresh|
 |rb_show_burndown_in_sidebar||
 
-bq(error). Português(Brasil) (40%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana, mikoto20000)
+bq(error). Português(Brasil) (40%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana, mikoto20000, Robson R S Peixoto)
 
 *Untranslated*
 
