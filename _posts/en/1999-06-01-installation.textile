@@ -227,24 +227,21 @@ export RAILS_ENV
 
 Up next, we need to ensure that your Redmine instance is set-up correctly. So make sure to execute the following rake commands from the command line while in your Redmine installation's top directory:
 
-bc. rake generate_session_store
-rake config/initializers/session_store.rb
-rake db:migrate
-rake db:migrate:upgrade_plugin_migrations
+bc. bundle exec rake db:migrate
 
 For more information on the above rake tasks, execute `rake -T` from within your Redmine installation. You may also want to run the following rake tasks.
 
 bq(warning). *WARNING:* Be careful when running the following rake tasks in a production environment as it might produce unwanted results.
 
-bc. rake tmp:cache:clear
-rake tmp:sessions:clear
+bc. bundle exec rake tmp:cache:clear
+bundle exec rake tmp:sessions:clear
 
 h2. Configure Backlogs
 
 Now that Backlogs has been downloaded, let's go ahead and tell it how to behave. To do that, go to your terminal again and do the following:
 
 bc. cd path/to/redmine
-rake redmine:backlogs:install
+bundle exec rake redmine:backlogs:install
 
 This will download some needed files, help you set up your story and
 task trackers, run the plugin's database migrations, and, if you're
@@ -254,7 +251,7 @@ If you don't want the installer to bother you with questions, you can
 pass it parameters to automate (parts of) the install process by
 calling it with
 
-bc. rake redmine:backlogs:install parameter=value parameter=value ...
+bc. bundle exec rake redmine:backlogs:install parameter=value parameter=value ...
 
 | *Parameter* | *Value* | *Effect* |
 | story_trackers | comma-separated list of trackers names | Overwrites the current setting for story trackers |
@@ -315,7 +312,7 @@ If you want to grab the latest & greatest from the repo, here's what you do:
 bc. cd path/to/backlogs
 git checkout master
 git pull origin
-rake redmine:backlogs:install
+bundle exec rake redmine:backlogs:install
 
 bq(info). *NOTE:* Obviously, you can only do this if you used _Method #1_ in the installation process above.
 
@@ -334,7 +331,7 @@ git tag
 The last line above will show you a list of available versions. To upgrade to one of the versions, do the following:
    
 bc. git checkout vX.Y.Z
-rake redmine:backlogs:install
+bundle exec rake redmine:backlogs:install
 
 bq(info). *NOTE:* Replace vX.Y.Z with the correct tag.
 
