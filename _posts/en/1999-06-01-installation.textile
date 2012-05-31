@@ -119,11 +119,12 @@ The Backlogs plugin is supported on Redmine 1.3.0 or ChiliProject 2.6.0. Other v
 h2. Check Those Gems!
 
  <div class="platform rhel5x">
-You need an up-to-date version of rubygems for rails 2.3.14, so:
+You need bundler and an up-to-date version of rubygems for rails 2.3.14, so:
 
 bc. gem install rubygems-update -d --no-rdoc --no-ri
 update_rubygems
 gem update --system
+gem install bundler
 
  </div>
 
@@ -226,24 +227,21 @@ export RAILS_ENV
 
 Up next, we need to ensure that your Redmine instance is set-up correctly. So make sure to execute the following rake commands from the command line while in your Redmine installation's top directory:
 
-bc. rake generate_session_store
-rake config/initializers/session_store.rb
-rake db:migrate
-rake db:migrate:upgrade_plugin_migrations
+bc. bundle exec rake db:migrate
 
 For more information on the above rake tasks, execute `rake -T` from within your Redmine installation. You may also want to run the following rake tasks.
 
 bq(warning). *WARNING:* Be careful when running the following rake tasks in a production environment as it might produce unwanted results.
 
-bc. rake tmp:cache:clear
-rake tmp:sessions:clear
+bc. bundle exec rake tmp:cache:clear
+bundle exec rake tmp:sessions:clear
 
 h2. Configure Backlogs
 
 Now that Backlogs has been downloaded, let's go ahead and tell it how to behave. To do that, go to your terminal again and do the following:
 
 bc. cd path/to/redmine
-rake redmine:backlogs:install
+bundle exec rake redmine:backlogs:install
 
 This will download some needed files, help you set up your story and
 task trackers, run the plugin's database migrations, and, if you're
@@ -253,7 +251,7 @@ If you don't want the installer to bother you with questions, you can
 pass it parameters to automate (parts of) the install process by
 calling it with
 
-bc. rake redmine:backlogs:install parameter=value parameter=value ...
+bc. bundle exec rake redmine:backlogs:install parameter=value parameter=value ...
 
 | *Parameter* | *Value* | *Effect* |
 | story_trackers | comma-separated list of trackers names | Overwrites the current setting for story trackers |
@@ -264,7 +262,9 @@ bc. rake redmine:backlogs:install parameter=value parameter=value ...
 
 bq(info). *About story and task trackers:* These settings tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Some of us like to use Bug, Feature, and Support as story trackers and Task as the task tracker. Others prefer to make it simple by creating a Story tracker and a Task tracker. It's really up to you.
 
-Once you're done with the installer, restart Redmine to proceed to the next step.
+h2. Give it a spin!
+
+At this point you can go to the Redmine/Chiliproject installation directory and run 'thin start'. Redmine/Chiliproject ought to start, and backlogs ought to be functional. You might want to set up Redmine/ChiliProject to run behind Apache or nginx; the configuration of these is beyond the scope of setting up backlogs itself.
 
 h2. Additional Configuration
 
@@ -314,7 +314,7 @@ If you want to grab the latest & greatest from the repo, here's what you do:
 bc. cd path/to/backlogs
 git checkout master
 git pull origin
-rake redmine:backlogs:install
+bundle exec rake redmine:backlogs:install
 
 bq(info). *NOTE:* Obviously, you can only do this if you used _Method #1_ in the installation process above.
 
@@ -333,7 +333,7 @@ git tag
 The last line above will show you a list of available versions. To upgrade to one of the versions, do the following:
    
 bc. git checkout vX.Y.Z
-rake redmine:backlogs:install
+bundle exec rake redmine:backlogs:install
 
 bq(info). *NOTE:* Replace vX.Y.Z with the correct tag.
 

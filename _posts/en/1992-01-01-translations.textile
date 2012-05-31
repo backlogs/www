@@ -18,7 +18,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (95%) (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, Mark Maglana, mikoto20000, root, sureal, Tobias Bayer)
+bq(error). Deutsch (95%)
 
 *Untranslated*
 
@@ -27,7 +27,7 @@ bq(error). Deutsch (95%) (Bo Hansen, Christoph Graumann, Frank Blendinger, frifl
 |label_master_backlog|label_release|
 |label_release_plural||
 
-bq(error). English (British) (94%) (Bo Hansen, Frank Blendinger, friflaj, mikoto20000)
+bq(error). English (British) (94%)
 
 *Untranslated*
 
@@ -36,7 +36,7 @@ bq(error). English (British) (94%) (Bo Hansen, Frank Blendinger, friflaj, mikoto
 |label_webcal|rb_auto_refresh|
 |rb_timelog_from_taskboard|use_free_text_if_empty|
 
-bq(error). Español (75%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000)
+bq(error). Español (75%)
 
 *Untranslated*
 
@@ -60,7 +60,7 @@ bq(error). Español (75%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uri
 |label_webcal|rb_auto_refresh|
 |rb_show_burndown_in_sidebar||
 
-bq(error). Français (96%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, mikoto20000)
+bq(error). Français (96%)
 
 *Untranslated*
 
@@ -68,15 +68,15 @@ bq(error). Français (96%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, m
 |field_blocks|label_release|
 |label_release_plural|remaining_story_points|
 
-bq(success). Japanese (日本語) (friflaj, mikoto20000)
+bq(success). Japanese (日本語)
 
-bq(error). Nederlands (98%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
+bq(error). Nederlands (98%)
 
 *Untranslated*
 
 |backlogs_new_story_position|backlogs_new_story_position_bottom|
 
-bq(error). Norwegian (Norsk bokmål) (69%) (friflaj, Geir Helland, mikoto20000, Riley W.)
+bq(error). Norwegian (Norsk bokmål) (69%)
 
 *Untranslated*
 
@@ -104,7 +104,7 @@ bq(error). Norwegian (Norsk bokmål) (69%) (friflaj, Geir Helland, mikoto20000, 
 |label_show_completed_sprints|label_stories_tasks|
 |rb_auto_refresh|rb_show_burndown_in_sidebar|
 
-bq(error). Português(Brasil) (39%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana, mikoto20000, Robson R S Peixoto)
+bq(error). Português(Brasil) (39%)
 
 *Untranslated*
 
@@ -155,10 +155,17 @@ bq(error). Português(Brasil) (39%) (Bo Hansen, Daniel Passos, friflaj, Mark Mag
 |story_spent_time|today_not_in_release_msg|
 |today_not_in_release_warning|use_free_text_if_empty|
 
-bq(error). Russian (Русский) (49%) (Bo Hansen, Emiliano Heyns, friflaj, mikoto20000)
+bq(error). Russian (Русский) (49%)
 
 *Untranslated*
 
 |backlogs_auto_assign_task|backlogs_burndown_print_height|
 |backlogs_burndown_print_width|backlogs_include_sat_and_sun|
-|backlogs_new_story_position|backlogs_new_story_position_b
+|backlogs_new_story_position|backlogs_new_story_position_bottom|
+|backlogs_new_story_position_top|backlogs_statistics_active|
+|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
+|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_hours_per_point|
+|backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_
