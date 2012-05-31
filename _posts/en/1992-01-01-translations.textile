@@ -70,11 +70,7 @@ bq(error). Français (96%)
 
 bq(success). Japanese (日本語)
 
-bq(error). Nederlands (98%)
-
-*Untranslated*
-
-|backlogs_new_story_position|backlogs_new_story_position_bottom|
+bq(success). Nederlands
 
 bq(error). Norwegian (Norsk bokmål) (69%)
 
@@ -168,4 +164,5 @@ bq(error). Russian (Русский) (49%)
 |backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
 |backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
 |backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
-|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_
+|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_spri
