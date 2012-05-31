@@ -18,10 +18,11 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (96%) (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, Mark Maglana, mikoto20000, root, sureal, Tobias Bayer)
+bq(error). Deutsch (95%) (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, Mark Maglana, mikoto20000, root, sureal, Tobias Bayer)
 
 *Untranslated*
 
+|backlogs_new_story_position|backlogs_new_story_position_bottom|
 |backlogs_statistics_hours_per_point|field_tracker_id|
 |label_master_backlog|label_release|
 |label_release_plural||
@@ -35,79 +36,82 @@ bq(error). English (British) (94%) (Bo Hansen, Frank Blendinger, friflaj, mikoto
 |label_webcal|rb_auto_refresh|
 |rb_timelog_from_taskboard|use_free_text_if_empty|
 
-bq(error). Español (77%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000)
+bq(error). Español (75%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000)
 
 *Untranslated*
 
 |backlogs_auto_assign_task|backlogs_burndown_print_height|
 |backlogs_burndown_print_width|backlogs_include_sat_and_sun|
-|backlogs_sprints|backlogs_statistics_committed_velocity_stable|
-|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_hours_per_point|
-|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
-|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
-|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
-|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
-|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
-|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
-|backlogs_statistics_yield|backlogs_statistics_yield_failed|
-|field_time_entry_comments|field_time_entry_hours|
-|field_time_entry_spend_on|field_time_entry_user_id|
-|label_no_end|label_no_start|
-|label_release|label_release_plural|
-|label_show_completed_sprints|label_webcal|
-|rb_auto_refresh|rb_show_burndown_in_sidebar|
+|backlogs_new_story_position|backlogs_new_story_position_bottom|
+|backlogs_new_story_position_top|backlogs_sprints|
+|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
+|backlogs_statistics_hours_per_point|backlogs_statistics_product_backlog_sized|
+|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
+|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sprint_notes_available|
+|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
+|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
+|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
+|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
+|backlogs_statistics_yield_failed|field_time_entry_comments|
+|field_time_entry_hours|field_time_entry_spend_on|
+|field_time_entry_user_id|label_no_end|
+|label_no_start|label_release|
+|label_release_plural|label_show_completed_sprints|
+|label_webcal|rb_auto_refresh|
+|rb_show_burndown_in_sidebar||
 
-bq(error). Français (97%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, mikoto20000)
+bq(error). Français (96%) (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, mikoto20000)
 
 *Untranslated*
 
+|backlogs_new_story_position|backlogs_new_story_position_bottom|
 |field_blocks|label_release|
 |label_release_plural|remaining_story_points|
 
 bq(success). Japanese (日本語) (friflaj, mikoto20000)
 
-bq(error). Nederlands (96%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
+bq(error). Nederlands (98%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
+
+*Untranslated*
+
+|backlogs_new_story_position|backlogs_new_story_position_bottom|
+
+bq(error). Norwegian (Norsk bokmål) (69%) (friflaj, Geir Helland, mikoto20000, Riley W.)
 
 *Untranslated*
 
 |backlogs_auto_assign_task|backlogs_burndown_print_height|
 |backlogs_burndown_print_width|backlogs_include_sat_and_sun|
-|backlogs_statistics_hours_per_point|field_remaining_hours|
+|backlogs_new_story_position|backlogs_new_story_position_bottom|
+|backlogs_new_story_position_top|backlogs_statistics_active|
+|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
+|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_hours_per_point|
+|backlogs_statistics_product_backlog_filled_failed|backlogs_statistics_product_backlog_sized|
+|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
+|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sizing_stddev|
+|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
+|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
+|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
+|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
+|backlogs_statistics_yield|backlogs_statistics_yield_failed|
+|backlogs_task|backlogs_task_tracker|
+|field_assigned_to|field_priority|
+|field_remaining_hours|field_time_entry_comments|
+|field_time_entry_hours|field_time_entry_spend_on|
+|field_time_entry_user_id|label_close_completed_sprints|
+|label_column_width|label_download_sprint|
+|label_hide_completed_sprints|label_reset|
+|label_show_completed_sprints|label_stories_tasks|
+|rb_auto_refresh|rb_show_burndown_in_sidebar|
 
-bq(error). Norwegian (Norsk bokmål) (71%) (friflaj, Geir Helland, mikoto20000, Riley W.)
-
-*Untranslated*
-
-|backlogs_auto_assign_task|backlogs_burndown_print_height|
-|backlogs_burndown_print_width|backlogs_include_sat_and_sun|
-|backlogs_statistics_active|backlogs_statistics_active_failed|
-|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
-|backlogs_statistics_hours_per_point|backlogs_statistics_product_backlog_filled_failed|
-|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
-|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
-|backlogs_statistics_sizing_stddev|backlogs_statistics_sprint_notes_available|
-|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
-|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
-|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
-|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
-|backlogs_statistics_yield_failed|backlogs_task|
-|backlogs_task_tracker|field_assigned_to|
-|field_priority|field_remaining_hours|
-|field_time_entry_comments|field_time_entry_hours|
-|field_time_entry_spend_on|field_time_entry_user_id|
-|label_close_completed_sprints|label_column_width|
-|label_download_sprint|label_hide_completed_sprints|
-|label_reset|label_show_completed_sprints|
-|label_stories_tasks|rb_auto_refresh|
-|rb_show_burndown_in_sidebar||
-
-bq(error). Português(Brasil) (40%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana, mikoto20000)
+bq(error). Português(Brasil) (39%) (Bo Hansen, Daniel Passos, friflaj, Mark Maglana, mikoto20000, Robson R S Peixoto)
 
 *Untranslated*
 
 |backlogs_auto_assign_task|backlogs_burndown_print_height|
 |backlogs_burndown_print_width|backlogs_impediment|
-|backlogs_include_sat_and_sun|backlogs_sprints|
+|backlogs_include_sat_and_sun|backlogs_new_story_position|
+|backlogs_new_story_position_bottom|backlogs_sprints|
 |backlogs_statistics_active|backlogs_statistics_active_failed|
 |backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
 |backlogs_statistics_hours_per_point|backlogs_statistics_product_backlog_filled|
@@ -151,55 +155,10 @@ bq(error). Português(Brasil) (40%) (Bo Hansen, Daniel Passos, friflaj, Mark Mag
 |story_spent_time|today_not_in_release_msg|
 |today_not_in_release_warning|use_free_text_if_empty|
 
-bq(error). Russian (Русский) (50%) (Bo Hansen, Emiliano Heyns, friflaj, mikoto20000)
+bq(error). Russian (Русский) (49%) (Bo Hansen, Emiliano Heyns, friflaj, mikoto20000)
 
 *Untranslated*
 
 |backlogs_auto_assign_task|backlogs_burndown_print_height|
 |backlogs_burndown_print_width|backlogs_include_sat_and_sun|
-|backlogs_statistics_active|backlogs_statistics_active_failed|
-|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
-|backlogs_statistics_hours_per_point|backlogs_statistics_product_backlog_filled|
-|backlogs_statistics_product_backlog_filled_failed|backlogs_statistics_product_backlog_sized|
-|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
-|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sizing_stddev|
-|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
-|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
-|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
-|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
-|backlogs_statistics_yield|backlogs_statistics_yield_failed|
-|comma_delimited_numbers|current_open_story_points|
-|error_inclusion|error_no_workflow_for_task_tracker|
-|error_taken|field_assigned_to|
-|field_priority|field_remaining_hours|
-|field_time_entry_comments|field_time_entry_hours|
-|field_time_entry_spend_on|field_time_entry_user_id|
-|label_close_completed_sprints|label_column_width|
-|label_download_sprint|label_hide_completed_sprints|
-|label_hours_remaining|label_hours_required_burn_rate|
-|label_ideal|label_new_sprint|
-|label_new_story|label_no_data_to_show|
-|label_no_end|label_no_start|
-|label_points_accepted|label_points_committed|
-|label_points_required_burn_rate|label_points_resolved|
-|label_points_to_accept|label_points_to_resolve|
-|label_reset|label_show_completed_sprints|
-|rb_auto_refresh|rb_label_timelog_disable|
-|rb_label_timelog_enable|rb_show_burndown_in_sidebar|
-|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
-|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
-|rb_timelog_from_taskboard|story_description|
-|story_estimation_hours|story_remaining_hours|
-|story_spent_time|story_status|
-|use_free_text_if_empty||
-
-*Old-style variable substitution*
-
-|label_backlogs_unconfigured|label_sprint_name|
-
-bq(warning). Simplified Chinese (简体中文) (98%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
-
-*Old-style variable substitution*
-
-|label_backlogs_unconfigured|label_sprint_name|
-
+|backlogs_new_story_position|backlogs_new_story_position_b
