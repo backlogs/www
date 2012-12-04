@@ -15,7 +15,9 @@ categories: en
     ./redmine_install.sh -r # this fetches redmine
     ./redmine_install.sh -i # this sets up backlogs
     ./redmine_install.sh -t # this runs the tests
-  after this, you can simply run the last step whenever you want to execute the tests.
+  after this, you can simply run the last step whenever you want to execute the tests. 
+* For a single test, just pass in the feature name
+    ./redmine_install.sh -t burndown  # for features/burndown.feature
 
 Doing this *will blow your database to bits*, so *DON'T DO THIS ANYWHERE NEAR PRODUCTION*. You have been warned.
 
