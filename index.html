@@ -49,6 +49,10 @@ title: Home
     #footer a:hover{
       text-decoration:underline;
     }
+    #body a, #body a:visited{
+      color:#B45151;
+      text-decoration:underline;
+    }
     ul{
       margin:15px auto;
       padding:0;
@@ -130,20 +134,22 @@ title: Home
   <div id="content">
     <h2 id="title">Redmine Backlogs {% include version.html %}</h2>
     <div id="description">{{ site.description }}</div>
+    <div id="body">
     <p><a href="http://travis-ci.org/backlogs/redmine_backlogs"><img
     src="https://secure.travis-ci.org/backlogs/redmine_backlogs.png?branch=master"/></a>
     The known-good platform is <b>Redmine 2.0.4</b> and <b>Redmine 2.1.5</b> on ruby
     1.9.3, on Linux, with a from-source (i.e., not a platform-packaged) install. Windows and pre-packaged distros such as Bitnami ought to work in principle, but are untested, and history shows that getting them to work requires a bit of effort on your account.</p>
     <p><b>Redmine 2.2.0 support is planned, but no ETA</b>, not even for you, special as you may be. It would in principle be possible to support Redmine 1.4 and ChiliProject v3.3, but they currently do not work, so they get no support. Much of the plumbing is in place, but these platforms need
-    someone to adopt them. You'd get our help, but they're currently known not to work, and no directed effort is being spent right now to remedy that. Until that time, there is <i>no support</i> for these platforms, so <i>unless you're volunteering to fix them, don't ask about them</i>.</p>
+    someone to adopt them. You'd get our help, but they're currently known not to work, and no directed effort is being spent right now to remedy that. Until that time, there is <i>no support</i> for these platforms, so <i>unless you're volunteering to fix them</i>, you're only recourse for support is the <a href="http://forum.redminebacklogs.net/">forums</a>.</p>
     <p>If a <i>supported</i> version does not do what you expect it to do, or you have a feature request, please user our <a href="https://github.com/backlogs/redmine_backlogs/issues">issue tracker</a>. For all other versions, please use the <a href="http://forum.redminebacklogs.net/">forums</a>.
-    <p>Please remember that this is a <b>volunteer effort</b> and our time is limited; unless you are on the latest released version (currently {% include version.html %}) of the plugin on one of the supported versions above we will probably still help you but it's <b>not a priority, nor an obligation</b>. Sorry, but those are the breaks.</p>
-
+    <p>Please remember that this is a <b>volunteer effort</b> and our time is limited; unless you are on the latest released version (currently {% include version.html %}) of the plugin on one of the supported versions above you are free to ask for support on the <a href="http://forum.redminebacklogs.net/">forums</a>, but the help you get there is <b>not a priority, nor an obligation</b>. Sorry, but those are the breaks.</p>
+    </div>
     <div id="links">
       <ul>
         <li><a href="en/introduction.html">Read the docs</a></li>
         <li><a href="en/installation.html">Get the plugin</a></li>
-        <li><a href="https://github.com/backlogs/redmine_backlogs/issues">Help us track bugs</a></li>
+        <li><a href="https://github.com/backlogs/redmine_backlogs/issues">Report a bug</a></li>
+        <li><a href="http://forum.redminebacklogs.net/">forums</a>
       </ul>
     </div>
     <div id="footer">
