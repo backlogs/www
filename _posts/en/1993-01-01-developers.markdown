@@ -30,3 +30,16 @@ Content of ~/.backlogs.rc
     PATH_TO_BACKLOGS=$WORKSPACE/redmine_backlogs
     CLEARDB=yes # set to no if you don't want the installer to clear your database during test run
     VERBOSE=yes # give verbose output. Recommended
+
+## Changing supported Redmine versions
+
+The versions of redmine that are supported are derived from the tests we run on Travis. In order to change the supported versions:
+
+* Edit .travis.yml and add/change the supported version in the 'env:' section
+* Edit redmine\_install.sh and add/change the supported versions in the same way in the section starting with "case $REDMINE\_VER in"
+
+## Tagging a new version
+
+* Update the changelog. The script ./lib/tasks/changelog.rb will trawl the checkin logs for hints, but will always need touch-up
+* Run the ./lib/tasks/tag.rb script. This will do some consistency checks, modify a few files to reflect the new version, and will *check in* those files, so tagging is best done on a repo that has no pending changes. This script expects the backlogs website to be checked out in ../www, as it will modify and check in the site to reflect the new version.
+
