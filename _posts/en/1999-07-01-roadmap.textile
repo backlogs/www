@@ -13,11 +13,7 @@ I've introduced a change a few months ago that calculates the burndown from the 
 
 h2. Version/story sharing between projects
 
-This is currently in progress, but the complexity of the matter is enormously underestimated by the people clamoring for it. I've seen a few naive (sorry, but it's true) patches come in, which do show these shared versions/stories, but also introduce one or more of the following problems:
-
-* Workflow breakage
-* AJAX failures on the master backlogs page because it is no longer safe to assume any story can be dropped anywhere. Version sharing is pretty flexible *up and down* the tree, so the drag-and-drop stuff on the master page must adapt *dynamically* to only allow valid drop targets. This is currently implemented but I'm still working on tests for this. None of the other patches even considered this.
-* AJAX failures on the taskboard because tasks can't assume they can be dropped on any story but their own, and impediments cannot be created for all combinations of tasks because a "blocks" relationship cannot transgress project lines. None of the other patches consider this. Not implemented yet.
+The core functionality of sharing sprints between prjects has been released, but still lacks good documentation. We could need some help here.
 
 h2. Easy time logging
 
