@@ -28,8 +28,6 @@ h1. Installation
 Alrighty! Let's install Backlogs into your system. Now, remember, if you come across any hitches or just don't know how to proceed,
 don't hesitate to "ask for help":http://forum.redminebacklogs.net. 
 
-bq(info). See also an "alternative instruction":https://github.com/backlogs/redmine_backlogs/wiki/Installation-of-Backlogs-in-Redmine-2.0
-
 bq(info). NOTE: These instructions always apply to current master on github until we have a decent baseline. Current backlogs requires ruby 1.9.3.
 
 Select your target platform: "(select-platform generic)generic":http://www.example.com, "(select-platform rhel5x)RHEL 5.x":http://www.example.com, "(select-platform dreamhost)Dreamhost":http://www.example.com, "(select-platform bitnami)Bitnami Redmine stack":http://www.example.com
