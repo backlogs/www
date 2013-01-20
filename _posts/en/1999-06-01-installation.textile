@@ -116,7 +116,7 @@ permissions which prevented apache from reading the ruby files.
 Don't forget to restart apache.
  </div>
 
-The Backlogs plugin is supported on Redmine 2.0.4, 2.1.6 or 2.2.1. Other versions are known to work but are not supported. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/ or "the official ChiliProject website":https://www.chiliproject.org/ .
+The Backlogs plugin is supported on Redmine {% include rm_versions.html %}. Other versions are known to work but are not supported. For more information on Redmine and how to install it, please visit "the official Redmine website":http://www.redmine.org/ or "the official ChiliProject website":https://www.chiliproject.org/ .
 
 h2. Check Those Gems!
 
