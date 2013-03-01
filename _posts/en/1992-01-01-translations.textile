@@ -18,29 +18,25 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(success). Deutsch (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, Mark Maglana, mikoto20000, root, sureal, Tobias Bayer)
+bq(success). Deutsch (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, root, sureal, Terence Miller, Tobias Bayer)
 
-bq(success). English (British) (Bo Hansen, Frank Blendinger, friflaj, mikoto20000)
+bq(success). English (British) (Bo Hansen, Frank Blendinger, friflaj, mikoto20000, Patrick Atamaniuk)
 
-bq(success). Español (Bo Hansen, friflaj, Gustavo Andrés Angulo, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000)
+bq(success). Español (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000, Patrick Atamaniuk)
 
-bq(success). Français (Bo Hansen, friflaj, ibussieres, Maxime Chambreuil, mikoto20000)
+bq(success). Français (Bo Hansen, friflaj, ibussieres, John Yani, Martin Bastien, Maxime Chambreuil, mikoto20000, Patrick Atamaniuk)
 
-bq(success). Japanese (日本語) (friflaj, mikoto20000)
+bq(success). Japanese (日本語) (Bo Hansen, drakontia, friflaj, mikoto20000, Patrick Atamaniuk)
 
-bq(success). Nederlands (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
+bq(success). Nederlands (Bo Hansen, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk)
 
-bq(success). Norwegian (Norsk bokmål) (friflaj, Geir Helland, mikoto20000, Riley W.)
+bq(success). Norwegian (Norsk bokmål) (Bo Hansen, friflaj, Geir Helland, John Yani, mikoto20000, Patrick Atamaniuk, Riley W.)
 
-bq(success). Português(Brasil) (Bo Hansen, Daniel Passos, friflaj, John Yani, Mark Maglana, mikoto20000, Robson R S Peixoto)
+bq(success). Português(Brasil) (Bo Hansen, Daniel Passos, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, Robson R S Peixoto)
 
-bq(warning). Russian (Русский) (98%) (Bo Hansen, Emiliano Heyns, friflaj, John Yani, mikoto20000)
+bq(success). Russian (Русский) (Anton Minin, Bo Hansen, Emiliano Heyns, friflaj, John Yani, leenq, mikoto20000, Patrick Atamaniuk)
 
-*Old-style variable substitution*
-
-|label_backlogs_unconfigured|label_sprint_name|
-
-bq(warning). Simplified Chinese (简体中文) (98%) (Bo Hansen, friflaj, Mark Maglana, mikoto20000)
+bq(warning). Simplified Chinese (简体中文) (98%) (Bo Hansen, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk)
 
 *Old-style variable substitution*
 
