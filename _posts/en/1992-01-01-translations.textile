@@ -18,15 +18,12 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (95%) (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, root, sureal, Terence Miller, Tobias Bayer)
+bq(error). Deutsch (97%) (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, root, sureal, Terence Miller, Tobias Bayer)
 
 *Untranslated*
 
-|backlogs_sharing_support|backlogs_statistics_hours_per_point|
-|error_sprint_end_before_start|field_release|
-|field_tracker_id|label_master_backlog|
-|label_points_added|label_release|
-|label_release_plural||
+|backlogs_sharing_support|field_tracker_id|
+|label_master_backlog|label_release_plural|
 
 bq(error). English (British) (93%) (Bo Hansen, Frank Blendinger, friflaj, mikoto20000, Patrick Atamaniuk)
 
@@ -40,7 +37,7 @@ bq(error). English (British) (93%) (Bo Hansen, Frank Blendinger, friflaj, mikoto
 |rb_burndown_timezone_explanation|rb_timelog_from_taskboard|
 |use_free_text_if_empty||
 
-bq(error). Español (60%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000, Patrick Atamaniuk)
+bq(error). Español (61%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000, Patrick Atamaniuk)
 
 *Untranslated*
 
@@ -69,13 +66,12 @@ bq(error). Español (60%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani
 |backlogs_story_follow_task_status_nil|backlogs_story_follows_task_loose_explanation|
 |backlogs_story_follows_task_status|backlogs_story_settings|
 |error_sprint_end_before_start|field_project_id|
-|field_release|field_time_entry_comments|
-|field_time_entry_hours|field_time_entry_spend_on|
-|field_time_entry_user_id|label_all_tasks|
-|label_closed_releases|label_filter_tasks|
-|label_filter_tasks_my_tasks|label_my_tasks|
-|label_no_end|label_no_start|
-|label_points_added|label_release|
+|field_time_entry_comments|field_time_entry_hours|
+|field_time_entry_spend_on|field_time_entry_user_id|
+|label_all_tasks|label_closed_releases|
+|label_filter_tasks|label_filter_tasks_my_tasks|
+|label_my_tasks|label_no_end|
+|label_no_start|label_points_added|
 |label_release_plural|label_show_completed_sprints|
 |label_view_options|label_webcal|
 |rb_auto_refresh|rb_burndown_timezone|
@@ -83,14 +79,13 @@ bq(error). Español (60%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani
 |rb_project_settings_updated|rb_show_burndown_in_sidebar|
 |rb_show_project_name||
 
-bq(error). Français (94%) (Bo Hansen, friflaj, ibussieres, John Yani, Martin Bastien, Maxime Chambreuil, mikoto20000, Patrick Atamaniuk)
+bq(error). Français (95%) (Bo Hansen, friflaj, ibussieres, John Yani, Martin Bastien, Maxime Chambreuil, mikoto20000, Patrick Atamaniuk)
 
 *Untranslated*
 
 |backlogs_not_all_themes_are_supported|backlogs_story_follows_task_loose_explanation|
 |error_sprint_end_before_start|field_blocks|
-|field_release|label_points_added|
-|label_release|label_release_plural|
+|label_points_added|label_release_plural|
 |rb_burndown_timezone|rb_burndown_timezone_explanation|
 
 bq(success). Japanese (日本語) (Bo Hansen, drakontia, friflaj, mikoto20000, Patrick Atamaniuk)
@@ -165,7 +160,7 @@ bq(error). Norwegian (Norsk bokmål) (56%) (Bo Hansen, friflaj, Geir Helland, Jo
 |rb_project_settings_updated|rb_show_burndown_in_sidebar|
 |rb_show_project_name||
 
-bq(error). Português(Brasil) (33%) (Bo Hansen, Daniel Passos, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, Robson R S Peixoto)
+bq(error). Português(Brasil) (34%) (Bo Hansen, Daniel Passos, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, Robson R S Peixoto)
 
 *Untranslated*
 
@@ -200,22 +195,21 @@ bq(error). Português(Brasil) (33%) (Bo Hansen, Daniel Passos, friflaj, John Yan
 |error_no_workflow_for_task_tracker|error_release_end_after_start|
 |error_sprint_end_before_start|error_taken|
 |field_assigned_to|field_priority|
-|field_project_id|field_release|
-|field_release_end_date|field_release_start_date|
-|field_remaining_hours|field_time_entry_comments|
-|field_time_entry_hours|field_time_entry_spend_on|
-|field_time_entry_user_id|label_all_tasks|
-|label_close_completed_sprints|label_closed_releases|
-|label_column_width|label_filter_tasks|
-|label_filter_tasks_my_tasks|label_hide_completed_sprints|
-|label_hours_remaining|label_hours_required_burn_rate|
-|label_master_backlog|label_my_tasks|
-|label_new_sprint|label_new_story|
-|label_no_end|label_no_start|
-|label_points_accepted|label_points_added|
-|label_points_committed|label_points_required_burn_rate|
-|label_points_resolved|label_points_to_accept|
-|label_points_to_resolve|label_release|
+|field_project_id|field_release_end_date|
+|field_release_start_date|field_remaining_hours|
+|field_time_entry_comments|field_time_entry_hours|
+|field_time_entry_spend_on|field_time_entry_user_id|
+|label_all_tasks|label_close_completed_sprints|
+|label_closed_releases|label_column_width|
+|label_filter_tasks|label_filter_tasks_my_tasks|
+|label_hide_completed_sprints|label_hours_remaining|
+|label_hours_required_burn_rate|label_master_backlog|
+|label_my_tasks|label_new_sprint|
+|label_new_story|label_no_end|
+|label_no_start|label_points_accepted|
+|label_points_added|label_points_committed|
+|label_points_required_burn_rate|label_points_resolved|
+|label_points_to_accept|label_points_to_resolve|
 |label_release_end_date|label_release_new|
 |label_release_planning|label_release_plural|
 |label_release_start_date|label_reset|
