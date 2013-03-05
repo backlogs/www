@@ -37,7 +37,7 @@ bq(error). English (British) (93%) (Bo Hansen, Frank Blendinger, friflaj, mikoto
 |rb_burndown_timezone_explanation|rb_timelog_from_taskboard|
 |use_free_text_if_empty||
 
-bq(error). Español (61%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000, Patrick Atamaniuk)
+bq(error). Español (60%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani, Jorge Uriarte, Mauricio Rivera Schneider, mikoto20000, Patrick Atamaniuk)
 
 *Untranslated*
 
@@ -46,7 +46,9 @@ bq(error). Español (61%) (Bo Hansen, friflaj, Gustavo Andrés Angulo, John Yani
 |backlogs_general_settings|backlogs_include_sat_and_sun|
 |backlogs_new_story_position|backlogs_new_story_position_bottom|
 |backlogs_new_story_position_top|backlogs_not_all_themes_are_supported|
-|backlogs_pblpage_settings|backlogs_set_start_and_duedates_from_sprint|
+|backlogs_pblpage_settings|backlogs_scrum_stats_menu_application|
+|backlogs_scrum_stats_menu_none|backlogs_scrum_stats_menu_position|
+|backlogs_scrum_stats_menu_top|backlogs_set_start_and_duedates_from_sprint|
 |backlogs_sharing_enabled|backlogs_sharing_new_sprint|
 |backlogs_sharing_new_sprint_explanation|backlogs_sharing_support|
 |backlogs_show_in_scrum_stats|backlogs_show_redmine_std_header|
@@ -83,19 +85,21 @@ bq(error). Français (95%) (Bo Hansen, friflaj, ibussieres, John Yani, Martin Ba
 
 *Untranslated*
 
-|backlogs_not_all_themes_are_supported|backlogs_story_follows_task_loose_explanation|
-|error_sprint_end_before_start|field_blocks|
-|label_points_added|label_release_plural|
-|rb_burndown_timezone|rb_burndown_timezone_explanation|
+|backlogs_not_all_themes_are_supported|backlogs_scrum_stats_menu_position|
+|backlogs_story_follows_task_loose_explanation|error_sprint_end_before_start|
+|field_blocks|label_points_added|
+|label_release_plural|rb_burndown_timezone|
+|rb_burndown_timezone_explanation||
 
 bq(success). Japanese (日本語) (Bo Hansen, drakontia, friflaj, mikoto20000, Patrick Atamaniuk)
 
-bq(error). Nederlands (81%) (Bo Hansen, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk)
+bq(error). Nederlands (80%) (Bo Hansen, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk)
 
 *Untranslated*
 
 |backlogs_burndown_settings|backlogs_general_settings|
 |backlogs_not_all_themes_are_supported|backlogs_pblpage_settings|
+|backlogs_scrum_stats_menu_application|backlogs_scrum_stats_menu_position|
 |backlogs_set_start_and_duedates_from_sprint|backlogs_sharing_enabled|
 |backlogs_sharing_new_sprint|backlogs_sharing_new_sprint_explanation|
 |backlogs_sharing_support|backlogs_show_in_scrum_stats|
@@ -113,7 +117,7 @@ bq(error). Nederlands (81%) (Bo Hansen, friflaj, John Yani, Mark Maglana, mikoto
 |rb_burndown_timezone_explanation|rb_project_settings_update_error|
 |rb_project_settings_updated||
 
-bq(error). Norwegian (Norsk bokmål) (56%) (Bo Hansen, friflaj, Geir Helland, John Yani, mikoto20000, Patrick Atamaniuk, Riley W.)
+bq(error). Norwegian (Norsk bokmål) (55%) (Bo Hansen, friflaj, Geir Helland, John Yani, mikoto20000, Patrick Atamaniuk, Riley W.)
 
 *Untranslated*
 
@@ -122,43 +126,44 @@ bq(error). Norwegian (Norsk bokmål) (56%) (Bo Hansen, friflaj, Geir Helland, Jo
 |backlogs_general_settings|backlogs_include_sat_and_sun|
 |backlogs_new_story_position|backlogs_new_story_position_bottom|
 |backlogs_new_story_position_top|backlogs_not_all_themes_are_supported|
-|backlogs_pblpage_settings|backlogs_set_start_and_duedates_from_sprint|
-|backlogs_sharing_enabled|backlogs_sharing_new_sprint|
-|backlogs_sharing_new_sprint_explanation|backlogs_sharing_support|
-|backlogs_show_in_scrum_stats|backlogs_show_redmine_std_header|
-|backlogs_show_stories_from_subprojects_in_backlog|backlogs_sprint_card_settings|
-|backlogs_sprint_sort_order|backlogs_sprint_sort_order_asc|
-|backlogs_sprint_sort_order_desc|backlogs_statistics_active|
-|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
-|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_hours_per_point|
-|backlogs_statistics_product_backlog_filled_failed|backlogs_statistics_product_backlog_sized|
-|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
-|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sizing_stddev|
-|backlogs_statistics_spent_hours_per_point|backlogs_statistics_sprint_notes_available|
-|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
-|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
-|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
-|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
-|backlogs_statistics_yield_failed|backlogs_story_follow_task_status_close|
-|backlogs_story_follow_task_status_loose|backlogs_story_follow_task_status_nil|
-|backlogs_story_follows_task_loose_explanation|backlogs_story_follows_task_status|
-|backlogs_story_settings|backlogs_task|
-|backlogs_task_tracker|error_sprint_end_before_start|
-|field_assigned_to|field_priority|
-|field_project_id|field_remaining_hours|
-|field_time_entry_comments|field_time_entry_hours|
-|field_time_entry_spend_on|field_time_entry_user_id|
-|label_all_tasks|label_close_completed_sprints|
-|label_closed_releases|label_column_width|
-|label_download_sprint|label_filter_tasks|
-|label_filter_tasks_my_tasks|label_hide_completed_sprints|
-|label_my_tasks|label_points_added|
-|label_reset|label_show_completed_sprints|
-|label_stories_tasks|label_view_options|
-|rb_auto_refresh|rb_burndown_timezone|
-|rb_burndown_timezone_explanation|rb_project_settings_update_error|
-|rb_project_settings_updated|rb_show_burndown_in_sidebar|
-|rb_show_project_name||
+|backlogs_pblpage_settings|backlogs_scrum_stats_menu_application|
+|backlogs_scrum_stats_menu_position|backlogs_scrum_stats_menu_top|
+|backlogs_set_start_and_duedates_from_sprint|backlogs_sharing_enabled|
+|backlogs_sharing_new_sprint|backlogs_sharing_new_sprint_explanation|
+|backlogs_sharing_support|backlogs_show_in_scrum_stats|
+|backlogs_show_redmine_std_header|backlogs_show_stories_from_subprojects_in_backlog|
+|backlogs_sprint_card_settings|backlogs_sprint_sort_order|
+|backlogs_sprint_sort_order_asc|backlogs_sprint_sort_order_desc|
+|backlogs_statistics_active|backlogs_statistics_active_failed|
+|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
+|backlogs_statistics_hours_per_point|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_spent_hours_per_point|
+|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
+|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
+|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
+|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
+|backlogs_statistics_yield|backlogs_statistics_yield_failed|
+|backlogs_story_follow_task_status_close|backlogs_story_follow_task_status_loose|
+|backlogs_story_follow_task_status_nil|backlogs_story_follows_task_loose_explanation|
+|backlogs_story_follows_task_status|backlogs_story_settings|
+|backlogs_task|backlogs_task_tracker|
+|error_sprint_end_before_start|field_assigned_to|
+|field_priority|field_project_id|
+|field_remaining_hours|field_time_entry_comments|
+|field_time_entry_hours|field_time_entry_spend_on|
+|field_time_entry_user_id|label_all_tasks|
+|label_close_completed_sprints|label_closed_releases|
+|label_column_width|label_download_sprint|
+|label_filter_tasks|label_filter_tasks_my_tasks|
+|label_hide_completed_sprints|label_my_tasks|
+|label_points_added|label_reset|
+|label_show_completed_sprints|label_stories_tasks|
+|label_view_options|rb_auto_refresh|
+|rb_burndown_timezone|rb_burndown_timezone_explanation|
+|rb_project_settings_update_error|rb_project_settings_updated|
+|rb_show_burndown_in_sidebar|rb_show_project_name|
 
 bq(error). Português(Brasil) (34%) (Bo Hansen, Daniel Passos, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, Robson R S Peixoto)
 
@@ -169,68 +174,71 @@ bq(error). Português(Brasil) (34%) (Bo Hansen, Daniel Passos, friflaj, John Yan
 |backlogs_general_settings|backlogs_impediment|
 |backlogs_include_sat_and_sun|backlogs_new_story_position|
 |backlogs_new_story_position_bottom|backlogs_not_all_themes_are_supported|
-|backlogs_pblpage_settings|backlogs_set_start_and_duedates_from_sprint|
-|backlogs_sharing_enabled|backlogs_sharing_new_sprint|
-|backlogs_sharing_new_sprint_explanation|backlogs_sharing_support|
-|backlogs_show_in_scrum_stats|backlogs_show_redmine_std_header|
-|backlogs_show_stories_from_subprojects_in_backlog|backlogs_sprint_card_settings|
-|backlogs_sprint_sort_order|backlogs_sprint_sort_order_asc|
-|backlogs_sprint_sort_order_desc|backlogs_sprints|
-|backlogs_statistics_active|backlogs_statistics_active_failed|
-|backlogs_statistics_committed_velocity_stable|backlogs_statistics_committed_velocity_stable_failed|
-|backlogs_statistics_hours_per_point|backlogs_statistics_product_backlog_filled|
-|backlogs_statistics_product_backlog_filled_failed|backlogs_statistics_product_backlog_sized|
-|backlogs_statistics_product_backlog_sized_failed|backlogs_statistics_sizing_consistent|
-|backlogs_statistics_sizing_consistent_failed|backlogs_statistics_sizing_stddev|
-|backlogs_statistics_spent_hours_per_point|backlogs_statistics_sprint_notes_available|
-|backlogs_statistics_sprint_notes_available_failed|backlogs_statistics_sprints|
-|backlogs_statistics_sprints_estimated|backlogs_statistics_sprints_estimated_failed|
-|backlogs_statistics_sprints_sized|backlogs_statistics_sprints_sized_failed|
-|backlogs_statistics_velocity_stddev|backlogs_statistics_yield|
-|backlogs_statistics_yield_failed|backlogs_story_follow_task_status_close|
-|backlogs_story_follow_task_status_loose|backlogs_story_follow_task_status_nil|
-|backlogs_story_follows_task_loose_explanation|backlogs_story_follows_task_status|
-|backlogs_story_settings|comma_delimited_numbers|
-|current_open_story_points|error_inclusion|
-|error_no_workflow_for_task_tracker|error_release_end_after_start|
-|error_sprint_end_before_start|error_taken|
-|field_assigned_to|field_priority|
-|field_project_id|field_release_end_date|
-|field_release_start_date|field_remaining_hours|
-|field_time_entry_comments|field_time_entry_hours|
-|field_time_entry_spend_on|field_time_entry_user_id|
-|label_all_tasks|label_close_completed_sprints|
-|label_closed_releases|label_column_width|
-|label_filter_tasks|label_filter_tasks_my_tasks|
-|label_hide_completed_sprints|label_hours_remaining|
-|label_hours_required_burn_rate|label_master_backlog|
-|label_my_tasks|label_new_sprint|
-|label_new_story|label_no_end|
-|label_no_start|label_points_accepted|
-|label_points_added|label_points_committed|
-|label_points_required_burn_rate|label_points_resolved|
-|label_points_to_accept|label_points_to_resolve|
-|label_release_end_date|label_release_new|
-|label_release_planning|label_release_plural|
-|label_release_start_date|label_reset|
-|label_show_completed_sprints|label_sprint_name|
-|label_view_options|label_webcal|
-|rb_auto_refresh|rb_burndown_timezone|
-|rb_burndown_timezone_explanation|rb_label_timelog_disable|
-|rb_label_timelog_enable|rb_project_settings_update_error|
-|rb_project_settings_updated|rb_show_burndown_in_sidebar|
-|rb_show_project_name|rb_task_cards_stories_then_tasks|
-|rb_task_cards_story_follows_tasks|rb_task_cards_tasks_follow_story|
-|rb_taskboard_card_order|rb_timelog_from_taskboard|
-|remaining_story_points|story_description|
-|story_estimation_hours|story_remaining_hours|
-|story_spent_time|today_not_in_release_warning|
-|use_free_text_if_empty||
+|backlogs_pblpage_settings|backlogs_scrum_stats_menu_application|
+|backlogs_scrum_stats_menu_none|backlogs_scrum_stats_menu_position|
+|backlogs_set_start_and_duedates_from_sprint|backlogs_sharing_enabled|
+|backlogs_sharing_new_sprint|backlogs_sharing_new_sprint_explanation|
+|backlogs_sharing_support|backlogs_show_in_scrum_stats|
+|backlogs_show_redmine_std_header|backlogs_show_stories_from_subprojects_in_backlog|
+|backlogs_sprint_card_settings|backlogs_sprint_sort_order|
+|backlogs_sprint_sort_order_asc|backlogs_sprint_sort_order_desc|
+|backlogs_sprints|backlogs_statistics_active|
+|backlogs_statistics_active_failed|backlogs_statistics_committed_velocity_stable|
+|backlogs_statistics_committed_velocity_stable_failed|backlogs_statistics_hours_per_point|
+|backlogs_statistics_product_backlog_filled|backlogs_statistics_product_backlog_filled_failed|
+|backlogs_statistics_product_backlog_sized|backlogs_statistics_product_backlog_sized_failed|
+|backlogs_statistics_sizing_consistent|backlogs_statistics_sizing_consistent_failed|
+|backlogs_statistics_sizing_stddev|backlogs_statistics_spent_hours_per_point|
+|backlogs_statistics_sprint_notes_available|backlogs_statistics_sprint_notes_available_failed|
+|backlogs_statistics_sprints|backlogs_statistics_sprints_estimated|
+|backlogs_statistics_sprints_estimated_failed|backlogs_statistics_sprints_sized|
+|backlogs_statistics_sprints_sized_failed|backlogs_statistics_velocity_stddev|
+|backlogs_statistics_yield|backlogs_statistics_yield_failed|
+|backlogs_story_follow_task_status_close|backlogs_story_follow_task_status_loose|
+|backlogs_story_follow_task_status_nil|backlogs_story_follows_task_loose_explanation|
+|backlogs_story_follows_task_status|backlogs_story_settings|
+|comma_delimited_numbers|current_open_story_points|
+|error_inclusion|error_no_workflow_for_task_tracker|
+|error_release_end_after_start|error_sprint_end_before_start|
+|error_taken|field_assigned_to|
+|field_priority|field_project_id|
+|field_release_end_date|field_release_start_date|
+|field_remaining_hours|field_time_entry_comments|
+|field_time_entry_hours|field_time_entry_spend_on|
+|field_time_entry_user_id|label_all_tasks|
+|label_close_completed_sprints|label_closed_releases|
+|label_column_width|label_filter_tasks|
+|label_filter_tasks_my_tasks|label_hide_completed_sprints|
+|label_hours_remaining|label_hours_required_burn_rate|
+|label_master_backlog|label_my_tasks|
+|label_new_sprint|label_new_story|
+|label_no_end|label_no_start|
+|label_points_accepted|label_points_added|
+|label_points_committed|label_points_required_burn_rate|
+|label_points_resolved|label_points_to_accept|
+|label_points_to_resolve|label_release_end_date|
+|label_release_new|label_release_planning|
+|label_release_plural|label_release_start_date|
+|label_reset|label_show_completed_sprints|
+|label_sprint_name|label_view_options|
+|label_webcal|rb_auto_refresh|
+|rb_burndown_timezone|rb_burndown_timezone_explanation|
+|rb_label_timelog_disable|rb_label_timelog_enable|
+|rb_project_settings_update_error|rb_project_settings_updated|
+|rb_show_burndown_in_sidebar|rb_show_project_name|
+|rb_task_cards_stories_then_tasks|rb_task_cards_story_follows_tasks|
+|rb_task_cards_tasks_follow_story|rb_taskboard_card_order|
+|rb_timelog_from_taskboard|remaining_story_points|
+|story_description|story_estimation_hours|
+|story_remaining_hours|story_spent_time|
+|today_not_in_release_warning|use_free_text_if_empty|
 
-bq(error). Russian (Русский) (97%) (Anton Minin, Bo Hansen, Emiliano Heyns, friflaj, John Yani, leenq, mikoto20000, Patrick Atamaniuk)
+bq(error). Russian (Русский) (95%) (Anton Minin, Bo Hansen, Emiliano Heyns, friflaj, John Yani, leenq, mikoto20000, Patrick Atamaniuk)
 
 *Untranslated*
 
+|backlogs_scrum_stats_menu_application|backlogs_scrum_stats_menu_none|
+|backlogs_scrum_stats_menu_position|backlogs_scrum_stats_menu_top|
 |backlogs_story_follows_task_loose_explanation|field_time_entry_comments|
 |field_time_entry_hours|field_time_entry_spend_on|
 |field_time_entry_user_id||
