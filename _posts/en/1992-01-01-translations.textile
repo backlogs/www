@@ -243,7 +243,7 @@ bq(error). Russian (Русский) (95%) (Anton Minin, Bo Hansen, Emiliano Heyn
 |field_time_entry_hours|field_time_entry_spend_on|
 |field_time_entry_user_id||
 
-bq(warning). Simplified Chinese (简体中文) (98%) (Bo Hansen, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk)
+bq(warning). Simplified Chinese (简体中文) (98%) (Bo Hansen, friflaj, harrywalker, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk)
 
 *Old-style variable substitution*
 
