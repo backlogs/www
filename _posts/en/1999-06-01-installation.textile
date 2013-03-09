@@ -274,6 +274,8 @@ This step is not required at this point, but it helps to know there is this page
 
 bq(info). NOTE: Redmine ships with just the Feature, Bug, and Support tracker. To add custom trackers such as Task and Impediment in the above screen, go to _Administration > Trackers_ in Redmine.
 
+bq(info). NOTE: Currently child-issues of stories are forced to become tasks. It is planned to lift this limitation.
+
 A quick description of the fields:
 
 * _Story Trackers_ and _Task Tracker_ - These fields tell Backlogs what type of issues it should consider as stories and tasks respectively. You may select more than one story tracker but only one task tracker. Make sure that you don't use the same tracker in both fields! If you do this, the _Apply_ button will automatically be disabled.
