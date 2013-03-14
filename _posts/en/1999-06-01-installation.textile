@@ -180,13 +180,13 @@ gem install holidays
 
 h2. Install Backlogs
 
-Now let's download the Backlogs source code from "the official repo":git://github.com/backlogs/redmine_backlogs.git into the `vendor/plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
+Now let's download the Backlogs source code from "the official repo":git://github.com/backlogs/redmine_backlogs.git into the `plugins` directory of your Redmine installation. The code is hosted in Github and you have two ways get it. The first method is what we recommend since it allows you to update to the latest version easily and even try out experimental features. Unfortunately, it requires that you have git installed. If you don't feel like messing around with git right now, go ahead and skip to the second method.
 
 h3. Method #1
 
 bq(info). *NOTE*: This first method requires some knowledge of git. For more information on how to use it, please visit "the git homepage":http://git-scm.com/.
 
-First, make sure that you're inside the `vendor/plugins` directory of your Redmine instance. Now, clone the source from Github by executing the following command:
+First, make sure that you're inside the `plugins` directory of your Redmine instance. Now, clone the source from Github by executing the following command:
 
 bc. git clone git://github.com/backlogs/redmine_backlogs.git
 
@@ -216,7 +216,7 @@ This second method involves going to "the project's page in Github":http://githu
 
 !../../assets/images/download_button.png!
 
-This will display a page where you can download the available versions tagged in the repo. Download the version of your choice by clicking either the tgz or zip link. For Windows users, it's usually zip. After this, go ahead and extract the contents of the downloaded archive into the `vendor/plugins` directory of your Redmine instance. Also, make sure that the extracted directory is named exactly as `redmine_backlogs`.
+This will display a page where you can download the available versions tagged in the repo. Download the version of your choice by clicking either the tgz or zip link. For Windows users, it's usually zip. After this, go ahead and extract the contents of the downloaded archive into the `plugins` directory of your Redmine instance. Also, make sure that the extracted directory is named exactly as `redmine_backlogs`.
 
 h2. Pre-install Tasks
 
