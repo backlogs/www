@@ -24,7 +24,7 @@ Doing this *will blow your database to bits*, so *DON'T DO THIS ANYWHERE NEAR PR
 Content of ~/.backlogs.rc
 
     DBROOTPW=password # your MySQL root user password
-    REDMINE_VER=2.0.4 # or 2.1.2, or v3.3.0, or...
+    REDMINE_VER=2.2.4 # or 2.3.0, or v3.3.0, or...
     WORKSPACE=/home/user/redmine # CHANGE THIS TO REFLECT THE *ABSOLUTE* DIRECTORY OF THE DIRECTORY IN STEP 1
     PATH_TO_REDMINE=$WORKSPACE/redmine
     PATH_TO_BACKLOGS=$WORKSPACE/redmine_backlogs
