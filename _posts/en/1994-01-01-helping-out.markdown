@@ -38,4 +38,4 @@ or cleaning up old ones. If you can write code, but have no Ruby experience: pic
 
 ## Webmasters
 
-We love open source. Heck, even this website is open source! If you want to help out in keeping the information here on the website current, you can start by forking [its code on Github](http://github.com/backlogs/www.redminebacklogs.net).
+We love open source. Heck, even this website is open source! If you want to help out in keeping the information here on the website current, you can start by forking [its code on Github](https://github.com/backlogs/www).
