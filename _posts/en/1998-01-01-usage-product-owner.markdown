@@ -3,6 +3,9 @@ title: Usage&#58; Product Owner
 layout: default
 categories: en
 ---
+[releases]: /topics/releases.html
+[release_graph]: /topics/release_graph.html
+
 # Usage: Product Owner
 
 As the product owner you are responsible for prioritizing and describing the stories in the product backlog. Read more about <a href="http://www.mountaingoatsoftware.com/scrum/product-owner" target="_blank">the product owner role</a> from Mountain Goat Software.
@@ -17,47 +20,21 @@ You can quickly change priorities by dragging the stories in the product backlog
 
 By clicking the number in the green square you will be taken the full story details, where you can add more details to it.
 
+## Releases (multiple backlogs)
+
+The "Releases" page allows you to define future releases. This can be useful to divide a huge backlog into managable chunks.
+On the _Master Backlog_ releases show up as multiple backlogs. Stories are added to a release by dragging from the product backlog and into the chosen release.
+When dragging a story from a release into a sprint it still keeps it's relationship with the release. The tooltip shown for each story shows the release.
+
+For detailed explaination of releases please see advanced topic [Releases][releases].
+
 ## How is my project doing?
 
 Attending the standup is the easiest way to get a feel for your project, but if you're not available at some point or you want to share the project progress with the rest of the world, you can find the burndown on the context menu of the active sprint.
 
 ![Burndown Chart](../../assets/images/sprint_context_menu.png)
 
-To see how a longer running project is performing, there is an additional method
-called release planning. This is completely optional and most useful for
-projects that have a specific date where a certain amount of features has to be
-completed - a planned release. The timespan of one release is usually divided
-into several sprints.
-
-The idea is to get a burndown graph for a longer timespan than just a sprint - a
-planned release. For example you have to track a project for a customer that
-expects a released version in 6 months. You initially fill your backlog with the
-requirements of the customer and give each of them story points - vague at
-the beginning, but just to have a rough estimation of how complex the item is.
-Then you can start to plan a release: go to the "Releases" tab, click on "New
-release", and enter some clever name like "Version 1.0". For the start date you
-choose the day where the work on the release begins (which might be the first
-day of the initial sprint), and for the end date the day when the release is
-planned to be ready for delivery - probably some sprints later.
-You will also have to enter a number as total story points, which shall estimate
-the total effort for all the features of that release. Backlogs will
-automatically suggest the sum of all backlog entries, but you can also change
-this when creating the release, or even modify it later.
-
-Then you will see a burndown graph that looks just like a sprint burndown graph,
-with a line going down from the initial total story points at the release start
-date to 0 at the end date. To keep track of the release project, you will have
-to create points on the graph that show the current status of the project. This
-currently has to be done manually by pressing the "Update story point snapshot
-for today" button below the graph.
-
-Of course this only makes sense after some time in the project has passed, and
-the sum of story points remaining in the backlog has changed (hopefully it got
-less!). It's usually enough to create one point after each sprint, so making
-this a part of your retrospective or planning is a good idea.
-The graph will start to be useful after some sprints have passed, and you have
-some points within the release burndown graph. It should help you to see how you
-project is evolving, and if the release goal can be reached.
+For longer running projects utilizing the [Releases][releases]-feature there is another burnchart allowing a similar view over several sprints. It is explained in details here: [Release graph][release_graph].
 
 ## Closing the sprint
 

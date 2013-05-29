@@ -1,0 +1,10 @@
+---
+title: Release graph
+layout: default
+categories: en
+---
+h1. Release graph
+
+bq(info). NOTE: To enable the release graph, please go to Redmine Backlogs settings and tick "Enable release burnup chart (EXPERIMENTAL)".
+
+TO DO...
