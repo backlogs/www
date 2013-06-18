@@ -1,0 +1,56 @@
+---
+title: Sharing sprints/releases
+layout: default
+categories: en
+---
+h1. Sharings sprints/releases
+
+bq(info). NOTE: Sharing is not enabled by default. Please go to Redmine Backlogs settings and tick "Enable sharing".
+
+As Backlogs utilize Redmine versions for the concept of sprints it also inherits the version sharing feature. Shared version are described in general in the "Redmine documentation":http://www.redmine.org/projects/redmine/wiki/RedmineProjectSettings#Versions. The following sections will focus on some use cases for sharing in Backlogs and how it affects the master backlog view.
+
+h3. Single team, multiple projects
+
+As a single team working on multiple projects one might organize the entire team's work into a single sprint. This could look something like this:
+
+bc. |--Project Top
+|   |--Sprint 1 (shared subprojects)
+|   |--Sprint 2 (shared subprojects)
+|   |--Project A
+|   |   |--Story 1
+|   |   |--Story 2
+|   |
+|   |--Project B
+|   |   |--Story 3
+|   |   |--Story 4
+
+When viewing Project A in the master backlog only stories 1 & 2 are visible in the product backlog. This makes it easy to get an overview of this particular project.
+Going to Project Top the product backlogs of both projects are combined allowing to order all stories.
+By sharing sprints with subprojects from Project Top both sprint 1 & 2 are visible from all projects making it possible to drag stories into the sprints from any project.
+
+h3. Multiple teams, single project
+
+Multiple teams dealing with one project each might utilize a similar structure, but have separate sprints like shown below:
+
+bc. |--Project Top
+|   |--Project A
+|   |   |--Sprint A1 (shared hierarchy)
+|   |   |--Story 1
+|   |   |--Story 2
+|   |
+|   |--ProjectB
+|   |   |--Sprint B1 (shared hiearchy)
+|   |   |--Story 3
+|   |   |--Story 4
+
+The product backlog is shown in the scope of each project as before, but the sprints have been moved to each project and shared with project hierarchy. This means Project A & B cannot see each others sprints, but Project Top still allows to get the full overview of the projects as this is capable of seeing the complete product backlogs and the sprints A1 & B1.
+
+h3. Multiple teams, multiple projects
+
+Combining the two scenarios above it is possible to support multiple projects per team. Subprojects are simply added to Project A or Project B while sprints are kept in the respective project A or B with project hierarchy sharing.
+
+h2. Releases
+
+The use cases described above was only concerned about sprints. Releases and sprints have the same sharing capabilities in Backlogs and thus the examples can be used for releases too.
+The only difference one has to consider is that releases behave like the product backlog when viewing a subproject. That implies the visibility of stories in a release is narrowed down to the specific subproject(s) viewed in the master backlog.
+

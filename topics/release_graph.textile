@@ -7,4 +7,41 @@ h1. Release graph
 
 bq(info). NOTE: To enable the release graph, please go to Redmine Backlogs settings and tick "Enable release burnup chart (EXPERIMENTAL)".
 
-TO DO...
+The concept of the release graph is very similar to the sprint burn charts. In stead of showing days the release graph shows the sprints containing stories within the given release.
+
+h2. Understanding the graph
+
+The graph is made as a burnup chart to make it easy to follow when release scope changes. Below is shown a finished release which we will walkthrough:
+!../assets/images/release_graph_complex_all_marked.png!
+
+#0 The first bar always show the initial backlog. That is the stories assigned to the release before the release start date. In the example the scope of the release start at 24 points.
+# This is the result after the first sprint. The green bar indicates that 5 story points have been finished. The more alarming part is the orange bar showing that the release was extended by 6 points during this sprint.
+# Second sprint we see 5 story points closed and no scope changes.
+# Nothing happened apparently. In reality a story was duplicated from sprint 2 to sprnt 3 and the story in sprint 2 was rejected afterwards. This is automatically detected as a continued story.
+# In sprint 4 two story points have been removed. In this case it's due to a story being rejected.
+# Looking at sprint 5 two story points was completed while the scope changed to a total of 20 points by removing a story from the release backlog.
+# Another 4 points closed in sprint 6.
+# Final sprint the last story of 4 points is closed. The bar is now completely green indicating the release is finished.
+
+If we wind back time until sprint 3 we will see the trendlines calculated when the release is in progress:
+
+!../assets/images/release_graph_complex_after_sprint3_marked.png!
+
+#1 The "Trend closed"-line is the forecasted velocity of closed points. The calculation is based on the last three sprints.
+#2 Similarly we have the "Trend scope"-line which show the forecasted change of scope of the release.
+#3 The crossing between the two trendlines is the estimated finish date of the release.
+
+The information about scope changes in the release helps to analyze whether the release scope is stable or if stories are leaking into the release.
+
+The trendlines above are only available when the work on a release has started. If desired it is possible to get another trendline called "Planned velocity". This is activated when filling the Release attribute of the same name. The unit is points per month. E.g. a value of 50 will create a trendline similar to the "Trend closed"-line with a slope of 50 points per month.
+ 
+
+h2. Adjusting release relationship
+
+In a few cases it is desirable to adjust whether a story has been a member of the release since the beginning or if it is an added story. Adjusting the "Release relationship"-attribute help us achieve this:
+
+| *Relationship* | *Description* |
+| Auto | Default setting. This automatically detects when a story is added or removed from a release. This will show the full history of a story's release membership. |
+| Initial | Forces story to be initial member of current release. This means the story is visible from the release start date. |
+| Added | Story will be shown in the "added"-row on the release graph. |
+| Continued | Story will show up in initial backlog, but only from the creation date of the story. Useful for splitting stories or continuing stories in a later sprint if the auto detection fails. |

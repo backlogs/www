@@ -1,0 +1,28 @@
+---
+title: Releases
+layout: default
+categories: en
+---
+[sharing]/topics/sharing.html
+[release_graph]/topics/release_graph.html
+
+h1. Releases
+
+Releases or the term "Release planning" is a loved and hated topic in SCRUM. Misused it might hide a bad development process where the final sprint is used for bugfixing features which should not have been committed in the first place. If used properly it creates a longer term overview of the project and eases planning the upcoming sprints.
+
+To create a release just go to the "Release"-tab and fill the required fields. This is hardly exciting, but if we go to the master backlog we see the following:
+
+!../assets/images/releases_master_backlog.png!
+
+The release has popped up in the right column along with the Product backlog. In fact the release is just another backlog. This is useful to know when working with subprojects and using the "Sharing-feature":sharing.
+The structure makes releases very flexible. One might create traditional time-based releases or simply use it for grouping stories of different state e.g. having releases named "Scheduled", "Current backlog", "Future backlog" and use the normal product backlog for new stories not reviewed yet. 
+
+h3. Assign story to release
+
+Assigning stories to a release is done by dragging a story from the Product backlog into a release. This is shown below along with the tooltip of one of the stories:
+
+!../assets/images/releases_master_backlog_tooltip.png!
+
+It is worth mentioning the "Release" shown in the tooltip. When a story is later dragged to a sprint this is the only indicator of which release a story belongs to. Release of a story contained in a sprint can always be changed in the normal Redmine issue view.
+
+Releases also support generating a "Release graph":release_graph.
