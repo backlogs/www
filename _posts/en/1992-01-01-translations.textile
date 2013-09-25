@@ -18,12 +18,7 @@ bq(success). English
 
 serves as a base for all other translations
 
-bq(error). Deutsch (97%) (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, root, sureal, Terence Miller, Tobias Bayer)
-
-*Untranslated*
-
-|backlogs_sharing_support|field_tracker_id|
-|label_master_backlog|label_release_plural|
+bq(success). Deutsch (Bo Hansen, Christoph Graumann, Frank Blendinger, friflaj, John Yani, Mark Maglana, mikoto20000, Patrick Atamaniuk, root, sureal, Terence Miller, Tobias Bayer)
 
 bq(error). English (British) (93%) (Bo Hansen, Frank Blendinger, friflaj, mikoto20000, Patrick Atamaniuk)
 
