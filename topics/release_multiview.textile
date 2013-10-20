@@ -1,0 +1,63 @@
+---
+title: Release multiview
+layout: default
+categories: en
+---
+h1. Release multiview
+
+bq(info). NOTE: To enable the release multiview, please go to Redmine Backlogs settings and tick "Enable release burnup chart (EXPERIMENTAL)". It is currently only available in latest master from github.
+
+The idea behind release multiview is to combine the release burncharts of several releases to get an estimate of when a series of releases are finished according to the velocity of all releases combined.
+The concept is inspired by http://blog.gdinwiddie.com/2012/12/04/multi-release-burnup/.
+
+
+h2. Create a release multiview
+
+A release multiview is created in the Release-tab along with the releases. It only makes sense to create a release multiview if more than one release is visible in the Release-tab for the current project scope. It does not matter if the releases belong to subprojects as long as they are shared in the current scope.
+To select multiple releases, hold down CTRL and click each release in the "Releases"-field.
+
+!../assets/images/release_multiview_create.png!
+
+It is up to the user to choose which releases to put into the multiview. It might be interesting to see a series of sequential releases done by the same team. Another possibility is to select parallel releases from different teams if that makes sense in the given project.
+
+h2. Understanding the burnchart
+
+Let us start by taking a look at the ideal world - a series of releases without any change of scope or stories taking longer than expected:
+
+!../assets/images/release_multiview_complete.png!
+
+#1 The blue line shows the total story points of release "Rel 1". As the release was not changed during the project the line is horizontal showing 25 points for the entire timespan of the release.
+#2 Each dot represent a point in time where something changed. In this case some stories was solved during a sprint.
+#3 The orange line shows the stacked total story points of "Rel 1" and "Rel 2". "Rel 2" started a little later than the first release and thus the line begins at the release start date. 
+#4 Likewise "Rel 2" was not changed during the project. The total story points for "Rel 1" and "Rel 2" is thus 50 points.
+#5 Stacking releases continues with "Rel 3" and "Rel 4" revealing a total of 100 points for the four releases combined.
+#6 The line "Points accepted" shows the closed points for the releases combined. In this case it is a straight line, but it will reflect the combined velocity of the team(s) working on the combined releases.
+
+h3. Project in progress
+
+The multiview burnchart supports showing estimates when the project is in progress. This is illustrated below:
+
+!../assets/images/release_multiview_in_progress.png!
+
+#1 The screenshot was taken in the middle of the sprint where none of the stories was accepted yet.
+#2 The dotted blue line shows the estimated points accepted.
+#3 Crossing date of estimated total points of "Rel 3" and estimated points accepted. See table below.
+
+If an estimated end date is available it is shown in the release table along with the release multiview:
+
+!../assets/images/release_multiview_in_progress_table.png!
+
+h3. Scope changes
+
+Another important aspect when releases are in progress are scope changes - or changes to the number of total story points committed to a release.
+This is illustrated below:
+
+!../assets/images/release_multiview_scope_change.png!
+
+#1 Scope of "Rel 3" was changed. Ten more story points was added to the release.
+#2 Estimated scope of "Rel 3" reflects the changes.
+#3 Crossing date of "Rel 3" estimate and accepted points estimate is affected by the scope change. See table below.
+
+The estimated end date reflects the trend of scope changes in the estimated end dates shown in the release table:
+
+!../assets/images/release_multiview_scope_change_table.png!

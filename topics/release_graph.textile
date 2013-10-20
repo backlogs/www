@@ -3,6 +3,8 @@ title: Release graph
 layout: default
 categories: en
 ---
+[release_multiview]/topics/release_multiview.html
+
 h1. Release graph
 
 bq(info). NOTE: To enable the release graph, please go to Redmine Backlogs settings and tick "Enable release burnup chart (EXPERIMENTAL)".
@@ -45,3 +47,8 @@ In a few cases it is desirable to adjust whether a story has been a member of th
 | Initial | Forces story to be initial member of current release. This means the story is visible from the release start date. |
 | Added | Story will be shown in the "added"-row on the release graph. |
 | Continued | Story will show up in initial backlog, but only from the creation date of the story. Useful for splitting stories or continuing stories in a later sprint if the auto detection fails. |
+
+
+h2. Release multiview
+
+It is possible to combine the graph of several releases using the feature "Release multiview":release_multiview.

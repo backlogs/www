@@ -5,6 +5,7 @@ categories: en
 ---
 [releases]: /topics/releases.html
 [release_graph]: /topics/release_graph.html
+[release_multiview]: /topics/release_multiview.html
 
 # Usage: Product Owner
 
@@ -35,6 +36,7 @@ Attending the standup is the easiest way to get a feel for your project, but if 
 ![Burndown Chart](../../assets/images/sprint_context_menu.png)
 
 For longer running projects utilizing the [Releases][releases]-feature there is another burnchart allowing a similar view over several sprints. It is explained in details here: [Release graph][release_graph].
+A bird's-eye overview of the progress of several releases is also possible through the [Release multiviews][release_multiview].
 
 ## Closing the sprint
 
